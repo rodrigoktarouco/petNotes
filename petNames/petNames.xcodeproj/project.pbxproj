@@ -25,6 +25,7 @@
 		9DCC58EA27189A0A007A800C /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCC58E927189A0A007A800C /* Task.storyboard */; };
 		9DCC58EC27189A1E007A800C /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58EB27189A1E007A800C /* TaskViewController.swift */; };
 		9DCC58EE27189A2C007A800C /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58ED27189A2C007A800C /* TaskModel.swift */; };
+		F496C572271A140C00443927 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496C571271A140C00443927 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		9DCC58E927189A0A007A800C /* Task.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		9DCC58EB27189A1E007A800C /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		9DCC58ED27189A2C007A800C /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		F496C571271A140C00443927 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				9D5A1D282718B52B00637589 /* addPet.storyboard */,
+				F496C571271A140C00443927 /* ViewController.swift */,
 			);
 			path = addPet;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				9DCC58EC27189A1E007A800C /* TaskViewController.swift in Sources */,
 				9D1E7506270E118E00321E54 /* FeedViewController.swift in Sources */,
 				9D1E7502270E118E00321E54 /* AppDelegate.swift in Sources */,
+				F496C572271A140C00443927 /* ViewController.swift in Sources */,
 				9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */,
 				9D1E7504270E118E00321E54 /* SceneDelegate.swift in Sources */,
 				9DCC58E6271899C7007A800C /* SettingsViewController.swift in Sources */,
