@@ -69,7 +69,8 @@
                     <connections>
                         <segue destination="Epu-X9-Pj3" kind="relationship" relationship="viewControllers" id="Jgk-71-f8A"/>
                         <segue destination="sLU-67-5Br" kind="relationship" relationship="viewControllers" id="Ojp-sR-27s"/>
-                        <segue destination="Per-wX-ReN" kind="relationship" relationship="viewControllers" id="EGH-nn-rDQ"/>
+                        <segue destination="ZF8-pA-q8R" kind="relationship" relationship="viewControllers" id="jgq-po-GF7"/>
+                        <segue destination="Per-wX-ReN" kind="relationship" relationship="viewControllers" id="UU2-zB-fwQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jZ-jg-UcP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -101,7 +102,24 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2L-ws-TZB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1388" y="795"/>
+            <point key="canvasLocation" x="-1316" y="795"/>
+        </scene>
+        <!--Task-->
+        <scene sceneID="027-wm-uRe">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1u-E7-7kk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController title="Task" id="ZF8-pA-q8R" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tasks" image="list.bullet.rectangle.portrait" catalog="system" id="zaO-Dy-7xq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YsI-gm-tfr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="28e-bu-14t" kind="relationship" relationship="rootViewController" id="R90-MG-Y3c"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-2120" y="795"/>
         </scene>
         <!--Settings-->
         <scene sceneID="U1k-DU-tzN">
@@ -111,7 +129,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ymj-R2-QpU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1388" y="1310"/>
+            <point key="canvasLocation" x="-749" y="1310"/>
         </scene>
         <!--Pets-->
         <scene sceneID="6Lu-8c-h43">
@@ -122,6 +140,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VS-lf-DzX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2909" y="1310"/>
+        </scene>
+        <!--Task-->
+        <scene sceneID="fZq-Yx-1Uo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Task" id="28e-bu-14t" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="HYI-1m-GXF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fhz-yd-yoI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2120" y="1310"/>
         </scene>
         <!--Pets-->
         <scene sceneID="UwD-QP-Fcd">
@@ -145,6 +173,7 @@
     </scenes>
     <resources>
         <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
         <image name="pawprint" catalog="system" width="128" height="116"/>
         <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
