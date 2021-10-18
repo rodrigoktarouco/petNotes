@@ -6,3 +6,19 @@
 //
 
 import Foundation
+import UIKit
+
+enum SelectedSementInTasks {
+        case all
+        case notDone
+        case byPet
+        case filter
+    }
+
+struct CellInfosStruct {
+    var taskName: String
+    var taskTime: String
+    var taskPetName: String
+    var taskPetImage: UIImage
+    var isCheckedAsDone: Bool
+}
