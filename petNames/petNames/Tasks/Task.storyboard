@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qr8-t3-GEz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -49,7 +49,7 @@
                                 <rect key="frame" x="0.0" y="270.5" width="414" height="625.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reloadableTaskCell" rowHeight="120" id="05C-FY-the">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reloadableTaskCell" rowHeight="120" id="05C-FY-the" customClass="TaskTableViewCell" customModule="petNames" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="05C-FY-the" id="iMv-vn-RvC">
@@ -68,22 +68,22 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="taJ-bt-Mcb">
-                                                            <rect key="frame" x="87" y="7" width="42.5" height="77.5"/>
+                                                            <rect key="frame" x="87" y="7" width="42" height="76.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7O-xd-5l2">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="42.5" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="20"/>
                                                                     <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oo8-lt-h9J">
-                                                                    <rect key="frame" x="0.0" y="32.5" width="42.5" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="32" width="42" height="17"/>
                                                                     <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zd-4u-B7d">
-                                                                    <rect key="frame" x="0.0" y="61.5" width="42.5" height="16"/>
+                                                                    <rect key="frame" x="0.0" y="61" width="42" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -105,6 +105,7 @@
                                                         <constraint firstItem="taJ-bt-Mcb" firstAttribute="leading" secondItem="R0j-0Q-aih" secondAttribute="trailing" constant="13.199999999999999" id="K9i-KA-bMJ"/>
                                                         <constraint firstAttribute="trailing" secondItem="F92-0c-JgM" secondAttribute="trailing" constant="13" id="Oot-yX-2az"/>
                                                         <constraint firstItem="R0j-0Q-aih" firstAttribute="leading" secondItem="0j2-tu-SG2" secondAttribute="leading" constant="9" id="Yoe-qh-G4V"/>
+                                                        <constraint firstAttribute="width" secondItem="0j2-tu-SG2" secondAttribute="height" multiplier="157:49" id="a3j-s8-31J"/>
                                                         <constraint firstItem="R0j-0Q-aih" firstAttribute="centerY" secondItem="0j2-tu-SG2" secondAttribute="centerY" id="pLu-hH-Ks5"/>
                                                         <constraint firstItem="taJ-bt-Mcb" firstAttribute="top" secondItem="0j2-tu-SG2" secondAttribute="top" constant="7.2000000000000002" id="wy3-vb-WmX"/>
                                                     </constraints>
@@ -112,11 +113,18 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="0j2-tu-SG2" firstAttribute="leading" secondItem="iMv-vn-RvC" secondAttribute="leadingMargin" constant="30" id="4zS-7O-gml"/>
+                                                <constraint firstItem="0j2-tu-SG2" firstAttribute="bottom" secondItem="iMv-vn-RvC" secondAttribute="bottomMargin" id="Rxo-fr-86C"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0j2-tu-SG2" secondAttribute="trailing" constant="30" id="a0E-pv-bFl"/>
-                                                <constraint firstItem="0j2-tu-SG2" firstAttribute="bottom" secondItem="iMv-vn-RvC" secondAttribute="bottomMargin" id="dNx-fq-Y0J"/>
-                                                <constraint firstItem="0j2-tu-SG2" firstAttribute="top" secondItem="iMv-vn-RvC" secondAttribute="topMargin" id="so0-XG-24F"/>
+                                                <constraint firstItem="0j2-tu-SG2" firstAttribute="top" secondItem="iMv-vn-RvC" secondAttribute="topMargin" id="evj-1z-gKr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="petImageTask" destination="R0j-0Q-aih" id="dc7-fN-TA0"/>
+                                            <outlet property="petNameLabel" destination="3Zd-4u-B7d" id="HMt-0v-a5A"/>
+                                            <outlet property="taskCheckedImage" destination="F92-0c-JgM" id="1gF-bm-kYq"/>
+                                            <outlet property="taskNameLabel" destination="u7O-xd-5l2" id="scN-0N-e2g"/>
+                                            <outlet property="taskTimeLabel" destination="oo8-lt-h9J" id="ZFb-6P-Mly"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -140,6 +148,11 @@
                     <navigationItem key="navigationItem" id="JjI-Kk-0Rg">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="T1F-Wh-vhM"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tasksSearchBar" destination="Isa-6L-YUV" id="XCC-tZ-47e"/>
+                        <outlet property="tasksSegmentedControl" destination="pec-64-wXi" id="1im-P7-etM"/>
+                        <outlet property="tasksTableView" destination="fvv-cB-sIM" id="LeJ-Be-hqk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
