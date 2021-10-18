@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D1788B3271DE8CF00C839DF /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1788B2271DE8CF00C839DF /* TaskTableViewCell.swift */; };
 		9D1E7502270E118E00321E54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1E7501270E118E00321E54 /* AppDelegate.swift */; };
 		9D1E7504270E118E00321E54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1E7503270E118E00321E54 /* SceneDelegate.swift */; };
 		9D1E7506270E118E00321E54 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1E7505270E118E00321E54 /* FeedViewController.swift */; };
 		9D1E7509270E118E00321E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E7507270E118E00321E54 /* Main.storyboard */; };
 		9D1E750B270E119000321E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E750A270E119000321E54 /* Assets.xcassets */; };
 		9D1E750E270E119000321E54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E750C270E119000321E54 /* LaunchScreen.storyboard */; };
+		9D295292271DE3C90079A685 /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D295291271DE3A80079A685 /* SF-Pro-Rounded-Regular.otf */; };
 		9D5A1D292718B52B00637589 /* addPet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A1D282718B52B00637589 /* addPet.storyboard */; };
 		9D5A1D2C2718BD3E00637589 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A1D2B2718BD3E00637589 /* Pets.storyboard */; };
 		9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5A1D2D2718BD5A00637589 /* PetsViewController.swift */; };
@@ -28,6 +30,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D1788A9271DE63900C839DF /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
+		9D1788AA271DE63900C839DF /* SF-Pro-Rounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Light.otf"; sourceTree = "<group>"; };
+		9D1788AB271DE63900C839DF /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		9D1788AC271DE63900C839DF /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
+		9D1788AD271DE63900C839DF /* SF-Pro-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Medium.otf"; sourceTree = "<group>"; };
+		9D1788AE271DE63900C839DF /* SF-Pro-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Heavy.otf"; sourceTree = "<group>"; };
+		9D1788AF271DE63A00C839DF /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
+		9D1788B0271DE63A00C839DF /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Rounded-Regular.otf"; path = "../../../../../../../../Library/Fonts/SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
+		9D1788B1271DE63A00C839DF /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
+		9D1788B2271DE8CF00C839DF /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		9D1E74FE270E118E00321E54 /* petNames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = petNames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1E7501270E118E00321E54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D1E7503270E118E00321E54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +48,7 @@
 		9D1E750A270E119000321E54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D1E750D270E119000321E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D1E750F270E119000321E54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D295291271DE3A80079A685 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
 		9D5A1D282718B52B00637589 /* addPet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = addPet.storyboard; sourceTree = "<group>"; };
 		9D5A1D2B2718BD3E00637589 /* Pets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pets.storyboard; sourceTree = "<group>"; };
 		9D5A1D2D2718BD5A00637589 /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
@@ -91,11 +104,29 @@
 				9D1E7501270E118E00321E54 /* AppDelegate.swift */,
 				9D1E7503270E118E00321E54 /* SceneDelegate.swift */,
 				9D1E750A270E119000321E54 /* Assets.xcassets */,
+				9D295290271DE1410079A685 /* Fonts */,
 				9D1E750C270E119000321E54 /* LaunchScreen.storyboard */,
 				9D1E750F270E119000321E54 /* Info.plist */,
 				9D75F9EC2710C54D001FF11C /* Localizable.strings */,
 			);
 			path = petNames;
+			sourceTree = "<group>";
+		};
+		9D295290271DE1410079A685 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9D1788AC271DE63900C839DF /* SF-Pro-Rounded-Black.otf */,
+				9D1788AB271DE63900C839DF /* SF-Pro-Rounded-Bold.otf */,
+				9D1788AE271DE63900C839DF /* SF-Pro-Rounded-Heavy.otf */,
+				9D1788AA271DE63900C839DF /* SF-Pro-Rounded-Light.otf */,
+				9D1788AD271DE63900C839DF /* SF-Pro-Rounded-Medium.otf */,
+				9D1788B0271DE63A00C839DF /* SF-Pro-Rounded-Regular.otf */,
+				9D1788AF271DE63A00C839DF /* SF-Pro-Rounded-Semibold.otf */,
+				9D1788B1271DE63A00C839DF /* SF-Pro-Rounded-Thin.otf */,
+				9D1788A9271DE63900C839DF /* SF-Pro-Rounded-Ultralight.otf */,
+				9D295291271DE3A80079A685 /* SF-Pro-Rounded-Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		9D5A1D272718B50300637589 /* addPet */ = {
@@ -141,6 +172,7 @@
 			children = (
 				9DCC58EB27189A1E007A800C /* TaskViewController.swift */,
 				9DCC58ED27189A2C007A800C /* TaskModel.swift */,
+				9D1788B2271DE8CF00C839DF /* TaskTableViewCell.swift */,
 				9DCC58E927189A0A007A800C /* Task.storyboard */,
 			);
 			path = Tasks;
@@ -211,6 +243,7 @@
 				9D5A1D2C2718BD3E00637589 /* Pets.storyboard in Resources */,
 				9D75F9EA2710C54D001FF11C /* Localizable.strings in Resources */,
 				9D1E750B270E119000321E54 /* Assets.xcassets in Resources */,
+				9D295292271DE3C90079A685 /* SF-Pro-Rounded-Regular.otf in Resources */,
 				9D1E7509270E118E00321E54 /* Main.storyboard in Resources */,
 				9D5A1D292718B52B00637589 /* addPet.storyboard in Resources */,
 				9DCC58E4271899B1007A800C /* Settings.storyboard in Resources */,
@@ -247,6 +280,7 @@
 			files = (
 				9DCC58E8271899E4007A800C /* SettingsModel.swift in Sources */,
 				9DCC58EC27189A1E007A800C /* TaskViewController.swift in Sources */,
+				9D1788B3271DE8CF00C839DF /* TaskTableViewCell.swift in Sources */,
 				9D1E7506270E118E00321E54 /* FeedViewController.swift in Sources */,
 				9D1E7502270E118E00321E54 /* AppDelegate.swift in Sources */,
 				9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */,
