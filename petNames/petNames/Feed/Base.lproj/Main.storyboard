@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="-2119" y="64"/>
         </scene>
-        <!--addPet-->
+        <!--NewPet-->
         <scene sceneID="yaV-b1-8U6">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="addPet" storyboardName="addPet" id="wJe-Gv-5vz" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="addPet" storyboardName="NewPet" id="wJe-Gv-5vz" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="tHr-ba-2vE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZQ-mE-XrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -107,7 +107,6 @@
         <!--Task-->
         <scene sceneID="027-wm-uRe">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v1u-E7-7kk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController title="Task" id="ZF8-pA-q8R" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tasks" image="list.bullet.rectangle.portrait" catalog="system" id="zaO-Dy-7xq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YsI-gm-tfr">
@@ -118,6 +117,7 @@
                         <segue destination="28e-bu-14t" kind="relationship" relationship="rootViewController" id="R90-MG-Y3c"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1u-E7-7kk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2120" y="795"/>
         </scene>

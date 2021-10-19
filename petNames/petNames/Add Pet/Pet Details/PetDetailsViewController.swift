@@ -1,24 +1,20 @@
 //
-//  ViewController.swift
+//  PetDetailsViewController.swift
 //  petNames
 //
-//  Created by Enzo Degrazia on 15/10/21.
+//  Created by Guilherme Valent Antonini on 18/10/21.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class PetDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Add Pet"
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: nil)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: nil)
-        
         // Do any additional setup after loading the view.
     }
+    
 
     /*
     // MARK: - Navigation
