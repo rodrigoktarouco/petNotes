@@ -10,7 +10,6 @@ import UIKit
 class WarningsOfTaskSettingsTableViewCell: UITableViewCell {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var isOn: UISwitch!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
