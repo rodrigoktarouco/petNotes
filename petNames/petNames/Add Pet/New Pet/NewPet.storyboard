@@ -176,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVq-P6-5dB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="116"/>
+            <point key="canvasLocation" x="3242" y="-1014"/>
         </scene>
         <!--taskSetting-->
         <scene sceneID="BAq-Y3-1HQ">
@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1r-tW-R1H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1874" y="116"/>
+            <point key="canvasLocation" x="4106" y="-1014"/>
         </scene>
         <!--petDetails-->
         <scene sceneID="VbM-wL-EbA">
@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWJ-01-QiG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2739" y="116"/>
+            <point key="canvasLocation" x="4971" y="-1014"/>
         </scene>
     </scenes>
     <resources>

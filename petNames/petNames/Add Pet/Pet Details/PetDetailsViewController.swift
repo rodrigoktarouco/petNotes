@@ -13,8 +13,27 @@ class PetDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
+        // Setting UIBarButtonItems
+        self.title = "Details"
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonAction))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Confirm", style: .plain, target: self, action: #selector(confirmButtonAction))
+
     }
-    
+
+    @objc func editButtonAction() {
+       print("Edit pressed")
+    }
+
+    @objc func confirmButtonAction() {
+       print("Confirm pressed")
+        self.navigationController?.dismiss(animated: true, completion: nil)
+
+//        let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "newPet") as UIViewController
+//        show(vc, sender: nil)
+    }
 
     /*
     // MARK: - Navigation

@@ -30,6 +30,8 @@
 		9DCC58EC27189A1E007A800C /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58EB27189A1E007A800C /* TaskViewController.swift */; };
 		9DCC58EE27189A2C007A800C /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58ED27189A2C007A800C /* TaskModel.swift */; };
 		F496C572271A140C00443927 /* NewPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496C571271A140C00443927 /* NewPetViewController.swift */; };
+		F496C574271F597C00443927 /* TaskScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496C573271F597C00443927 /* TaskScreenViewController.swift */; };
+		F496C576271F612300443927 /* TaskScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496C575271F612300443927 /* TaskScreenTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		9DCC58EB27189A1E007A800C /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		9DCC58ED27189A2C007A800C /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		F496C571271A140C00443927 /* NewPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetViewController.swift; sourceTree = "<group>"; };
+		F496C573271F597C00443927 /* TaskScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskScreenViewController.swift; sourceTree = "<group>"; };
+		F496C575271F612300443927 /* TaskScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskScreenTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				5C86C9F7271DE4BE00FD1C2C /* TaskScreen.storyboard */,
+				F496C573271F597C00443927 /* TaskScreenViewController.swift */,
+				F496C575271F612300443927 /* TaskScreenTableViewCell.swift */,
 			);
 			path = "Task Screen_Task Settings";
 			sourceTree = "<group>";
@@ -287,7 +293,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DCC58E8271899E4007A800C /* SettingsModel.swift in Sources */,
+				F496C574271F597C00443927 /* TaskScreenViewController.swift in Sources */,
 				9DCC58EC27189A1E007A800C /* TaskViewController.swift in Sources */,
+				F496C576271F612300443927 /* TaskScreenTableViewCell.swift in Sources */,
 				9D1E7506270E118E00321E54 /* FeedViewController.swift in Sources */,
 				9D1E7502270E118E00321E54 /* AppDelegate.swift in Sources */,
 				F496C572271A140C00443927 /* NewPetViewController.swift in Sources */,
