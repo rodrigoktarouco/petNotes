@@ -5,3 +5,14 @@
   Created by Rodrigo Kroef Tarouco on 08/10/21.
   
 */
+//MARK: -TaskScreen
+"taskTitleLabel" = "Tarefas";
+//MARK: -SegmentedControl
+"All" = "Todas";
+"Not done" = "Não feitas";
+"By Pet" = "Por Pet";
+//MARK: -TaskSettings
+"taskSettingsTitleLabel" = "Alertas";
+"addANewAlertLabel" = "Adicionar um novo alerta";
+"repeatLabel" = "Repete";
+"observationsTitlelabel" = "Observações";

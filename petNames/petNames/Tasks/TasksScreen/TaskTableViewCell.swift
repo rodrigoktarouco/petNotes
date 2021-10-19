@@ -14,15 +14,10 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskTimeLabel: UILabel!
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var taskCheckedImage: UIImageView!
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
-    
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

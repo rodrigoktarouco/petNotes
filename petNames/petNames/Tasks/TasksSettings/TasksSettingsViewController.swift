@@ -8,14 +8,12 @@
 import UIKit
 
 class TasksSettingsViewController: UIViewController {
-
+    @IBOutlet weak var taskSettingsTitleLabel: UILabel!
+    @IBOutlet weak var repeatLabel: UILabel!
+    @IBOutlet weak var observationsTitlelabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
-
     /*
     // MARK: - Navigation
 

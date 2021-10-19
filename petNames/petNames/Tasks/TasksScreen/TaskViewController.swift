@@ -8,6 +8,7 @@
 import UIKit
 
 class TaskViewController: UIViewController {
+    @IBOutlet weak var taskTitleLabel: UILabel!
     @IBOutlet weak var tasksTableView: UITableView!
     @IBOutlet weak var tasksSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tasksSearchBar: UISearchBar!
@@ -16,6 +17,10 @@ class TaskViewController: UIViewController {
         super.viewDidLoad()
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
+        taskTitleLabel.text = "taskTitleLabel".localized()
+        tasksSegmentedControl.setTitle("All".localized(), forSegmentAt: 0)
+        tasksSegmentedControl.setTitle("Not done".localized(), forSegmentAt: 1)
+        tasksSegmentedControl.setTitle("By Pet", forSegmentAt: 2)
     }
 }
 
