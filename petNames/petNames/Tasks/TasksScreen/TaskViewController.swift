@@ -15,10 +15,11 @@ class TaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tasksTableView.dataSource = self
+        tasksTableView.delegate = self
     }
 }
 // MARK: - UITableViewDataSource
-extension TaskViewController: UITableViewDataSource {
+extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return getNumberOfTasks(selectedSegment)
     }
@@ -38,6 +39,12 @@ extension TaskViewController: UITableViewDataSource {
             safeCell.taskCheckedImage.image = UIImage(systemName: "checkmark.circle")
         }
         return safeCell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let storyboard = UIStoryboard(name: "Task", bundle: nil)
+        let settingsController = storyboard.instantiateViewController(identifier: "NavigationControllerOfTasksSettingsView")
+        self.present(settingsController, animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
