@@ -8,10 +8,10 @@
 import UIKit
 
 class ShareTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var shareLabel: UILabel!
     @IBOutlet weak var shareImage: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

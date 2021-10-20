@@ -17,8 +17,14 @@ class PetDetailsViewController: UIViewController {
         // Setting UIBarButtonItems
         self.title = "Details"
         self.navigationController?.isNavigationBarHidden = false
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonAction))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Confirm", style: .plain, target: self, action: #selector(confirmButtonAction))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit",
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: #selector(editButtonAction))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Confirm",
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(confirmButtonAction))
 
     }
 
@@ -34,15 +40,4 @@ class PetDetailsViewController: UIViewController {
 //        let vc = storyboard.instantiateViewController(withIdentifier: "newPet") as UIViewController
 //        show(vc, sender: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

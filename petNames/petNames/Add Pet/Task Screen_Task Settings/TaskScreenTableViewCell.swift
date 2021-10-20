@@ -10,7 +10,7 @@ import UIKit
 class TaskScreenTableViewCell: UITableViewCell {
 
     @IBOutlet var taskTitleLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
