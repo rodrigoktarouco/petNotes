@@ -5,3 +5,18 @@
   Created by Rodrigo Kroef Tarouco on 08/10/21.
   
 */
+//MARK: -Task Screen
+"taskTitleLabel" = "Tasks";
+
+//MARK: -SegmentedControl
+"All" = "All";
+"Not done" = "Not done";
+"By Pet" = "By Pet";
+
+//MARK: -TaskSettings
+"taskSettingsTitleLabel" = "Alerts";
+"addANewAlertLabel" = "Add a new alert";
+"repeatLabel" = "repeat";
+"observationsTitlelabel" = "Observations";
+"frequencyLabel" = "Daily";
+"tasksSearchBar" = "Search";
