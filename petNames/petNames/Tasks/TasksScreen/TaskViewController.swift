@@ -20,7 +20,7 @@ class TaskViewController: UIViewController {
         taskTitleLabel.text = "taskTitleLabel".localized()
         tasksSegmentedControl.setTitle("All".localized(), forSegmentAt: 0)
         tasksSegmentedControl.setTitle("Not done".localized(), forSegmentAt: 1)
-        tasksSegmentedControl.setTitle("By Pet", forSegmentAt: 2)
+        tasksSegmentedControl.setTitle("By Pet".localized(), forSegmentAt: 2)
         tasksSearchBar.placeholder = "tasksSearchBar".localized()
     }
 }
