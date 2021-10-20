@@ -13,14 +13,20 @@ class TasksSettingsViewController: UIViewController {
     @IBOutlet weak var repeatLabel: UILabel!
     @IBOutlet weak var observationsTitlelabel: UILabel!
     @IBOutlet weak var taskTimesTableView: UITableView!
+    @IBOutlet weak var frequencyLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         taskTimesTableView.dataSource = self
         taskTimesTableView.delegate = self
+        
+        addNewAlertLabel.text = "addNewAlertLabel".localized()
+        taskSettingsTitleLabel.text = "taskSettingsTitleLabel".localized()
+        repeatLabel.text = "repeatLabel".localized()
+        frequencyLabel.text = "frequencyLabel".localized()
+        observationsTitlelabel.text = "observationsTitlelabel".localized()
+        
+        
     }
-    
-    
-
 }
 
 extension TasksSettingsViewController : UITableViewDataSource, UITableViewDelegate{
@@ -34,12 +40,7 @@ extension TasksSettingsViewController : UITableViewDataSource, UITableViewDelega
     
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
-    
-    
-    
-    
     
 }

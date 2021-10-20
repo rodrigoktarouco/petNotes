@@ -68,22 +68,22 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="taJ-bt-Mcb">
-                                                            <rect key="frame" x="87" y="7" width="42" height="76.5"/>
+                                                            <rect key="frame" x="87" y="7" width="42.5" height="77.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7O-xd-5l2">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="42.5" height="20.5"/>
                                                                     <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oo8-lt-h9J">
-                                                                    <rect key="frame" x="0.0" y="32" width="42" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="32.5" width="42.5" height="17"/>
                                                                     <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zd-4u-B7d">
-                                                                    <rect key="frame" x="0.0" y="61" width="42" height="15.5"/>
+                                                                    <rect key="frame" x="0.0" y="61.5" width="42.5" height="16"/>
                                                                     <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -182,25 +182,23 @@
                                 <rect key="frame" x="27" y="129.5" width="360" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZv-gO-azJ">
-                                        <rect key="frame" x="16" y="14.5" width="105.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="16" y="15" width="106.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sEB-eo-sPz">
-                                        <rect key="frame" x="329.5" y="20" width="14.5" height="11"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="14.5" id="4kI-3c-LtH"/>
-                                            <constraint firstAttribute="height" constant="14.5" id="arL-g0-eLB"/>
-                                        </constraints>
-                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBj-sQ-2Y0">
+                                        <rect key="frame" x="308" y="9.5" width="36" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="uBj-sQ-2Y0" secondAttribute="trailing" constant="16" id="2T2-4T-0Zw"/>
+                                    <constraint firstItem="uBj-sQ-2Y0" firstAttribute="centerY" secondItem="Lgp-xA-SIZ" secondAttribute="centerY" id="OXc-Wi-eFb"/>
                                     <constraint firstAttribute="height" constant="50" id="SGe-L2-htc"/>
-                                    <constraint firstItem="sEB-eo-sPz" firstAttribute="centerY" secondItem="Lgp-xA-SIZ" secondAttribute="centerY" id="T6s-R0-s2e"/>
                                     <constraint firstItem="VZv-gO-azJ" firstAttribute="centerY" secondItem="Lgp-xA-SIZ" secondAttribute="centerY" id="UOw-jy-UyA"/>
-                                    <constraint firstAttribute="trailing" secondItem="sEB-eo-sPz" secondAttribute="trailing" constant="16" id="Y3h-Y5-Sfu"/>
                                     <constraint firstAttribute="width" constant="360" id="gRV-5w-7Nf"/>
                                     <constraint firstItem="VZv-gO-azJ" firstAttribute="leading" secondItem="Lgp-xA-SIZ" secondAttribute="leading" constant="16" id="yq5-Hk-2Fq"/>
                                 </constraints>
@@ -263,8 +261,8 @@
                                             <constraint firstAttribute="width" constant="14.5" id="XRO-Oe-m6R"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diariamente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuQ-ui-fYr">
-                                        <rect key="frame" x="223.5" y="15.5" width="92" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuQ-ui-fYr">
+                                        <rect key="frame" x="278" y="15.5" width="37.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -283,8 +281,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observações" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQz-hf-OCV">
-                                <rect key="frame" x="18" y="485" width="116" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="18" y="485" width="121" height="24"/>
+                                <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -333,8 +331,9 @@
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="GwV-h5-U88"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="ObservationsTitlelabel" destination="ZQz-hf-OCV" id="u1Z-6r-pBU"/>
                         <outlet property="addNewAlertLabel" destination="VZv-gO-azJ" id="8QN-ga-R8O"/>
+                        <outlet property="frequencyLabel" destination="tuQ-ui-fYr" id="tft-Zw-vGR"/>
+                        <outlet property="observationsTitlelabel" destination="ZQz-hf-OCV" id="dck-Qo-md1"/>
                         <outlet property="repeatLabel" destination="PcH-mP-fmL" id="O2x-ZI-QQ6"/>
                         <outlet property="taskSettingsTitleLabel" destination="BgZ-be-ax8" id="rD5-Cl-JZO"/>
                         <outlet property="taskTimesTableView" destination="bGW-jI-OnA" id="lfJ-r0-ZgV"/>

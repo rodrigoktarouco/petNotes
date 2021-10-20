@@ -18,3 +18,5 @@
 "addANewAlertLabel" = "Add a new alert";
 "repeatLabel" = "repeat";
 "observationsTitlelabel" = "Observations";
+"frequencyLabel" = "Daily";
+"tasksSearchBar" = "Search";
