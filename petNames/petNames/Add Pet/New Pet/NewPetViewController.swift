@@ -13,21 +13,26 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var petTableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Localizable
+        let newPet = "newPetTitle".localized()
+        let cancelButton = "cancelButton".localized()
+        let addButton = "addButton".localized()
 
         petTableView.delegate = self
         petTableView.dataSource = self
 
         // Setting UIBarButtonItems
-        self.title = "New Pet"
+        self.title = newPet
         self.navigationController?.isNavigationBarHidden = false
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel",
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: cancelButton,
                                                                 style: .plain,
                                                                 target: self,
                                                                 action: #selector(cancelButtonAction))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add",
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: addButton,
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: #selector(addButtonAction))
@@ -46,9 +51,10 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         var sectionLabel: String
         let sectionInt: Int = section
+
         switch sectionInt {
         case 0:
-            sectionLabel = "Informations"
+            sectionLabel = "firstSectionLabel".localized()
         case 1:
             sectionLabel = "Tasks"
         default:

@@ -18,3 +18,7 @@
 "observationsTitlelabel" = "Observações";
 "frequencyLabel" = "Diariamente";
 "tasksSearchBar" = "Buscar";
+
+//MARK: -NewPet
+"newPetTitle" = "Novo pet";
+"firstSectionLabel" = "Informações";

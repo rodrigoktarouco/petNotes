@@ -20,3 +20,9 @@
 "observationsTitlelabel" = "Observations";
 "frequencyLabel" = "Daily";
 "tasksSearchBar" = "Search";
+
+//MARK: -NewPet
+"newPetTitle" = "New Pet";
+"cancelButton" = "Cancel";
+"addButton" = "Add";
+"firstSectionLabel" = "Informations";
