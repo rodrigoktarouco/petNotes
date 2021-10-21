@@ -26,3 +26,8 @@
 "cancelButton" = "Cancel";
 "addButton" = "Add";
 "firstSectionLabel" = "Informations";
+"secondSectionLabel" = "Tasks";
+"shareLabel" = "Share my pet";
+"textField" = "Name";
+"category" = "Category";
+"addNewTask" = "Add new task";

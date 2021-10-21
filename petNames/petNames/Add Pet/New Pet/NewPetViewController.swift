@@ -13,9 +13,15 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var petTableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Setting image
+        ImagePickerManager().pickImage(self) { image in
+            self.petImage.image = image
+            // salvar a foto
+            }
 
         // Localizable
         let newPet = "newPetTitle".localized()
@@ -56,7 +62,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case 0:
             sectionLabel = "firstSectionLabel".localized()
         case 1:
-            sectionLabel = "Tasks"
+            sectionLabel = "secondSectionLabel".localized()
         default:
             sectionLabel = ""
         }
@@ -90,7 +96,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             } else {
 
                 let cell2 = tableView.dequeueReusableCell(withIdentifier: "choose-cell", for: indexPath)
-                cell2.textLabel?.text = "Category"
+                cell2.textLabel?.text = "category".localized()
 
                 return cell2 }
 
@@ -98,7 +104,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
             let cell = tableView.dequeueReusableCell(withIdentifier: "choose-cell", for: indexPath)
 
-            cell.textLabel?.text = "Add new task"
+            cell.textLabel?.text = "addNewTask".localized()
 
             return cell
 
@@ -106,7 +112,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             guard let cell = (tableView.dequeueReusableCell(withIdentifier: "share-cell", for: indexPath)
                               as? ShareTableViewCell) else {
                                 return ShareTableViewCell() }
-
+            cell.shareLabel.text = "shareLabel".localized()
             return cell
         }
     }

@@ -21,4 +21,11 @@
 
 //MARK: -NewPet
 "newPetTitle" = "Novo pet";
+"cancelButton" = "Cancelar";
+"addButton" = "Adicionar";
 "firstSectionLabel" = "Informações";
+"secondSectionLabel" = "Tarefas";
+"shareLabel" = "Compartilhar meu pet";
+"textField" = "Nome";
+"category" = "Categoria";
+"addNewTask" = "Adicionar nova tarefa";
