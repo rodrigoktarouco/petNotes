@@ -1,2 +1,4 @@
 disabled_rules:
   - line_lenght
+  - trailing_whitespace
+  
