@@ -18,10 +18,10 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         // Setting image
-        //        ImagePickerManager().pickImage(self) { image in
-        //            self.petImage.image = image
-        //            //TODO: Adicionar botão, pedir permissão e salvar a foto
-        //            }
+                ImagePickerManager().pickImage(self) { image in
+                    self.petImage.image = image
+                    // TODO: Adicionar botão, pedir permissão e salvar a foto
+                    }
         
         // Localizable
         let newPet = "newPetTitle".localized()
