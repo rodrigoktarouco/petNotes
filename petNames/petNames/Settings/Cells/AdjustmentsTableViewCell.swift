@@ -21,18 +21,25 @@ class AdjustmentsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         setFontStyle()
-    
+        setLocalizablesForLabels()
+        
         adjustmentsView.layer.cornerRadius = 12
-
+        self.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
+        
     }
-    
+   func setLocalizablesForLabels(){
+       generalNotificationsLabel.text = "generalNotifications".localized()
+       recommendationsLabel.text = "recommendations".localized()
+       soundEfectsLabel.text = "soundEfects".localized()
+       darkModeLabel.text = "darkMode".localized()
+    }
     
     
     func setFontStyle(){
         adjustmentsTitleLabel.font = UIFont(name: "SFProRounded-Semibold", size: 20)
         let labels = [generalNotificationsLabel,recommendationsLabel,soundEfectsLabel,darkModeLabel]
         for label in labels {
-            label?.font = UIFont(name: "SFProRounded-Regular", size: 20)
+            label?.font = UIFont(name: "SFProRounded-Regular", size: 17)
         }
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
