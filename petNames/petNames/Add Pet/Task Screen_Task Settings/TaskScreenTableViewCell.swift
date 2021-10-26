@@ -9,10 +9,15 @@ import UIKit
 
 class TaskScreenTableViewCell: UITableViewCell {
 
-    @IBOutlet var taskTitleLabel: UILabel!
+    @IBOutlet var taskScreenTitleLabel: UILabel!
+
+    var tasks: [String] = ["Water", "Food", "Wash", "Playtime", "Medicine", "Groom", "Vet"]
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        taskScreenTitleLabel?.text = tasks.first
+
         // Initialization code
     }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C145B592721DA970091C02A /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C145B582721DA970091C02A /* TextFieldTableViewCell.swift */; };
+		5C145B5D2721DF090091C02A /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C145B5C2721DF090091C02A /* ImagePickerManager.swift */; };
 		5C86C9F8271DE4BE00FD1C2C /* TaskScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C86C9F7271DE4BE00FD1C2C /* TaskScreen.storyboard */; };
 		5C86C9FA271DE4E200FD1C2C /* PetDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C86C9F9271DE4E200FD1C2C /* PetDetails.storyboard */; };
 		5C86C9FC271DE91000FD1C2C /* PetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C86C9FB271DE91000FD1C2C /* PetDetailsViewController.swift */; };
@@ -18,6 +20,7 @@
 		9D1E7509270E118E00321E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E7507270E118E00321E54 /* Main.storyboard */; };
 		9D1E750B270E119000321E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E750A270E119000321E54 /* Assets.xcassets */; };
 		9D1E750E270E119000321E54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E750C270E119000321E54 /* LaunchScreen.storyboard */; };
+		9D295292271DE3C90079A685 /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D295291271DE3A80079A685 /* SF-Pro-Rounded-Regular.otf */; };
 		9D5A1D292718B52B00637589 /* NewPet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A1D282718B52B00637589 /* NewPet.storyboard */; };
 		9D5A1D2C2718BD3E00637589 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A1D2B2718BD3E00637589 /* Pets.storyboard */; };
 		9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5A1D2D2718BD5A00637589 /* PetsViewController.swift */; };
@@ -51,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C145B582721DA970091C02A /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		5C145B5C2721DF090091C02A /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
 		5C86C9F7271DE4BE00FD1C2C /* TaskScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskScreen.storyboard; sourceTree = "<group>"; };
 		5C86C9F9271DE4E200FD1C2C /* PetDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetDetails.storyboard; sourceTree = "<group>"; };
 		5C86C9FB271DE91000FD1C2C /* PetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +132,8 @@
 				9D5A1D282718B52B00637589 /* NewPet.storyboard */,
 				F496C571271A140C00443927 /* NewPetViewController.swift */,
 				5C86C9FD271E0CAC00FD1C2C /* ShareTableViewCell.swift */,
+				5C145B582721DA970091C02A /* TextFieldTableViewCell.swift */,
+				5C145B5C2721DF090091C02A /* ImagePickerManager.swift */,
 			);
 			path = "New Pet";
 			sourceTree = "<group>";
@@ -404,6 +411,7 @@
 				F496C572271A140C00443927 /* NewPetViewController.swift in Sources */,
 				9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */,
 				9D1E7504270E118E00321E54 /* SceneDelegate.swift in Sources */,
+				5C145B5D2721DF090091C02A /* ImagePickerManager.swift in Sources */,
 				5C86C9FC271DE91000FD1C2C /* PetDetailsViewController.swift in Sources */,
 				9DCC58E6271899C7007A800C /* SettingsViewController.swift in Sources */,
 				9D5A1D302718BD6600637589 /* PetsModel.swift in Sources */,
@@ -413,6 +421,7 @@
 				FD86996F271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift in Sources */,
 				9DCC58E227189992007A800C /* FeedModel.swift in Sources */,
 				5C86C9FE271E0CAC00FD1C2C /* ShareTableViewCell.swift in Sources */,
+				5C145B592721DA970091C02A /* TextFieldTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
