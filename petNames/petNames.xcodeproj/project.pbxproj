@@ -23,6 +23,7 @@
 		9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5A1D2D2718BD5A00637589 /* PetsViewController.swift */; };
 		9D5A1D302718BD6600637589 /* PetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5A1D2F2718BD6600637589 /* PetsModel.swift */; };
 		9D75F9EA2710C54D001FF11C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D75F9EC2710C54D001FF11C /* Localizable.strings */; };
+		9D90D1412728683300689292 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D90D13F2728683300689292 /* Model.xcdatamodeld */; };
 		9DCC58E227189992007A800C /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58E127189992007A800C /* FeedModel.swift */; };
 		9DCC58E4271899B1007A800C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCC58E3271899B1007A800C /* Settings.storyboard */; };
 		9DCC58E6271899C7007A800C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58E5271899C7007A800C /* SettingsViewController.swift */; };
@@ -81,6 +82,7 @@
 		9D75F9E72710C509001FF11C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		9D75F9EB2710C54D001FF11C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9D75F9ED2710C554001FF11C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		9D90D1402728683300689292 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9DCC58E127189992007A800C /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		9DCC58E3271899B1007A800C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9DCC58E5271899C7007A800C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		9D1E7500270E118E00321E54 /* petNames */ = {
 			isa = PBXGroup;
 			children = (
+				9D90D13E2728680000689292 /* CoreData */,
 				9D5A1D2A2718BD2C00637589 /* Pets */,
 				9D5A1D272718B50300637589 /* Add Pet */,
 				9DCC58E02718996B007A800C /* Tasks */,
@@ -208,6 +211,14 @@
 				9D5A1D2F2718BD6600637589 /* PetsModel.swift */,
 			);
 			path = Pets;
+			sourceTree = "<group>";
+		};
+		9D90D13E2728680000689292 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9D90D13F2728683300689292 /* Model.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		9DCC58DB2718964A007A800C /* Feed */ = {
@@ -389,6 +400,7 @@
 				9D1788B3271DE8CF00C839DF /* TaskTableViewCell.swift in Sources */,
 				9D1E7506270E118E00321E54 /* FeedViewController.swift in Sources */,
 				9D1E7502270E118E00321E54 /* AppDelegate.swift in Sources */,
+				9D90D1412728683300689292 /* Model.xcdatamodeld in Sources */,
 				F496C572271A140C00443927 /* NewPetViewController.swift in Sources */,
 				9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */,
 				9D1E7504270E118E00321E54 /* SceneDelegate.swift in Sources */,
@@ -633,6 +645,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9D90D13F2728683300689292 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9D90D1402728683300689292 /* Model.xcdatamodel */,
+			);
+			currentVersion = 9D90D1402728683300689292 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9D1E74F6270E118E00321E54 /* Project object */;
 }

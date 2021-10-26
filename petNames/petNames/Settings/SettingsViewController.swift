@@ -8,17 +8,12 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    
     @IBOutlet weak var settingsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
-    
-    
-    
-    
 }
 extension SettingsViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
