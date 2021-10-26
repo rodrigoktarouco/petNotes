@@ -18,6 +18,12 @@
 "observationsTitlelabel" = "Observações";
 "frequencyLabel" = "Diariamente";
 "tasksSearchBar" = "Buscar";
+"contact" = "Contato";
+"AppDevelopedBy" = "Aplicativo desenvolvido por";
+"generalNotifications" = "Notificações gerais";
+"recommendations" = "Recomendações";
+"soundEfects" = "Efeitos sonoros";
+"darkMode" = "Modo escuro";
 
 //MARK: -NewPet
 "newPetTitle" = "Novo pet";

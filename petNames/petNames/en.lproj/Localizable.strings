@@ -20,6 +20,13 @@
 "observationsTitlelabel" = "Observations";
 "frequencyLabel" = "Daily";
 "tasksSearchBar" = "Search";
+"contact" = "Contact";
+"AppDevelopedBy" = "App developed by";
+"generalNotifications" = "General notifications";
+"recommendations" = "Recommendations";
+"soundEfects" = "Sound efects";
+"darkMode" = "Dark mode";
+
 
 //MARK: -NewPet
 "newPetTitle" = "New Pet";
