@@ -233,6 +233,7 @@
 		9DCC58DB2718964A007A800C /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				FD638E552729ECC200197910 /* feed cells */,
 				9D1E7505270E118E00321E54 /* FeedViewController.swift */,
 				9DCC58E127189992007A800C /* FeedModel.swift */,
 				9D1E7507270E118E00321E54 /* Main.storyboard */,
@@ -269,6 +270,13 @@
 				FD7599AD2727189300B86111 /* DevelopedByTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FD638E552729ECC200197910 /* feed cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "feed cells";
 			sourceTree = "<group>";
 		};
 		FD86996A271F145100FC9725 /* TasksScreen */ = {
