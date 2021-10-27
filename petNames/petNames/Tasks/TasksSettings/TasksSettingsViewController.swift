@@ -18,29 +18,25 @@ class TasksSettingsViewController: UIViewController {
         super.viewDidLoad()
         taskTimesTableView.dataSource = self
         taskTimesTableView.delegate = self
-        
+
         addNewAlertLabel.text = "addNewAlertLabel".localized()
         taskSettingsTitleLabel.text = "taskSettingsTitleLabel".localized()
         repeatLabel.text = "repeatLabel".localized()
         frequencyLabel.text = "frequencyLabel".localized()
         observationsTitlelabel.text = "observationsTitlelabel".localized()
-        
-        
+
     }
 }
 
-extension TasksSettingsViewController : UITableViewDataSource, UITableViewDelegate{
+extension TasksSettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
-    
-    
-    
+
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
-    
 }

@@ -32,7 +32,7 @@ class PersistanceManager {
         container.viewContext
     }
     var currentUser: User?
-    
+
     func setUp() {
         // MARK: - Core Data stack
         let container = NSPersistentContainer(name: "Model")
@@ -119,7 +119,7 @@ extension Task {
             let alertString = alerts ?? String()
             let timeStrings = alertString.components(separatedBy: "|")
             var components: [DateComponents] = []
-            
+
             for time in timeStrings {
                 let timeComponents = time.components(separatedBy: ":")
                 if let hourString = timeComponents.first, let hour = Int(hourString),

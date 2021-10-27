@@ -13,7 +13,7 @@ class ContactTableViewCell: UITableViewCell {
     @IBOutlet weak var contactLabel: UILabel!
     @IBOutlet weak var mailLabel: UIView!
     @IBOutlet weak var instagramLabel: UILabel!
-    
+
     @IBOutlet weak var insideView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()

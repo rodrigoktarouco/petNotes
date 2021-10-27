@@ -8,23 +8,23 @@
 import UIKit
 
 class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+
     @IBOutlet var taskTableView: UITableView!
-    
+
     var tasks: [String] = ["Water", "Food", "Wash", "Playtime", "Medicine", "Groom", "Vet"]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         taskTableView.delegate = self
         taskTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rowsInSection: Int
         switch section {
@@ -37,12 +37,12 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         return rowsInSection
     }
-    
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
+
         var sectionLabel: String
         let sectionInt: Int = section
-        
+
         switch sectionInt {
         case 0:
             sectionLabel = ""
@@ -51,24 +51,24 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         default:
             sectionLabel = ""
         }
-        
+
         return "\(sectionLabel)"
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             guard let cell = (taskTableView.dequeueReusableCell(withIdentifier: "taskScreen-cell", for: indexPath)
                               as? TaskScreenTableViewCell) else {
                 return TaskScreenTableViewCell() }
-            
+
             return cell
         } else {
             guard let cell = (taskTableView.dequeueReusableCell(withIdentifier: "taskScreen-cell", for: indexPath)
                               as? TaskScreenTableViewCell) else {
                 return TaskScreenTableViewCell() }
-            
+
             cell.taskScreenTitleLabel.text = "Custom".localized()
-            
+
             return cell
         }
     }
