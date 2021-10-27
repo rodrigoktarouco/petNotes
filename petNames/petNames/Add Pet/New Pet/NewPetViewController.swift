@@ -8,7 +8,6 @@
 import UIKit
 
 class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
     var isPressed: Bool = false
     
     @IBOutlet weak var petImage: UIImageView!
@@ -17,20 +16,18 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setting image
-                ImagePickerManager().pickImage(self) { image in
-                    self.petImage.image = image
-                    // TODO: Adicionar botão, pedir permissão e salvar a foto
-                    }
+//        // Setting image
+//                ImagePickerManager().pickImage(self) { image in
+//                    self.petImage.image = image
+//                    // TODO: Adicionar botão, pedir permissão e salvar a foto
+//                    }
         
         // Localizable
         let newPet = "newPetTitle".localized()
         let cancelButton = "cancelButton".localized()
         let addButton = "addButton".localized()
-        
         petTableView.delegate = self
         petTableView.dataSource = self
-        
         // Setting UIBarButtonItems
         self.title = newPet
         self.navigationController?.isNavigationBarHidden = false
