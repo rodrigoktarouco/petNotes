@@ -103,6 +103,7 @@
 		FD06EAB82721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentsTableViewCell.swift; sourceTree = "<group>"; };
 		FD06EABA27232C0A00EC4D37 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		FD638E56272AEB5400197910 /* NextTaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextTaskCollectionViewCell.swift; sourceTree = "<group>"; };
+		FD638E59272B1A0A00197910 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		FD7599AD2727189300B86111 /* DevelopedByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopedByTableViewCell.swift; sourceTree = "<group>"; };
 		FD86996C271F14DA00FC9725 /* TasksSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksSettingsViewController.swift; sourceTree = "<group>"; };
 		FD86996E271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningsOfTaskSettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -169,6 +170,7 @@
 		9D1E7500270E118E00321E54 /* petNames */ = {
 			isa = PBXGroup;
 			children = (
+				FD638E59272B1A0A00197910 /* .swiftlint.yml */,
 				9D90D13E2728680000689292 /* CoreData */,
 				9D5A1D2A2718BD2C00637589 /* Pets */,
 				9D5A1D272718B50300637589 /* Add Pet */,
