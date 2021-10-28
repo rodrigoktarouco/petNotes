@@ -22,6 +22,21 @@ case custom
 class FeedModel {
     
 static let sharedFeedModel = FeedModel()
+
+    var task1: Task = {
+        var task = Task()
+        task.name = "water"
+        return task
+    }()
+    var task2: Task = {
+         var task = Task()
+         task.name = "walk"
+         return task
+    }()
+    lazy var mockTasks : [Task] = [
+        task1,
+        task2
+    ]
     
     func getTaskColor ( _ taskType: TaskTypes) -> UIColor {
         switch taskType {
@@ -48,5 +63,15 @@ static let sharedFeedModel = FeedModel()
             
         }
     }
-    
+    func getTaskFeedCollectionViewCellData( taskNumber: Int) -> TaskFeedCollectionViewCellData {
+        let taskDataStruct = TaskFeedCollectionViewCellData(petImage: UIImage(named: "pitty"), taskType: .water, taskName: "water", taskTime: "12:00", done: true)
+        return taskDataStruct
+    }
+}
+struct TaskFeedCollectionViewCellData {
+    var petImage: UIImage?
+    var taskType: TaskTypes?
+    var taskName: String?
+    var taskTime: String?
+    var done: Bool?
 }

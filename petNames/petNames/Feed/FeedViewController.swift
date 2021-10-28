@@ -44,15 +44,19 @@ extension FeedViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == tasksCollectionView {
-            let cell = tasksCollectionView.dequeueReusableCell(withReuseIdentifier: "NextTaskCollectionViewCell", for: indexPath) as! NextTaskCollectionViewCell
-            cell.taskTimeLabel.text = "teste"
-            cell.petImage.image = UIImage(named: "pitty")
+            let cell = tasksCollectionView.dequeueReusableCell(withReuseIdentifier: "NextTaskCollectionViewCell", for: indexPath) as? NextTaskCollectionViewCell
+            guard let cell = cell else { return UICollectionViewCell() }
+            let infoStruct = FeedModel.sharedFeedModel.getTaskFeedCollectionViewCellData(taskNumber: indexPath.row)
+            cell.petImage.image = infoStruct.petImage
+            cell.auxView.backgroundColor = FeedModel.sharedFeedModel.getTaskColor(infoStruct.taskType ?? .custom)
+            cell.taskNameLabel.text = infoStruct.taskName?.capitalized
+            cell.taskTimeLabel.text = infoStruct.taskTime
+            cell.checkImage.image = infoStruct.done ?? false ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "checkmark.circle.fill")
             return cell
         }
         return UICollectionViewCell()
     }
-    
-    
+
 }
 extension String {
     func localized() -> String {
