@@ -48,6 +48,7 @@
 		FD06EAB52721E9C700EC4D37 /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D295291271DE3A80079A685 /* SF-Pro-Rounded-Regular.otf */; };
 		FD06EAB92721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD06EAB82721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift */; };
 		FD06EABB27232C0A00EC4D37 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD06EABA27232C0A00EC4D37 /* ContactTableViewCell.swift */; };
+		FD638E57272AEB5400197910 /* NextTaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD638E56272AEB5400197910 /* NextTaskCollectionViewCell.swift */; };
 		FD7599AE2727189300B86111 /* DevelopedByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7599AD2727189300B86111 /* DevelopedByTableViewCell.swift */; };
 		FD86996D271F14DA00FC9725 /* TasksSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86996C271F14DA00FC9725 /* TasksSettingsViewController.swift */; };
 		FD86996F271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86996E271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift */; };
@@ -101,6 +102,7 @@
 		F496C575271F612300443927 /* TaskScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskScreenTableViewCell.swift; sourceTree = "<group>"; };
 		FD06EAB82721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentsTableViewCell.swift; sourceTree = "<group>"; };
 		FD06EABA27232C0A00EC4D37 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		FD638E56272AEB5400197910 /* NextTaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextTaskCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD7599AD2727189300B86111 /* DevelopedByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopedByTableViewCell.swift; sourceTree = "<group>"; };
 		FD86996C271F14DA00FC9725 /* TasksSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksSettingsViewController.swift; sourceTree = "<group>"; };
 		FD86996E271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningsOfTaskSettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		9DCC58DB2718964A007A800C /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				FD638E552729ECC200197910 /* feed cells */,
 				9D1E7505270E118E00321E54 /* FeedViewController.swift */,
 				9DCC58E127189992007A800C /* FeedModel.swift */,
 				9D1E7507270E118E00321E54 /* Main.storyboard */,
@@ -269,6 +272,14 @@
 				FD7599AD2727189300B86111 /* DevelopedByTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FD638E552729ECC200197910 /* feed cells */ = {
+			isa = PBXGroup;
+			children = (
+				FD638E56272AEB5400197910 /* NextTaskCollectionViewCell.swift */,
+			);
+			path = "feed cells";
 			sourceTree = "<group>";
 		};
 		FD86996A271F145100FC9725 /* TasksScreen */ = {
@@ -412,6 +423,7 @@
 				9D90D1412728683300689292 /* Model.xcdatamodeld in Sources */,
 				F496C572271A140C00443927 /* NewPetViewController.swift in Sources */,
 				9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */,
+				FD638E57272AEB5400197910 /* NextTaskCollectionViewCell.swift in Sources */,
 				9D1E7504270E118E00321E54 /* SceneDelegate.swift in Sources */,
 				5C145B5D2721DF090091C02A /* ImagePickerManager.swift in Sources */,
 				5C86C9FC271DE91000FD1C2C /* PetDetailsViewController.swift in Sources */,
