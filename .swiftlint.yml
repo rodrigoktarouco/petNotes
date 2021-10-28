@@ -1,4 +1,0 @@
-disabled_rules: 
-   - vertical_whitespace
-   - line_length
-line_length: 300
