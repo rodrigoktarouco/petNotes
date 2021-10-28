@@ -20,7 +20,7 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tasksCollectionView.dataSource = self
-        setUpFontStyle ()
+        setUpFontStyle()
         doneTasksFunImage.layer.cornerRadius = 22
     }
     func setUpFontStyle () {
@@ -33,7 +33,7 @@ class FeedViewController: UIViewController {
         myPetsLabel.font = UIFont(name: "SFProRounded-Semibold", size: 20)
     }
 }
-extension FeedViewController : UICollectionViewDataSource {
+extension FeedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == tasksCollectionView {
@@ -51,7 +51,6 @@ extension FeedViewController : UICollectionViewDataSource {
         }
         return UICollectionViewCell()
     }
-    
     
 }
 extension String {
