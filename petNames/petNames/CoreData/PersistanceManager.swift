@@ -74,6 +74,23 @@ class PersistanceManager {
         saveContext()
         completion(nil)
     }
+    func savePet(pet: Pet, completion: @escaping(Error?) -> Void) {
+        pet.user = currentUser
+
+        if let pets = currentUser?.pets {
+
+            currentUser?.pets = pets.adding(pet) as NSSet
+        } else {
+            currentUser?.pets = [pet]
+        }
+        saveContext()
+        completion(nil)
+
+    }
+    func listPets(completion: @escaping(Result<[Pet], Error>) -> Void) {
+        let pets = (currentUser?.pets ?? []).compactMap { $0 as? Pet }
+        completion(.success(pets))
+    }
 }
 
 extension User {
