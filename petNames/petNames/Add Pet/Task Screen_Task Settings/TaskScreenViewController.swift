@@ -11,10 +11,11 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet var taskTableView: UITableView!
     
-    var tasks: [String] = ["Water", "Food", "Wash", "Playtime", "Medicine", "Groom", "Vet"]
+    var tasks: [String] = ["Water", "Food", "Wash", "Playtime", "Walk", "Medicine", "Groom", "Vet"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         taskTableView.delegate = self
         taskTableView.dataSource = self
@@ -61,6 +62,8 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
                               as? TaskScreenTableViewCell) else {
                 return TaskScreenTableViewCell() }
             
+            cell.taskScreenTitleLabel.text = tasks[indexPath.row].localized()
+
             return cell
         } else {
             guard let cell = (taskTableView.dequeueReusableCell(withIdentifier: "taskScreen-cell", for: indexPath)
@@ -71,5 +74,11 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
+        let viewC = storyboard.instantiateViewController(withIdentifier: "taskSetting") as UIViewController
+        show(viewC, sender: nil)
     }
 }

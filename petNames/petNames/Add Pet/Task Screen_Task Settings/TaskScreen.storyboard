@@ -65,12 +65,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qe-q2-4WO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008.6956521739131" y="115.84821428571428"/>
+            <point key="canvasLocation" x="855" y="116"/>
         </scene>
         <!--taskSetting-->
         <scene sceneID="QEe-kb-fsM">
             <objects>
-                <viewController title="taskSetting" id="ABB-k9-7tJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="taskSetting" title="taskSetting" id="ABB-k9-7tJ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tBf-8b-wo7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
