@@ -8,12 +8,11 @@
 import UIKit
 
 class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
     var isPressed: Bool = false
-    
+
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var petTableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,10 +26,8 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let newPet = "newPetTitle".localized()
         let cancelButton = "cancelButton".localized()
         let addButton = "addButton".localized()
-        
         petTableView.delegate = self
         petTableView.dataSource = self
-        
         // Setting UIBarButtonItems
         self.title = newPet
         self.navigationController?.isNavigationBarHidden = false
@@ -42,7 +39,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: #selector(addButtonAction))
-        
+
         // Setting the View Controller`s outlets
         petImage.layer.cornerRadius = 22
 
@@ -105,30 +102,30 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         return rowsInSection
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                
+
                 let cell = tableView.dequeueReusableCell(withIdentifier: "textField-cell", for: indexPath)
-                
+
                 return cell
-                
+
             } else {
-                
+
                 let cell2 = tableView.dequeueReusableCell(withIdentifier: "choose-cell", for: indexPath)
                 cell2.textLabel?.text = "category".localized()
-                
+
                 return cell2 }
-            
+
         } else if indexPath.section == 1 {
-            
+
             let cell = tableView.dequeueReusableCell(withIdentifier: "choose-cell", for: indexPath)
-            
+
             cell.textLabel?.text = "addNewTask".localized()
-            
+
             return cell
-            
+
         } else {
             guard let cell = (tableView.dequeueReusableCell(withIdentifier: "share-cell", for: indexPath)
                               as? ShareTableViewCell) else {
@@ -137,7 +134,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return cell
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
@@ -153,21 +150,20 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
             let viewC = storyboard.instantiateViewController(withIdentifier: "taskScreen") as UIViewController
             show(viewC, sender: nil)
-            //            present(viewC, animated: true, completion: nil)
-            
+//            present(viewC, animated: true, completion: nil)
+
         } else {
             // share
             print("share")
         }
     }
-    
-    
+
     @objc func cancelButtonAction() {
         print("Cancel pressed")
         self.navigationController?.dismiss(animated: true, completion: nil)
-        
+
     }
-    
+
     @objc func addButtonAction() {
         print("Add pressed")
         //        let storyboard = UIStoryboard(name: "PetDetails", bundle: nil)
@@ -175,6 +171,5 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //        present(viewC, animated: true, completion: nil)
         //        show(viewC, sender: nil)
     }
-    
-}
 
+}

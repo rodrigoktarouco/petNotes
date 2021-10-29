@@ -15,7 +15,7 @@ class DevelopedByTableViewCell: UITableViewCell {
     @IBOutlet weak var guilhermeLabel: UILabel!
     @IBOutlet weak var heitorLabel: UILabel!
     @IBOutlet weak var rodrigoLabel: UILabel!
-    
+
     @IBOutlet weak var insideView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,9 +24,9 @@ class DevelopedByTableViewCell: UITableViewCell {
         setFontStyle()
         developedByLabel.text = "AppDevelopedBy".localized()
     }
-    func setFontStyle(){
+    func setFontStyle() {
         developedByLabel.font = UIFont(name: "SFProRounded-Semibold", size: 20)
-        let labels = [dharanaLabel,enzoLabel,guilhermeLabel,heitorLabel,rodrigoLabel]
+        let labels = [dharanaLabel, enzoLabel, guilhermeLabel, heitorLabel, rodrigoLabel]
         for label in labels {
             label?.font = UIFont(name: "SFProRounded-Regular", size: 14)
         }

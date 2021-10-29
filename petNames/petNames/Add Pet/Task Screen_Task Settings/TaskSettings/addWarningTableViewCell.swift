@@ -1,23 +1,18 @@
 //
-//  TaskScreenTableViewCell.swift
+//  addAlertTableViewCell.swift
 //  petNames
 //
-//  Created by Enzo Degrazia on 19/10/21.
+//  Created by Enzo Degrazia on 28/10/21.
 //
 
 import UIKit
 
-class TaskScreenTableViewCell: UITableViewCell {
+class addWarningTableViewCell: UITableViewCell {
 
-    @IBOutlet var taskScreenTitleLabel: UILabel!
-
-    var tasks: [String] = ["Water", "Food", "Wash", "Playtime", "Medicine", "Groom", "Vet"]
-
+    @IBOutlet var addWarningLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        taskScreenTitleLabel?.text = tasks.first
-
         // Initialization code
     }
 

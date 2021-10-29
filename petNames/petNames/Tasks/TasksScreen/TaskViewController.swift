@@ -61,7 +61,7 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
 }
 // get informações a serem apresentadas no all, not done, e by pet
 extension TaskViewController {
-    func getDataForRowAt(_ selectedSegment: SelectedSementInTasks,_ item : Int) -> CellInfosStruct {
+    func getDataForRowAt(_ selectedSegment: SelectedSementInTasks, _ item: Int) -> CellInfosStruct {
         let pittyMockTask = CellInfosStruct(taskName: "Alimentação", taskTime: "12:00", taskPetName: "Pitty", taskPetImage: UIImage(named: "pitty") ?? UIImage(), isCheckedAsDone: false)
         return pittyMockTask
     }
