@@ -37,6 +37,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xb7-ee-MY9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K6A-0S-2zj">
                                 <rect key="frame" x="157" y="50" width="100" height="35"/>
                                 <constraints>
@@ -156,20 +159,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gm1-th-1zg">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gm1-th-1zg">
                                 <rect key="frame" x="30" y="403" width="384" height="330"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="330" id="SUa-Y2-SMg"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9AP-Eo-bDY">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9AP-Eo-bDY">
                                     <size key="itemSize" width="155" height="155"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5h4-se-YQx">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddNewPetCollectionViewCell" id="5h4-se-YQx" customClass="AddNewPetCollectionViewCell" customModule="petNames" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="o9E-m9-cdc">
@@ -179,8 +182,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kT-0z-5Wr">
                                                     <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2px-Uh-npz">
-                                                            <rect key="frame" x="13" y="12" width="41" height="41"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2px-Uh-npz">
+                                                            <rect key="frame" x="13" y="12.5" width="41" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="41" id="FRP-JP-bw7"/>
                                                                 <constraint firstAttribute="width" constant="41" id="sCY-M6-AqP"/>
@@ -189,7 +192,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adicionar um pet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3O-Uo-LgK">
                                                             <rect key="frame" x="16" y="53" width="108" height="45.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" red="0.075117968019999995" green="0.46232306960000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -199,6 +202,7 @@
                                                         <constraint firstItem="L3O-Uo-LgK" firstAttribute="top" secondItem="2px-Uh-npz" secondAttribute="bottom" id="bVh-3C-TKU"/>
                                                         <constraint firstItem="L3O-Uo-LgK" firstAttribute="leading" secondItem="7kT-0z-5Wr" secondAttribute="leading" constant="16" id="byu-E4-MWr"/>
                                                         <constraint firstItem="2px-Uh-npz" firstAttribute="top" secondItem="7kT-0z-5Wr" secondAttribute="top" constant="12" id="dKR-Pd-sZb"/>
+                                                        <constraint firstAttribute="width" constant="155" id="gaL-hL-E9D"/>
                                                         <constraint firstAttribute="trailing" secondItem="L3O-Uo-LgK" secondAttribute="trailing" constant="31" id="tXw-5X-64a"/>
                                                         <constraint firstItem="2px-Uh-npz" firstAttribute="leading" secondItem="7kT-0z-5Wr" secondAttribute="leading" constant="13" id="yFn-7i-kdF"/>
                                                     </constraints>
@@ -212,9 +216,12 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="155" height="155"/>
+                                        <connections>
+                                            <outlet property="addNewPet" destination="L3O-Uo-LgK" id="9qy-p0-hxA"/>
+                                        </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="I7F-lY-Ymi">
-                                        <rect key="frame" x="165" y="0.5" width="155" height="154"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="PetsOnFeedCollectionViewCell" id="I7F-lY-Ymi" customClass="PetsOnFeedCollectionViewCell" customModule="petNames" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="165" width="155" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mtQ-re-Lkg">
                                             <rect key="frame" x="0.0" y="0.0" width="155" height="154"/>
@@ -223,7 +230,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJX-Wt-feL">
                                                     <rect key="frame" x="0.0" y="0.0" width="155" height="154"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YZu-WP-7wp">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YZu-WP-7wp">
                                                             <rect key="frame" x="0.0" y="0.0" width="155" height="95"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="95" id="GGj-Xw-aGl"/>
@@ -264,6 +271,11 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="155" height="154"/>
+                                        <connections>
+                                            <outlet property="petImage" destination="YZu-WP-7wp" id="Y9v-eI-Cfl"/>
+                                            <outlet property="petName" destination="Ncn-Ix-yzX" id="hPb-Ob-z1l"/>
+                                            <outlet property="petTaskQuantity" destination="dF6-af-mHS" id="fsP-P3-HnI"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -289,11 +301,14 @@
                             <constraint firstItem="5qh-Mr-CLK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="Cdp-Ti-mGC"/>
                             <constraint firstItem="HQt-oB-7Te" firstAttribute="top" secondItem="4ZS-1w-HVI" secondAttribute="bottom" constant="20" id="D9F-G4-RwD"/>
                             <constraint firstItem="HQt-oB-7Te" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ESl-k7-gP0"/>
+                            <constraint firstItem="Xb7-ee-MY9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HKj-dX-Ck7"/>
                             <constraint firstItem="5qh-Mr-CLK" firstAttribute="top" secondItem="sBp-jK-ccy" secondAttribute="bottom" constant="17" id="Hfc-CG-hoE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gm1-th-1zg" secondAttribute="trailing" id="Mz0-u1-clN"/>
                             <constraint firstItem="Dqa-la-VlU" firstAttribute="top" secondItem="jB9-iN-aho" secondAttribute="bottom" constant="20" id="OAk-bX-jUj"/>
                             <constraint firstItem="Dqa-la-VlU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="PK9-j4-JYF"/>
                             <constraint firstItem="4ZS-1w-HVI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="PY8-ly-HrZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Xb7-ee-MY9" secondAttribute="trailing" id="Rgf-Cr-UEv"/>
+                            <constraint firstItem="Xb7-ee-MY9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Rvh-HM-OuP"/>
                             <constraint firstItem="gm1-th-1zg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="UmV-fS-cMH"/>
                             <constraint firstItem="4ZS-1w-HVI" firstAttribute="top" secondItem="Dqa-la-VlU" secondAttribute="bottom" constant="10" id="X4k-cq-dPl"/>
                             <constraint firstItem="K6A-0S-2zj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="eb7-ty-apn"/>
@@ -302,16 +317,19 @@
                             <constraint firstItem="eXt-ZZ-rcJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="j4G-oh-Ouw"/>
                             <constraint firstItem="sBp-jK-ccy" firstAttribute="top" secondItem="eXt-ZZ-rcJ" secondAttribute="bottom" constant="21" id="mBH-ad-Ttg"/>
                             <constraint firstItem="sBp-jK-ccy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="p2s-0L-Aqj"/>
+                            <constraint firstAttribute="bottom" secondItem="Xb7-ee-MY9" secondAttribute="bottom" id="pN2-yO-g2o"/>
                             <constraint firstItem="K6A-0S-2zj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uAg-0E-qDs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lci-9y-qzG"/>
                     <connections>
+                        <outlet property="backgroundImage" destination="Xb7-ee-MY9" id="tDT-hj-g2G"/>
                         <outlet property="dayLabel" destination="sBp-jK-ccy" id="KWA-du-RuL"/>
                         <outlet property="doneTasksFunImage" destination="jB9-iN-aho" id="I9B-df-NKu"/>
                         <outlet property="doneTasksLabel" destination="5qh-Mr-CLK" id="rGk-02-4gT"/>
                         <outlet property="myPetsLabel" destination="HQt-oB-7Te" id="drF-mE-r5E"/>
                         <outlet property="nextTaskLabel" destination="Dqa-la-VlU" id="CSe-rk-797"/>
+                        <outlet property="petsCollectionView" destination="gm1-th-1zg" id="DhM-qF-iyB"/>
                         <outlet property="tasksCollectionView" destination="4ZS-1w-HVI" id="W0T-PL-ID3"/>
                         <outlet property="welcomeUserLabel" destination="eXt-ZZ-rcJ" id="NQR-ZQ-IsB"/>
                     </connections>
@@ -324,7 +342,7 @@
         <scene sceneID="DoX-IB-OXx">
             <objects>
                 <tabBarController id="gNA-yG-e5O" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TfG-79-Plx">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TfG-79-Plx" customClass="AppUITabBar" customModule="petNames" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -439,6 +457,7 @@
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
         <image name="pawprint" catalog="system" width="128" height="116"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

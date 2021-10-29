@@ -29,11 +29,12 @@ static let sharedFeedModel = FeedModel()
         return task
     }()
     var task2: Task = {
+
          var task = Task()
          task.name = "walk"
          return task
     }()
-    lazy var mockTasks : [Task] = [
+    lazy var mockTasks: [Task] = [
         task1,
         task2
     ]
@@ -63,10 +64,21 @@ static let sharedFeedModel = FeedModel()
             
         }
     }
-    func getTaskFeedCollectionViewCellData( taskNumber: Int) -> TaskFeedCollectionViewCellData {
+    func getTaskFeedCollectionViewCellData(taskNumber: Int) -> TaskFeedCollectionViewCellData {
         let taskDataStruct = TaskFeedCollectionViewCellData(petImage: UIImage(named: "pitty"), taskType: .water, taskName: "water", taskTime: "12:00", done: true)
         return taskDataStruct
     }
+    func getPetsCollectionViewData( petNumber: Int) -> PetsCollectionViewDataOnFeed {
+        let petsDataStruct = PetsCollectionViewDataOnFeed(petImage: UIImage(named: "pitty"), petName: "pitty", tasksQuantity: 3)
+        return petsDataStruct
+    }
+    func getFractionOfNumberOfTasksDone() -> String {
+        return "7 / 10"
+    }
+    func getUsersName() -> String {
+        return "Heitor"
+    }
+
 }
 struct TaskFeedCollectionViewCellData {
     var petImage: UIImage?
@@ -74,4 +86,9 @@ struct TaskFeedCollectionViewCellData {
     var taskName: String?
     var taskTime: String?
     var done: Bool?
+}
+struct PetsCollectionViewDataOnFeed {
+    var petImage: UIImage?
+    var petName: String?
+    var tasksQuantity: Int?
 }

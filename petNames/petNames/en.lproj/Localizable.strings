@@ -5,6 +5,12 @@
   Created by Rodrigo Kroef Tarouco on 08/10/21.
   
 */
+//MARK: -Feed Screen
+"welcomeUser" = "Welcome";
+"today" = "Today";
+"nextTask" = "Next Task";
+"addNewPet" = "Add a New Pet";
+"tasks" = "Tasks";
 //MARK: -Task Screen
 "taskTitleLabel" = "Tasks";
 

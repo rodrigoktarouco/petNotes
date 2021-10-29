@@ -17,11 +17,34 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var doneTasksFunImage: UIImageView!
     @IBOutlet weak var tasksCollectionView: UICollectionView!
+    @IBOutlet weak var petsCollectionView: UICollectionView!
+
+    @IBOutlet weak var backgroundImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tasksCollectionView.dataSource = self
-        setUpFontStyle ()
+        petsCollectionView.dataSource = self
+        setUpFontStyle()
+        setUpLabelsTexts()
+        setUpBackground()
+
         doneTasksFunImage.layer.cornerRadius = 22
+    }
+    func setUpBackground() {
+        let backGroundAssetNames = ["background1", "background2", "background3"]
+        backgroundImage.image = UIImage(named: backGroundAssetNames.randomElement() ?? "background1") ?? UIImage(named: "")
+        backgroundImage.alpha = 0.4
+
+        [tasksCollectionView, petsCollectionView].forEach { collection in collection?.backgroundColor = .clear}
+    }
+    func setUpLabelsTexts() {
+
+        welcomeUserLabel.text = "welcomeUser".localized().capitalized + " " + FeedModel.sharedFeedModel.getUsersName() + "!"
+        dayLabel.text = "today".localized().capitalized
+        let tasks = "tasks".localized().capitalized
+        doneTasksLabel.text = FeedModel.sharedFeedModel.getFractionOfNumberOfTasksDone() + " " + tasks
+        nextTaskLabel.text = "nextTask".localized()
+        myPetsLabel.text = "myPets"
     }
     func setUpFontStyle () {
         welcomeUserLabel.font = UIFont(name: "SFProRounded-Bold", size: 24)
@@ -38,6 +61,9 @@ extension FeedViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == tasksCollectionView {
             return 2
+        } else if collectionView == petsCollectionView {
+            return 2
+
         }
         return 0
     }
@@ -52,7 +78,23 @@ extension FeedViewController : UICollectionViewDataSource {
             cell.taskNameLabel.text = infoStruct.taskName?.capitalized
             cell.taskTimeLabel.text = infoStruct.taskTime
             cell.checkImage.image = infoStruct.done ?? false ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "checkmark.circle.fill")
+            cell.checkImage.tintColor = UIColor(red: 0.592, green: 0.592, blue: 0.592, alpha: 1)
             return cell
+        } else if collectionView == petsCollectionView {
+            if indexPath.row == 0 {
+                let cell = petsCollectionView.dequeueReusableCell(withReuseIdentifier: "AddNewPetCollectionViewCell", for: indexPath) as? AddNewPetCollectionViewCell
+                return cell ?? UICollectionViewCell()
+            }
+            else {
+                let cell = petsCollectionView.dequeueReusableCell(withReuseIdentifier: "PetsOnFeedCollectionViewCell", for: indexPath) as? PetsOnFeedCollectionViewCell
+                let infoStruct = FeedModel.sharedFeedModel.getPetsCollectionViewData(petNumber: indexPath.row)
+                cell?.petImage.image = infoStruct.petImage ?? UIImage()
+                cell?.petName.text = infoStruct.petName?.capitalized
+
+                cell?.petTaskQuantity.text = "tasks".localized().capitalized + " " + String(infoStruct.tasksQuantity ?? 0)
+                return cell ?? UICollectionViewCell()
+            }
+            
         }
         return UICollectionViewCell()
     }

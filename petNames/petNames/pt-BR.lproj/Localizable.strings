@@ -5,6 +5,12 @@
   Created by Rodrigo Kroef Tarouco on 08/10/21.
   
 */
+//MARK: -Feed Screen
+"welcomeUser" = "Olá";
+"today" = "Hoje";
+"nextTask" = "Próxima tarefa";
+"addNewPet" = "Adicionar um pet";
+"tasks" = "Tarefas";
 //MARK: -TaskScreen
 "taskTitleLabel" = "Tarefas";
 //MARK: -SegmentedControl
