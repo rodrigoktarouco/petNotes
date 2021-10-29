@@ -13,7 +13,6 @@ class NextTaskCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var taskTimeLabel: UILabel!
     @IBOutlet weak var checkImage: UIImageView!
     @IBOutlet weak var auxView: UIView!
-
     override func awakeFromNib() {
         super.awakeFromNib()
         

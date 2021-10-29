@@ -54,8 +54,11 @@
 		FD06EAB52721E9C700EC4D37 /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D295291271DE3A80079A685 /* SF-Pro-Rounded-Regular.otf */; };
 		FD06EAB92721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD06EAB82721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift */; };
 		FD06EABB27232C0A00EC4D37 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD06EABA27232C0A00EC4D37 /* ContactTableViewCell.swift */; };
+		FD62D2D3272C7FA20061560E /* AppUITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D2D2272C7FA20061560E /* AppUITabBar.swift */; };
 		FD638E57272AEB5400197910 /* NextTaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD638E56272AEB5400197910 /* NextTaskCollectionViewCell.swift */; };
 		FD7599AE2727189300B86111 /* DevelopedByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7599AD2727189300B86111 /* DevelopedByTableViewCell.swift */; };
+		FD7C4589272C63230065C035 /* AddNewPetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7C4588272C63230065C035 /* AddNewPetCollectionViewCell.swift */; };
+		FD7C458B272C6A6A0065C035 /* PetsOnFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7C458A272C6A6A0065C035 /* PetsOnFeedCollectionViewCell.swift */; };
 		FD86996D271F14DA00FC9725 /* TasksSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86996C271F14DA00FC9725 /* TasksSettingsViewController.swift */; };
 		FD86996F271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86996E271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -114,9 +117,12 @@
 		F4D612A5272B494200C49FCB /* notesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notesTableViewCell.swift; sourceTree = "<group>"; };
 		FD06EAB82721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentsTableViewCell.swift; sourceTree = "<group>"; };
 		FD06EABA27232C0A00EC4D37 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		FD62D2D2272C7FA20061560E /* AppUITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITabBar.swift; sourceTree = "<group>"; };
 		FD638E56272AEB5400197910 /* NextTaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextTaskCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD638E59272B1A0A00197910 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		FD7599AD2727189300B86111 /* DevelopedByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopedByTableViewCell.swift; sourceTree = "<group>"; };
+		FD7C4588272C63230065C035 /* AddNewPetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPetCollectionViewCell.swift; sourceTree = "<group>"; };
+		FD7C458A272C6A6A0065C035 /* PetsOnFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsOnFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD86996C271F14DA00FC9725 /* TasksSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksSettingsViewController.swift; sourceTree = "<group>"; };
 		FD86996E271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningsOfTaskSettingsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +197,7 @@
 				9DCC58DF27189952007A800C /* Settings */,
 				9DCC58DB2718964A007A800C /* Feed */,
 				9D1E7501270E118E00321E54 /* AppDelegate.swift */,
+				FD62D2D2272C7FA20061560E /* AppUITabBar.swift */,
 				9D1E7503270E118E00321E54 /* SceneDelegate.swift */,
 				9D1E750A270E119000321E54 /* Assets.xcassets */,
 				9D295290271DE1410079A685 /* Fonts */,
@@ -314,6 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				FD638E56272AEB5400197910 /* NextTaskCollectionViewCell.swift */,
+				FD7C4588272C63230065C035 /* AddNewPetCollectionViewCell.swift */,
+				FD7C458A272C6A6A0065C035 /* PetsOnFeedCollectionViewCell.swift */,
 			);
 			path = "feed cells";
 			sourceTree = "<group>";
@@ -457,8 +466,9 @@
 				FD7599AE2727189300B86111 /* DevelopedByTableViewCell.swift in Sources */,
 				9D1788B3271DE8CF00C839DF /* TaskTableViewCell.swift in Sources */,
 				9D1E7506270E118E00321E54 /* FeedViewController.swift in Sources */,
+				FD62D2D3272C7FA20061560E /* AppUITabBar.swift in Sources */,
 				9D1E7502270E118E00321E54 /* AppDelegate.swift in Sources */,
-				F4D612A0272B491800C49FCB /* addWarningTableViewCell.swift in Sources */,
+				FD7C4589272C63230065C035 /* AddNewPetCollectionViewCell.swift in Sources */,
 				9D90D1412728683300689292 /* Model.xcdatamodeld in Sources */,
 				F496C572271A140C00443927 /* NewPetViewController.swift in Sources */,
 				9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */,
@@ -471,6 +481,7 @@
 				FD06EAB92721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift in Sources */,
 				F4D612A4272B493900C49FCB /* repeatTableViewCell.swift in Sources */,
 				9DCC58EE27189A2C007A800C /* TaskModel.swift in Sources */,
+				FD7C458B272C6A6A0065C035 /* PetsOnFeedCollectionViewCell.swift in Sources */,
 				FD06EABB27232C0A00EC4D37 /* ContactTableViewCell.swift in Sources */,
 				F4D612A2272B492E00C49FCB /* warningTableViewCell.swift in Sources */,
 				9D6449CB272898A8007BFB63 /* PersistanceManager.swift in Sources */,

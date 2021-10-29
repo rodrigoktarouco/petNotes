@@ -5,6 +5,13 @@
   Created by Rodrigo Kroef Tarouco on 08/10/21.
   
 */
+//MARK: -Feed Screen
+"welcomeUser" = "Olá";
+"today" = "Hoje";
+"nextTask" = "Próxima tarefa";
+"addNewPet" = "Adicionar um pet";
+"tasks" = "Tarefas";
+"myPets" = "Meus pets";
 //MARK: -TaskScreen
 "taskTitleLabel" = "Tarefas";
 "Water" = "Água";
