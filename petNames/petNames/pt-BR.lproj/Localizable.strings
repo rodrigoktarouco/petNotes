@@ -11,6 +11,7 @@
 "nextTask" = "Próxima tarefa";
 "addNewPet" = "Adicionar um pet";
 "tasks" = "Tarefas";
+"myPets" = "Meus pets";
 //MARK: -TaskScreen
 "taskTitleLabel" = "Tarefas";
 //MARK: -SegmentedControl

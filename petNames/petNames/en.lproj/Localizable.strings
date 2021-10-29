@@ -11,6 +11,7 @@
 "nextTask" = "Next Task";
 "addNewPet" = "Add a New Pet";
 "tasks" = "Tasks";
+"myPets" = "My pets";
 //MARK: -Task Screen
 "taskTitleLabel" = "Tasks";
 

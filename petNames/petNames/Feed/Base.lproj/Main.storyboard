@@ -55,7 +55,7 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jB9-iN-aho">
                                 <rect key="frame" x="30" y="141" width="330" height="80"/>
-                                <color key="backgroundColor" red="0.8320112824" green="0.63304090499999999" blue="0.92159837479999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="330" id="OIz-FM-w5m"/>
                                     <constraint firstAttribute="height" constant="80" id="ltO-V0-45P"/>
@@ -230,7 +230,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJX-Wt-feL">
                                                     <rect key="frame" x="0.0" y="0.0" width="155" height="154"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YZu-WP-7wp">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YZu-WP-7wp">
                                                             <rect key="frame" x="0.0" y="0.0" width="155" height="95"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="95" id="GGj-Xw-aGl"/>
@@ -327,6 +327,7 @@
                         <outlet property="dayLabel" destination="sBp-jK-ccy" id="KWA-du-RuL"/>
                         <outlet property="doneTasksFunImage" destination="jB9-iN-aho" id="I9B-df-NKu"/>
                         <outlet property="doneTasksLabel" destination="5qh-Mr-CLK" id="rGk-02-4gT"/>
+                        <outlet property="logoImage" destination="K6A-0S-2zj" id="Zd2-KQ-t5I"/>
                         <outlet property="myPetsLabel" destination="HQt-oB-7Te" id="drF-mE-r5E"/>
                         <outlet property="nextTaskLabel" destination="Dqa-la-VlU" id="CSe-rk-797"/>
                         <outlet property="petsCollectionView" destination="gm1-th-1zg" id="DhM-qF-iyB"/>

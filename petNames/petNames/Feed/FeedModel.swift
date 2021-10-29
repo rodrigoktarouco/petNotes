@@ -78,6 +78,17 @@ static let sharedFeedModel = FeedModel()
     func getUsersName() -> String {
         return "Heitor"
     }
+    func getNumberOfTotalTasks() -> Int {
+        return 2
+    }
+    func getNumberOfPets() -> Int {
+        return 2
+    }
+    func getImageForFunTasksImageView() -> UIImage? {
+        let image = UIImage(named: "mockFunImage")
+
+        return image
+    }
 
 }
 struct TaskFeedCollectionViewCellData {

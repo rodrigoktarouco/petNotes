@@ -15,10 +15,13 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var nextTaskLabel: UILabel!
     @IBOutlet weak var myPetsLabel: UILabel!
     
-    @IBOutlet weak var doneTasksFunImage: UIImageView!
+
+
     @IBOutlet weak var tasksCollectionView: UICollectionView!
     @IBOutlet weak var petsCollectionView: UICollectionView!
 
+    @IBOutlet weak var doneTasksFunImage: UIImageView!
+    @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var backgroundImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +30,13 @@ class FeedViewController: UIViewController {
         setUpFontStyle()
         setUpLabelsTexts()
         setUpBackground()
-
+        setUpDoneTasksImage()
+        
+        logoImage.image = UIImage(named: "logo")
         doneTasksFunImage.layer.cornerRadius = 22
+    }
+    func setUpDoneTasksImage() {
+        doneTasksFunImage.image =  FeedModel.sharedFeedModel.getImageForFunTasksImageView()
     }
     func setUpBackground() {
         let backGroundAssetNames = ["background1", "background2", "background3"]
@@ -43,8 +51,8 @@ class FeedViewController: UIViewController {
         dayLabel.text = "today".localized().capitalized
         let tasks = "tasks".localized().capitalized
         doneTasksLabel.text = FeedModel.sharedFeedModel.getFractionOfNumberOfTasksDone() + " " + tasks
-        nextTaskLabel.text = "nextTask".localized()
-        myPetsLabel.text = "myPets"
+        nextTaskLabel.text = "nextTask".localized().capitalized
+        myPetsLabel.text = "myPets".localized().capitalized
     }
     func setUpFontStyle () {
         welcomeUserLabel.font = UIFont(name: "SFProRounded-Bold", size: 24)
@@ -56,13 +64,13 @@ class FeedViewController: UIViewController {
         myPetsLabel.font = UIFont(name: "SFProRounded-Semibold", size: 20)
     }
 }
-extension FeedViewController : UICollectionViewDataSource {
+extension FeedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == tasksCollectionView {
-            return 2
+            return FeedModel.sharedFeedModel.getNumberOfTotalTasks()
         } else if collectionView == petsCollectionView {
-            return 2
+            return 1 + FeedModel.sharedFeedModel.getNumberOfPets() // 1 + é para mostrar o adicionar pet além dos pets que já existem
 
         }
         return 0
