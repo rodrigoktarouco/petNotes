@@ -14,6 +14,7 @@
 		5C86C9FC271DE91000FD1C2C /* PetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C86C9FB271DE91000FD1C2C /* PetDetailsViewController.swift */; };
 		5C86C9FE271E0CAC00FD1C2C /* ShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C86C9FD271E0CAC00FD1C2C /* ShareTableViewCell.swift */; };
 		5CBE0475272C774D000811D5 /* CustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE0474272C774D000811D5 /* CustomHeader.swift */; };
+		5CBE0478272C98ED000811D5 /* AddWarningTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6129F272B491800C49FCB /* AddWarningTableviewCell.swift */; };
 		9D1788B3271DE8CF00C839DF /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1788B2271DE8CF00C839DF /* TaskTableViewCell.swift */; };
 		9D1E7502270E118E00321E54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1E7501270E118E00321E54 /* AppDelegate.swift */; };
 		9D1E7504270E118E00321E54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1E7503270E118E00321E54 /* SceneDelegate.swift */; };
@@ -40,7 +41,6 @@
 		F496C576271F612300443927 /* TaskScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496C575271F612300443927 /* TaskScreenTableViewCell.swift */; };
 		F4D612982729E3A200C49FCB /* TasksArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D612972729E3A200C49FCB /* TasksArray.swift */; };
 		F4D6129E272B3BE300C49FCB /* TaskSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6129D272B3BE300C49FCB /* TaskSettingsViewController.swift */; };
-		F4D612A0272B491800C49FCB /* addWarningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6129F272B491800C49FCB /* addWarningTableViewCell.swift */; };
 		F4D612A2272B492E00C49FCB /* warningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D612A1272B492E00C49FCB /* warningTableViewCell.swift */; };
 		F4D612A4272B493900C49FCB /* repeatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D612A3272B493900C49FCB /* repeatTableViewCell.swift */; };
 		F4D612A6272B494200C49FCB /* notesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D612A5272B494200C49FCB /* notesTableViewCell.swift */; };
@@ -113,7 +113,7 @@
 		F496C575271F612300443927 /* TaskScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskScreenTableViewCell.swift; sourceTree = "<group>"; };
 		F4D612972729E3A200C49FCB /* TasksArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksArray.swift; sourceTree = "<group>"; };
 		F4D6129D272B3BE300C49FCB /* TaskSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSettingsViewController.swift; sourceTree = "<group>"; };
-		F4D6129F272B491800C49FCB /* addWarningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addWarningTableViewCell.swift; sourceTree = "<group>"; };
+		F4D6129F272B491800C49FCB /* AddWarningTableviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWarningTableviewCell.swift; sourceTree = "<group>"; };
 		F4D612A1272B492E00C49FCB /* warningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = warningTableViewCell.swift; sourceTree = "<group>"; };
 		F4D612A3272B493900C49FCB /* repeatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = repeatTableViewCell.swift; sourceTree = "<group>"; };
 		F4D612A5272B494200C49FCB /* notesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notesTableViewCell.swift; sourceTree = "<group>"; };
@@ -302,7 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				F4D6129D272B3BE300C49FCB /* TaskSettingsViewController.swift */,
-				F4D6129F272B491800C49FCB /* addWarningTableViewCell.swift */,
+				F4D6129F272B491800C49FCB /* AddWarningTableviewCell.swift */,
 				F4D612A1272B492E00C49FCB /* warningTableViewCell.swift */,
 				F4D612A3272B493900C49FCB /* repeatTableViewCell.swift */,
 				F4D612A5272B494200C49FCB /* notesTableViewCell.swift */,
@@ -486,6 +486,7 @@
 				F4D612A4272B493900C49FCB /* repeatTableViewCell.swift in Sources */,
 				9DCC58EE27189A2C007A800C /* TaskModel.swift in Sources */,
 				FD7C458B272C6A6A0065C035 /* PetsOnFeedCollectionViewCell.swift in Sources */,
+				5CBE0478272C98ED000811D5 /* AddWarningTableviewCell.swift in Sources */,
 				FD06EABB27232C0A00EC4D37 /* ContactTableViewCell.swift in Sources */,
 				F4D612A2272B492E00C49FCB /* warningTableViewCell.swift in Sources */,
 				9D6449CB272898A8007BFB63 /* PersistanceManager.swift in Sources */,

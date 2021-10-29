@@ -9,7 +9,6 @@ import UIKit
 
 class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
     @IBOutlet var taskSettingsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -81,8 +80,8 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
             if indexPath.row == 0 {
                 
                 guard let cell = (taskSettingsTableView.dequeueReusableCell(withIdentifier: "addWarning-cell", for: indexPath)
-                                  as? addWarningTableViewCell) else {
-                    return addWarningTableViewCell() }
+                                  as? AddWarningTableviewCell) else {
+                    return AddWarningTableviewCell() }
                 
                 cell.addWarningLabel.text = "Add new warning".localized()
                 
