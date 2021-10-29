@@ -33,12 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print(error)
 //        }
 
-
-
 //        PersistanceManager.shared.loadUser { result in
 //            switch result {
 //            case .success(let user):
-////                self.testCreatePet()
+//                self.testCreatePet()
 //                self.listPets()
 //            case .failure(let error):
 //                print(error)
@@ -46,17 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                newUser.name = "RodrigoS2"
 //                PersistanceManager.shared.saveUser(user: newUser) { error in
 //                    print(error)
-////                    self.testCreatePet()
+//                    self.testCreatePet()
 //                    self.listPets()
 //                }
 //            }
 //        }
 
-
-
         return true
     }
-
 
 //    func testCreatePet() {
 //        let pet = Pet()

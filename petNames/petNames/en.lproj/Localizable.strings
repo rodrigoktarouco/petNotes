@@ -14,6 +14,15 @@
 "myPets" = "My pets";
 //MARK: -Task Screen
 "taskTitleLabel" = "Tasks";
+"Water" = "Water";
+"Food" = "Food";
+"Wash" = "Wash";
+"Playtime" = "Playtime";
+"Walk" = "Walk";
+"Medicine" = "Medicine";
+"Groom" = "Groom";
+"Vet" = "Vet";
+"Custom" = "Custom";
 
 //MARK: -SegmentedControl
 "All" = "All";
@@ -27,12 +36,6 @@
 "observationsTitlelabel" = "Observations";
 "frequencyLabel" = "Daily";
 "tasksSearchBar" = "Search";
-"contact" = "Contact";
-"AppDevelopedBy" = "App developed by";
-"generalNotifications" = "General notifications";
-"recommendations" = "Recommendations";
-"soundEfects" = "Sound efects";
-"darkMode" = "Dark mode";
 
 
 //MARK: -NewPet
@@ -45,3 +48,12 @@
 "textField" = "Name";
 "category" = "Category";
 "addNewTask" = "Add new task";
+
+//MARK: -AppSettings
+"contact" = "Contact";
+"AppDevelopedBy" = "App developed by";
+"generalNotifications" = "General notifications";
+"recommendations" = "Recommendations";
+"soundEfects" = "Sound efects";
+"darkMode" = "Dark mode";
+"adjustmendsTitle" = "Adjustments";

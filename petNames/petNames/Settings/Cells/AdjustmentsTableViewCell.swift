@@ -9,7 +9,6 @@ import UIKit
 
 class AdjustmentsTableViewCell: UITableViewCell {
     @IBOutlet weak var adjustmentsTitleLabel: UILabel!
-
     @IBOutlet weak var generalNotificationsLabel: UILabel!
     @IBOutlet weak var recommendationsLabel: UILabel!
     @IBOutlet weak var soundEfectsLabel: UILabel!
@@ -32,6 +31,7 @@ class AdjustmentsTableViewCell: UITableViewCell {
        recommendationsLabel.text = "recommendations".localized()
        soundEfectsLabel.text = "soundEfects".localized()
        darkModeLabel.text = "darkMode".localized()
+       adjustmentsTitleLabel.text = "adjustmendsTitle".localized()
     }
 
     func setFontStyle() {

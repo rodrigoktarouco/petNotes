@@ -14,10 +14,21 @@
 "myPets" = "Meus pets";
 //MARK: -TaskScreen
 "taskTitleLabel" = "Tarefas";
+"Water" = "Água";
+"Food" = "Alimentação";
+"Wash" = "Banho";
+"Playtime" = "Brincadeira";
+"Walk" = "Passeio";
+"Medicine" = "Remédio";
+"Groom" = "Tosa";
+"Vet" = "Veterinário";
+"Custom" = "Personalizada";
+
 //MARK: -SegmentedControl
 "All" = "Todas";
 "Not done" = "Não feitas";
 "By Pet" = "Por Pet";
+
 //MARK: -TaskSettings
 "taskSettingsTitleLabel" = "Alertas";
 "addANewAlertLabel" = "Adicionar um novo alerta";
@@ -25,12 +36,7 @@
 "observationsTitlelabel" = "Observações";
 "frequencyLabel" = "Diariamente";
 "tasksSearchBar" = "Buscar";
-"contact" = "Contato";
-"AppDevelopedBy" = "Aplicativo desenvolvido por";
-"generalNotifications" = "Notificações gerais";
-"recommendations" = "Recomendações";
-"soundEfects" = "Efeitos sonoros";
-"darkMode" = "Modo escuro";
+
 
 //MARK: -NewPet
 "newPetTitle" = "Novo pet";
@@ -42,3 +48,12 @@
 "textField" = "Nome";
 "category" = "Categoria";
 "addNewTask" = "Adicionar nova tarefa";
+
+//MARK: -AppSettings
+"contact" = "Contato";
+"AppDevelopedBy" = "Aplicativo desenvolvido por";
+"generalNotifications" = "Notificações gerais";
+"recommendations" = "Recomendações";
+"soundEfects" = "Efeitos sonoros";
+"darkMode" = "Modo escuro";
+"adjustmendsTitle" = "Ajustes";

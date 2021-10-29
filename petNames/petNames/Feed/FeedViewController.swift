@@ -106,7 +106,6 @@ extension FeedViewController: UICollectionViewDataSource {
         }
         return UICollectionViewCell()
     }
-
 }
 extension String {
     func localized() -> String {
