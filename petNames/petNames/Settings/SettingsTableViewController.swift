@@ -10,14 +10,12 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
 
     @IBOutlet weak var adjustmentsTitleLabel: UILabel!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         adjustmentsTitleLabel.font = UIFont(name: "SFProRounded-Semibold", size: 20)
-        
-        
+
     }
 
     // MARK: - Table view data source

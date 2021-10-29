@@ -29,12 +29,6 @@
 "observationsTitlelabel" = "Observations";
 "frequencyLabel" = "Daily";
 "tasksSearchBar" = "Search";
-"contact" = "Contact";
-"AppDevelopedBy" = "App developed by";
-"generalNotifications" = "General notifications";
-"recommendations" = "Recommendations";
-"soundEfects" = "Sound efects";
-"darkMode" = "Dark mode";
 
 
 //MARK: -NewPet
@@ -47,3 +41,12 @@
 "textField" = "Name";
 "category" = "Category";
 "addNewTask" = "Add new task";
+
+//MARK: -AppSettings
+"contact" = "Contact";
+"AppDevelopedBy" = "App developed by";
+"generalNotifications" = "General notifications";
+"recommendations" = "Recommendations";
+"soundEfects" = "Sound efects";
+"darkMode" = "Dark mode";
+"adjustmendsTitle" = "Adjustments";
