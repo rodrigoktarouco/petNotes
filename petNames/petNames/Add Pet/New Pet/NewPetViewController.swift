@@ -17,11 +17,11 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setting image
-                ImagePickerManager().pickImage(self) { image in
-                    self.petImage.image = image
-                    // TODO: Adicionar botão, pedir permissão e salvar a foto
-                    }
+        //        // Setting image
+        //                ImagePickerManager().pickImage(self) { image in
+        //                    self.petImage.image = image
+        //                    // TODO: Adicionar botão, pedir permissão e salvar a foto
+        //                    }
         
         // Localizable
         let newPet = "newPetTitle".localized()
@@ -45,33 +45,54 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Setting the View Controller`s outlets
         petImage.layer.cornerRadius = 22
-        
+
+        // Register the custom header view.
+        petTableView.register(MyCustomHeader.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
+
     }
-    
+
     // Setting the TableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        var sectionLabel: String
-        let sectionInt: Int = section
-        
-        switch sectionInt {
-        case 0:
-            sectionLabel = "firstSectionLabel".localized()
-        case 1:
-            sectionLabel = "secondSectionLabel".localized()
-        default:
-            sectionLabel = ""
-        }
-        
-        return "\(sectionLabel)"
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "sectionHeader")
+                as? MyCustomHeader else {
+                    return MyCustomHeader() }
+
+        view.title.text = "teste"
+
+        return view
     }
-    
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//
+//        var sectionLabel: String
+//        let sectionInt: Int = section
+//
+//        switch sectionInt {
+//        case 0:
+//            sectionLabel = "firstSectionLabel".localized()
+//        case 1:
+//            sectionLabel = "secondSectionLabel".localized()
+//        default:
+//            sectionLabel = ""
+//        }
+//
+//        return "\(sectionLabel)"
+//    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+
         var rowsInSection: Int
         switch section {
         case 0:
@@ -81,7 +102,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         default:
             rowsInSection = 1
         }
-        
+
         return rowsInSection
     }
     
@@ -132,7 +153,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
             let viewC = storyboard.instantiateViewController(withIdentifier: "taskScreen") as UIViewController
             show(viewC, sender: nil)
-//            present(viewC, animated: true, completion: nil)
+            //            present(viewC, animated: true, completion: nil)
             
         } else {
             // share
