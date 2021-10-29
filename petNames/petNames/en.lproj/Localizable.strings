@@ -7,6 +7,15 @@
 */
 //MARK: -Task Screen
 "taskTitleLabel" = "Tasks";
+"Water" = "Water";
+"Food" = "Food";
+"Wash" = "Wash";
+"Playtime" = "Playtime";
+"Walk" = "Walk";
+"Medicine" = "Medicine";
+"Groom" = "Groom";
+"Vet" = "Vet";
+"Custom" = "Custom";
 
 //MARK: -SegmentedControl
 "All" = "All";
