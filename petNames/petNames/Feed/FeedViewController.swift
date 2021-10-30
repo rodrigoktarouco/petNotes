@@ -15,8 +15,6 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var nextTaskLabel: UILabel!
     @IBOutlet weak var myPetsLabel: UILabel!
     
-
-
     @IBOutlet weak var tasksCollectionView: UICollectionView!
     @IBOutlet weak var petsCollectionView: UICollectionView!
 
@@ -27,6 +25,7 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         tasksCollectionView.dataSource = self
         petsCollectionView.dataSource = self
+        petsCollectionView.delegate = self
         setUpFontStyle()
         setUpLabelsTexts()
         setUpBackground()
@@ -92,8 +91,7 @@ extension FeedViewController: UICollectionViewDataSource {
             if indexPath.row == 0 {
                 let cell = petsCollectionView.dequeueReusableCell(withReuseIdentifier: "AddNewPetCollectionViewCell", for: indexPath) as? AddNewPetCollectionViewCell
                 return cell ?? UICollectionViewCell()
-            }
-            else {
+            } else {
                 let cell = petsCollectionView.dequeueReusableCell(withReuseIdentifier: "PetsOnFeedCollectionViewCell", for: indexPath) as? PetsOnFeedCollectionViewCell
                 let infoStruct = FeedModel.sharedFeedModel.getPetsCollectionViewData(petNumber: indexPath.row)
                 cell?.petImage.image = infoStruct.petImage ?? UIImage()
@@ -106,6 +104,21 @@ extension FeedViewController: UICollectionViewDataSource {
         }
         return UICollectionViewCell()
     }
+
+}
+extension FeedViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == petsCollectionView {
+            if indexPath.row == 0 {
+                let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
+                let newVC = storyboard.instantiateViewController(withIdentifier: "NewPetNavigationControllerViewController")
+                present(newVC, animated: true, completion: nil)
+            }
+
+        }
+    }
+
 }
 extension String {
     func localized() -> String {
