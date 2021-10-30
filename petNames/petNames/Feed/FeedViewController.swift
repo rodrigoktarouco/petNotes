@@ -114,6 +114,14 @@ extension FeedViewController: UICollectionViewDelegate {
                 let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
                 let newVC = storyboard.instantiateViewController(withIdentifier: "NewPetNavigationControllerViewController")
                 present(newVC, animated: true, completion: nil)
+            } else {
+                let storyboard = UIStoryboard(name: "PetDetails", bundle: nil)
+                guard let newVC = storyboard.instantiateViewController(withIdentifier: "PetDetailsNavigationController") as? PetDetailsNavigationControllerViewController else { return  }
+
+                newVC.selectedPetData = FeedModel.sharedFeedModel.getPetsInfosForPetDetails(forRowAt: indexPath.row + 1)
+                
+                present(newVC, animated: true, completion: nil)
+
             }
 
         }
