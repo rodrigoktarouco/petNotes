@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddWarningTableviewCell: UITableViewCell {
+class AddWarningTableViewCell: UITableViewCell {
 
     @IBOutlet var addWarningLabel: UILabel!
     

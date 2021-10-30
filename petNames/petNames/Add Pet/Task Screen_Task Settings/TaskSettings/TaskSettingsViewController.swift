@@ -80,8 +80,8 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
             if indexPath.row == 0 {
                 
                 guard let cell = (taskSettingsTableView.dequeueReusableCell(withIdentifier: "addWarning-cell", for: indexPath)
-                                  as? AddWarningTableviewCell) else {
-                    return AddWarningTableviewCell() }
+                                  as? AddWarningTableViewCell) else {
+                    return AddWarningTableViewCell() }
                 
                 cell.addWarningLabel.text = "Add new warning".localized()
                 
