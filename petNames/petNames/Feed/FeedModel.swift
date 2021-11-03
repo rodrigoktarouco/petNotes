@@ -106,6 +106,3 @@ struct PetsCollectionViewDataOnFeed {
     var petName: String?
     var tasksQuantity: Int?
 }
-struct PetsInfosForPetDetails {
-
-}

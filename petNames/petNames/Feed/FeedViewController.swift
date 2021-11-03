@@ -21,6 +21,30 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var doneTasksFunImage: UIImageView!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var backgroundImage: UIImageView!
+
+    //Constraints
+
+    @IBOutlet weak var welcomeUserTopDistance: NSLayoutConstraint!
+
+
+    @IBOutlet weak var funimageTopDistance: NSLayoutConstraint!
+
+   // @IBOutlet weak var funImageHeight: NSLayoutConstraint!
+
+    @IBOutlet weak var dayLabelTopdistance: NSLayoutConstraint!
+
+    @IBOutlet weak var doneTasksTopDistance: NSLayoutConstraint!
+
+    func constraintAdjustments() {
+        welcomeUserTopDistance.constant = UIScreen.main.bounds.height * 23 / 844
+        funimageTopDistance.constant = UIScreen.main.bounds.height * 10 / 844
+
+
+//        funImageHeight.constant = UIScreen.main.bounds.height * 80 / 844
+//        funImageWidth.constant = UIScreen.main.bounds.width * 330 / 844
+        doneTasksTopDistance.constant = UIScreen.main.bounds.height * 17 / 844 - 2
+        dayLabelTopdistance.constant = UIScreen.main.bounds.height * 21 / 844
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tasksCollectionView.dataSource = self
@@ -30,7 +54,9 @@ class FeedViewController: UIViewController {
         setUpLabelsTexts()
         setUpBackground()
         setUpDoneTasksImage()
-        
+        constraintAdjustments()
+
+
         logoImage.image = UIImage(named: "logo")
         doneTasksFunImage.layer.cornerRadius = 22
     }
@@ -54,13 +80,14 @@ class FeedViewController: UIViewController {
         myPetsLabel.text = "myPets".localized().capitalized
     }
     func setUpFontStyle () {
-        welcomeUserLabel.font = UIFont(name: "SFProRounded-Bold", size: 24)
-        dayLabel.font = UIFont(name: "SFProRounded-Medium", size: 14)
+
+        welcomeUserLabel.font = UIFont(name: "SFProRounded-Bold", size: UIScreen.main.bounds.height*24/844)
+        dayLabel.font = UIFont(name: "SFProRounded-Medium", size: UIScreen.main.bounds.height*14/844)
         dayLabel.textColor = .white
-        doneTasksLabel.font = UIFont(name: "SFProRounded-Bold", size: 24)
+        doneTasksLabel.font = UIFont(name: "SFProRounded-Bold", size: UIScreen.main.bounds.height*24/844)
         doneTasksLabel.textColor = .white
-        nextTaskLabel.font = UIFont(name: "SFProRounded-Semibold", size: 20)
-        myPetsLabel.font = UIFont(name: "SFProRounded-Semibold", size: 20)
+        nextTaskLabel.font = UIFont(name: "SFProRounded-Semibold", size: UIScreen.main.bounds.height*14.2/568)
+        myPetsLabel.font = UIFont(name: "SFProRounded-Semibold", size: UIScreen.main.bounds.height*14.2/568)
     }
 }
 extension FeedViewController: UICollectionViewDataSource {
@@ -116,15 +143,26 @@ extension FeedViewController: UICollectionViewDelegate {
                 present(newVC, animated: true, completion: nil)
             } else {
                 let storyboard = UIStoryboard(name: "PetDetails", bundle: nil)
-                guard let newVC = storyboard.instantiateViewController(withIdentifier: "PetDetailsNavigationController") as? PetDetailsNavigationControllerViewController else { return  }
 
-                newVC.selectedPetData = FeedModel.sharedFeedModel.getPetsInfosForPetDetails(forRowAt: indexPath.row + 1)
+                guard let navController = storyboard.instantiateInitialViewController() as? UINavigationController, let VCdetails = navController.topViewController as? PetDetailsViewController else{ return }
+                VCdetails.petData = FeedModel.sharedFeedModel.getPetsInfosForPetDetails(forRowAt: indexPath.row + 1)
                 
-                present(newVC, animated: true, completion: nil)
+                present(navController, animated: true, completion: nil)
 
             }
 
         }
+    }
+
+}
+extension FeedViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //let squareSide: CGFloat = UIScreen.main.bounds.height * 155 / 844 - 2
+        let squareSide: CGFloat = ( collectionView.frame.height - 14 ) / 2
+        return CGSize(width: squareSide, height: squareSide)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 14
     }
 
 }

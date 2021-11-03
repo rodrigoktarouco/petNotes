@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="985.50724637681162" y="-149.33035714285714"/>
         </scene>
-        <!--Pet Details Navigation Controller View Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="atc-eg-K2L">
             <objects>
-                <navigationController storyboardIdentifier="PetDetailsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="YlW-Sb-m3L" customClass="PetDetailsNavigationControllerViewController" customModule="petNames" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PetDetailsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="YlW-Sb-m3L" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Umu-jz-I14">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
