@@ -17,9 +17,6 @@ class PetsOnFeedCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         self.layer.cornerRadius = 22
         setUpLabelsDetails()
-//        let constantHeightForPetImage: CGFloat = self.bounds.height * 67 / 110
-//        let petImageHeight = NSLayoutConstraint(item: petImage, attribute: .height, relatedBy: .lessThanOrEqual, toItem: self.contentView, attribute: .height, multiplier: 1, constant: constantHeightForPetImage)
-//        self.contentView.addConstraint(petImageHeight)
         petImageHeight.constant = self.contentView.frame.height * 67 / 110 - 20
     }
     func setUpLabelsDetails() {
