@@ -9,18 +9,21 @@ import UIKit
 
 class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var isPressed: Bool = false
+    var imageManager = ImagePickerManager()
     
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var petTableView: UITableView!
-    
+
+    @IBAction func pickImageButton(_ sender: UIButton) {
+        // Setting image
+        imageManager.requestPermissions()
+        imageManager.pickImage(self) { image in
+            self.petImage.image = image
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //        // Setting image
-        //                ImagePickerManager().pickImage(self) { image in
-        //                    self.petImage.image = image
-        //                    // TODO: Adicionar botão, pedir permissão e salvar a foto
-        //                    }
         
         // Localizable
         let newPet = "newPetTitle".localized()
@@ -89,10 +92,8 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         return headerHeight
-        
     }
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var rowsInSection: Int
