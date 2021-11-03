@@ -52,6 +52,7 @@
 "secondSectionLabel" = "Tarefas";
 
 //MARK: -AppSettings
+"settingsTitleLabel" = "Configurações";
 "contact" = "Contato";
 "AppDevelopedBy" = "Aplicativo desenvolvido por";
 "generalNotifications" = "Notificações gerais";

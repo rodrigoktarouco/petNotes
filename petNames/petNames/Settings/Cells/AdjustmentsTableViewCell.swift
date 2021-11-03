@@ -21,7 +21,7 @@ class AdjustmentsTableViewCell: UITableViewCell {
         setLocalizablesForLabels()
 
         adjustmentsView.layer.cornerRadius = 12
-        self.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
+//        self.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
 
     }
    func setLocalizablesForLabels() {
