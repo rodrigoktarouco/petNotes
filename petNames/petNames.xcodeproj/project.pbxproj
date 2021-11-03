@@ -62,6 +62,8 @@
 		FD7C458B272C6A6A0065C035 /* PetsOnFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7C458A272C6A6A0065C035 /* PetsOnFeedCollectionViewCell.swift */; };
 		FD86996D271F14DA00FC9725 /* TasksSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86996C271F14DA00FC9725 /* TasksSettingsViewController.swift */; };
 		FD86996F271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86996E271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift */; };
+		FDB7B31D2733233500C83EC8 /* TopInfosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB7B31C2733233500C83EC8 /* TopInfosTableViewCell.swift */; };
+		FDB7B31F273323B700C83EC8 /* TasksEnumerationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB7B31E273323B700C83EC8 /* TasksEnumerationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +129,8 @@
 		FD7C458A272C6A6A0065C035 /* PetsOnFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsOnFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD86996C271F14DA00FC9725 /* TasksSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksSettingsViewController.swift; sourceTree = "<group>"; };
 		FD86996E271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningsOfTaskSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		FDB7B31C2733233500C83EC8 /* TopInfosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInfosTableViewCell.swift; sourceTree = "<group>"; };
+		FDB7B31E273323B700C83EC8 /* TasksEnumerationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksEnumerationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 		5C86C9F6271DE27D00FD1C2C /* Pet Details */ = {
 			isa = PBXGroup;
 			children = (
+				FDB7B31B273322EE00C83EC8 /* Pet Details Major Cells */,
 				5C86C9F9271DE4E200FD1C2C /* PetDetails.storyboard */,
 				5C86C9FB271DE91000FD1C2C /* PetDetailsViewController.swift */,
 				FD62D2D82732F7E00061560E /* PetDetailsModel.swift */,
@@ -349,6 +354,15 @@
 			path = TasksSettings;
 			sourceTree = "<group>";
 		};
+		FDB7B31B273322EE00C83EC8 /* Pet Details Major Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FDB7B31C2733233500C83EC8 /* TopInfosTableViewCell.swift */,
+				FDB7B31E273323B700C83EC8 /* TasksEnumerationTableViewCell.swift */,
+			);
+			path = "Pet Details Major Cells";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -463,6 +477,7 @@
 				F496C574271F597C00443927 /* TaskScreenViewController.swift in Sources */,
 				F4D612982729E3A200C49FCB /* TasksArray.swift in Sources */,
 				F4D612A6272B494200C49FCB /* notesTableViewCell.swift in Sources */,
+				FDB7B31F273323B700C83EC8 /* TasksEnumerationTableViewCell.swift in Sources */,
 				9DCC58EC27189A1E007A800C /* TaskViewController.swift in Sources */,
 				F496C576271F612300443927 /* TaskScreenTableViewCell.swift in Sources */,
 				FD86996D271F14DA00FC9725 /* TasksSettingsViewController.swift in Sources */,
@@ -474,6 +489,7 @@
 				FD7C4589272C63230065C035 /* AddNewPetCollectionViewCell.swift in Sources */,
 				9D90D1412728683300689292 /* Model.xcdatamodeld in Sources */,
 				F496C572271A140C00443927 /* NewPetViewController.swift in Sources */,
+				FDB7B31D2733233500C83EC8 /* TopInfosTableViewCell.swift in Sources */,
 				9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */,
 				FD638E57272AEB5400197910 /* NextTaskCollectionViewCell.swift in Sources */,
 				9D1E7504270E118E00321E54 /* SceneDelegate.swift in Sources */,

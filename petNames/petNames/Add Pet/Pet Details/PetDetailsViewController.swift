@@ -9,8 +9,16 @@ import UIKit
 
 class PetDetailsViewController: UIViewController {
     var petData: PetsInfosForPetDetails?
+    @IBOutlet weak var bigTableView: UITableView!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNavController()
+        bigTableView.dataSource = self
+
+    }
+    func setUpNavController() {
         self.title = "Details"
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit",
@@ -21,20 +29,39 @@ class PetDetailsViewController: UIViewController {
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: #selector(confirmButtonAction))
-        
-
     }
-
     @objc func editButtonAction() {
-       print("Edit pressed")
+        print("Edit pressed")
     }
 
     @objc func confirmButtonAction() {
-       print("Confirm pressed")
+        print("Confirm pressed")
         self.navigationController?.dismiss(animated: true, completion: nil)
 
-//        let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "newPet") as UIViewController
-//        show(vc, sender: nil)
     }
 }
+extension PetDetailsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+           var cell =  bigTableView.dequeueReusableCell(withIdentifier: "TopInfosTableViewCell")
+            guard let cell = cell as? TopInfosTableViewCell else {
+                return  UITableViewCell()
+            }
+            cell.petImage.image = UIImage(named: "pitty")
+            cell.name.text = "Pitty"
+            cell.nameIsNext.text = "nome:"
+            
+            return cell
+        }
+        return  UITableViewCell()
+    }
+
+
+
+
+}
+
