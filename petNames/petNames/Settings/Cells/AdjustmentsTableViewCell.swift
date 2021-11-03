@@ -10,10 +10,8 @@ import UIKit
 class AdjustmentsTableViewCell: UITableViewCell {
     @IBOutlet weak var adjustmentsTitleLabel: UILabel!
     @IBOutlet weak var generalNotificationsLabel: UILabel!
-    @IBOutlet weak var recommendationsLabel: UILabel!
     @IBOutlet weak var soundEfectsLabel: UILabel!
     @IBOutlet weak var darkModeLabel: UILabel!
-
     @IBOutlet weak var adjustmentsView: UIView!
 
     override func awakeFromNib() {
@@ -28,7 +26,6 @@ class AdjustmentsTableViewCell: UITableViewCell {
     }
    func setLocalizablesForLabels() {
        generalNotificationsLabel.text = "generalNotifications".localized()
-       recommendationsLabel.text = "recommendations".localized()
        soundEfectsLabel.text = "soundEfects".localized()
        darkModeLabel.text = "darkMode".localized()
        adjustmentsTitleLabel.text = "adjustmendsTitle".localized()
@@ -36,7 +33,7 @@ class AdjustmentsTableViewCell: UITableViewCell {
 
     func setFontStyle() {
         adjustmentsTitleLabel.font = UIFont(name: "SFProRounded-Semibold", size: 20)
-        let labels = [generalNotificationsLabel, recommendationsLabel, soundEfectsLabel, darkModeLabel]
+        let labels = [generalNotificationsLabel, soundEfectsLabel, darkModeLabel]
         for label in labels {
             label?.font = UIFont(name: "SFProRounded-Regular", size: 17)
         }
