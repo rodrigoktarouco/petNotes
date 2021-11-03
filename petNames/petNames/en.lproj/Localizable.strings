@@ -48,6 +48,8 @@
 "textField" = "Name";
 "category" = "Category";
 "addNewTask" = "Add new task";
+"firstSectionLabel" = "Information";
+"secondSectionLabel" = "Tasks";
 
 //MARK: -AppSettings
 "contact" = "Contact";
