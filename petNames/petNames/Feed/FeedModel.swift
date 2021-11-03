@@ -89,7 +89,10 @@ static let sharedFeedModel = FeedModel()
 
         return image
     }
+    func getPetsInfosForPetDetails( forRowAt: Int) -> PetsInfosForPetDetails {
 
+        return PetsInfosForPetDetails()
+    }
 }
 struct TaskFeedCollectionViewCellData {
     var petImage: UIImage?
