@@ -8,13 +8,9 @@
 import UIKit
 
 class PetDetailsViewController: UIViewController {
-
+    var petData: PetsInfosForPetDetails?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-
-        // Setting UIBarButtonItems
         self.title = "Details"
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit",
@@ -25,6 +21,7 @@ class PetDetailsViewController: UIViewController {
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: #selector(confirmButtonAction))
+        
 
     }
 

@@ -56,6 +56,7 @@
 		FD06EAB92721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD06EAB82721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift */; };
 		FD06EABB27232C0A00EC4D37 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD06EABA27232C0A00EC4D37 /* ContactTableViewCell.swift */; };
 		FD62D2D3272C7FA20061560E /* AppUITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D2D2272C7FA20061560E /* AppUITabBar.swift */; };
+		FD62D2D92732F7E00061560E /* PetDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D2D82732F7E00061560E /* PetDetailsModel.swift */; };
 		FD638E57272AEB5400197910 /* NextTaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD638E56272AEB5400197910 /* NextTaskCollectionViewCell.swift */; };
 		FD7599AE2727189300B86111 /* DevelopedByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7599AD2727189300B86111 /* DevelopedByTableViewCell.swift */; };
 		FD7C4589272C63230065C035 /* AddNewPetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7C4588272C63230065C035 /* AddNewPetCollectionViewCell.swift */; };
@@ -120,6 +121,7 @@
 		FD06EAB82721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentsTableViewCell.swift; sourceTree = "<group>"; };
 		FD06EABA27232C0A00EC4D37 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		FD62D2D2272C7FA20061560E /* AppUITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITabBar.swift; sourceTree = "<group>"; };
+		FD62D2D82732F7E00061560E /* PetDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsModel.swift; sourceTree = "<group>"; };
 		FD638E56272AEB5400197910 /* NextTaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextTaskCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD638E59272B1A0A00197910 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		FD7599AD2727189300B86111 /* DevelopedByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopedByTableViewCell.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				5C86C9F9271DE4E200FD1C2C /* PetDetails.storyboard */,
 				5C86C9FB271DE91000FD1C2C /* PetDetailsViewController.swift */,
+				FD62D2D82732F7E00061560E /* PetDetailsModel.swift */,
 			);
 			path = "Pet Details";
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				9D1E7504270E118E00321E54 /* SceneDelegate.swift in Sources */,
 				5C145B5D2721DF090091C02A /* ImagePickerManager.swift in Sources */,
 				5C86C9FC271DE91000FD1C2C /* PetDetailsViewController.swift in Sources */,
+				FD62D2D92732F7E00061560E /* PetDetailsModel.swift in Sources */,
 				9DCC58E6271899C7007A800C /* SettingsViewController.swift in Sources */,
 				9D5A1D302718BD6600637589 /* PetsModel.swift in Sources */,
 				FD06EAB92721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift in Sources */,
