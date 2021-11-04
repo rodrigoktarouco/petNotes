@@ -25,6 +25,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ggl-KC-0Pt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpi-SO-8xw">
                                 <rect key="frame" x="0.0" y="88" width="414" height="57.5"/>
                                 <subviews>
@@ -111,7 +114,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="GFw-Qe-RNO" secondAttribute="trailing" constant="13" id="3pg-QU-FnQ"/>
                                                                 <constraint firstItem="R1u-z1-Aw0" firstAttribute="top" secondItem="LrC-wi-71P" secondAttribute="bottom" constant="9.5" id="87T-98-toc"/>
@@ -242,7 +245,7 @@
                                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                                 </imageView>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="LOB-AC-S5O" firstAttribute="top" secondItem="bPa-z1-d4i" secondAttribute="top" constant="20" id="08k-aH-nJS"/>
                                                                 <constraint firstAttribute="trailing" secondItem="1rP-Ve-4fz" secondAttribute="trailing" constant="14" id="6cs-6e-3Hm"/>
@@ -309,101 +312,68 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8go-JJ-r0H">
-                                                            <rect key="frame" x="29" y="55" width="356" height="266"/>
+                                                            <rect key="frame" x="30" y="55" width="354" height="256"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="jdc-Ta-Ylw">
-                                                                    <rect key="frame" x="15" y="14" width="326" height="238"/>
-                                                                    <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yh7-Xh-pbo">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="326" height="238"/>
-                                                                            <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dharana Rivas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QB-ZM-e9e">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="42"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="height" constant="42" id="7qJ-Se-OfT"/>
-                                                                                    </constraints>
-                                                                                    <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
-                                                                                    <nil key="textColor"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enzo Degrazia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZp-Ij-6jR">
-                                                                                    <rect key="frame" x="0.0" y="43" width="326" height="42"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="height" constant="42" id="aYg-WX-Olv"/>
-                                                                                    </constraints>
-                                                                                    <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
-                                                                                    <nil key="textColor"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guilherme Antonini" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxt-pb-SE8">
-                                                                                    <rect key="frame" x="0.0" y="86" width="326" height="42"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="height" constant="42" id="W9R-Ho-OvY"/>
-                                                                                    </constraints>
-                                                                                    <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
-                                                                                    <nil key="textColor"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heitor Kunrath" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bem-nh-DmX">
-                                                                                    <rect key="frame" x="0.0" y="129" width="326" height="42"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="height" constant="42" id="bQc-GH-hsw"/>
-                                                                                    </constraints>
-                                                                                    <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="17"/>
-                                                                                    <nil key="textColor"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rodrigo Tarouco" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAP-5a-FTt">
-                                                                                    <rect key="frame" x="0.0" y="172" width="326" height="66"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="height" constant="42" id="qtW-Sn-rXb"/>
-                                                                                    </constraints>
-                                                                                    <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
-                                                                                    <nil key="textColor"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                            </subviews>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="trailing" secondItem="rZp-Ij-6jR" secondAttribute="trailing" id="0Ly-6I-T8i"/>
-                                                                                <constraint firstItem="bem-nh-DmX" firstAttribute="leading" secondItem="Yh7-Xh-pbo" secondAttribute="leading" id="0za-dh-LcU"/>
-                                                                                <constraint firstAttribute="trailing" secondItem="sAP-5a-FTt" secondAttribute="trailing" id="55Y-WG-g0b"/>
-                                                                                <constraint firstItem="rZp-Ij-6jR" firstAttribute="leading" secondItem="Yh7-Xh-pbo" secondAttribute="leading" id="MUr-Tm-DE6"/>
-                                                                                <constraint firstItem="7QB-ZM-e9e" firstAttribute="top" secondItem="Yh7-Xh-pbo" secondAttribute="top" id="VoO-IS-XES"/>
-                                                                                <constraint firstItem="Gxt-pb-SE8" firstAttribute="leading" secondItem="Yh7-Xh-pbo" secondAttribute="leading" id="Z0a-Rc-oWb"/>
-                                                                                <constraint firstAttribute="trailing" secondItem="Gxt-pb-SE8" secondAttribute="trailing" id="Zg8-Re-AC8"/>
-                                                                                <constraint firstAttribute="trailing" secondItem="bem-nh-DmX" secondAttribute="trailing" id="bVm-0n-7tE"/>
-                                                                                <constraint firstAttribute="trailing" secondItem="7QB-ZM-e9e" secondAttribute="trailing" id="diJ-RN-e2h"/>
-                                                                                <constraint firstItem="7QB-ZM-e9e" firstAttribute="leading" secondItem="Yh7-Xh-pbo" secondAttribute="leading" id="x3M-40-WoA"/>
-                                                                                <constraint firstItem="sAP-5a-FTt" firstAttribute="leading" secondItem="Yh7-Xh-pbo" secondAttribute="leading" id="yLx-7z-WNp"/>
-                                                                            </constraints>
-                                                                        </stackView>
-                                                                    </subviews>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="Yh7-Xh-pbo" secondAttribute="bottom" id="KIX-Xb-CtU"/>
-                                                                        <constraint firstItem="Yh7-Xh-pbo" firstAttribute="leading" secondItem="jdc-Ta-Ylw" secondAttribute="leading" id="QGs-m7-MU1"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="Yh7-Xh-pbo" secondAttribute="trailing" id="dPX-2l-C6K"/>
-                                                                        <constraint firstItem="Yh7-Xh-pbo" firstAttribute="top" secondItem="jdc-Ta-Ylw" secondAttribute="top" id="vSz-y7-usi"/>
-                                                                    </constraints>
-                                                                </stackView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dharana Rivas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QB-ZM-e9e">
+                                                                    <rect key="frame" x="15" y="14" width="326" height="17"/>
+                                                                    <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heitor Kunrath" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bem-nh-DmX">
+                                                                    <rect key="frame" x="15" y="110" width="326" height="17"/>
+                                                                    <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guilherme Antonini" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxt-pb-SE8">
+                                                                    <rect key="frame" x="15" y="78" width="326" height="17"/>
+                                                                    <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enzo Degrazia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZp-Ij-6jR">
+                                                                    <rect key="frame" x="15" y="46" width="326" height="17"/>
+                                                                    <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rodrigo Tarouco" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAP-5a-FTt">
+                                                                    <rect key="frame" x="15" y="142" width="324" height="17"/>
+                                                                    <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="jdc-Ta-Ylw" secondAttribute="trailing" constant="15" id="dT7-Tp-ODN"/>
-                                                                <constraint firstItem="jdc-Ta-Ylw" firstAttribute="top" secondItem="8go-JJ-r0H" secondAttribute="top" constant="14" id="dd2-Ot-KqL"/>
-                                                                <constraint firstAttribute="bottom" secondItem="jdc-Ta-Ylw" secondAttribute="bottom" constant="14" id="ePo-n4-pyp"/>
-                                                                <constraint firstItem="jdc-Ta-Ylw" firstAttribute="leading" secondItem="8go-JJ-r0H" secondAttribute="leading" constant="15" id="mvm-GA-lRB"/>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="208" id="wib-9U-Id5"/>
+                                                                <constraint firstItem="Gxt-pb-SE8" firstAttribute="trailing" secondItem="bem-nh-DmX" secondAttribute="trailing" id="8Ze-53-7kg"/>
+                                                                <constraint firstItem="Gxt-pb-SE8" firstAttribute="leading" secondItem="bem-nh-DmX" secondAttribute="leading" id="FUg-6j-d3z"/>
+                                                                <constraint firstAttribute="trailing" secondItem="sAP-5a-FTt" secondAttribute="trailing" constant="15" id="GbI-84-dA2"/>
+                                                                <constraint firstItem="bem-nh-DmX" firstAttribute="leading" secondItem="sAP-5a-FTt" secondAttribute="leading" id="OsW-o8-Heb"/>
+                                                                <constraint firstAttribute="trailing" secondItem="7QB-ZM-e9e" secondAttribute="trailing" constant="13" id="RkR-Wy-wcx"/>
+                                                                <constraint firstItem="sAP-5a-FTt" firstAttribute="top" secondItem="bem-nh-DmX" secondAttribute="bottom" constant="15" id="VNO-bk-EOK"/>
+                                                                <constraint firstItem="bem-nh-DmX" firstAttribute="top" secondItem="Gxt-pb-SE8" secondAttribute="bottom" constant="15" id="czH-lH-s5o"/>
+                                                                <constraint firstItem="rZp-Ij-6jR" firstAttribute="top" secondItem="7QB-ZM-e9e" secondAttribute="bottom" constant="15" id="dxc-ma-d7h"/>
+                                                                <constraint firstItem="sAP-5a-FTt" firstAttribute="top" secondItem="bem-nh-DmX" secondAttribute="bottom" constant="15" id="ejj-KL-xd5"/>
+                                                                <constraint firstItem="7QB-ZM-e9e" firstAttribute="leading" secondItem="rZp-Ij-6jR" secondAttribute="leading" id="h9B-fC-C9K"/>
+                                                                <constraint firstItem="rZp-Ij-6jR" firstAttribute="trailing" secondItem="Gxt-pb-SE8" secondAttribute="trailing" id="mOK-Vg-fdh"/>
+                                                                <constraint firstItem="7QB-ZM-e9e" firstAttribute="trailing" secondItem="rZp-Ij-6jR" secondAttribute="trailing" id="n2F-BM-NIu"/>
+                                                                <constraint firstItem="rZp-Ij-6jR" firstAttribute="leading" secondItem="Gxt-pb-SE8" secondAttribute="leading" id="rcm-kB-1Pw"/>
+                                                                <constraint firstItem="7QB-ZM-e9e" firstAttribute="top" secondItem="8go-JJ-r0H" secondAttribute="top" constant="14" id="uHb-Da-Xje"/>
+                                                                <constraint firstItem="Gxt-pb-SE8" firstAttribute="top" secondItem="rZp-Ij-6jR" secondAttribute="bottom" constant="15" id="xM9-4W-SpT"/>
+                                                                <constraint firstItem="sAP-5a-FTt" firstAttribute="leading" secondItem="8go-JJ-r0H" secondAttribute="leading" constant="15" id="zng-Es-1gm"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="8go-JJ-r0H" firstAttribute="leading" secondItem="iVD-8L-HIO" secondAttribute="leading" constant="29" id="4uX-48-fgf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="8go-JJ-r0H" secondAttribute="bottom" constant="20" id="1GS-QQ-oe3"/>
+                                                        <constraint firstItem="8go-JJ-r0H" firstAttribute="top" secondItem="Y2g-fg-hlS" secondAttribute="bottom" constant="10" id="3LH-0n-tVI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8go-JJ-r0H" secondAttribute="trailing" constant="30" id="7Oj-Sg-8CK"/>
                                                         <constraint firstItem="Y2g-fg-hlS" firstAttribute="top" secondItem="iVD-8L-HIO" secondAttribute="top" constant="20" id="INY-Ye-jje"/>
-                                                        <constraint firstAttribute="trailing" secondItem="8go-JJ-r0H" secondAttribute="trailing" constant="29" id="SLv-Ns-b9x"/>
-                                                        <constraint firstItem="8go-JJ-r0H" firstAttribute="top" secondItem="Y2g-fg-hlS" secondAttribute="bottom" constant="10" id="V3Q-hm-99G"/>
+                                                        <constraint firstItem="8go-JJ-r0H" firstAttribute="leading" secondItem="iVD-8L-HIO" secondAttribute="leading" constant="30" id="OQC-wc-qaY"/>
                                                         <constraint firstItem="Y2g-fg-hlS" firstAttribute="leading" secondItem="iVD-8L-HIO" secondAttribute="leading" constant="29" id="YNm-5f-8vg"/>
-                                                        <constraint firstAttribute="bottom" secondItem="8go-JJ-r0H" secondAttribute="bottom" constant="10" id="az9-YG-lIg"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -433,15 +403,20 @@
                         <constraints>
                             <constraint firstItem="wpi-SO-8xw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0Ps-M8-w2d"/>
                             <constraint firstItem="NI4-IF-cjA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="498-NR-ZoQ"/>
+                            <constraint firstItem="ggl-KC-0Pt" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="5ln-Ja-D5j"/>
                             <constraint firstItem="wpi-SO-8xw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Mrn-md-pRR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wpi-SO-8xw" secondAttribute="trailing" id="Vfu-RI-RSE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="NI4-IF-cjA" secondAttribute="bottom" id="d8A-za-qPQ"/>
+                            <constraint firstItem="ggl-KC-0Pt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fjh-Dq-Y0u"/>
                             <constraint firstItem="NI4-IF-cjA" firstAttribute="top" secondItem="wpi-SO-8xw" secondAttribute="bottom" id="hIs-iQ-uaN"/>
+                            <constraint firstAttribute="bottom" secondItem="ggl-KC-0Pt" secondAttribute="bottom" id="mEa-SG-nCE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NI4-IF-cjA" secondAttribute="trailing" id="rfo-cT-yu2"/>
+                            <constraint firstItem="ggl-KC-0Pt" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="yPR-nT-bev"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jc7-nL-2b8"/>
                     <connections>
+                        <outlet property="appSettingBackgroundImage" destination="ggl-KC-0Pt" id="4HM-jG-Xxi"/>
                         <outlet property="settingsTableView" destination="NI4-IF-cjA" id="5ob-GM-ahw"/>
                         <outlet property="settingsTitleLabel" destination="al6-nH-yff" id="brO-z7-BIH"/>
                     </connections>
@@ -480,9 +455,6 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
