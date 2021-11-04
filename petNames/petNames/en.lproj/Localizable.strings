@@ -52,6 +52,7 @@
 "secondSectionLabel" = "Tasks";
 
 //MARK: -AppSettings
+"settingsTitleLabel" = "Settings";
 "contact" = "Contact";
 "AppDevelopedBy" = "App developed by";
 "generalNotifications" = "General notifications";

@@ -9,9 +9,12 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView: UITableView!
+    @IBOutlet weak var settingsTitleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsTableView.dataSource = self
+        settingsTitleLabel.text = "settingsTitleLabel".localized()
+
         // Do any additional setup after loading the view.
     }
 }
