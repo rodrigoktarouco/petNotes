@@ -15,7 +15,7 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Background.shared.assignBackground(view: self.view)
         
         taskTableView.delegate = self
         taskTableView.dataSource = self
@@ -54,6 +54,10 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         }
 
         return "\(sectionLabel)"
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 52
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

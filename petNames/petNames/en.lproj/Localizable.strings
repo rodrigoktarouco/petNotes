@@ -12,6 +12,7 @@
 "addNewPet" = "Add a New Pet";
 "tasks" = "Tasks";
 "myPets" = "My pets";
+
 //MARK: -Task Screen
 "taskTitleLabel" = "Tasks";
 "Water" = "Water";
@@ -23,6 +24,13 @@
 "Groom" = "Groom";
 "Vet" = "Vet";
 "Custom" = "Custom";
+
+//MARK: -TaskSettingViewController
+"Warning" = "Warning";
+"Notes" = "Notes";
+"addNewWarning" = "Add a new warning";
+"repeat" = "Repeat";
+"notes" = "Notes";
 
 //MARK: -SegmentedControl
 "All" = "All";
@@ -48,8 +56,11 @@
 "textField" = "Name";
 "category" = "Category";
 "addNewTask" = "Add new task";
+"firstSectionLabel" = "Information";
+"secondSectionLabel" = "Tasks";
 
 //MARK: -AppSettings
+"settingsTitleLabel" = "Settings";
 "contact" = "Contact";
 "AppDevelopedBy" = "App developed by";
 "generalNotifications" = "General notifications";

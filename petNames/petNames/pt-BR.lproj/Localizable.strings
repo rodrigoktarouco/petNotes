@@ -24,6 +24,13 @@
 "Vet" = "Veterinário";
 "Custom" = "Personalizada";
 
+//MARK: -TaskSettingViewController
+"Warning" = "Alertas";
+"Notes" = "Observações";
+"addNewWarning" = "Adicionar um novo alerta";
+"repeat" = "Repete";
+"notes" = "Notas";
+
 //MARK: -SegmentedControl
 "All" = "Todas";
 "Not done" = "Não feitas";
@@ -48,8 +55,11 @@
 "textField" = "Nome";
 "category" = "Categoria";
 "addNewTask" = "Adicionar nova tarefa";
+"firstSectionLabel" = "Informações";
+"secondSectionLabel" = "Tarefas";
 
 //MARK: -AppSettings
+"settingsTitleLabel" = "Configurações";
 "contact" = "Contato";
 "AppDevelopedBy" = "Aplicativo desenvolvido por";
 "generalNotifications" = "Notificações gerais";
