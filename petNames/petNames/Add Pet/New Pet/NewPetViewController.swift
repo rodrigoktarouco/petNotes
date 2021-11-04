@@ -64,18 +64,20 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         var sectionLabel: String
         let sectionInt: Int = section
-        
+
         switch sectionInt {
         case 0:
-            sectionLabel = "firstSectionLabel".localized()
+            sectionLabel = "firstSectionLabel".localized()  // informations
         case 1:
-            sectionLabel = "secondSectionLabel".localized()
+            sectionLabel = "secondSectionLabel".localized() // tasks
         default:
             sectionLabel = ""
         }
-        
-        view.title.text = sectionLabel
-        
+
+        var boldString = NSAttributedString(string: sectionLabel)
+        view.title.attributedText = NSMutableAttributedString()
+            .bold(boldString.string)
+
         return view
     }
     
@@ -109,6 +111,10 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return rowsInSection
     }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 52
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
@@ -119,17 +125,22 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 return cell
                 
             } else {
-                
-                let cell2 = tableView.dequeueReusableCell(withIdentifier: "choose-cell", for: indexPath)
-                cell2.textLabel?.text = "category".localized()
+                guard let cell2 = (tableView.dequeueReusableCell(withIdentifier: "category-cell", for: indexPath)
+                                   as? CategoryTableViewCell) else {
+                    return CategoryTableViewCell() }
+
+//                cell2.textLabel?.text = "category".localized()
+                cell2.categoryLabel.text = "category".localized()
                 
                 return cell2 }
             
         } else if indexPath.section == 1 {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "choose-cell", for: indexPath)
+            guard let cell = (tableView.dequeueReusableCell(withIdentifier: "newTask-cell", for: indexPath) as? AddNewTaskTableViewCell) else {
+                return AddNewTaskTableViewCell() }
             
-            cell.textLabel?.text = "addNewTask".localized()
+//            cell.textLabel?.text = "addNewTask".localized()
+            cell.addNewTaskLabel.text = "addNewTask".localized()
             
             return cell
             

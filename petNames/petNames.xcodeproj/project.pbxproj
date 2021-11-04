@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5C145B592721DA970091C02A /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C145B582721DA970091C02A /* TextFieldTableViewCell.swift */; };
 		5C145B5D2721DF090091C02A /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C145B5C2721DF090091C02A /* ImagePickerManager.swift */; };
+		5C50A70327344D6E00FD142E /* CustomFontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A70227344D6E00FD142E /* CustomFontModel.swift */; };
+		5C50A7052734554A00FD142E /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A7042734554A00FD142E /* CategoryTableViewCell.swift */; };
+		5C50A707273458DC00FD142E /* AddNewTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A706273458DC00FD142E /* AddNewTaskTableViewCell.swift */; };
 		5C86C9F8271DE4BE00FD1C2C /* TaskScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C86C9F7271DE4BE00FD1C2C /* TaskScreen.storyboard */; };
 		5C86C9FA271DE4E200FD1C2C /* PetDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C86C9F9271DE4E200FD1C2C /* PetDetails.storyboard */; };
 		5C86C9FC271DE91000FD1C2C /* PetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C86C9FB271DE91000FD1C2C /* PetDetailsViewController.swift */; };
@@ -69,6 +72,9 @@
 /* Begin PBXFileReference section */
 		5C145B582721DA970091C02A /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		5C145B5C2721DF090091C02A /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
+		5C50A70227344D6E00FD142E /* CustomFontModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontModel.swift; sourceTree = "<group>"; };
+		5C50A7042734554A00FD142E /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		5C50A706273458DC00FD142E /* AddNewTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskTableViewCell.swift; sourceTree = "<group>"; };
 		5C86C9F7271DE4BE00FD1C2C /* TaskScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskScreen.storyboard; sourceTree = "<group>"; };
 		5C86C9F9271DE4E200FD1C2C /* PetDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetDetails.storyboard; sourceTree = "<group>"; };
 		5C86C9FB271DE91000FD1C2C /* PetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +168,9 @@
 				F496C571271A140C00443927 /* NewPetViewController.swift */,
 				5C86C9FD271E0CAC00FD1C2C /* ShareTableViewCell.swift */,
 				5C145B582721DA970091C02A /* TextFieldTableViewCell.swift */,
+				5C50A7042734554A00FD142E /* CategoryTableViewCell.swift */,
 				5C145B5C2721DF090091C02A /* ImagePickerManager.swift */,
+				5C50A706273458DC00FD142E /* AddNewTaskTableViewCell.swift */,
 			);
 			path = "New Pet";
 			sourceTree = "<group>";
@@ -237,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				5CBE0474272C774D000811D5 /* CustomHeader.swift */,
+				5C50A70227344D6E00FD142E /* CustomFontModel.swift */,
 				5C86C9F4271DE26A00FD1C2C /* New Pet */,
 				5C86C9F3271DE1FF00FD1C2C /* Task Screen_Task Settings */,
 				5C86C9F6271DE27D00FD1C2C /* Pet Details */,
@@ -476,6 +485,7 @@
 				FD7599AE2727189300B86111 /* DevelopedByTableViewCell.swift in Sources */,
 				9D1788B3271DE8CF00C839DF /* TaskTableViewCell.swift in Sources */,
 				9D1E7506270E118E00321E54 /* FeedViewController.swift in Sources */,
+				5C50A7052734554A00FD142E /* CategoryTableViewCell.swift in Sources */,
 				FD62D2D3272C7FA20061560E /* AppUITabBar.swift in Sources */,
 				9D1E7502270E118E00321E54 /* AppDelegate.swift in Sources */,
 				FD7C4589272C63230065C035 /* AddNewPetCollectionViewCell.swift in Sources */,
@@ -489,6 +499,8 @@
 				5C86C9FC271DE91000FD1C2C /* PetDetailsViewController.swift in Sources */,
 				FD62D2D92732F7E00061560E /* PetDetailsModel.swift in Sources */,
 				9DCC58E6271899C7007A800C /* SettingsViewController.swift in Sources */,
+				5C50A70327344D6E00FD142E /* CustomFontModel.swift in Sources */,
+				5C50A707273458DC00FD142E /* AddNewTaskTableViewCell.swift in Sources */,
 				9D5A1D302718BD6600637589 /* PetsModel.swift in Sources */,
 				FD06EAB92721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift in Sources */,
 				F4D612A4272B493900C49FCB /* repeatTableViewCell.swift in Sources */,
