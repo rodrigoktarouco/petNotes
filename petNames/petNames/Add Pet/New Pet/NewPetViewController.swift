@@ -74,7 +74,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             sectionLabel = ""
         }
 
-        var boldString = NSAttributedString(string: sectionLabel)
+        let boldString = NSAttributedString(string: sectionLabel)
         view.title.attributedText = NSMutableAttributedString()
             .bold(boldString.string)
 
