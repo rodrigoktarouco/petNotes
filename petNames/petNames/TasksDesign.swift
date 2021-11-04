@@ -11,7 +11,8 @@ import UIKit
 //  ["Water", "Food", "Wash", "Playtime", "Walk", "Medicine", "Groom", "Vet", "Custom"]
 
 class TasksDesign {
-    var shared: TasksDesign = TasksDesign()
+    init() {}
+    static var shared: TasksDesign = TasksDesign()
     var tasksDesignPropertiesArray: [TasksDesignProperties] = {
         let water = TasksDesignProperties(name: "water", taskImage: UIImage(named: "water"), color: UIColor(red: 0.439, green: 0.843, blue: 1, alpha: 1))
         let food = TasksDesignProperties(name: "food", taskImage: UIImage(named: "food"), color: UIColor(red: 1, green: 0.702, blue: 0.251, alpha: 1))
