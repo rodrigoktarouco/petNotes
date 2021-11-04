@@ -57,3 +57,7 @@
 "soundEfects" = "Sound efects";
 "darkMode" = "Dark mode";
 "adjustmendsTitle" = "Adjustments";
+
+//MARK: -PetDetails
+"name" = "Name";
+"edit" = "Edit";

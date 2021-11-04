@@ -9,7 +9,6 @@ import UIKit
 
 class TopInfosTableViewCell: UITableViewCell {
 
-
     @IBOutlet weak var petImage: UIImageView!
 
     @IBOutlet weak var nameIsNext: UILabel!
@@ -25,6 +24,12 @@ class TopInfosTableViewCell: UITableViewCell {
         petImage.layer.cornerRadius = 22
         setUpFontStyle()
         setUpFuncColor()
+        setUpLabelsTexts()
+    }
+    func setUpLabelsTexts() {
+        nameIsNext.text = "name".localized().capitalized + ":"
+        categoryIsNext.text = "category".localized().capitalized + ":"
+        tasksAreNextLabel.text = "tasks".localized().capitalized
 
     }
     func setUpFuncColor() {

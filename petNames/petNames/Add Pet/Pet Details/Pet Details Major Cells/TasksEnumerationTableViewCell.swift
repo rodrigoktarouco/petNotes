@@ -8,6 +8,8 @@
 import UIKit
 
 class TasksEnumerationTableViewCell: UITableViewCell {
+    var taskNames: [String]?
+    @IBOutlet weak var littleTableView: UITableView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -16,8 +18,17 @@ class TasksEnumerationTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
+
+}
+extension TasksEnumerationTableViewCell: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+
 
 }

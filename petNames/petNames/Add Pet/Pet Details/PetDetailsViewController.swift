@@ -12,20 +12,20 @@ class PetDetailsViewController: UIViewController {
     @IBOutlet weak var bigTableView: UITableView!
 
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavController()
         bigTableView.dataSource = self
-
     }
     func setUpNavController() {
         self.title = "Details"
         self.navigationController?.isNavigationBarHidden = false
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit",
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "cancelButton".localized().capitalized,
                                                                 style: .plain,
                                                                 target: self,
                                                                 action: #selector(editButtonAction))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Confirm",
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "edit".localized().capitalized,
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: #selector(confirmButtonAction))
@@ -42,26 +42,33 @@ class PetDetailsViewController: UIViewController {
 }
 extension PetDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-           var cell =  bigTableView.dequeueReusableCell(withIdentifier: "TopInfosTableViewCell")
+            let cell =  bigTableView.dequeueReusableCell(withIdentifier: "TopInfosTableViewCell")
             guard let cell = cell as? TopInfosTableViewCell else {
                 return  UITableViewCell()
             }
-            cell.petImage.image = UIImage(named: "pitty")
-            cell.name.text = "Pitty"
-            cell.nameIsNext.text = "nome:"
-            
+            cell.petImage.image = petData?.petImage
+            cell.name.text = petData?.name.capitalized
+            cell.category.text = petData?.petClassification?.capitalized
+            return cell
+        } else if indexPath.row == 1 {
+            let cell =  bigTableView.dequeueReusableCell(withIdentifier: "TasksEnumerationTableViewCell")
+            guard let cell = cell as? TasksEnumerationTableViewCell else {
+
+                
+                return  UITableViewCell()
+            }
+
             return cell
         }
+//        else if indexPath.row == 2 {}
+
+
         return  UITableViewCell()
     }
 
-
-
-
 }
-
