@@ -10,6 +10,7 @@ import UIKit
 class TaskScreenTableViewCell: UITableViewCell {
 
     @IBOutlet var taskScreenTitleLabel: UILabel!
+    @IBOutlet weak var taskIconImage: UIImageView!
 
 //    var tasks: [String] = ["Water", "Food", "Wash", "Playtime", "Medicine", "Groom", "Vet"]
 

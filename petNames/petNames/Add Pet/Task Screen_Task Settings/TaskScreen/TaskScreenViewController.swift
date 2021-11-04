@@ -10,7 +10,9 @@ import UIKit
 class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var taskTableView: UITableView!
-    
+
+    @IBOutlet var tasksNavigationinItem: UINavigationItem!
+
     var tasks: [String] = ["Water", "Food", "Wash", "Playtime", "Walk", "Medicine", "Groom", "Vet"]
     
     override func viewDidLoad() {
@@ -19,7 +21,9 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         
         taskTableView.delegate = self
         taskTableView.dataSource = self
-        // Do any additional setup after loading the view.
+
+        tasksNavigationinItem.title = "taskTitleLabel".localized()
+//        tasksNavigationinItem.backButtonTitle = "backButton".localized()
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -65,8 +69,11 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             guard let cell = (taskTableView.dequeueReusableCell(withIdentifier: "taskScreen-cell", for: indexPath)
                               as? TaskScreenTableViewCell) else {
                 return TaskScreenTableViewCell() }
+
+            let iconImage = TasksDesign.shared.pickTaskIcon(task: tasks[indexPath.row])
             
             cell.taskScreenTitleLabel.text = tasks[indexPath.row].localized()
+            cell.taskIconImage.image = UIImage(named: iconImage)
 
             return cell
         } else {
@@ -75,6 +82,7 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
                 return TaskScreenTableViewCell() }
 
             cell.taskScreenTitleLabel.text = "Custom".localized()
+            cell.taskIconImage.image = UIImage(named: "custom-task-icon")
 
             return cell
         }
