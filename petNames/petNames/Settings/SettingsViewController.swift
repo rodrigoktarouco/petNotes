@@ -9,11 +9,9 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView: UITableView!
-    @IBOutlet weak var appSettingBackgroundImage: UIImageView!
     @IBOutlet weak var settingsTitleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpBackground()
         settingsTableView.dataSource = self
         settingsTitleLabel.text = "settingsTitleLabel".localized()
 
@@ -42,15 +40,5 @@ extension SettingsViewController: UITableViewDataSource {
 
      let cell = UITableViewCell()
         return cell
-    }
-}
-
-// MARK: Settings background
-extension SettingsViewController {
-    func setUpBackground() {
-        let backGroundAssetNames = ["background1", "background2", "background3"]
-        appSettingBackgroundImage.image = UIImage(named: backGroundAssetNames.randomElement() ?? "background1") ?? UIImage(named: "")
-        appSettingBackgroundImage.alpha = 0.4
-
     }
 }
