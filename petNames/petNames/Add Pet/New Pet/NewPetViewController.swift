@@ -24,6 +24,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Background.shared.assignBackground(view: self.view)
         
         // Localizable
         let newPet = "newPetTitle".localized()

@@ -15,7 +15,7 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Background.shared.assignBackground(view: self.view)
         
         taskTableView.delegate = self
         taskTableView.dataSource = self
