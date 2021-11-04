@@ -13,6 +13,7 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Background.shared.assignBackground(view: self.view)
 
         taskSettingsTableView.delegate = self
         taskSettingsTableView.dataSource = self
@@ -110,14 +111,10 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
             
             cell.notesTextView.text = "Notes"
             cell.notesTextView.textColor = UIColor.lightGray
-            
-            
+
             return cell
         }
     }
-
-    
-    
     /*
     // MARK: - Navigation
 
