@@ -14,8 +14,9 @@ class TasksEnumerationTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        littleTableView.dataSource = self
+        littleTableView.layer.cornerRadius = 12
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -23,12 +24,21 @@ class TasksEnumerationTableViewCell: UITableViewCell {
 }
 extension TasksEnumerationTableViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+
+        return taskNames?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+
+       let cell =  littleTableView.dequeueReusableCell(withIdentifier: "SmallTableViewCell")
+        guard let cell = cell as? SmallTableViewCell else {
+            return UITableViewCell()
+        }
+        print("jnjkNJKASNJ")
+        print(taskNames?[indexPath.row])
+        cell.taskName.text = taskNames?[indexPath.row] ?? ""
+        cell.taskImage.image = TasksDesign.shared.getTaskDesignProperties(taskNames?[indexPath.row] ?? "").taskImage
+        
+        return cell
     }
-
-
 }

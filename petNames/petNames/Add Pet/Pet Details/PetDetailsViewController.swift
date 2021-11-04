@@ -16,6 +16,7 @@ class PetDetailsViewController: UIViewController {
         setUpNavController()
         bigTableView.dataSource = self
         setUpBackground()
+
     }
     func setUpBackground() {
         let backGroundAssetNames = ["background1", "background2", "background3"]
@@ -63,11 +64,10 @@ extension PetDetailsViewController: UITableViewDataSource {
         } else if indexPath.row == 1 {
             let cell =  bigTableView.dequeueReusableCell(withIdentifier: "TasksEnumerationTableViewCell")
             guard let cell = cell as? TasksEnumerationTableViewCell else {
-
-                
                 return  UITableViewCell()
             }
-
+            cell.taskNames = petData?.petTaskNames
+            cell.littleTableView.reloadData()
             return cell
         }
 //        else if indexPath.row == 2 {}
