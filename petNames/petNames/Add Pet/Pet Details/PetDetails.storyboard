@@ -16,9 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wVI-Gj-DyW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gTN-bd-boQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wVI-Gj-DyW">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopInfosTableViewCell" rowHeight="241" id="dcR-nO-Ni3" customClass="TopInfosTableViewCell" customModule="petNames" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="241"/>
@@ -68,7 +71,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="jHy-wv-9Fa" firstAttribute="leading" secondItem="0Oe-kv-xm4" secondAttribute="trailing" constant="20" id="1IW-4d-bFL"/>
                                                         <constraint firstItem="YR3-K1-1zz" firstAttribute="leading" secondItem="0Oe-kv-xm4" secondAttribute="trailing" constant="20" id="Avt-dD-Qmt"/>
@@ -93,6 +96,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="fdW-4O-IRq" secondAttribute="bottom" id="z6T-ms-k2W"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="category" destination="VrB-4e-lnl" id="MnL-Cx-UAE"/>
                                             <outlet property="categoryIsNext" destination="Z4i-Rr-njK" id="Gg9-Kh-dMk"/>
@@ -131,6 +135,7 @@
                                                 <constraint firstItem="EgP-Ut-4VE" firstAttribute="leading" secondItem="Lsn-Os-TVF" secondAttribute="leading" id="vh0-As-WxA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="littleTableView" destination="EgP-Ut-4VE" id="Ovg-cE-Cp8"/>
                                         </connections>
@@ -144,11 +149,16 @@
                             <constraint firstItem="ges-sx-YJ0" firstAttribute="bottom" secondItem="wVI-Gj-DyW" secondAttribute="bottom" id="CDf-0y-7PS"/>
                             <constraint firstItem="wVI-Gj-DyW" firstAttribute="top" secondItem="ges-sx-YJ0" secondAttribute="top" id="GbX-hd-4as"/>
                             <constraint firstItem="ges-sx-YJ0" firstAttribute="trailing" secondItem="wVI-Gj-DyW" secondAttribute="trailing" id="Mue-F5-HD0"/>
+                            <constraint firstAttribute="bottom" secondItem="gTN-bd-boQ" secondAttribute="bottom" id="UC6-g8-bZH"/>
+                            <constraint firstItem="ges-sx-YJ0" firstAttribute="trailing" secondItem="gTN-bd-boQ" secondAttribute="trailing" id="Wb6-xh-pw5"/>
+                            <constraint firstItem="gTN-bd-boQ" firstAttribute="leading" secondItem="ges-sx-YJ0" secondAttribute="leading" id="fxJ-uN-y5M"/>
                             <constraint firstItem="wVI-Gj-DyW" firstAttribute="leading" secondItem="ges-sx-YJ0" secondAttribute="leading" id="hvI-oQ-tdV"/>
+                            <constraint firstItem="gTN-bd-boQ" firstAttribute="top" secondItem="ges-sx-YJ0" secondAttribute="top" id="saO-xu-g99"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="BMD-7Z-tNu"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="gTN-bd-boQ" id="Dao-KR-29S"/>
                         <outlet property="bigTableView" destination="wVI-Gj-DyW" id="brT-fB-Aj1"/>
                     </connections>
                 </viewController>

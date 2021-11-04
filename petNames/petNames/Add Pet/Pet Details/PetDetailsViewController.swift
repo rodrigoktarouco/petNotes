@@ -9,14 +9,19 @@ import UIKit
 
 class PetDetailsViewController: UIViewController {
     var petData: PetsInfosForPetDetails?
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var bigTableView: UITableView!
-
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavController()
         bigTableView.dataSource = self
+        setUpBackground()
+    }
+    func setUpBackground() {
+        let backGroundAssetNames = ["background1", "background2", "background3"]
+        backgroundImageView.image = UIImage(named: backGroundAssetNames.randomElement() ?? "background1") ?? UIImage(named: "")
+        backgroundImageView.alpha = 0.4
+        bigTableView.backgroundColor = .clear
     }
     func setUpNavController() {
         self.title = "Details"
