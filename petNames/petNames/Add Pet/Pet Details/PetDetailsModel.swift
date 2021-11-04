@@ -6,11 +6,15 @@
 //
 
 import Foundation
+import UIKit
 
 class PetDetailsModel {
 
 }
 struct PetsInfosForPetDetails {
+    var name: String
+    var petImage: UIImage?
+    var petClassification: String?
 
 }
 
