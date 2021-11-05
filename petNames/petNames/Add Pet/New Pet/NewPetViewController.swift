@@ -13,7 +13,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var petTableView: UITableView!
-
+    
     @IBAction func pickImageButton(_ sender: UIButton) {
         // Setting image
         imageManager.requestPermissions()
