@@ -9,19 +9,14 @@ import UIKit
 
 class ContactTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var instagramImage: UIImageView!
-    @IBOutlet weak var contactLabel: UILabel!
-    @IBOutlet weak var mailLabel: UIView!
-    @IBOutlet weak var instagramLabel: UILabel!
-    @IBOutlet weak var insideView: UIView!
+    @IBOutlet weak var contactImageView: UIImageView!
+    @IBOutlet weak var contactTitleLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         self.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
-        instagramImage.image = UIImage(named: "instagramSymbol")
-        insideView.layer.cornerRadius = 12
-        contactLabel.text = "contact".localized()
-        contactLabel.font = UIFont(name: "SFProRounded-Semibold", size: 20)
+        contactTitleLabel.text = "contact".localized()
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
