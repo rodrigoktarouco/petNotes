@@ -35,6 +35,33 @@ class TasksDesign {
         }
         return tasksDesignPropertiesArray.last ?? TasksDesignProperties(name: "custom", taskImage: UIImage(named: "custom"), color: UIColor(red: 0.682, green: 0.682, blue: 0.698, alpha: 1)) // the last is the custom TasksDesignProperties
     }
+
+    func pickTaskIcon(task: String) -> String {
+        var iconAsset: String
+
+        switch task {
+        case "Water":
+            iconAsset = "water-task-icon"
+        case "Food":
+            iconAsset = "food-task-icon"
+        case "Wash":
+            iconAsset = "wash-task-icon"
+        case "Playtime":
+            iconAsset = "playtime-task-icon"
+        case "Walk":
+            iconAsset = "walk-task-icon"
+        case "Medicine":
+            iconAsset = "medicine-task-icon"
+        case "Groom":
+            iconAsset = "groom-task-icon"
+        case "Vet":
+            iconAsset = "vet-task-icon"
+        default:
+            iconAsset = "xmark"
+        }
+
+        return iconAsset
+    }
 }
 
 struct TasksDesignProperties {
