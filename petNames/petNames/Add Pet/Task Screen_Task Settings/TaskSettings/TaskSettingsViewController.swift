@@ -13,10 +13,13 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Background.shared.assignBackground(view: self.view)
 
         taskSettingsTableView.delegate = self
         taskSettingsTableView.dataSource = self
-        // Do any additional setup after loading the view.
+
+        // Register the custom header view.
+        taskSettingsTableView.register(MyCustomHeader.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -42,12 +45,15 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "sectionHeader")
+                as? MyCustomHeader else {
+                    return MyCustomHeader() }
+
         var sectionLabel: String
         let sectionInt: Int = section
-        
+
         switch sectionInt {
         case 0:
             sectionLabel = "Warning".localized()
@@ -56,8 +62,28 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
         default:
             sectionLabel = "Notes".localized()
         }
-        
-        return "\(sectionLabel)"
+
+        let boldString = NSAttributedString(string: sectionLabel)
+        view.title.attributedText = NSMutableAttributedString()
+            .bold(boldString.string)
+
+        return view
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        var headerHeight: CGFloat
+        let sectionInt: Int = section
+
+        switch sectionInt {
+        case 0:
+            headerHeight = 38
+        case 1:
+            headerHeight = 0
+        default:
+            headerHeight = 38
+        }
+
+        return headerHeight
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,7 +109,7 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
                                   as? AddWarningTableViewCell) else {
                     return AddWarningTableViewCell() }
                 
-                cell.addWarningLabel.text = "Add new warning".localized()
+                cell.addWarningLabel.text = "addNewWarning".localized()
                 
                 return cell
                 
@@ -100,6 +126,9 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
             guard let cell = (taskSettingsTableView.dequeueReusableCell(withIdentifier: "repeat-cell", for: indexPath)
                               as? repeatTableViewCell) else {
                 return repeatTableViewCell() }
+
+            cell.repeatLabel.text = "repeat".localized()
+//            cell.repeatSecondaryLabel.text = "frequency".localized()
             
             return cell
             
@@ -108,16 +137,12 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
                               as? notesTableViewCell) else {
                 return notesTableViewCell() }
             
-            cell.notesTextView.text = "Notes"
+            cell.notesTextView.text = "notes".localized()
             cell.notesTextView.textColor = UIColor.lightGray
-            
-            
+
             return cell
         }
     }
-
-    
-    
     /*
     // MARK: - Navigation
 
