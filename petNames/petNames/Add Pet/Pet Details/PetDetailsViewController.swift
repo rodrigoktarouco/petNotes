@@ -42,19 +42,19 @@ class PetDetailsViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "cancelButton".localized().capitalized,
                                                                 style: .plain,
                                                                 target: self,
-                                                                action: #selector(editButtonAction))
+                                                                action: #selector(cancelButtonAction))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "edit".localized().capitalized,
                                                                  style: .plain,
                                                                  target: self,
-                                                                 action: #selector(confirmButtonAction))
+                                                                 action: #selector(editButtonAction))
+    }
+
+    @objc func cancelButtonAction() {
+        print("cancelButton pressed")
     }
 
     @objc func editButtonAction() {
-        print("Edit pressed")
-    }
-
-    @objc func confirmButtonAction() {
-        print("Confirm pressed")
+        print("edit pressed")
         self.navigationController?.dismiss(animated: true, completion: nil)
 
     }
@@ -90,6 +90,10 @@ extension PetDetailsViewController: UITableViewDataSource {
             }
             cell.taskImage.image = TasksDesign.shared.getTaskDesignProperties(petData?.petTaskNames?[indexPath.row] ?? "").taskImage
             cell.taskName.text = petData?.petTaskNames?[indexPath.row].capitalized
+            let countTasks: Int = petData?.petTaskNames?.count ?? 0
+            if indexPath.row == countTasks - 1 {
+                cell.separatorView.removeFromSuperview()
+            }
             return cell
         }
         return  UITableViewCell()

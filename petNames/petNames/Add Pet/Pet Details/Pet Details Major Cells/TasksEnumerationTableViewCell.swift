@@ -9,11 +9,13 @@ import UIKit
 
 class TasksEnumerationTableViewCell: UITableViewCell {
     @IBOutlet weak var taskName: UILabel!
+    @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var viewHeight: NSLayoutConstraint!
     @IBOutlet weak var taskImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         fontStyle()
+        viewHeight.constant = 0.4
     }
     func fontStyle() {
         taskName.font = UIFont(name: "SFProRounded-Regular", size: 17)
