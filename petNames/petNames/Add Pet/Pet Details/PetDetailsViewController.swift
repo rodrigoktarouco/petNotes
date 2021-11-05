@@ -95,9 +95,4 @@ extension PetDetailsViewController: UITableViewDataSource {
 
 extension PetDetailsViewController: UITableViewDelegate {
 
-
-
-
-
-
 }
