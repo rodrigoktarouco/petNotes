@@ -11,17 +11,22 @@
         <array key="SF-Pro-Rounded-Bold.otf">
             <string>SFProRounded-Bold</string>
         </array>
+        <array key="SF-Pro-Rounded-Regular.otf">
+            <string>SFProRounded-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Settings View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Y6W-OH-hqX" customClass="SettingsViewController" customModule="petNames" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="meC-G2-IKf">
+                                <rect key="frame" x="0.0" y="131" width="414" height="682"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zy3-xY-AMS">
                                 <rect key="frame" x="0.0" y="88" width="414" height="43"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="36"/>
@@ -30,7 +35,6 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h2W-b5-frm">
                                 <rect key="frame" x="0.0" y="131" width="414" height="765"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Adjustments" id="Hsa-1h-f8E" customClass="AdjustmentsTableViewCell" customModule="petNames" customModuleProvider="target">
                                         <rect key="frame" x="20" y="49.5" width="374" height="51.5"/>
@@ -40,8 +44,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXY-73-U0i">
-                                                    <rect key="frame" x="13" y="16" width="286" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="13" y="16" width="286" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -73,8 +77,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyT-Id-oR8">
-                                                    <rect key="frame" x="46.5" y="19.5" width="280.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="46.5" y="19.5" width="280.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -112,15 +116,15 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DevelopedBy" id="Uns-HH-rbL" customClass="DevelopedByTableViewCell" customModule="petNames" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="158.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="20" y="158.5" width="374" height="39.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uns-HH-rbL" id="2V9-QY-i7i">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKh-ad-v9y">
-                                                    <rect key="frame" x="13" y="11" width="348" height="21.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="13" y="11" width="348" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -145,25 +149,30 @@
                             <constraint firstItem="zy3-xY-AMS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="9bw-rf-KQG"/>
                             <constraint firstItem="h2W-b5-frm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="IRj-JS-IQt"/>
                             <constraint firstAttribute="bottom" secondItem="h2W-b5-frm" secondAttribute="bottom" id="Lxj-x6-jCq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="meC-G2-IKf" secondAttribute="trailing" id="WFS-sQ-JPv"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="meC-G2-IKf" secondAttribute="bottom" id="eph-Dd-nRA"/>
                             <constraint firstItem="zy3-xY-AMS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="h5w-hW-0y3"/>
                             <constraint firstItem="h2W-b5-frm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jWe-SD-1px"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zy3-xY-AMS" secondAttribute="trailing" id="kK7-jV-Gpt"/>
+                            <constraint firstItem="meC-G2-IKf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sLx-RI-lu9"/>
                             <constraint firstItem="h2W-b5-frm" firstAttribute="top" secondItem="zy3-xY-AMS" secondAttribute="bottom" id="sOi-kz-Qc4"/>
+                            <constraint firstItem="meC-G2-IKf" firstAttribute="top" secondItem="zy3-xY-AMS" secondAttribute="bottom" id="ubO-cF-doz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jc7-nL-2b8"/>
                     <connections>
+                        <outlet property="appSettingsBackgroundImage" destination="meC-G2-IKf" id="akn-sm-fFw"/>
                         <outlet property="settingsTableView" destination="h2W-b5-frm" id="VuM-eo-CGw"/>
                         <outlet property="settingsTitleLabel" destination="zy3-xY-AMS" id="GXv-rc-WNG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="546" y="-34"/>
         </scene>
         <!--Settings-->
         <scene sceneID="8I6-Ys-zb6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OQS-IK-Mtd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lr1-Rd-pPa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" selectedImage="gearshape" id="4Ut-BI-fMB"/>
                     <toolbarItems/>
@@ -177,6 +186,7 @@
                         <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Itl-7P-ef1"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQS-IK-Mtd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-368.11594202898556" y="-34.151785714285715"/>
         </scene>
@@ -186,9 +196,6 @@
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

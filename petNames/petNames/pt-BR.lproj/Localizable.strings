@@ -53,10 +53,10 @@
 
 //MARK: -AppSettings
 "settingsTitleLabel" = "Configurações";
-"contact" = "Contato";
-"AppDevelopedBy" = "Aplicativo desenvolvido por";
-"generalNotifications" = "Notificações gerais";
+"Contacts" = "Contato";
+"Developed By" = "Aplicativo desenvolvido por";
+"General notifications" = "Notificações gerais";
 "recommendations" = "Recomendações";
 "soundEfects" = "Efeitos sonoros";
 "darkMode" = "Modo escuro";
-"adjustmendsTitle" = "Ajustes";
+"Adjustments" = "Ajustes";

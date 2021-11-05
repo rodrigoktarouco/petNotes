@@ -10,7 +10,8 @@ import UIKit
 class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var settingsTitleLabel: UILabel!
-
+    @IBOutlet weak var appSettingsBackgroundImage: UIImageView!
+    
     let sectionNames: [String] = ["Adjustments", "Contacts", "Developed By"]
     let switchNames: [String] = ["General notifications", "Sound effects", "Dark mode"]
     let contactTypes: [(UIImage?, String)] = [(UIImage(systemName: "envelope"), "Email"), (UIImage(named: "instagramSymbol"), "Instagram")]
@@ -21,6 +22,7 @@ class SettingsViewController: UIViewController {
         settingsTableView.dataSource = self
         settingsTitleLabel.text = "settingsTitleLabel".localized()
         settingsTableView.delegate = self
+        setUpBackground()
 
         // Do any additional setup after loading the view.
     }
@@ -61,14 +63,12 @@ extension SettingsViewController: UITableViewDataSource {
      let cell = UITableViewCell()
         return cell
     }
-
-
-
 }
 
 extension SettingsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+
         return 50
     }
 
@@ -77,12 +77,21 @@ extension SettingsViewController: UITableViewDelegate {
 
             let label = UILabel()
             label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
-            label.text = sectionNames[section]
-            label.font = .systemFont(ofSize: 16)
+        label.text = sectionNames[section].localized()
+            label.font = .systemFont(ofSize: 20)
             label.textColor = .black
 
             headerView.addSubview(label)
 
             return headerView
         }
+}
+// MARK: Setting BackgroundImage
+
+extension SettingsViewController {
+    func setUpBackground() {
+        let backGroundAssetName = "background1"
+        appSettingsBackgroundImage.image = UIImage(named: backGroundAssetName)
+        appSettingsBackgroundImage.alpha = 0.4
+    }
 }
