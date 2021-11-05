@@ -343,7 +343,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="DoX-IB-OXx">
             <objects>
-                <tabBarController id="gNA-yG-e5O" sceneMemberID="viewController">
+                <tabBarController extendedLayoutIncludesOpaqueBars="YES" id="gNA-yG-e5O" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TfG-79-Plx" customClass="AppUITabBar" customModule="petNames" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -353,29 +353,12 @@
                         <segue destination="Epu-X9-Pj3" kind="relationship" relationship="viewControllers" id="Jgk-71-f8A"/>
                         <segue destination="sLU-67-5Br" kind="relationship" relationship="viewControllers" id="Ojp-sR-27s"/>
                         <segue destination="ZF8-pA-q8R" kind="relationship" relationship="viewControllers" id="jgq-po-GF7"/>
-                        <segue destination="Per-wX-ReN" kind="relationship" relationship="viewControllers" id="UU2-zB-fwQ"/>
+                        <segue destination="epR-SE-vpu" kind="relationship" relationship="viewControllers" id="jVK-IT-YZf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jZ-jg-UcP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2119" y="64"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="vQZ-ug-39H">
-            <objects>
-                <navigationController id="Per-wX-ReN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="WNu-M0-CkU"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P4h-uM-4CO">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="epR-SE-vpu" kind="relationship" relationship="rootViewController" id="ruq-2I-2Wr"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C2L-ws-TZB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1316" y="795"/>
         </scene>
         <!--Task-->
         <scene sceneID="027-wm-uRe">
@@ -398,11 +381,12 @@
         <scene sceneID="U1k-DU-tzN">
             <objects>
                 <viewControllerPlaceholder storyboardName="Settings" id="epR-SE-vpu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" selectedImage="gearshape" catalog="system" id="X6Y-XR-hlm"/>
                     <navigationItem key="navigationItem" id="PqQ-hh-6Ch"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ymj-R2-QpU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-749" y="1310"/>
+            <point key="canvasLocation" x="-1367" y="479"/>
         </scene>
         <!--Pets-->
         <scene sceneID="6Lu-8c-h43">
