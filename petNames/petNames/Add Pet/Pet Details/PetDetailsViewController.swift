@@ -16,9 +16,17 @@ class PetDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavController()
+        setUpBackground()
+        setUpTableView()
+    }
+
+    func setUpTableView() {
         bigTableView.dataSource = self
         bigTableView.delegate = self
-        setUpBackground()
+        bigTableView.sectionHeaderHeight = 0
+        bigTableView.sectionFooterHeight = 0
+        bigTableView.contentInsetAdjustmentBehavior = .never
+
     }
 
     func setUpBackground() {
@@ -94,5 +102,7 @@ extension PetDetailsViewController: UITableViewDataSource {
 }
 
 extension PetDetailsViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.1
+    }
 }
