@@ -15,6 +15,6 @@ struct PetsInfosForPetDetails {
     var name: String
     var petImage: UIImage?
     var petClassification: String?
-
+    var petTaskNames: [String]?
 }
 

@@ -14,6 +14,7 @@
 "myPets" = "Meus pets";
 //MARK: -TaskScreen
 "taskTitleLabel" = "Tarefas";
+"backButton" = "Voltar";
 "Water" = "Água";
 "Food" = "Alimentação";
 "Wash" = "Banho";

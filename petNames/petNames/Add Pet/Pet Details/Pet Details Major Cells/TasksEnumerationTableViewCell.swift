@@ -8,27 +8,19 @@
 import UIKit
 
 class TasksEnumerationTableViewCell: UITableViewCell {
-    var taskNames: [String]?
-    @IBOutlet weak var littleTableView: UITableView!
-
+    @IBOutlet weak var taskName: UILabel!
+    @IBOutlet weak var taskImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        fontStyle()
     }
-
+    func fontStyle() {
+        taskName.font = UIFont(name: "SFProRounded-Regular", size: 17)
+        taskName.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
-}
-extension TasksEnumerationTableViewCell: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-
-
 }
