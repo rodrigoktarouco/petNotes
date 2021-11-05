@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,29 +28,37 @@
                                 <rect key="frame" x="0.0" y="90" width="414" height="806"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskScreen-cell" textLabel="Snh-n1-yrT" imageView="Lhi-JK-5Mf" style="IBUITableViewCellStyleDefault" id="yD7-Ok-qro" customClass="TaskScreenTableViewCell" customModule="petNames" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskScreen-cell" id="yD7-Ok-qro" customClass="TaskScreenTableViewCell" customModule="petNames" customModuleProvider="target">
                                         <rect key="frame" x="20" y="49.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yD7-Ok-qro" id="aTS-Jg-748">
                                             <rect key="frame" x="0.0" y="0.0" width="344.5" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Snh-n1-yrT">
-                                                    <rect key="frame" x="56" y="0.0" width="280.5" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Z9-yh-HBE">
+                                                    <rect key="frame" x="20" y="9.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="b6j-L1-o9W"/>
+                                                        <constraint firstAttribute="width" constant="25" id="st4-6F-wOy"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERT-0X-tp8">
+                                                    <rect key="frame" x="57" y="11.5" width="35" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lhi-JK-5Mf">
-                                                    <rect key="frame" x="19.5" y="12" width="21.5" height="19.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <imageReference key="image" image="pencil.slash" catalog="system" symbolScale="large"/>
-                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4Z9-yh-HBE" firstAttribute="leading" secondItem="aTS-Jg-748" secondAttribute="leadingMargin" id="NFX-Xf-Ihb"/>
+                                                <constraint firstItem="ERT-0X-tp8" firstAttribute="centerY" secondItem="aTS-Jg-748" secondAttribute="centerY" id="Tde-Xg-ikR"/>
+                                                <constraint firstItem="4Z9-yh-HBE" firstAttribute="centerY" secondItem="aTS-Jg-748" secondAttribute="centerY" id="ahW-Xq-amn"/>
+                                                <constraint firstItem="ERT-0X-tp8" firstAttribute="leading" secondItem="4Z9-yh-HBE" secondAttribute="trailing" constant="12" id="vFH-fX-HW1"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="taskScreenTitleLabel" destination="Snh-n1-yrT" id="jlO-KF-l95"/>
+                                            <outlet property="taskIconImage" destination="4Z9-yh-HBE" id="O9a-0t-0pb"/>
+                                            <outlet property="taskScreenTitleLabel" destination="ERT-0X-tp8" id="xNC-hh-ynF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -77,6 +84,7 @@
                     <navigationItem key="navigationItem" title="Tasks" id="efY-a4-2RQ"/>
                     <connections>
                         <outlet property="taskTableView" destination="63B-qc-GpX" id="4Uj-uo-gf0"/>
+                        <outlet property="tasksNavigationinItem" destination="efY-a4-2RQ" id="eP8-0d-rgY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qe-q2-4WO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -92,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Our-uM-egQ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="806"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addWarning-cell" id="R9L-eL-dbB" customClass="AddWarningTableViewCell" customModule="petNames" customModuleProvider="target">
@@ -224,7 +232,7 @@
                             <constraint firstAttribute="bottom" secondItem="Our-uM-egQ" secondAttribute="bottom" id="7in-kh-g34"/>
                             <constraint firstItem="Our-uM-egQ" firstAttribute="trailing" secondItem="C9z-KT-E0e" secondAttribute="trailing" id="P9C-8K-nfG"/>
                             <constraint firstItem="Our-uM-egQ" firstAttribute="leading" secondItem="C9z-KT-E0e" secondAttribute="leading" id="U0S-m6-CMk"/>
-                            <constraint firstItem="Our-uM-egQ" firstAttribute="top" secondItem="tBf-8b-wo7" secondAttribute="top" id="bAf-8O-VeI"/>
+                            <constraint firstItem="Our-uM-egQ" firstAttribute="top" secondItem="tBf-8b-wo7" secondAttribute="top" constant="90" id="bAf-8O-VeI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Task X" id="eUU-Ho-tMv"/>
@@ -239,7 +247,6 @@
     </scenes>
     <resources>
         <image name="alarm" catalog="system" width="124" height="128"/>
-        <image name="pencil.slash" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
