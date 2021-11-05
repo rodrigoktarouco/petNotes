@@ -91,7 +91,7 @@ static let sharedFeedModel = FeedModel()
     }
     func getPetsInfosForPetDetails( forRowAt: Int) -> PetsInfosForPetDetails {
 
-        return PetsInfosForPetDetails(name: "pitty", petImage: UIImage(named: "pitty"),petClassification: "Cachorro")
+        return PetsInfosForPetDetails(name: "pitty", petImage: UIImage(named: "pitty"),petClassification: "Cachorro",petTaskNames: ["water","food","Trick Playing"])
 
     }
 }

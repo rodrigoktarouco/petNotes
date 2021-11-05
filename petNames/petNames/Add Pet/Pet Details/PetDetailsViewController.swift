@@ -8,21 +8,26 @@
 import UIKit
 
 class PetDetailsViewController: UIViewController {
+
     var petData: PetsInfosForPetDetails?
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var bigTableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavController()
         bigTableView.dataSource = self
+        bigTableView.delegate = self
         setUpBackground()
     }
+
     func setUpBackground() {
         let backGroundAssetNames = ["background1", "background2", "background3"]
         backgroundImageView.image = UIImage(named: backGroundAssetNames.randomElement() ?? "background1") ?? UIImage(named: "")
         backgroundImageView.alpha = 0.4
         bigTableView.backgroundColor = .clear
     }
+
     func setUpNavController() {
         self.title = "Details"
         self.navigationController?.isNavigationBarHidden = false
@@ -35,6 +40,7 @@ class PetDetailsViewController: UIViewController {
                                                                  target: self,
                                                                  action: #selector(confirmButtonAction))
     }
+
     @objc func editButtonAction() {
         print("Edit pressed")
     }
@@ -45,13 +51,22 @@ class PetDetailsViewController: UIViewController {
 
     }
 }
+
 extension PetDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return petData?.petTaskNames?.count ?? 0
+        default:
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+
+        if indexPath.section == 0 {
             let cell =  bigTableView.dequeueReusableCell(withIdentifier: "TopInfosTableViewCell")
             guard let cell = cell as? TopInfosTableViewCell else {
                 return  UITableViewCell()
@@ -60,20 +75,24 @@ extension PetDetailsViewController: UITableViewDataSource {
             cell.name.text = petData?.name.capitalized
             cell.category.text = petData?.petClassification?.capitalized
             return cell
-        } else if indexPath.row == 1 {
+        } else if indexPath.section == 1 {
             let cell =  bigTableView.dequeueReusableCell(withIdentifier: "TasksEnumerationTableViewCell")
             guard let cell = cell as? TasksEnumerationTableViewCell else {
-
-                
                 return  UITableViewCell()
             }
-
+            cell.taskImage.image = TasksDesign.shared.getTaskDesignProperties(petData?.petTaskNames?[indexPath.row] ?? "").taskImage
+            cell.taskName.text = petData?.petTaskNames?[indexPath.row].capitalized
             return cell
         }
-//        else if indexPath.row == 2 {}
-
-
         return  UITableViewCell()
     }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+
+}
+
+extension PetDetailsViewController: UITableViewDelegate {
 
 }

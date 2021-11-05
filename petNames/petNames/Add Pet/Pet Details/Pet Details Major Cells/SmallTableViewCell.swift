@@ -9,9 +9,12 @@ import UIKit
 
 class SmallTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var taskName: UILabel!
+    @IBOutlet weak var taskImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        taskName.font = UIFont(name: "SFProRounded-Regular", size: 17)
+        taskName.text = taskName.text?.capitalized
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
