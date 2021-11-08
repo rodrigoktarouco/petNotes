@@ -76,16 +76,42 @@ class PersistanceManager {
         completion(nil)
     }
 
+    func getPetImage(_ pet: Pet, completion: @escaping(UIImage?) -> Void) {
+
+        let imageName = pet.image ?? "\(UUID().uuidString).jpg"
+        var url = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: .userDomainMask)[0]
+        url.appendPathComponent("\(imageName)")
+        do {
+            let imageData = try Data(contentsOf: url)
+            let image = UIImage(data: imageData)
+            completion(image)
+        } catch {
+            print(error)
+            completion(nil)
+        }
+
+    }
+
     func savePet(pet: Pet, petImage: UIImage? , completion: @escaping(Error?) -> Void) {
         pet.user = currentUser
         let imageName = pet.image ?? "\(UUID().uuidString).jpg"
 
+        var url = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: .userDomainMask)[0]
+        url.appendPathComponent("\(imageName)")
+
         if let petImage = petImage {
-            var url = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: .userDomainMask)[0]
-            url.appendPathComponent("petImages/\(imageName)")
             let data = petImage.jpegData(compressionQuality: 1)
             do {
                 try data?.write(to: url)
+                pet.image = imageName
+            } catch {
+                print(error)
+            }
+
+        } else {
+            do {
+                try FileManager.default.removeItem(at: url)
+                pet.image = nil
             } catch {
                 print(error)
             }

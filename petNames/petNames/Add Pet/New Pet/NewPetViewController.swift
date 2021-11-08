@@ -49,7 +49,9 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Register the custom header view.
         petTableView.register(MyCustomHeader.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
+
         
+
     }
     
     // Setting the TableView
@@ -188,6 +190,24 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //        let viewC = storyboard.instantiateViewController(withIdentifier: "petDetails") as UIViewController
         //        present(viewC, animated: true, completion: nil)
         //        show(viewC, sender: nil)
+        let pet = Pet()
+        pet.name = "tibetiamo"
+        PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
+            PersistanceManager.shared.listPets { result in
+                switch result {
+                case .success(let pets):
+                    for pet in pets where pet.name == "tibetiamo" {
+                        PersistanceManager.shared.getPetImage(pet) { image in
+                            print(pet.name, image)
+                        }
+                    }
+                default:
+                    return
+                }
+            }
+        }
+
+
     }
     
 }

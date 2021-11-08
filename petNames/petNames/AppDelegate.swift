@@ -13,6 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         PersistanceManager.shared.setUp()
+        PersistanceManager.shared.loadUser { _ in
+            
+        }
         //        let user = User.init(context: persistentContainer.viewContext)
 //        user.name = "Heitor"
 //        user.id = "1"

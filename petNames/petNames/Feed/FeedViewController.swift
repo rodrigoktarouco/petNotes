@@ -73,7 +73,7 @@ class FeedViewController: UIViewController {
 
     func setUpLabelsTexts() {
 
-        welcomeUserLabel.text = "welcomeUser".localized().capitalized + " " + FeedModel.sharedFeedModel.getUsersName() + "!"
+        welcomeUserLabel.text = "welcomeUser".localized().capitalized + " " + FeedModel.sharedFeedModel.getUsersName() + "!" + " 👋🏼"
         dayLabel.text = "today".localized().capitalized
         let tasks = "tasks".localized().lowercased()
         doneTasksLabel.text = FeedModel.sharedFeedModel.getFractionOfNumberOfTasksDone() + " " + tasks
