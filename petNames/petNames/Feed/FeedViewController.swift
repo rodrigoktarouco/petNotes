@@ -55,7 +55,7 @@ class FeedViewController: UIViewController {
         setUpBackground()
         setUpDoneTasksImage()
         constraintAdjustments()
-
+        //self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 0.5)
         logoImage.image = UIImage(named: "logo")
     }
 

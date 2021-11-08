@@ -15,9 +15,11 @@ class AppUITabBar: UITabBar {
     override func draw(_ rect: CGRect) {
         // Drawing code
     }
+
     */
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 0.5)
+        self.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 1)
     }
+
 }

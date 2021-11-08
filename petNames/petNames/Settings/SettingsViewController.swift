@@ -23,8 +23,6 @@ class SettingsViewController: UIViewController {
         settingsTitleLabel.text = "settingsTitleLabel".localized()
         settingsTableView.delegate = self
         Background.shared.assignBackground(view: self.view)
-        
-
         // Do any additional setup after loading the view.
     }
 }
