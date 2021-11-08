@@ -6,11 +6,31 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AdjustmentsTableViewCell: UITableViewCell {
     @IBOutlet weak var generalNotificationsLabel: UILabel!
+    @IBOutlet weak var generalNotificationsSwitch: UISwitch!
+
+    private let localNotificationService = LocalNotificationService.shared
 
     @IBAction func generalNotificationsSwitch(_ sender: UISwitch) {
+        if sender.isOn {
+            // Ask for user enable notifications on Settings
+            LocalNotificationService.shared.requestAuthorizationIfNeeded { [self] success in
+                DispatchQueue.main.async {
+                    guard success else {
+                        sender.isOn = false
+                        return
+                    }
+                }
+            }
+        } else {
+            // Unschedule all user's notifications
+            DispatchQueue.global(qos: .background).async { [weak self] in
+                self?.localNotificationService.remove(identifiers: [.task])
+            }
+        }
     }
 
     override func awakeFromNib() {
