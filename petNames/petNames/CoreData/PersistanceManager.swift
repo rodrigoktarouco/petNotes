@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 enum PersistenceError: Error {
     case notSignedIn
@@ -74,9 +75,23 @@ class PersistanceManager {
         saveContext()
         completion(nil)
     }
-    func savePet(pet: Pet, completion: @escaping(Error?) -> Void) {
-        pet.user = currentUser
 
+    func savePet(pet: Pet, petImage: UIImage? , completion: @escaping(Error?) -> Void) {
+        pet.user = currentUser
+        let imageName = pet.image ?? "\(UUID().uuidString).jpg"
+
+        if let petImage = petImage {
+            var url = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: .userDomainMask)[0]
+            url.appendPathComponent("petImages/\(imageName)")
+            let data = petImage.jpegData(compressionQuality: 1)
+            do {
+                try data?.write(to: url)
+            } catch {
+                print(error)
+            }
+
+
+        }
         if let pets = currentUser?.pets {
 
             currentUser?.pets = pets.adding(pet) as NSSet
@@ -87,6 +102,7 @@ class PersistanceManager {
         completion(nil)
 
     }
+
     func listPets(completion: @escaping(Result<[Pet], Error>) -> Void) {
         let pets = (currentUser?.pets ?? []).compactMap { $0 as? Pet }
         completion(.success(pets))

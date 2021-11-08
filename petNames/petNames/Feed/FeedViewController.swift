@@ -56,29 +56,31 @@ class FeedViewController: UIViewController {
         setUpDoneTasksImage()
         constraintAdjustments()
 
-
         logoImage.image = UIImage(named: "logo")
-        doneTasksFunImage.layer.cornerRadius = 22
     }
+
     func setUpDoneTasksImage() {
+        doneTasksFunImage.layer.cornerRadius = 22
         doneTasksFunImage.image =  FeedModel.sharedFeedModel.getImageForFunTasksImageView()
     }
+
     func setUpBackground() {
         let backGroundAssetNames = ["background1", "background2", "background3"]
         backgroundImage.image = UIImage(named: backGroundAssetNames.randomElement() ?? "background1") ?? UIImage(named: "")
         backgroundImage.alpha = 0.4
-
         [tasksCollectionView, petsCollectionView].forEach { collection in collection?.backgroundColor = .clear}
     }
+
     func setUpLabelsTexts() {
 
         welcomeUserLabel.text = "welcomeUser".localized().capitalized + " " + FeedModel.sharedFeedModel.getUsersName() + "!"
         dayLabel.text = "today".localized().capitalized
-        let tasks = "tasks".localized().capitalized
+        let tasks = "tasks".localized().lowercased()
         doneTasksLabel.text = FeedModel.sharedFeedModel.getFractionOfNumberOfTasksDone() + " " + tasks
         nextTaskLabel.text = "nextTask".localized().capitalized
         myPetsLabel.text = "myPets".localized().capitalized
     }
+
     func setUpFontStyle () {
 
         welcomeUserLabel.font = UIFont(name: "SFProRounded-Bold", size: UIScreen.main.bounds.height*24/844)
@@ -124,7 +126,7 @@ extension FeedViewController: UICollectionViewDataSource {
                 cell?.petImage.image = infoStruct.petImage ?? UIImage()
                 cell?.petName.text = infoStruct.petName?.capitalized
 
-                cell?.petTaskQuantity.text = "tasks".localized().capitalized + " " + String(infoStruct.tasksQuantity ?? 0)
+                cell?.petTaskQuantity.text = String(infoStruct.tasksQuantity ?? 0) + " " +  "tasks".localized().capitalized
                 return cell ?? UICollectionViewCell()
             }
             
@@ -161,10 +163,10 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
         let squareSide: CGFloat = ( collectionView.frame.height - 14 ) / 2
         return CGSize(width: squareSide, height: squareSide)
     }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 14
     }
-
 }
 extension String {
     func localized() -> String {
