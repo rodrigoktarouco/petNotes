@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class FeedViewController: UIViewController {
     
@@ -61,6 +62,16 @@ class FeedViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 0.5)
+        PersistanceManager.shared.listPets { result in
+            switch result {
+            case .success(let pets):
+                pets.forEach { pet in
+                    print(pet.name)
+                }
+            default:
+                return
+            }
+        }
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
