@@ -13,8 +13,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var appSettingsBackgroundImage: UIImageView!
     
     let sectionNames: [String] = ["Adjustments", "Contacts", "Developed By"]
-    let switchNames: [String] = ["General notifications", "Sound effects", "Dark mode"]
-    let contactTypes: [(UIImage?, String)] = [(UIImage(systemName: "envelope"), "Email"), (UIImage(named: "instagramSymbol"), "Instagram")]
+    let switchNames: [String] = ["General notifications".localized(), "Sound effects".localized(), "Dark mode".localized()]
+    let contactTypes: [(UIImage?, String)] = [(UIImage(named: "email"), "Email"), (UIImage(named: "instagram"), "Instagram")]
     let teamMembers: [String] = ["Dharana Rivas", "Enzo Degrazia", "Guilherme Antonini", "Heitor Kunrath", "Rodrigo Tarouco"]
 
     override func viewDidLoad() {
