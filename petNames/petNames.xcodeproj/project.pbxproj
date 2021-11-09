@@ -32,6 +32,7 @@
 		9D6449CB272898A8007BFB63 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6449CA272898A8007BFB63 /* PersistanceManager.swift */; };
 		9D75F9EA2710C54D001FF11C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D75F9EC2710C54D001FF11C /* Localizable.strings */; };
 		9D90D1412728683300689292 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D90D13F2728683300689292 /* Model.xcdatamodeld */; };
+		9D93C97A2739CFF300C3C713 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93C9792739CFF300C3C713 /* LocalNotificationService.swift */; };
 		9DCC58E227189992007A800C /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58E127189992007A800C /* FeedModel.swift */; };
 		9DCC58E4271899B1007A800C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCC58E3271899B1007A800C /* Settings.storyboard */; };
 		9DCC58E6271899C7007A800C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58E5271899C7007A800C /* SettingsViewController.swift */; };
@@ -113,6 +114,7 @@
 		9D75F9EB2710C54D001FF11C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9D75F9ED2710C554001FF11C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		9D90D1402728683300689292 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		9D93C9792739CFF300C3C713 /* LocalNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
 		9DCC58E127189992007A800C /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		9DCC58E3271899B1007A800C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9DCC58E5271899C7007A800C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +284,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		9D93C9782739CFDA00C3C713 /* LocalNotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				9D93C9792739CFF300C3C713 /* LocalNotificationService.swift */,
+			);
+			path = LocalNotificationService;
+			sourceTree = "<group>";
+		};
 		9DCC58DB2718964A007A800C /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +306,7 @@
 		9DCC58DF27189952007A800C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				9D93C9782739CFDA00C3C713 /* LocalNotificationService */,
 				FD06EABC27232D8400EC4D37 /* Cells */,
 				9DCC58E5271899C7007A800C /* SettingsViewController.swift */,
 				9DCC58E7271899E4007A800C /* SettingsModel.swift */,
@@ -508,6 +519,7 @@
 				9D1788B3271DE8CF00C839DF /* TaskTableViewCell.swift in Sources */,
 				9D1E7506270E118E00321E54 /* FeedViewController.swift in Sources */,
 				5C50A7052734554A00FD142E /* CategoryTableViewCell.swift in Sources */,
+				9D93C97A2739CFF300C3C713 /* LocalNotificationService.swift in Sources */,
 				FD62D2D3272C7FA20061560E /* AppUITabBar.swift in Sources */,
 				9D1E7502270E118E00321E54 /* AppDelegate.swift in Sources */,
 				FD7C4589272C63230065C035 /* AddNewPetCollectionViewCell.swift in Sources */,
