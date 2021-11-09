@@ -10,6 +10,8 @@ import UIKit
 class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var isPressed: Bool = false
     var imageManager = ImagePickerManager()
+
+    var newPet: Pet = Pet()
     
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var petTableView: UITableView!
@@ -24,6 +26,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         Background.shared.assignBackground(view: self.view)
         
         // Localizable
@@ -191,3 +194,10 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
 }
+
+//extension TextFieldTableViewCell {
+//    @IBAction func onReturn() {
+//        self.textField.resignFirstResponder()
+//        textField.a
+//    }
+//}
