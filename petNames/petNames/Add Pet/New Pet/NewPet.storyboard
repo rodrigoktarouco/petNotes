@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZuM-SA-eqB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZuM-SA-eqB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -57,11 +57,11 @@
                                             <outlet property="textField" destination="4s2-LI-edM" id="bDS-H3-1no"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="category-cell" rowHeight="56" id="y6U-KA-vLZ" customClass="CategoryTableViewCell" customModule="petNames" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="category-cell" rowHeight="56" id="y6U-KA-vLZ" customClass="CategoryTableViewCell" customModule="petNames" customModuleProvider="target">
                                         <rect key="frame" x="20" y="104.5" width="374" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y6U-KA-vLZ" id="N3Z-Ch-ZN3">
-                                            <rect key="frame" x="0.0" y="0.0" width="344.5" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9t-KG-K9I">
@@ -70,23 +70,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kK-J2-Gfe">
-                                                    <rect key="frame" x="265.5" y="17.5" width="59" height="21"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cF-fv-k1u">
+                                                    <rect key="frame" x="275.5" y="11" width="86.5" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" systemColor="systemGrayColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="5cF-fv-k1u" firstAttribute="centerY" secondItem="N3Z-Ch-ZN3" secondAttribute="centerY" id="4sa-uW-IsD"/>
                                                 <constraint firstItem="H9t-KG-K9I" firstAttribute="leading" secondItem="N3Z-Ch-ZN3" secondAttribute="leadingMargin" id="5M5-8T-nkT"/>
-                                                <constraint firstItem="2kK-J2-Gfe" firstAttribute="centerY" secondItem="N3Z-Ch-ZN3" secondAttribute="centerY" id="JbD-e0-153"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="2kK-J2-Gfe" secondAttribute="trailing" constant="12" id="M2E-mH-xjv"/>
                                                 <constraint firstItem="H9t-KG-K9I" firstAttribute="centerY" secondItem="N3Z-Ch-ZN3" secondAttribute="centerY" id="M4M-Z1-o22"/>
+                                                <constraint firstAttribute="trailing" secondItem="5cF-fv-k1u" secondAttribute="trailing" constant="12" id="WOt-OK-b7S"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="categoryLabel" destination="H9t-KG-K9I" id="qCm-Yh-n3x"/>
-                                            <outlet property="chooseLabel" destination="2kK-J2-Gfe" id="RrE-GJ-l7j"/>
+                                            <outlet property="categoryTextField" destination="5cF-fv-k1u" id="sTf-VF-Did"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newTask-cell" rowHeight="56" id="gKe-SK-qTV" customClass="AddNewTaskTableViewCell" customModule="petNames" customModuleProvider="target">

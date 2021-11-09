@@ -12,6 +12,7 @@
 		5C50A70327344D6E00FD142E /* CustomFontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A70227344D6E00FD142E /* CustomFontModel.swift */; };
 		5C50A7052734554A00FD142E /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A7042734554A00FD142E /* CategoryTableViewCell.swift */; };
 		5C50A707273458DC00FD142E /* AddNewTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A706273458DC00FD142E /* AddNewTaskTableViewCell.swift */; };
+		5C50A717273B263B00FD142E /* ToolBarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A716273B263B00FD142E /* ToolBarPickerView.swift */; };
 		5C86C9F8271DE4BE00FD1C2C /* TaskScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C86C9F7271DE4BE00FD1C2C /* TaskScreen.storyboard */; };
 		5C86C9FA271DE4E200FD1C2C /* PetDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C86C9F9271DE4E200FD1C2C /* PetDetails.storyboard */; };
 		5C86C9FC271DE91000FD1C2C /* PetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C86C9FB271DE91000FD1C2C /* PetDetailsViewController.swift */; };
@@ -80,6 +81,7 @@
 		5C50A70227344D6E00FD142E /* CustomFontModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontModel.swift; sourceTree = "<group>"; };
 		5C50A7042734554A00FD142E /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		5C50A706273458DC00FD142E /* AddNewTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskTableViewCell.swift; sourceTree = "<group>"; };
+		5C50A716273B263B00FD142E /* ToolBarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarPickerView.swift; sourceTree = "<group>"; };
 		5C86C9F7271DE4BE00FD1C2C /* TaskScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskScreen.storyboard; sourceTree = "<group>"; };
 		5C86C9F9271DE4E200FD1C2C /* PetDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetDetails.storyboard; sourceTree = "<group>"; };
 		5C86C9FB271DE91000FD1C2C /* PetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			children = (
 				5CBE0474272C774D000811D5 /* CustomHeader.swift */,
 				5C50A70227344D6E00FD142E /* CustomFontModel.swift */,
+				5C50A716273B263B00FD142E /* ToolBarPickerView.swift */,
 				5C86C9F4271DE26A00FD1C2C /* New Pet */,
 				5C86C9F3271DE1FF00FD1C2C /* Task Screen_Task Settings */,
 				5C86C9F6271DE27D00FD1C2C /* Pet Details */,
@@ -534,6 +537,7 @@
 				5C86C9FC271DE91000FD1C2C /* PetDetailsViewController.swift in Sources */,
 				FD62D2D92732F7E00061560E /* PetDetailsModel.swift in Sources */,
 				9DCC58E6271899C7007A800C /* SettingsViewController.swift in Sources */,
+				5C50A717273B263B00FD142E /* ToolBarPickerView.swift in Sources */,
 				5C50A70327344D6E00FD142E /* CustomFontModel.swift in Sources */,
 				5C50A707273458DC00FD142E /* AddNewTaskTableViewCell.swift in Sources */,
 				9D5A1D302718BD6600637589 /* PetsModel.swift in Sources */,
@@ -712,7 +716,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TTJUS38QJA;
+				DEVELOPMENT_TEAM = 2522W6SWRS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = petNames/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -740,7 +744,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TTJUS38QJA;
+				DEVELOPMENT_TEAM = 2522W6SWRS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = petNames/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
