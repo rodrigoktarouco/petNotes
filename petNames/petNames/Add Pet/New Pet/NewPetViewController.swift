@@ -57,7 +57,6 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     }
 
-    
     // MARK: Setting the TableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -179,7 +178,8 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             // share
         }
     }
-    
+
+    // MARK: navigation bar buttons
     @objc func cancelButtonAction() {
         print("Cancel pressed")
         self.navigationController?.dismiss(animated: true, completion: nil)
