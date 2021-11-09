@@ -231,13 +231,13 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncn-Ix-yzX">
-                                                            <rect key="frame" x="10" y="98.5" width="42" height="21"/>
+                                                            <rect key="frame" x="15" y="98.5" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dF6-af-mHS">
-                                                            <rect key="frame" x="10" y="123" width="42" height="21"/>
+                                                            <rect key="frame" x="15" y="123" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -248,11 +248,11 @@
                                                         <constraint firstItem="YZu-WP-7wp" firstAttribute="top" secondItem="oJX-Wt-feL" secondAttribute="top" id="5Cv-TQ-pPa"/>
                                                         <constraint firstItem="dF6-af-mHS" firstAttribute="top" secondItem="Ncn-Ix-yzX" secondAttribute="bottom" constant="3.5" id="63G-SU-Epr"/>
                                                         <constraint firstAttribute="bottom" secondItem="dF6-af-mHS" secondAttribute="bottom" constant="10" id="7KM-Gv-UvN"/>
-                                                        <constraint firstItem="dF6-af-mHS" firstAttribute="leading" secondItem="oJX-Wt-feL" secondAttribute="leading" constant="10" id="LhI-tL-YWj"/>
+                                                        <constraint firstItem="dF6-af-mHS" firstAttribute="leading" secondItem="oJX-Wt-feL" secondAttribute="leading" constant="15" id="LhI-tL-YWj"/>
                                                         <constraint firstAttribute="trailing" secondItem="YZu-WP-7wp" secondAttribute="trailing" id="eKL-Hd-uLG"/>
                                                         <constraint firstItem="YZu-WP-7wp" firstAttribute="leading" secondItem="oJX-Wt-feL" secondAttribute="leading" id="fOi-Th-utG"/>
                                                         <constraint firstItem="Ncn-Ix-yzX" firstAttribute="top" secondItem="YZu-WP-7wp" secondAttribute="bottom" constant="3.5" id="gij-1B-OgD"/>
-                                                        <constraint firstItem="Ncn-Ix-yzX" firstAttribute="leading" secondItem="oJX-Wt-feL" secondAttribute="leading" constant="10" id="oSP-5Y-5he"/>
+                                                        <constraint firstItem="Ncn-Ix-yzX" firstAttribute="leading" secondItem="oJX-Wt-feL" secondAttribute="leading" constant="15" id="oSP-5Y-5he"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -280,7 +280,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="5qh-Mr-CLK">
-                                <rect key="frame" x="47" y="186" width="42" height="21"/>
+                                <rect key="frame" x="47" y="183" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -296,7 +296,7 @@
                             <constraint firstItem="HQt-oB-7Te" firstAttribute="top" secondItem="4ZS-1w-HVI" secondAttribute="bottom" constant="20" id="D9F-G4-RwD"/>
                             <constraint firstItem="HQt-oB-7Te" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ESl-k7-gP0"/>
                             <constraint firstItem="Xb7-ee-MY9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HKj-dX-Ck7"/>
-                            <constraint firstItem="5qh-Mr-CLK" firstAttribute="top" secondItem="sBp-jK-ccy" secondAttribute="bottom" constant="13" id="Hfc-CG-hoE"/>
+                            <constraint firstItem="5qh-Mr-CLK" firstAttribute="top" secondItem="sBp-jK-ccy" secondAttribute="bottom" constant="10" id="Hfc-CG-hoE"/>
                             <constraint firstAttribute="trailing" secondItem="jB9-iN-aho" secondAttribute="trailing" constant="30" id="KtD-72-M8J"/>
                             <constraint firstItem="jB9-iN-aho" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0892857" id="Mdr-ys-rd8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gm1-th-1zg" secondAttribute="trailing" id="Mz0-u1-clN"/>

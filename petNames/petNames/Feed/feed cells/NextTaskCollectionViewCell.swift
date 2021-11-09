@@ -16,7 +16,7 @@ class NextTaskCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        petImage.layer.cornerRadius = 15
+        petImage.layer.cornerRadius = 22
         auxView.layer.cornerRadius = 22
         
         setUpFontStyle()

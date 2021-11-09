@@ -29,7 +29,7 @@ class FeedViewController: UIViewController {
 
     @IBOutlet weak var funimageTopDistance: NSLayoutConstraint!
 
-   // @IBOutlet weak var funImageHeight: NSLayoutConstraint!
+    // @IBOutlet weak var funImageHeight: NSLayoutConstraint!
 
     @IBOutlet weak var dayLabelTopdistance: NSLayoutConstraint!
 
@@ -40,9 +40,9 @@ class FeedViewController: UIViewController {
         funimageTopDistance.constant = UIScreen.main.bounds.height * 10 / 844
 
 
-//        funImageHeight.constant = UIScreen.main.bounds.height * 80 / 844
-//        funImageWidth.constant = UIScreen.main.bounds.width * 330 / 844
-        doneTasksTopDistance.constant = UIScreen.main.bounds.height * 17 / 844 - 2
+        //        funImageHeight.constant = UIScreen.main.bounds.height * 80 / 844
+        //        funImageWidth.constant = UIScreen.main.bounds.width * 330 / 844
+        doneTasksTopDistance.constant =  0.0201*UIScreen.main.bounds.height - 10
         dayLabelTopdistance.constant = UIScreen.main.bounds.height * 21 / 844
     }
     override func viewDidLoad() {
@@ -55,8 +55,16 @@ class FeedViewController: UIViewController {
         setUpBackground()
         setUpDoneTasksImage()
         constraintAdjustments()
-        //self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 0.5)
+
         logoImage.image = UIImage(named: "logo")
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 0.5)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 1)
     }
 
     func setUpDoneTasksImage() {
