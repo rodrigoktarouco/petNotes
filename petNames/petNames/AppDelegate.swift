@@ -9,10 +9,15 @@ import UIKit
 import CoreData
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        LocalNotificationService.initialize()
+        UNUserNotificationCenter.current().delegate = self
         // Override point for customization after application launch.
         PersistanceManager.shared.setUp()
+        PersistanceManager.shared.loadUser { _ in
+            
+        }
         //        let user = User.init(context: persistentContainer.viewContext)
 //        user.name = "Heitor"
 //        user.id = "1"
@@ -51,6 +56,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
 
         return true
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.badge, .sound, .banner])
     }
 
 //    func testCreatePet() {

@@ -27,9 +27,11 @@ class TaskViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return getNumberOfTasks(selectedSegment)
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myInfos = getDataForRowAt(selectedSegment, indexPath.item)
         let cell = tasksTableView.dequeueReusableCell(withIdentifier: "reloadableTaskCell" )
@@ -47,12 +49,14 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return safeCell
     }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let storyboard = UIStoryboard(name: "Task", bundle: nil)
         let settingsController = storyboard.instantiateViewController(identifier: "NavigationControllerOfTasksSettingsView")
         self.present(settingsController, animated: true, completion: nil)
     }
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("Content deleted.")
@@ -61,10 +65,12 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
 }
 // get informações a serem apresentadas no all, not done, e by pet
 extension TaskViewController {
+
     func getDataForRowAt(_ selectedSegment: SelectedSementInTasks, _ item: Int) -> CellInfosStruct {
         let pittyMockTask = CellInfosStruct(taskName: "Alimentação", taskTime: "12:00", taskPetName: "Pitty", taskPetImage: UIImage(named: "pitty") ?? UIImage(), isCheckedAsDone: false)
         return pittyMockTask
     }
+
     func getNumberOfTasks(_ selectedSegment: SelectedSementInTasks) -> Int {
         return 5
     }

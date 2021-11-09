@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 enum PersistenceError: Error {
     case notSignedIn
@@ -74,9 +75,49 @@ class PersistanceManager {
         saveContext()
         completion(nil)
     }
-    func savePet(pet: Pet, completion: @escaping(Error?) -> Void) {
-        pet.user = currentUser
 
+    func getPetImage(_ pet: Pet, completion: @escaping(UIImage?) -> Void) {
+
+        let imageName = pet.image ?? "\(UUID().uuidString).jpg"
+        var url = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: .userDomainMask)[0]
+        url.appendPathComponent("\(imageName)")
+        do {
+            let imageData = try Data(contentsOf: url)
+            let image = UIImage(data: imageData)
+            completion(image)
+        } catch {
+            print(error)
+            completion(nil)
+        }
+
+    }
+
+    func savePet(pet: Pet, petImage: UIImage? , completion: @escaping(Error?) -> Void) {
+        pet.user = currentUser
+        let imageName = pet.image ?? "\(UUID().uuidString).jpg"
+
+        var url = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: .userDomainMask)[0]
+        url.appendPathComponent("\(imageName)")
+
+        if let petImage = petImage {
+            let data = petImage.jpegData(compressionQuality: 1)
+            do {
+                try data?.write(to: url)
+                pet.image = imageName
+            } catch {
+                print(error)
+            }
+
+        } else {
+            do {
+                try FileManager.default.removeItem(at: url)
+                pet.image = nil
+            } catch {
+                print(error)
+            }
+
+
+        }
         if let pets = currentUser?.pets {
 
             currentUser?.pets = pets.adding(pet) as NSSet
@@ -87,6 +128,7 @@ class PersistanceManager {
         completion(nil)
 
     }
+
     func listPets(completion: @escaping(Result<[Pet], Error>) -> Void) {
         let pets = (currentUser?.pets ?? []).compactMap { $0 as? Pet }
         completion(.success(pets))
