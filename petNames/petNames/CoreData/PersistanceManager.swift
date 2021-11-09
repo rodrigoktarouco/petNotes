@@ -95,7 +95,6 @@ class PersistanceManager {
     func savePet(pet: Pet, petImage: UIImage? , completion: @escaping(Error?) -> Void) {
         pet.user = currentUser
         let imageName = pet.image ?? "\(UUID().uuidString).jpg"
-
         var url = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: .userDomainMask)[0]
         url.appendPathComponent("\(imageName)")
 
@@ -107,7 +106,6 @@ class PersistanceManager {
             } catch {
                 print(error)
             }
-
         } else {
             do {
                 try FileManager.default.removeItem(at: url)
@@ -115,8 +113,6 @@ class PersistanceManager {
             } catch {
                 print(error)
             }
-
-
         }
         if let pets = currentUser?.pets {
 
@@ -129,9 +125,31 @@ class PersistanceManager {
 
     }
 
+    func saveTask( task: Task ,completion: @escaping(Error?) -> Void ) {
+        saveContext()
+        completion(nil)
+    }
+
     func listPets(completion: @escaping(Result<[Pet], Error>) -> Void) {
         let pets = (currentUser?.pets ?? []).compactMap { $0 as? Pet }
         completion(.success(pets))
+
+    }
+    func listTasksFromPet(pet: Pet, completion: @escaping(Result<[Task], Error>) -> Void) {
+        let tasks : [Task] = (pet.tasks ?? []).compactMap { $0 as? Task }
+        completion(.success(tasks))
+
+    }
+    func listAllTasks( completion: @escaping(Result<[Task], Error>) -> Void) {
+
+        let fetchRequest = Task.fetchRequest()
+        do {
+            let tasks = try context.fetch(fetchRequest)
+            completion(.success(tasks))
+        } catch {
+            print(error)
+            completion(.failure(error))
+        }
     }
 }
 

@@ -20,7 +20,7 @@ class NextTaskCollectionViewCell: UICollectionViewCell {
         auxView.layer.cornerRadius = 22
         
         setUpFontStyle()
-        auxView.backgroundColor = FeedModel.sharedFeedModel.getTaskColor(.medicine)
+//        auxView.backgroundColor = FeedModel.sharedFeedModel.getTaskColor(.medicine)
     }
     
     func setUpFontStyle () {

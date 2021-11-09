@@ -20,8 +20,7 @@ case vet
 case custom
 }
 class FeedModel {
-    
-    static let sharedFeedModel = FeedModel()
+
     lazy var petArray = getAllPets()
 
     var task1: Task = {
@@ -39,6 +38,18 @@ class FeedModel {
         task1,
         task2
     ]
+    lazy var petsArray: [Pet] = {
+        var petArray: [Pet] = []
+        PersistanceManager.shared.listPets { result in
+            switch result {
+            case .success(let pets):
+                petArray =  pets
+            default:
+                petArray = []
+            }
+        }
+        return petArray
+    }()
     
     func getTaskColor ( _ taskType: TaskTypes) -> UIColor {
         switch taskType {
@@ -79,7 +90,7 @@ class FeedModel {
         return "7 / 10"
     }
     func getUsersName() -> String {
-        return "Heitor"
+        return PersistanceManager.shared.currentUser?.name?.capitalized ?? " "
     }
     func getNumberOfTotalTasks() -> Int {
         return 2
@@ -93,6 +104,8 @@ class FeedModel {
         return image
     }
     func getPetsInfosForPetDetails( forRowAt: Int) -> PetsInfosForPetDetails {
+        //petsArray[forRowAt]
+
         return PetsInfosForPetDetails(name: "pitty", petImage: UIImage(named: "pitty"),petClassification: "Cachorro",petTaskNames: ["water","food","Trick Playing"])
 
     }

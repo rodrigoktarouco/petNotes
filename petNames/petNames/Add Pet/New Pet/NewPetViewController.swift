@@ -192,6 +192,9 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //        show(viewC, sender: nil)
         let pet = Pet()
         pet.name = "tibetiamo"
+
+
+
         PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
             PersistanceManager.shared.listPets { result in
                 switch result {
