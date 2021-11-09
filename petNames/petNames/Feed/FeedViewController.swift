@@ -36,16 +36,8 @@ class FeedViewController: UIViewController {
 
     @IBOutlet weak var doneTasksTopDistance: NSLayoutConstraint!
 
-    func constraintAdjustments() {
-        welcomeUserTopDistance.constant = UIScreen.main.bounds.height * 23 / 844
-        funimageTopDistance.constant = UIScreen.main.bounds.height * 10 / 844
+    let modelInstance: FeedModel = FeedModel()
 
-
-        //        funImageHeight.constant = UIScreen.main.bounds.height * 80 / 844
-        //        funImageWidth.constant = UIScreen.main.bounds.width * 330 / 844
-        doneTasksTopDistance.constant =  0.0201*UIScreen.main.bounds.height - 10
-        dayLabelTopdistance.constant = UIScreen.main.bounds.height * 21 / 844
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tasksCollectionView.dataSource = self
@@ -59,6 +51,18 @@ class FeedViewController: UIViewController {
 
         logoImage.image = UIImage(named: "logo")
     }
+
+    func constraintAdjustments() {
+        welcomeUserTopDistance.constant = UIScreen.main.bounds.height * 23 / 844
+        funimageTopDistance.constant = UIScreen.main.bounds.height * 10 / 844
+
+
+        //        funImageHeight.constant = UIScreen.main.bounds.height * 80 / 844
+        //        funImageWidth.constant = UIScreen.main.bounds.width * 330 / 844
+        doneTasksTopDistance.constant =  0.0201*UIScreen.main.bounds.height - 10
+        dayLabelTopdistance.constant = UIScreen.main.bounds.height * 21 / 844
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 0.5)
@@ -80,7 +84,7 @@ class FeedViewController: UIViewController {
 
     func setUpDoneTasksImage() {
         doneTasksFunImage.layer.cornerRadius = 22
-        doneTasksFunImage.image =  FeedModel.sharedFeedModel.getImageForFunTasksImageView()
+        doneTasksFunImage.image =  modelInstance.getImageForFunTasksImageView()
     }
 
     func setUpBackground() {
@@ -92,10 +96,10 @@ class FeedViewController: UIViewController {
 
     func setUpLabelsTexts() {
 
-        welcomeUserLabel.text = "welcomeUser".localized().capitalized + " " + FeedModel.sharedFeedModel.getUsersName() + "!" + " 👋🏼"
+        welcomeUserLabel.text = "welcomeUser".localized().capitalized + " " + modelInstance.getUsersName() + "!" + " 👋🏼"
         dayLabel.text = "today".localized().capitalized
         let tasks = "tasks".localized().lowercased()
-        doneTasksLabel.text = FeedModel.sharedFeedModel.getFractionOfNumberOfTasksDone() + " " + tasks
+        doneTasksLabel.text = modelInstance.getFractionOfNumberOfTasksDone() + " " + tasks
         nextTaskLabel.text = "nextTask".localized().capitalized
         myPetsLabel.text = "myPets".localized().capitalized
     }
@@ -115,9 +119,9 @@ extension FeedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == tasksCollectionView {
-            return FeedModel.sharedFeedModel.getNumberOfTotalTasks()
+            return modelInstance.getNumberOfTotalTasks()
         } else if collectionView == petsCollectionView {
-            return 1 + FeedModel.sharedFeedModel.getNumberOfPets() // 1 + é para mostrar o adicionar pet além dos pets que já existem
+            return 1 + modelInstance.getNumberOfPets() // 1 + é para mostrar o adicionar pet além dos pets que já existem
 
         }
         return 0
@@ -127,9 +131,9 @@ extension FeedViewController: UICollectionViewDataSource {
         if collectionView == tasksCollectionView {
             let cell = tasksCollectionView.dequeueReusableCell(withReuseIdentifier: "NextTaskCollectionViewCell", for: indexPath) as? NextTaskCollectionViewCell
             guard let cell = cell else { return UICollectionViewCell() }
-            let infoStruct = FeedModel.sharedFeedModel.getTaskFeedCollectionViewCellData(taskNumber: indexPath.row)
+            let infoStruct = modelInstance.getTaskFeedCollectionViewCellData(taskNumber: indexPath.row)
             cell.petImage.image = infoStruct.petImage
-            cell.auxView.backgroundColor = FeedModel.sharedFeedModel.getTaskColor(infoStruct.taskType ?? .custom)
+            cell.auxView.backgroundColor = modelInstance.getTaskColor(infoStruct.taskType ?? .custom)
             cell.taskNameLabel.text = infoStruct.taskName?.capitalized
             cell.taskTimeLabel.text = infoStruct.taskTime
             cell.checkImage.image = infoStruct.done ?? false ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "checkmark.circle.fill")
@@ -141,7 +145,7 @@ extension FeedViewController: UICollectionViewDataSource {
                 return cell ?? UICollectionViewCell()
             } else {
                 let cell = petsCollectionView.dequeueReusableCell(withReuseIdentifier: "PetsOnFeedCollectionViewCell", for: indexPath) as? PetsOnFeedCollectionViewCell
-                let infoStruct = FeedModel.sharedFeedModel.getPetsCollectionViewData(petNumber: indexPath.row)
+                let infoStruct = modelInstance.getPetsCollectionViewData(petNumber: indexPath.row)
                 cell?.petImage.image = infoStruct.petImage ?? UIImage()
                 cell?.petName.text = infoStruct.petName?.capitalized
 
@@ -166,7 +170,7 @@ extension FeedViewController: UICollectionViewDelegate {
                 let storyboard = UIStoryboard(name: "PetDetails", bundle: nil)
 
                 guard let navController = storyboard.instantiateInitialViewController() as? UINavigationController, let VCdetails = navController.topViewController as? PetDetailsViewController else{ return }
-                VCdetails.petData = FeedModel.sharedFeedModel.getPetsInfosForPetDetails(forRowAt: indexPath.row + 1)
+                VCdetails.petData = modelInstance.getPetsInfosForPetDetails(forRowAt: indexPath.row + 1)
                 
                 present(navController, animated: true, completion: nil)
 
