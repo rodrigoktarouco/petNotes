@@ -7,13 +7,17 @@
 
 import UIKit
 
-class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    
     @IBOutlet var taskTableView: UITableView!
-
+    @IBOutlet var searchBar: UISearchBar!
+    
     @IBOutlet var tasksNavigationinItem: UINavigationItem!
-
-    var tasks: [String] = ["Water", "Food", "Wash", "Playtime", "Walk", "Medicine", "Groom", "Vet"]
+    
+    // swiftlint:disable:next line_length
+    var tasks: [String] = ["Water".localized(), "Food".localized(), "Wash".localized(), "Playtime".localized(), "Walk".localized(), "Medicine".localized(), "Groom".localized(), "Vet".localized()]
+    
+    var filteredData: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,20 +25,22 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         
         taskTableView.delegate = self
         taskTableView.dataSource = self
-
+        searchBar.delegate = self
+        filteredData = tasks
+        
         tasksNavigationinItem.title = "taskTitleLabel".localized()
-//        tasksNavigationinItem.backButtonTitle = "backButton".localized()
+        //        tasksNavigationinItem.backButtonTitle = "backButton".localized()
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rowsInSection: Int
         switch section {
         case 0:
-            rowsInSection = tasks.count
+            rowsInSection = filteredData.count
         case 1:
             rowsInSection = 1
         default:
@@ -42,12 +48,36 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         return rowsInSection
     }
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            guard let cell = (taskTableView.dequeueReusableCell(withIdentifier: "taskScreen-cell", for: indexPath)
+                              as? TaskScreenTableViewCell) else {
+                return TaskScreenTableViewCell() }
+            
+            let iconImage = TasksDesign.shared.pickTaskIcon(task: filteredData[indexPath.row])
+            cell.taskScreenTitleLabel.text = filteredData[indexPath.row]
+            cell.taskIconImage.image = UIImage(named: iconImage)
+            
+            return cell
+            
+        } else {
+            guard let cell = (taskTableView.dequeueReusableCell(withIdentifier: "taskScreen-cell", for: indexPath)
+                              as? TaskScreenTableViewCell) else {
+                return TaskScreenTableViewCell() }
+            
+            cell.taskScreenTitleLabel.text = "Custom".localized()
+            cell.taskIconImage.image = UIImage(named: "custom-task-icon")
+            
+            return cell
+        }
+    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-
+        
         var sectionLabel: String
         let sectionInt: Int = section
-
+        
         switch sectionInt {
         case 0:
             sectionLabel = ""
@@ -56,41 +86,28 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         default:
             sectionLabel = ""
         }
-
+        
         return "\(sectionLabel)"
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 52
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            guard let cell = (taskTableView.dequeueReusableCell(withIdentifier: "taskScreen-cell", for: indexPath)
-                              as? TaskScreenTableViewCell) else {
-                return TaskScreenTableViewCell() }
-
-            let iconImage = TasksDesign.shared.pickTaskIcon(task: tasks[indexPath.row])
-            
-            cell.taskScreenTitleLabel.text = tasks[indexPath.row].localized()
-            cell.taskIconImage.image = UIImage(named: iconImage)
-
-            return cell
-        } else {
-            guard let cell = (taskTableView.dequeueReusableCell(withIdentifier: "taskScreen-cell", for: indexPath)
-                              as? TaskScreenTableViewCell) else {
-                return TaskScreenTableViewCell() }
-
-            cell.taskScreenTitleLabel.text = "Custom".localized()
-            cell.taskIconImage.image = UIImage(named: "custom-task-icon")
-
-            return cell
-        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
         let viewC = storyboard.instantiateViewController(withIdentifier: "taskSetting") as UIViewController
         show(viewC, sender: nil)
+    }
+    
+    // MARK: Search Bar Config
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredData = searchText.isEmpty ? tasks : tasks.filter({(tasksString: String) -> Bool in
+            // If dataItem matches the searchText, return true to include it
+            return tasksString.range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil
+        })
+        
+        taskTableView.reloadData()
+        
     }
 }
