@@ -25,7 +25,8 @@ class NextTaskCollectionViewCell: UICollectionViewCell {
     
     func setUpFontStyle () {
         taskNameLabel.font = UIFont(name: "SFProRounded-Semibold", size: 17)
-        taskTimeLabel.font = UIFont(name: "SFProRounded-Regular", size: 10)
+        
+        taskTimeLabel.font = UIFont(name: "SFProRounded-Regular", size: 14)
         
     }
     
