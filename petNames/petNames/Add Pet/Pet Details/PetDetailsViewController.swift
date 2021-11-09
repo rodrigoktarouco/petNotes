@@ -50,13 +50,11 @@ class PetDetailsViewController: UIViewController {
     }
 
     @objc func cancelButtonAction() {
-        print("cancelButton pressed")
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 
     @objc func editButtonAction() {
         print("edit pressed")
-        self.navigationController?.dismiss(animated: true, completion: nil)
-
     }
 }
 

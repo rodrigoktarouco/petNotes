@@ -29,7 +29,7 @@ class FeedViewController: UIViewController {
 
     @IBOutlet weak var funimageTopDistance: NSLayoutConstraint!
 
-   // @IBOutlet weak var funImageHeight: NSLayoutConstraint!
+    // @IBOutlet weak var funImageHeight: NSLayoutConstraint!
 
     @IBOutlet weak var dayLabelTopdistance: NSLayoutConstraint!
 
@@ -40,9 +40,9 @@ class FeedViewController: UIViewController {
         funimageTopDistance.constant = UIScreen.main.bounds.height * 10 / 844
 
 
-//        funImageHeight.constant = UIScreen.main.bounds.height * 80 / 844
-//        funImageWidth.constant = UIScreen.main.bounds.width * 330 / 844
-        doneTasksTopDistance.constant = UIScreen.main.bounds.height * 17 / 844 - 2
+        //        funImageHeight.constant = UIScreen.main.bounds.height * 80 / 844
+        //        funImageWidth.constant = UIScreen.main.bounds.width * 330 / 844
+        doneTasksTopDistance.constant =  0.0201*UIScreen.main.bounds.height - 10
         dayLabelTopdistance.constant = UIScreen.main.bounds.height * 21 / 844
     }
     override func viewDidLoad() {
@@ -56,29 +56,39 @@ class FeedViewController: UIViewController {
         setUpDoneTasksImage()
         constraintAdjustments()
 
-
         logoImage.image = UIImage(named: "logo")
-        doneTasksFunImage.layer.cornerRadius = 22
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 0.5)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 1)
+    }
+
     func setUpDoneTasksImage() {
+        doneTasksFunImage.layer.cornerRadius = 22
         doneTasksFunImage.image =  FeedModel.sharedFeedModel.getImageForFunTasksImageView()
     }
+
     func setUpBackground() {
         let backGroundAssetNames = ["background1", "background2", "background3"]
         backgroundImage.image = UIImage(named: backGroundAssetNames.randomElement() ?? "background1") ?? UIImage(named: "")
         backgroundImage.alpha = 0.4
-
         [tasksCollectionView, petsCollectionView].forEach { collection in collection?.backgroundColor = .clear}
     }
+
     func setUpLabelsTexts() {
 
-        welcomeUserLabel.text = "welcomeUser".localized().capitalized + " " + FeedModel.sharedFeedModel.getUsersName() + "!"
+        welcomeUserLabel.text = "welcomeUser".localized().capitalized + " " + FeedModel.sharedFeedModel.getUsersName() + "!" + " 👋🏼"
         dayLabel.text = "today".localized().capitalized
-        let tasks = "tasks".localized().capitalized
+        let tasks = "tasks".localized().lowercased()
         doneTasksLabel.text = FeedModel.sharedFeedModel.getFractionOfNumberOfTasksDone() + " " + tasks
         nextTaskLabel.text = "nextTask".localized().capitalized
         myPetsLabel.text = "myPets".localized().capitalized
     }
+
     func setUpFontStyle () {
 
         welcomeUserLabel.font = UIFont(name: "SFProRounded-Bold", size: UIScreen.main.bounds.height*24/844)
@@ -124,7 +134,7 @@ extension FeedViewController: UICollectionViewDataSource {
                 cell?.petImage.image = infoStruct.petImage ?? UIImage()
                 cell?.petName.text = infoStruct.petName?.capitalized
 
-                cell?.petTaskQuantity.text = "tasks".localized().capitalized + " " + String(infoStruct.tasksQuantity ?? 0)
+                cell?.petTaskQuantity.text = String(infoStruct.tasksQuantity ?? 0) + " " +  "tasks".localized().capitalized
                 return cell ?? UICollectionViewCell()
             }
             
@@ -161,10 +171,10 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
         let squareSide: CGFloat = ( collectionView.frame.height - 14 ) / 2
         return CGSize(width: squareSide, height: squareSide)
     }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 14
     }
-
 }
 extension String {
     func localized() -> String {

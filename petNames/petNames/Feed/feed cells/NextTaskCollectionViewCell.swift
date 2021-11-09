@@ -16,7 +16,7 @@ class NextTaskCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        petImage.layer.cornerRadius = 15
+        petImage.layer.cornerRadius = 22
         auxView.layer.cornerRadius = 22
         
         setUpFontStyle()
@@ -25,7 +25,8 @@ class NextTaskCollectionViewCell: UICollectionViewCell {
     
     func setUpFontStyle () {
         taskNameLabel.font = UIFont(name: "SFProRounded-Semibold", size: 17)
-        taskTimeLabel.font = UIFont(name: "SFProRounded-Regular", size: 10)
+        
+        taskTimeLabel.font = UIFont(name: "SFProRounded-Regular", size: 14)
         
     }
     

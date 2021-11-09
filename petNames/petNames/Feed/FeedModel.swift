@@ -21,7 +21,8 @@ case custom
 }
 class FeedModel {
     
-static let sharedFeedModel = FeedModel()
+    static let sharedFeedModel = FeedModel()
+    lazy var petArray = getAllPets()
 
     var task1: Task = {
         var task = Task()
@@ -69,6 +70,8 @@ static let sharedFeedModel = FeedModel()
         return taskDataStruct
     }
     func getPetsCollectionViewData( petNumber: Int) -> PetsCollectionViewDataOnFeed {
+        print("HAHAHAH")
+        print(petArray.count)
         let petsDataStruct = PetsCollectionViewDataOnFeed(petImage: UIImage(named: "pitty"), petName: "pitty", tasksQuantity: 3)
         return petsDataStruct
     }
@@ -90,9 +93,21 @@ static let sharedFeedModel = FeedModel()
         return image
     }
     func getPetsInfosForPetDetails( forRowAt: Int) -> PetsInfosForPetDetails {
-
         return PetsInfosForPetDetails(name: "pitty", petImage: UIImage(named: "pitty"),petClassification: "Cachorro",petTaskNames: ["water","food","Trick Playing"])
 
+    }
+
+    func getAllPets() -> [Pet] {
+        var petsReceive: [Pet] = []
+        PersistanceManager.shared.listPets { result in
+                        switch result {
+                        case .success(let pets):
+                            petsReceive = pets
+                        case .failure(let error):
+                            print(error)
+                        }
+        }
+        return petsReceive
     }
 }
 struct TaskFeedCollectionViewCellData {
