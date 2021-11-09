@@ -9,6 +9,7 @@ import UIKit
 
 class TaskTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var petImageTask: UIImageView!
     @IBOutlet weak var taskNameLabel: UILabel!
     @IBOutlet weak var taskTimeLabel: UILabel!
@@ -16,7 +17,13 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskCheckedImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        setUpBackColor()
+        petImageTask.layer.cornerRadius = 22
+        backView.layer.cornerRadius = 22
+    }
+    func setUpBackColor() {
+        let name = taskNameLabel.text
+        backView.backgroundColor = TasksDesign.shared.getTaskDesignProperties(name ?? "").color
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
