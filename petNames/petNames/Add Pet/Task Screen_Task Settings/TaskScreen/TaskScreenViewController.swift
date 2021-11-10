@@ -7,6 +7,8 @@
 
 import UIKit
 
+public var selectedTaskGlobal: String = ""
+
 class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet var taskTableView: UITableView!
@@ -97,11 +99,22 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 52
     }
-    
+
+    // MARK: Performs navigation
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
         let viewC = storyboard.instantiateViewController(withIdentifier: "taskSetting") as UIViewController
         show(viewC, sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        // MARK: Gets the selected task name
+        if indexPath.section == 0 {
+            let selectedTask = filteredData[indexPath.row]
+            selectedTaskGlobal = selectedTask
+        } else {
+            let selectedTask = "Custom".localized()
+            selectedTaskGlobal = selectedTask
+        }
     }
     
     // MARK: Search Bar Config

@@ -7,37 +7,75 @@
 
 import UIKit
 
+public var frequencyGlobal: String = ""
+
 class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var taskSettingsTableView: UITableView!
-    
+
+    var task: Task = Task()
+    var newPetVC: UIViewController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         Background.shared.assignBackground(view: self.view)
 
         taskSettingsTableView.delegate = self
         taskSettingsTableView.dataSource = self
 
-        // Register the custom header view.
+        // MARK: Register the custom header view.
         taskSettingsTableView.register(MyCustomHeader.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
+
+        // MARK: NavigationBar config
+        self.title = selectedTaskGlobal
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "save".localized(),
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(saveButtonAction))
+
+        // MARK: Initializes the Task object
+        task.name = selectedTaskGlobal
+        task.repetition = frequencyGlobal
+
+        // MARK: Accesses NewPetViewController
+//        if let viewControlersStack = self.navigationController?.viewControllers {
+//            for VC in viewControlersStack where VC is NewPetViewController {
+//
+//                newPetVC = VC
+//                break
+//            }
+////            newPetVC.myPet
+//        }
     }
 
+    // MARK: navigation bar buttons
+    @objc func saveButtonAction() {
+
+        myPetTasks.append(task)
+
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+
+
+
+    // MARK: TableView config
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
                 
-                return 44
+                return 52
                 
             } else {
-               
-                return 44
+
+                return 52
             }
         } else if indexPath.section == 1 {
-          
-            return 44
+
+            return 52
             
         } else {
-          
+
             return 150
         }
     }
@@ -86,6 +124,7 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
         return headerHeight
     }
 
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var rowsInSection: Int
@@ -100,7 +139,7 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
         
         return rowsInSection
     }
- 
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
@@ -110,6 +149,7 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
                     return AddWarningTableViewCell() }
                 
                 cell.addWarningLabel.text = "addNewWarning".localized()
+                cell.alertImage.image = UIImage(named: "alerta")
                 cell.accessoryView = UIImageView(image: UIImage(systemName: "chevron.right"))
                 cell.accessoryView?.tintColor = UIColor(named: "headerTitleColor")
                 
@@ -118,7 +158,7 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
             } else {
                 
                 guard let cell2 = (taskSettingsTableView.dequeueReusableCell(withIdentifier: "warning-cell", for: indexPath)
-                                  as? warningTableViewCell) else {
+                                   as? warningTableViewCell) else {
                     return warningTableViewCell() }
                 
                 return cell2
@@ -144,14 +184,4 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
             return cell
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

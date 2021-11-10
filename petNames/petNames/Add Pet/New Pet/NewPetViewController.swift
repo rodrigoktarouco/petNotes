@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: Task added after pressing "save" in he last flow screen
+var myPetTasks: [Task] = [] // TODO: LEMBRAR DE ZERAR ESSE ARRAY AO CLICAR EM ADICIONAR
 public var textFieldInput: String = ""
 
 class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -22,8 +24,9 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
-    var isPressed: Bool = false
+    // MARK: Instantiates
     var imageManager = ImagePickerManager()
+    var isPressed: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +34,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         Background.shared.assignBackground(view: self.view)
 
         // MARK: Image placeholder
-        self.petImage.image = UIImage(named: "edit-placeholder")
+        self.petImage.image = UIImage(named: "placeHolderAsset".localized())
         
         // MARK: Localizable
         let newPet = "newPetTitle".localized()

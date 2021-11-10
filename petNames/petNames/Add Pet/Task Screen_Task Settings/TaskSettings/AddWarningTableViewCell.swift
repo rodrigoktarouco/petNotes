@@ -10,6 +10,7 @@ import UIKit
 class AddWarningTableViewCell: UITableViewCell {
 
     @IBOutlet var addWarningLabel: UILabel!
+    @IBOutlet weak var alertImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
