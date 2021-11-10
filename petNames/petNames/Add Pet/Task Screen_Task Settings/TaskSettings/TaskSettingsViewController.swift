@@ -110,6 +110,8 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
                     return AddWarningTableViewCell() }
                 
                 cell.addWarningLabel.text = "addNewWarning".localized()
+                cell.accessoryView = UIImageView(image: UIImage(systemName: "chevron.right"))
+                cell.accessoryView?.tintColor = UIColor(named: "headerTitleColor")
                 
                 return cell
                 
@@ -128,7 +130,8 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
                 return repeatTableViewCell() }
 
             cell.repeatLabel.text = "repeat".localized()
-//            cell.repeatSecondaryLabel.text = "frequency".localized()
+            cell.accessoryView = UIImageView(image: UIImage(systemName: "chevron.right"))
+            cell.accessoryView?.tintColor = UIColor(named: "headerTitleColor")
             
             return cell
             

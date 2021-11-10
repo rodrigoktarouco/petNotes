@@ -50,8 +50,6 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Register the custom header view.
         petTableView.register(MyCustomHeader.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
 
-        
-
     }
     
     // Setting the TableView
@@ -137,13 +135,14 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 return cell2 }
             
         } else if indexPath.section == 1 {
-            
+            // swiftlint:disable:next line_length
             guard let cell = (tableView.dequeueReusableCell(withIdentifier: "newTask-cell", for: indexPath) as? AddNewTaskTableViewCell) else {
                 return AddNewTaskTableViewCell() }
             
-//            cell.textLabel?.text = "addNewTask".localized()
             cell.addNewTaskLabel.text = "addNewTask".localized()
-            
+            cell.accessoryView = UIImageView(image: UIImage(systemName: "chevron.right"))
+            cell.accessoryView?.tintColor = UIColor(named: "headerTitleColor")
+
             return cell
             
         } else {
@@ -197,8 +196,6 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let pet = Pet()
         pet.name = "tibetiamo"
 
-
-
         PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
             PersistanceManager.shared.listPets { result in
                 switch result {
@@ -213,8 +210,6 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
         }
-
-
     }
     
 }

@@ -58,6 +58,8 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             let iconImage = TasksDesign.shared.pickTaskIcon(task: filteredData[indexPath.row])
             cell.taskScreenTitleLabel.text = filteredData[indexPath.row]
             cell.taskIconImage.image = UIImage(named: iconImage)
+            cell.accessoryView = UIImageView(image: UIImage(systemName: "chevron.right"))
+            cell.accessoryView?.tintColor = UIColor(named: "headerTitleColor")
             
             return cell
             
@@ -68,6 +70,8 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             
             cell.taskScreenTitleLabel.text = "Custom".localized()
             cell.taskIconImage.image = UIImage(named: "custom-task-icon")
+            cell.accessoryView = UIImageView(image: UIImage(systemName: "chevron.right"))
+            cell.accessoryView?.tintColor = UIColor(named: "headerTitleColor")
             
             return cell
         }
