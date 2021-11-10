@@ -85,6 +85,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="efY-a4-2RQ"/>
                     <connections>
+                        <outlet property="searchBar" destination="B47-Px-4z3" id="o7R-4d-EYB"/>
                         <outlet property="taskTableView" destination="63B-qc-GpX" id="4Uj-uo-gf0"/>
                         <outlet property="tasksNavigationinItem" destination="efY-a4-2RQ" id="eP8-0d-rgY"/>
                     </connections>
@@ -250,7 +251,7 @@
     <resources>
         <image name="alarm" catalog="system" width="124" height="128"/>
         <namedColor name="navBar">
-            <color red="1" green="1" blue="1" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="0.34999999403953552" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

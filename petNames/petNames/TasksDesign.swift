@@ -40,21 +40,21 @@ class TasksDesign {
         var iconAsset: String
 
         switch task {
-        case "Water":
+        case "Water".localized():
             iconAsset = "water-task-icon"
-        case "Food":
+        case "Food".localized():
             iconAsset = "food-task-icon"
-        case "Wash":
+        case "Wash".localized():
             iconAsset = "wash-task-icon"
-        case "Playtime":
+        case "Playtime".localized():
             iconAsset = "playtime-task-icon"
-        case "Walk":
+        case "Walk".localized():
             iconAsset = "walk-task-icon"
-        case "Medicine":
+        case "Medicine".localized():
             iconAsset = "medicine-task-icon"
-        case "Groom":
+        case "Groom".localized():
             iconAsset = "groom-task-icon"
-        case "Vet":
+        case "Vet".localized():
             iconAsset = "vet-task-icon"
         default:
             iconAsset = "xmark"
