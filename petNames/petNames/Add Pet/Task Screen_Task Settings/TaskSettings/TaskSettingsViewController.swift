@@ -130,8 +130,6 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
                 return repeatTableViewCell() }
 
             cell.repeatLabel.text = "repeat".localized()
-            cell.accessoryView = UIImageView(image: UIImage(systemName: "chevron.right"))
-            cell.accessoryView?.tintColor = UIColor(named: "headerTitleColor")
             
             return cell
             
