@@ -7,32 +7,37 @@
 
 import UIKit
 
+public var textFieldInput: String = ""
+
 class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var isPressed: Bool = false
-    var imageManager = ImagePickerManager()
-    
+
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var petTableView: UITableView!
-    
+
     @IBAction func pickImageButton(_ sender: UIButton) {
-        // Setting image
+        // MARK: Setting image
         imageManager.requestPermissions()
         imageManager.pickImage(self) { image in
             self.petImage.image = image
         }
     }
 
+    var isPressed: Bool = false
+    var imageManager = ImagePickerManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         Background.shared.assignBackground(view: self.view)
         
-        // Localizable
+        // MARK: Localizable
         let newPet = "newPetTitle".localized()
         let cancelButton = "cancelButton".localized()
         let addButton = "addButton".localized()
         petTableView.delegate = self
         petTableView.dataSource = self
-        // Setting UIBarButtonItems
+        
+        // MARK: Setting UIBarButtonItems
         self.title = newPet
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: cancelButton,
@@ -44,17 +49,15 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                                                  target: self,
                                                                  action: #selector(addButtonAction))
         
-        // Setting the View Controller`s outlets
+        // MARK: Setting the View Controller`s outlets
         petImage.layer.cornerRadius = 22
         
-        // Register the custom header view.
+        // MARK: Register the custom header view.
         petTableView.register(MyCustomHeader.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
 
-        
-
     }
-    
-    // Setting the TableView
+
+    // MARK: Setting the TableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
@@ -131,7 +134,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                    as? CategoryTableViewCell) else {
                     return CategoryTableViewCell() }
 
-//                cell2.textLabel?.text = "category".localized()
+                cell2.categoryTextField.placeholder = "choose".localized()
                 cell2.categoryLabel.text = "category".localized()
                 
                 return cell2 }
@@ -141,7 +144,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             guard let cell = (tableView.dequeueReusableCell(withIdentifier: "newTask-cell", for: indexPath) as? AddNewTaskTableViewCell) else {
                 return AddNewTaskTableViewCell() }
             
-//            cell.textLabel?.text = "addNewTask".localized()
+            //            cell.textLabel?.text = "addNewTask".localized()
             cell.addNewTaskLabel.text = "addNewTask".localized()
             
             return cell
@@ -154,7 +157,8 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return cell
         }
     }
-    
+
+    // MARK: navigate when cell is selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
@@ -181,7 +185,8 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
-    
+
+    // MARK: navigation bar buttons
     @objc func cancelButtonAction() {
         print("Cancel pressed")
         self.navigationController?.dismiss(animated: true, completion: nil)
@@ -190,15 +195,9 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @objc func addButtonAction() {
         print("Add pressed")
-        //        let storyboard = UIStoryboard(name: "PetDetails", bundle: nil)
-        //        let viewC = storyboard.instantiateViewController(withIdentifier: "petDetails") as UIViewController
-        //        present(viewC, animated: true, completion: nil)
-        //        show(viewC, sender: nil)
         let pet = Pet()
-        pet.name = "tibetiamo"
-
-
-
+        petImage.image = self.petImage.image
+        pet.name = textFieldInput
         PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
             PersistanceManager.shared.listPets { result in
                 switch result {
@@ -213,7 +212,6 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
         }
-
 
     }
     

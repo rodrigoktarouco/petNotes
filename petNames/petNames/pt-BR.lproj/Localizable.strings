@@ -58,6 +58,13 @@
 "addNewTask" = "Adicionar nova tarefa";
 "firstSectionLabel" = "Informações";
 "secondSectionLabel" = "Tarefas";
+"choose" = "Escolher";
+"dog" = "Cão";
+"cat" = "Gato";
+"bird" = "Pássaro";
+"other" = "Outro";
+"cancel" = "Cancelar";
+"done" = "Confirmar";
 
 //MARK: -AppSettings
 "settingsTitleLabel" = "Configurações";

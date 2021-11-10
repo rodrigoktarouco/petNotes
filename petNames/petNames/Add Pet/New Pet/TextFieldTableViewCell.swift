@@ -7,20 +7,22 @@
 
 import UIKit
 
-class TextFieldTableViewCell: UITableViewCell {
+class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        self.textField.delegate = self
+
         textField.attributedText = NSAttributedString(string: "textField".localized(), attributes: nil)
+        textField.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBAction func onReturn() {
+        self.textField.resignFirstResponder()
+        textField.attributedText = NSAttributedString(string: textField.text ?? "", attributes: nil)
     }
 
 }
