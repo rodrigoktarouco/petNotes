@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var settingsTitleLabel: UILabel!
@@ -16,6 +18,8 @@ class SettingsViewController: UIViewController {
     let switchNames: [String] = ["General notifications".localized(), "Sound effects".localized(), "Dark mode".localized()]
     let contactTypes: [(UIImage?, String)] = [(UIImage(named: "email"), "Email"), (UIImage(named: "instagram"), "Instagram")]
     let teamMembers: [String] = ["Dharana Rivas", "Enzo Degrazia", "Guilherme Antonini", "Heitor Kunrath", "Rodrigo Tarouco"]
+    var notificationsEnabled: Bool = false
+    var darkMode: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +27,7 @@ class SettingsViewController: UIViewController {
         settingsTitleLabel.text = "settingsTitleLabel".localized()
         settingsTableView.delegate = self
         Background.shared.assignBackground(view: self.view)
+
         // Do any additional setup after loading the view.
     }
 }
@@ -47,6 +52,17 @@ extension SettingsViewController: UITableViewDataSource {
         if indexPath.section == 0 {
             guard let cell =  settingsTableView.dequeueReusableCell(withIdentifier: "Adjustments") as? AdjustmentsTableViewCell else { return UITableViewCell() }
             cell.generalNotificationsLabel.text = switchNames[indexPath.row]
+            if indexPath.row == 0 {
+                cell.cellType = .notifications
+                cell.generalNotificationsSwitch.isOn = notificationsEnabled
+            } else if indexPath.row == 1 {
+                cell.cellType = .soundEffects
+                cell.generalNotificationsSwitch.isOn = LocalNotificationService.shared.customSoundsEnabled
+            } else if indexPath.row == 2 {
+                cell.cellType = .darkMode
+                cell.generalNotificationsSwitch.isOn = darkMode
+            }
+            cell.delegate = self
             return cell
         } else if indexPath.section == 1 {
             guard let cell =  settingsTableView.dequeueReusableCell(withIdentifier: "Contacts") as? ContactTableViewCell else { return UITableViewCell() }
@@ -93,5 +109,37 @@ extension SettingsViewController {
         let backGroundAssetName = "background1"
         appSettingsBackgroundImage.image = UIImage(named: backGroundAssetName)
         appSettingsBackgroundImage.alpha = 0.4
+    }
+}
+
+// MARK: Adjustments Table view Cell delegte
+extension SettingsViewController: AdjustmentsTableViewCellDelegate {
+    func didToogleSwitch(cellType: AdjustmentsCellType, isOn: Bool) {
+        switch cellType {
+        case .notifications:
+            if isOn {
+                // Ask for user enable notifications on Settings
+                LocalNotificationService.shared.requestAuthorizationIfNeeded { [self] success in
+                    DispatchQueue.main.async {
+                        self.notificationsEnabled = success
+                        self.settingsTableView.reloadData()
+                    }
+
+                }
+            } else {
+                // Unschedule all user's notifications
+                DispatchQueue.global(qos: .background).async { [weak self] in
+                    LocalNotificationService.shared.remove(identifiers: [.task])
+                }
+                notificationsEnabled = false
+                settingsTableView.reloadData()
+            }
+        case .soundEffects:
+            LocalNotificationService.shared.customSoundsEnabled.toggle()
+            settingsTableView.reloadData()
+        case .darkMode:
+            self.darkMode.toggle()
+            settingsTableView.reloadData()
+        }
     }
 }
