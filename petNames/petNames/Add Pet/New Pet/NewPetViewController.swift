@@ -29,6 +29,8 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
 
         Background.shared.assignBackground(view: self.view)
+
+        // MARK: Image placeholder
         
         // MARK: Localizable
         let newPet = "newPetTitle".localized()

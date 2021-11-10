@@ -167,11 +167,11 @@
                                             <outlet property="warningTimeLabel" destination="EP4-Is-c7A" id="NLV-uG-Jvo"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="repeat-cell" id="VTJ-vb-W6n" customClass="repeatTableViewCell" customModule="petNames" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="repeat-cell" id="VTJ-vb-W6n" customClass="repeatTableViewCell" customModule="petNames" customModuleProvider="target">
                                         <rect key="frame" x="20" y="136.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VTJ-vb-W6n" id="lRe-aJ-akj">
-                                            <rect key="frame" x="0.0" y="0.0" width="344.5" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ3-0b-xUn">
@@ -180,23 +180,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRW-Uc-P1l">
-                                                    <rect key="frame" x="286.5" y="11.5" width="38" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" systemColor="systemGray2Color"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Escolher" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HHK-f1-r6H">
+                                                    <rect key="frame" x="278" y="5" width="84" height="34"/>
+                                                    <color key="textColor" systemColor="linkColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="HHK-f1-r6H" firstAttribute="centerY" secondItem="lRe-aJ-akj" secondAttribute="centerY" id="105-Qh-ypA"/>
                                                 <constraint firstItem="sJ3-0b-xUn" firstAttribute="leading" secondItem="lRe-aJ-akj" secondAttribute="leadingMargin" id="6Vf-QZ-d2I"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bRW-Uc-P1l" secondAttribute="trailing" constant="12" id="Ieh-2X-zh4"/>
-                                                <constraint firstItem="bRW-Uc-P1l" firstAttribute="centerY" secondItem="lRe-aJ-akj" secondAttribute="centerY" id="Iky-qy-lWh"/>
+                                                <constraint firstAttribute="trailing" secondItem="HHK-f1-r6H" secondAttribute="trailing" constant="12" id="FgR-Fo-hzb"/>
                                                 <constraint firstItem="sJ3-0b-xUn" firstAttribute="centerY" secondItem="lRe-aJ-akj" secondAttribute="centerY" id="eWc-c5-ueo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="frequencyTextField" destination="HHK-f1-r6H" id="MTR-wI-Mbw"/>
                                             <outlet property="repeatLabel" destination="sJ3-0b-xUn" id="Imz-25-wVP"/>
-                                            <outlet property="repeatSecondaryLabel" destination="bRW-Uc-P1l" id="IIk-E8-oWr"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notes-cell" id="adL-Hy-9z3" customClass="notesTableViewCell" customModule="petNames" customModuleProvider="target">
@@ -256,11 +256,11 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

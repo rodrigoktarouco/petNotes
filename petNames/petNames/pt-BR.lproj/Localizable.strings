@@ -44,6 +44,8 @@
 "observationsTitlelabel" = "Observações";
 "frequencyLabel" = "Diariamente";
 "tasksSearchBar" = "Buscar";
+"never" = "Nunca";
+"daily" = "Diariamente";
 
 
 //MARK: -NewPet
