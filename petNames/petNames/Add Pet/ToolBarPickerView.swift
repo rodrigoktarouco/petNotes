@@ -32,7 +32,7 @@ class ToolbarPickerView: UIPickerView {
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default
         toolBar.isTranslucent = true
-        toolBar.tintColor = .black
+        toolBar.tintColor = .link
         toolBar.sizeToFit()
 
         let doneButton = UIBarButtonItem(title: "done".localized(), style: .plain, target: self, action: #selector(self.doneTapped))

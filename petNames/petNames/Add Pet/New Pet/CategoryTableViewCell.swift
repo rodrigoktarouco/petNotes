@@ -22,6 +22,16 @@ class CategoryTableViewCell: UITableViewCell {
         self.categoryTextField.inputView = self.picker
         self.categoryTextField.inputAccessoryView = self.picker.toolbar
 
+        categoryTextField.backgroundColor = .systemFill
+        categoryTextField.layer.masksToBounds = true
+        categoryTextField.layer.cornerRadius = 10.0
+        categoryTextField.text = "choose".localized()
+        categoryTextField.textColor = .link
+
+        let myColor = UIColor.link
+        categoryTextField.layer.borderColor = myColor.cgColor
+        categoryTextField.layer.borderWidth = 1.0
+
         self.picker.delegate = self
         self.picker.dataSource = self
         self.picker.toolbarDelegate = self
@@ -54,13 +64,13 @@ extension CategoryTableViewCell: ToolbarPickerViewDelegate {
         let row = self.picker.selectedRow(inComponent: 0)
         self.picker.selectRow(row, inComponent: 0, animated: false)
         self.categoryTextField.text = self.pickerData[row]
-        self.categoryTextField.textColor = UIColor.systemGray
+        self.categoryTextField.textColor = .link
         self.categoryTextField.resignFirstResponder()
     }
 
     func didTapCancel() {
-        self.categoryTextField.text = nil
-        self.categoryTextField.placeholder = "choose".localized()
+        self.categoryTextField.text = "choose".localized()
+        self.categoryTextField.textColor = .link
         self.categoryTextField.resignFirstResponder()
     }
 }
