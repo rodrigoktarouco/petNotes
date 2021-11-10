@@ -160,9 +160,11 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if indexPath.row == 0 {
                 // textField
                 print("textfield")
+                tableView.deselectRow(at: indexPath, animated: true)
             } else {
                 // category
                 print("category")
+                tableView.deselectRow(at: indexPath, animated: true)
             }
         } else if indexPath.section == 1 {
             // addTask
@@ -170,11 +172,13 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
             let viewC = storyboard.instantiateViewController(withIdentifier: "taskScreen") as UIViewController
             show(viewC, sender: nil)
+            tableView.deselectRow(at: indexPath, animated: true)
             //            present(viewC, animated: true, completion: nil)
             
         } else {
             // share
             print("share")
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     }
     
