@@ -4,7 +4,7 @@
 //
 //  Created by Rodrigo Kroef Tarouco on 06/10/21.
 //
-
+// user.name = "unamedUser" fazer loc depis
 import UIKit
 import CoreData
 
@@ -15,7 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNUserNotificationCenter.current().delegate = self
         // Override point for customization after application launch.
         PersistanceManager.shared.setUp()
-        PersistanceManager.shared.loadUser { _ in
+        PersistanceManager.shared.loadUser { result in
+            switch result {
+            case .failure(PersistenceError.notSignedIn):
+                let user = User()
+                user.name = "unamedUser"
+
+                PersistanceManager.shared.saveUser(user: user) { _ in }
+
+            default:
+                return
+            }
             
         }
         //        let user = User.init(context: persistentContainer.viewContext)

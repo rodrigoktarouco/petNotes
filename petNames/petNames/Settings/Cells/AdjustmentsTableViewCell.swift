@@ -24,6 +24,7 @@ class AdjustmentsTableViewCell: UITableViewCell {
                         return
                     }
                 }
+                
             }
         } else {
             // Unschedule all user's notifications
