@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 enum TaskTypes {
 case water
@@ -19,9 +20,8 @@ case medicine
 case vet
 case custom
 }
-class FeedModel {
 
-    lazy var petArray = getAllPets()
+class FeedModel {
 
     var task1: Task = {
         var task = Task()
@@ -38,6 +38,7 @@ class FeedModel {
         task1,
         task2
     ]
+
     lazy var petsArray: [Pet] = {
         var petArray: [Pet] = []
         PersistanceManager.shared.listPets { result in
@@ -48,81 +49,84 @@ class FeedModel {
                 petArray = []
             }
         }
+
         return petArray
     }()
-    
-    func getTaskColor ( _ taskType: TaskTypes) -> UIColor {
-        switch taskType {
-        case .water :
-            return UIColor(red: 0.898, green: 1, blue: 1, alpha: 1)
-        case .feeding :
-            return UIColor(red: 1, green: 0.947, blue: 0.898, alpha: 1)
-        case .wash :
-            return UIColor(red: 0.937, green: 0.898, blue: 1, alpha: 1)
-        case .playtime :
-            return UIColor(red: 1, green: 0.898, blue: 0.996, alpha: 1)
-        case .walk :
-            return UIColor(red: 0.898, green: 1, blue: 0.908, alpha: 1)
-        case .medicine :
-            return UIColor(red: 1, green: 0.898, blue: 0.898, alpha: 1)
-        case .groom :
-            return UIColor(red: 1, green: 0.978, blue: 0.898, alpha: 1)
-        case .vet :
-            return UIColor(red: 0.922, green: 0.922, blue: 0.922, alpha: 1)
-        case .custom :
-            return UIColor(red: 0.898, green: 0.949, blue: 1, alpha: 1)
-        default:
-            return UIColor(red: 0.898, green: 0.949, blue: 1, alpha: 1)
-            
+
+    lazy var petsTasks: [Pet: [Task]] = {
+        var emptyDic: [Pet: [Task]] = [:]
+        for thisPet in petsArray {
+            PersistanceManager.shared.listTasksFromPet(pet: thisPet) { result in
+                switch result {
+                case .success(let tasksFromPersistence):
+                    emptyDic[thisPet] = tasksFromPersistence
+                case .failure(let error):
+                    emptyDic[thisPet] = []
+                }
+            }
         }
-    }
+        return emptyDic
+    }()
+
+    lazy var petsImages: [Pet: UIImage?] = {
+        var emptyDic: [Pet: UIImage?] = [:]
+        for thisPet in petsArray {
+            PersistanceManager.shared.getPetImage(thisPet) { image in
+                emptyDic[thisPet] = image
+            }
+        }
+        return emptyDic
+    }()
+
+
     func getTaskFeedCollectionViewCellData(taskNumber: Int) -> TaskFeedCollectionViewCellData {
         let taskDataStruct = TaskFeedCollectionViewCellData(petImage: UIImage(named: "pitty"), taskType: .water, taskName: "water", taskTime: "12:00", done: true)
         return taskDataStruct
     }
+
     func getPetsCollectionViewData( petNumber: Int) -> PetsCollectionViewDataOnFeed {
-        print("HAHAHAH")
-        print(petArray.count)
-        let petsDataStruct = PetsCollectionViewDataOnFeed(petImage: UIImage(named: "pitty"), petName: "pitty", tasksQuantity: 3)
+        let thisPet = petsArray[petNumber]
+        let petsDataStruct = PetsCollectionViewDataOnFeed(petImage: petsImages[thisPet] ?? UIImage(named: ""), petName: thisPet.name, tasksQuantity: petsTasks[thisPet]?.count ?? 0)
         return petsDataStruct
     }
+
     func getFractionOfNumberOfTasksDone() -> String {
         return "7 / 10"
     }
+
     func getUsersName() -> String {
         return PersistanceManager.shared.currentUser?.name?.capitalized ?? " "
     }
+
     func getNumberOfTotalTasks() -> Int {
         return 2
     }
+
     func getNumberOfPets() -> Int {
-        return 2
+        return petsArray.count
     }
+
     func getImageForFunTasksImageView() -> UIImage? {
         let image = UIImage(named: "mockFunImage")
-
         return image
     }
-    func getPetsInfosForPetDetails( forRowAt: Int) -> PetsInfosForPetDetails {
-        //petsArray[forRowAt]
 
-        return PetsInfosForPetDetails(name: "pitty", petImage: UIImage(named: "pitty"),petClassification: "Cachorro",petTaskNames: ["water","food","Trick Playing"])
-
-    }
-
-    func getAllPets() -> [Pet] {
-        var petsReceive: [Pet] = []
-        PersistanceManager.shared.listPets { result in
-                        switch result {
-                        case .success(let pets):
-                            petsReceive = pets
-                        case .failure(let error):
-                            print(error)
-                        }
+    func getPetsInfosForPetDetails( forRowAt: Int) -> (PetsInfosForPetDetails, Pet) {
+        let thisPet = petsArray[forRowAt]
+        var taskNames: [String] = []
+        let theseTasks = petsTasks[thisPet]!
+        for thisTask in theseTasks {
+            guard let thisName = thisTask.name else {continue}
+            taskNames.append(thisName)
         }
-        return petsReceive
+
+        return (PetsInfosForPetDetails(name: thisPet.name ?? "unnamedAnimal", petImage: petsImages[thisPet] ?? UIImage(named:"") ,petClassification: thisPet.category ,petTaskNames: taskNames) , thisPet)
+
     }
+
+
 }
+
 struct TaskFeedCollectionViewCellData {
     var petImage: UIImage?
     var taskType: TaskTypes?

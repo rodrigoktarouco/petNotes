@@ -133,7 +133,7 @@ extension FeedViewController: UICollectionViewDataSource {
             guard let cell = cell else { return UICollectionViewCell() }
             let infoStruct = modelInstance.getTaskFeedCollectionViewCellData(taskNumber: indexPath.row)
             cell.petImage.image = infoStruct.petImage
-            cell.auxView.backgroundColor = modelInstance.getTaskColor(infoStruct.taskType ?? .custom)
+            cell.auxView.backgroundColor = TasksDesign.shared.getTaskDesignProperties(infoStruct.taskName ?? "").color
             cell.taskNameLabel.text = infoStruct.taskName?.capitalized
             cell.taskTimeLabel.text = infoStruct.taskTime
             cell.checkImage.image = infoStruct.done ?? false ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "checkmark.circle.fill")
@@ -145,7 +145,7 @@ extension FeedViewController: UICollectionViewDataSource {
                 return cell ?? UICollectionViewCell()
             } else {
                 let cell = petsCollectionView.dequeueReusableCell(withReuseIdentifier: "PetsOnFeedCollectionViewCell", for: indexPath) as? PetsOnFeedCollectionViewCell
-                let infoStruct = modelInstance.getPetsCollectionViewData(petNumber: indexPath.row)
+                let infoStruct = modelInstance.getPetsCollectionViewData(petNumber: indexPath.row - 1)
                 cell?.petImage.image = infoStruct.petImage ?? UIImage()
                 cell?.petName.text = infoStruct.petName?.capitalized
 
@@ -170,12 +170,13 @@ extension FeedViewController: UICollectionViewDelegate {
                 let storyboard = UIStoryboard(name: "PetDetails", bundle: nil)
 
                 guard let navController = storyboard.instantiateInitialViewController() as? UINavigationController, let VCdetails = navController.topViewController as? PetDetailsViewController else{ return }
-                VCdetails.petData = modelInstance.getPetsInfosForPetDetails(forRowAt: indexPath.row + 1)
+                let petDataAndPet = modelInstance.getPetsInfosForPetDetails(forRowAt: indexPath.row - 1)
+                VCdetails.petData = petDataAndPet.0
+                VCdetails.chosenPet = petDataAndPet.1
                 
                 present(navController, animated: true, completion: nil)
 
             }
-
         }
     }
 

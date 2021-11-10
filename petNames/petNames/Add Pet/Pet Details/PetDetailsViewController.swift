@@ -10,6 +10,7 @@ import UIKit
 class PetDetailsViewController: UIViewController {
 
     var petData: PetsInfosForPetDetails?
+    var chosenPet: Pet?
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var bigTableView: UITableView!
 

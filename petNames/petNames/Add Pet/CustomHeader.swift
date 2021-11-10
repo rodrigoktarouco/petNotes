@@ -24,6 +24,7 @@ class MyCustomHeader: UITableViewHeaderFooterView {
         title.translatesAutoresizingMaskIntoConstraints = false
 //        title.backgroundColor = .blue
         title.font = UIFont.systemFont(ofSize: 20)
+        title.textColor = UIColor(named: "")
         contentView.addSubview(title)
 
         NSLayoutConstraint.activate([
