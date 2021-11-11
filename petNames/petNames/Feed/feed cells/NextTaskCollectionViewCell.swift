@@ -18,9 +18,19 @@ class NextTaskCollectionViewCell: UICollectionViewCell {
         
         petImage.layer.cornerRadius = 22
         auxView.layer.cornerRadius = 22
-        
+
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            auxView.backgroundColor = TasksDesign.shared.getTaskDesignProperties(taskNameLabel.text ?? "").color
+
+        case .dark:
+            auxView.layer.borderWidth = 1
+            auxView.layer.borderColor = TasksDesign.shared.getTaskDesignProperties(taskNameLabel.text ?? "").color?.cgColor
+            auxView.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.114, alpha: 1)
+        default:
+            break
+        }
         setUpFontStyle()
-//        auxView.backgroundColor = FeedModel.sharedFeedModel.getTaskColor(.medicine)
     }
     
     func setUpFontStyle () {
