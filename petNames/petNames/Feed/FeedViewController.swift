@@ -70,10 +70,9 @@ class FeedViewController: UIViewController {
             self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 0.5)
         default:
             self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
-
-        
-
+        }
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         switch traitCollection.userInterfaceStyle {
@@ -136,10 +135,12 @@ extension FeedViewController: UICollectionViewDataSource {
             guard let cell = cell else { return UICollectionViewCell() }
             let infoStruct = modelInstance.getTaskFeedCollectionViewCellData(taskNumber: indexPath.row)
             cell.petImage.image = infoStruct.petImage
-            cell.taskNameLabel.text = infoStruct.taskName?.capitalized
+            cell.taskNameLabel.text = infoStruct.taskName?.localized().capitalized
             cell.taskTimeLabel.text = infoStruct.taskTime
             cell.checkImage.image = infoStruct.done ?? false ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "checkmark.circle.fill")
-            cell.checkImage.tintColor = UIColor(red: 0.592, green: 0.592, blue: 0.592, alpha: 1)
+            cell.taskNameInPersistence = infoStruct.taskName
+            cell.setUpColors()
+
             return cell
         } else if collectionView == petsCollectionView {
             if indexPath.row == 0 {
