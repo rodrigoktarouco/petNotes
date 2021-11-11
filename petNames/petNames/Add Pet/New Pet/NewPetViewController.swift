@@ -218,7 +218,7 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 @objc func addButtonAction() {
     print("Add pressed")
-
+    self.navigationController?.dismiss(animated: true, completion: nil)
     petImage.image = self.petImage.image
     pet.name = textFieldInput
     PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in

@@ -56,7 +56,6 @@ class FeedViewController: UIViewController {
         welcomeUserTopDistance.constant = UIScreen.main.bounds.height * 23 / 844
         funimageTopDistance.constant = UIScreen.main.bounds.height * 10 / 844
 
-
         //        funImageHeight.constant = UIScreen.main.bounds.height * 80 / 844
         //        funImageWidth.constant = UIScreen.main.bounds.width * 330 / 844
         doneTasksTopDistance.constant =  0.0201*UIScreen.main.bounds.height - 10
