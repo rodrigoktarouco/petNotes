@@ -33,31 +33,28 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: #selector(saveButtonAction))
-
-        // MARK: Initializes the Task object
-        task.name = selectedTaskGlobal
-        task.repetition = frequencyGlobal
-
-        // MARK: Accesses NewPetViewController
-//        if let viewControlersStack = self.navigationController?.viewControllers {
-//            for VC in viewControlersStack where VC is NewPetViewController {
-//
-//                newPetVC = VC
-//                break
-//            }
-////            newPetVC.myPet
-//        }
     }
 
     // MARK: navigation bar buttons
     @objc func saveButtonAction() {
 
-        myPetTasks.append(task)
+        // MARK: Initializes the Task object
+        task.name = selectedTaskGlobal
+        task.repetition = frequencyGlobal
+        task.initialDate = Date()
+        //       task.observations =
 
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        // MARK: returns to the first view of the flow
+        self.navigationController?.popToRootViewController(animated: true)
+
+        // MARK: Accesses NewPetViewController
+        guard let newPetVC = self.navigationController?.topViewController as? NewPetViewController else {
+            return
+        }
+        newPetVC.myPetTasks.append(task)
+        print(newPetVC.myPetTasks)
+        newPetVC.petTableView.reloadData()
     }
-
-
 
     // MARK: TableView config
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

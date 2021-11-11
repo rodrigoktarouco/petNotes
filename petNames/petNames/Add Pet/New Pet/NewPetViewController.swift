@@ -7,8 +7,6 @@
 
 import UIKit
 
-// MARK: Task added after pressing "save" in he last flow screen
-var myPetTasks: [Task] = [] // TODO: LEMBRAR DE ZERAR ESSE ARRAY AO CLICAR EM ADICIONAR
 public var textFieldInput: String = ""
 
 class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -23,6 +21,8 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.petImage.image = image
         }
     }
+
+    var myPetTasks: [Task] = []
 
     // MARK: Instantiates
     var imageManager = ImagePickerManager()
@@ -184,7 +184,6 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let viewC = storyboard.instantiateViewController(withIdentifier: "taskScreen") as UIViewController
             show(viewC, sender: nil)
             tableView.deselectRow(at: indexPath, animated: true)
-            //            present(viewC, animated: true, completion: nil)
             
         } else {
             // share
