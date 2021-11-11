@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="width" constant="155" id="tUX-Vx-jSI"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="22" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h7Y-c3-YDn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="22" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h7Y-c3-YDn">
                                 <rect key="frame" x="0.0" y="304.5" width="414" height="591.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="linkColor"/>
@@ -154,7 +154,7 @@
                                             <outlet property="shareLabel" destination="gRb-AT-6a8" id="BiE-qc-ea3"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Df2-aq-34x" customClass="TaskSwitchTableViewCell" customModule="petNames" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskSwitch-cell" id="Df2-aq-34x" customClass="TaskSwitchTableViewCell" customModule="petNames" customModuleProvider="target">
                                         <rect key="frame" x="20" y="272.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Df2-aq-34x" id="ijI-l9-klc">
@@ -187,6 +187,7 @@
                                                 <constraint firstItem="kZn-zO-hHw" firstAttribute="centerY" secondItem="ijI-l9-klc" secondAttribute="centerY" id="zez-jH-sqd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="cellColor"/>
                                         <connections>
                                             <outlet property="taskIconImage" destination="bPd-sV-jem" id="iKc-Vu-u3n"/>
                                             <outlet property="taskLabel" destination="kZn-zO-hHw" id="dJj-1T-1I2"/>

@@ -54,6 +54,8 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
         newPetVC.myPetTasks.append(task)
         print(newPetVC.myPetTasks)
         newPetVC.petTableView.reloadData()
+
+        
     }
 
     // MARK: TableView config
