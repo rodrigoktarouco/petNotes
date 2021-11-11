@@ -96,7 +96,7 @@ extension SettingsViewController: UITableViewDelegate {
             label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
             label.text = sectionNames[section].localized()
             label.font = .systemFont(ofSize: 20)
-            label.textColor = .black
+            label.textColor = UIColor(named: "headerTitleColor")
             label.font = UIFont(name: "SFProRounded-Semibold", size: 20)
 
             headerView.addSubview(label)
