@@ -76,6 +76,7 @@
 		FD7C458B272C6A6A0065C035 /* PetsOnFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7C458A272C6A6A0065C035 /* PetsOnFeedCollectionViewCell.swift */; };
 		FD86996D271F14DA00FC9725 /* TasksSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86996C271F14DA00FC9725 /* TasksSettingsViewController.swift */; };
 		FD86996F271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD86996E271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift */; };
+		FDA924BC273C60D5005B43CB /* TasksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA924BB273C60D5005B43CB /* TasksManager.swift */; };
 		FDB7B31D2733233500C83EC8 /* TopInfosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB7B31C2733233500C83EC8 /* TopInfosTableViewCell.swift */; };
 		FDB7B31F273323B700C83EC8 /* TasksEnumerationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB7B31E273323B700C83EC8 /* TasksEnumerationTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -157,6 +158,7 @@
 		FD7C458A272C6A6A0065C035 /* PetsOnFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsOnFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD86996C271F14DA00FC9725 /* TasksSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksSettingsViewController.swift; sourceTree = "<group>"; };
 		FD86996E271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningsOfTaskSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		FDA924BB273C60D5005B43CB /* TasksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksManager.swift; sourceTree = "<group>"; };
 		FDB7B31C2733233500C83EC8 /* TopInfosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInfosTableViewCell.swift; sourceTree = "<group>"; };
 		FDB7B31E273323B700C83EC8 /* TasksEnumerationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksEnumerationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,6 +238,7 @@
 				9DCC58DF27189952007A800C /* Settings */,
 				9DCC58DB2718964A007A800C /* Feed */,
 				FD45E96C273458B300F01E83 /* TasksDesign.swift */,
+				FDA924BB273C60D5005B43CB /* TasksManager.swift */,
 				9D1E7501270E118E00321E54 /* AppDelegate.swift */,
 				FD62D2D2272C7FA20061560E /* AppUITabBar.swift */,
 				9D1E7503270E118E00321E54 /* SceneDelegate.swift */,
@@ -540,6 +543,7 @@
 				FDB7B31F273323B700C83EC8 /* TasksEnumerationTableViewCell.swift in Sources */,
 				9DCC58EC27189A1E007A800C /* TaskViewController.swift in Sources */,
 				F496C576271F612300443927 /* TaskScreenTableViewCell.swift in Sources */,
+				FDA924BC273C60D5005B43CB /* TasksManager.swift in Sources */,
 				5CBE0475272C774D000811D5 /* CustomHeader.swift in Sources */,
 				FD86996D271F14DA00FC9725 /* TasksSettingsViewController.swift in Sources */,
 				9D641CF3273DA4CC0072886A /* Onboarding4ViewController.swift in Sources */,
