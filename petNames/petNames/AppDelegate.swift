@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
             
         }
+
+        let window = UIApplication.shared.windows.filter({$0.isKeyWindow}).first
+        window?.overrideUserInterfaceStyle = .unspecified
         //        let user = User.init(context: persistentContainer.viewContext)
 //        user.name = "Heitor"
 //        user.id = "1"
