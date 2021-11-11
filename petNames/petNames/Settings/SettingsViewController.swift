@@ -140,6 +140,11 @@ extension SettingsViewController: AdjustmentsTableViewCellDelegate {
             LocalNotificationService.shared.customSoundsEnabled.toggle()
             settingsTableView.reloadData()
         case .darkMode:
+            if #available(iOS 13.0, *) {
+                       overrideUserInterfaceStyle = .dark // or .dark
+                   } else {
+                       // Fallback on earlier versions
+                   }
             self.darkMode.toggle()
             settingsTableView.reloadData()
         }
