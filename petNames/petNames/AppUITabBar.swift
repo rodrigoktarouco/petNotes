@@ -19,7 +19,6 @@ class AppUITabBar: UITabBar {
     */
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 1)
     }
 
 }

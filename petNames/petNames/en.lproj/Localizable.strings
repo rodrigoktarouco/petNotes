@@ -45,9 +45,10 @@
 "observationsTitlelabel" = "Observations";
 "frequencyLabel" = "Daily";
 "tasksSearchBar" = "Search";
-
+"save" = "Save";
 
 //MARK: -NewPet
+"placeHolderAsset" = "placeholder-eng";
 "newPetTitle" = "New Pet";
 "cancelButton" = "Cancel";
 "addButton" = "Add";

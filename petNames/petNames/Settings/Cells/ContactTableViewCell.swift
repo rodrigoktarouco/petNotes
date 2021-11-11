@@ -11,6 +11,7 @@ class ContactTableViewCell: UITableViewCell {
 
     @IBOutlet weak var contactImageView: UIImageView!
     @IBOutlet weak var contactTitleLabel: UILabel!
+    var url: URL?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +25,11 @@ class ContactTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
+    @IBAction func linkBtnAction(_ sender: Any) {
+        if let url = self.url {
+               UIApplication.shared.open(url)
+           }
+       }
 
 }

@@ -24,7 +24,7 @@ class MyCustomHeader: UITableViewHeaderFooterView {
         title.translatesAutoresizingMaskIntoConstraints = false
 //        title.backgroundColor = .blue
         title.font = UIFont.systemFont(ofSize: 20)
-        title.textColor = UIColor(named: "")
+        title.textColor = UIColor(named: "headerTitleColor")
         contentView.addSubview(title)
 
         NSLayoutConstraint.activate([
@@ -34,7 +34,7 @@ class MyCustomHeader: UITableViewHeaderFooterView {
             title.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor,
                    constant: -20),
             title.trailingAnchor.constraint(equalTo:
-                   contentView.layoutMarginsGuide.trailingAnchor, constant: 20),
+                   contentView.layoutMarginsGuide.trailingAnchor, constant: 20)
 //            title.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor, constant: -100)
         ])
     }

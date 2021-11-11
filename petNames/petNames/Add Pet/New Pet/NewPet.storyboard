@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--newPet-->
+        <!--addPet-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="addPet" title="newPet" id="Y6W-OH-hqX" customClass="NewPetViewController" customModule="petNames" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addPet" title="addPet" id="Y6W-OH-hqX" customClass="NewPetViewController" customModule="petNames" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,13 +154,56 @@
                                             <outlet property="shareLabel" destination="gRb-AT-6a8" id="BiE-qc-ea3"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Df2-aq-34x" customClass="TaskSwitchTableViewCell" customModule="petNames" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="272.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Df2-aq-34x" id="ijI-l9-klc">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medicine-task-icon" translatesAutoresizingMaskIntoConstraints="NO" id="bPd-sV-jem">
+                                                    <rect key="frame" x="20" y="9.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="2bW-Vg-1lS"/>
+                                                        <constraint firstAttribute="height" constant="25" id="X3J-dD-Fd4"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZn-zO-hHw">
+                                                    <rect key="frame" x="52" y="11.5" width="70" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1tx-ou-Hsa">
+                                                    <rect key="frame" x="307" y="6.5" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="1tx-ou-Hsa" secondAttribute="trailing" constant="18" id="JjN-3q-Zwb"/>
+                                                <constraint firstItem="bPd-sV-jem" firstAttribute="leading" secondItem="ijI-l9-klc" secondAttribute="leadingMargin" id="Sjd-ff-rX5"/>
+                                                <constraint firstItem="bPd-sV-jem" firstAttribute="centerY" secondItem="ijI-l9-klc" secondAttribute="centerY" id="Ua8-4Y-K1a"/>
+                                                <constraint firstItem="kZn-zO-hHw" firstAttribute="leading" secondItem="bPd-sV-jem" secondAttribute="trailing" constant="7" id="rle-1N-VMk"/>
+                                                <constraint firstItem="1tx-ou-Hsa" firstAttribute="centerY" secondItem="ijI-l9-klc" secondAttribute="centerY" id="w86-wB-e0M"/>
+                                                <constraint firstItem="kZn-zO-hHw" firstAttribute="centerY" secondItem="ijI-l9-klc" secondAttribute="centerY" id="zez-jH-sqd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskIconImage" destination="bPd-sV-jem" id="iKc-Vu-u3n"/>
+                                            <outlet property="taskLabel" destination="kZn-zO-hHw" id="dJj-1T-1I2"/>
+                                            <outlet property="taskSwitch" destination="1tx-ou-Hsa" id="Jgg-BH-CIm"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0c-VH-BSZ">
-                                <rect key="frame" x="279" y="238" width="95" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0c-VH-BSZ">
+                                <rect key="frame" x="129.5" y="114.5" width="155" height="155"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="f1E-Wl-pd1"/>
+                                    <constraint firstAttribute="height" constant="155" id="xDe-dc-dQM"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Pick image"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="pickImageButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ME0-QT-07a"/>
                                 </connections>
@@ -169,11 +212,14 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hLP-2Y-Zc0" firstAttribute="bottom" secondItem="p0c-VH-BSZ" secondAttribute="bottom" id="FTn-pd-iBd"/>
                             <constraint firstItem="h7Y-c3-YDn" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="QkV-F8-Aho"/>
                             <constraint firstItem="hLP-2Y-Zc0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="26.5" id="SrC-eR-1K6"/>
                             <constraint firstItem="hLP-2Y-Zc0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="UDd-u1-mFy"/>
                             <constraint firstItem="h7Y-c3-YDn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fv2-TB-mwb"/>
+                            <constraint firstItem="p0c-VH-BSZ" firstAttribute="top" secondItem="hLP-2Y-Zc0" secondAttribute="top" id="nng-zG-NgQ"/>
                             <constraint firstAttribute="bottom" secondItem="h7Y-c3-YDn" secondAttribute="bottom" id="rE6-il-SaB"/>
+                            <constraint firstItem="p0c-VH-BSZ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="u9y-TC-bYH"/>
                             <constraint firstItem="h7Y-c3-YDn" firstAttribute="top" secondItem="hLP-2Y-Zc0" secondAttribute="bottom" constant="35" id="uSD-4T-eb6"/>
                         </constraints>
                     </view>
@@ -282,6 +328,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="medicine-task-icon" width="50" height="50.5"/>
         <image name="person.crop.circle.badge.plus" catalog="system" width="128" height="113"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <namedColor name="cellColor">

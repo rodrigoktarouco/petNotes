@@ -87,7 +87,6 @@ class FeedModel {
         return emptyDic
     }()
 
-
     func getTaskFeedCollectionViewCellData(taskNumber: Int) -> TaskFeedCollectionViewCellData {
         let taskDataStruct = TaskFeedCollectionViewCellData(petImage: UIImage(named: "pitty"), taskType: .water, taskName: "water", taskTime: "12:00", done: true)
         return taskDataStruct
@@ -156,7 +155,6 @@ class FeedModel {
         return (PetsInfosForPetDetails(name: thisPet.name ?? "unnamedAnimal", petImage: petsImages[thisPet] ?? UIImage(named:"") ,petClassification: thisPet.category ,petTaskNames: taskNames) , thisPet)
 
     }
-
 
 }
 
