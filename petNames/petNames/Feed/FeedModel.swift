@@ -87,7 +87,10 @@ class FeedModel {
         return emptyDic
     }()
 
-    func getTaskFeedCollectionViewCellData(taskNumber: Int) -> TaskFeedCollectionViewCellData {
+    func getTaskFeedCollectionViewCellData(taskNumber: Int) -> TaskFeedCollectionViewCellData {// send the task name as it is on the persistence
+
+
+
         let taskDataStruct = TaskFeedCollectionViewCellData(petImage: UIImage(named: "pitty"), taskType: .water, taskName: "water", taskTime: "12:00", done: true)
         return taskDataStruct
     }
