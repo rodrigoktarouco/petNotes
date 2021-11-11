@@ -31,6 +31,7 @@ class SettingsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+
 }
 extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

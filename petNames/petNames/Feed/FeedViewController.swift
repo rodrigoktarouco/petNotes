@@ -65,7 +65,7 @@ class FeedViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 0.5)
+        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
         PersistanceManager.shared.listPets { result in
             switch result {
             case .success(let pets):
@@ -79,7 +79,7 @@ class FeedViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 1)
+        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
     }
 
     func setUpDoneTasksImage() {
