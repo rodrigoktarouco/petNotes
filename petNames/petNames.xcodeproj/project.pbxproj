@@ -38,7 +38,7 @@
 		9DCC58E227189992007A800C /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58E127189992007A800C /* FeedModel.swift */; };
 		9DCC58E4271899B1007A800C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCC58E3271899B1007A800C /* Settings.storyboard */; };
 		9DCC58E6271899C7007A800C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58E5271899C7007A800C /* SettingsViewController.swift */; };
-		9DCC58E8271899E4007A800C /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58E7271899E4007A800C /* SettingsModel.swift */; };
+		9DCC58E8271899E4007A800C /* SoundsImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58E7271899E4007A800C /* SoundsImplementation.swift */; };
 		9DCC58EA27189A0A007A800C /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCC58E927189A0A007A800C /* Task.storyboard */; };
 		9DCC58EC27189A1E007A800C /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58EB27189A1E007A800C /* TaskViewController.swift */; };
 		9DCC58EE27189A2C007A800C /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58ED27189A2C007A800C /* TaskModel.swift */; };
@@ -121,7 +121,7 @@
 		9DCC58E127189992007A800C /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		9DCC58E3271899B1007A800C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9DCC58E5271899C7007A800C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		9DCC58E7271899E4007A800C /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		9DCC58E7271899E4007A800C /* SoundsImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsImplementation.swift; sourceTree = "<group>"; };
 		9DCC58E927189A0A007A800C /* Task.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		9DCC58EB27189A1E007A800C /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		9DCC58ED27189A2C007A800C /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
@@ -312,7 +312,7 @@
 				9D93C9782739CFDA00C3C713 /* LocalNotificationService */,
 				FD06EABC27232D8400EC4D37 /* Cells */,
 				9DCC58E5271899C7007A800C /* SettingsViewController.swift */,
-				9DCC58E7271899E4007A800C /* SettingsModel.swift */,
+				9DCC58E7271899E4007A800C /* SoundsImplementation.swift */,
 				9DCC58E3271899B1007A800C /* Settings.storyboard */,
 			);
 			path = Settings;
@@ -508,7 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DCC58E8271899E4007A800C /* SettingsModel.swift in Sources */,
+				9DCC58E8271899E4007A800C /* SoundsImplementation.swift in Sources */,
 				F496C574271F597C00443927 /* TaskScreenViewController.swift in Sources */,
 				F4D612A6272B494200C49FCB /* notesTableViewCell.swift in Sources */,
 				FD45E96D273458B300F01E83 /* TasksDesign.swift in Sources */,
@@ -716,7 +716,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2522W6SWRS;
+				DEVELOPMENT_TEAM = 8JAU65C453;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = petNames/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -744,7 +744,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2522W6SWRS;
+				DEVELOPMENT_TEAM = 8JAU65C453;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = petNames/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
