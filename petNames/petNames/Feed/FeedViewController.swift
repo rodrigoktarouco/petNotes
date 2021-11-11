@@ -65,7 +65,7 @@ class FeedViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "feedTabBarColor")
+        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
         PersistanceManager.shared.listPets { result in
             switch result {
             case .success(let pets):

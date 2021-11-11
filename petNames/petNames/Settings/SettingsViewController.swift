@@ -30,16 +30,7 @@ class SettingsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
-//    }
-//    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
-//    }
+
 }
 extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
