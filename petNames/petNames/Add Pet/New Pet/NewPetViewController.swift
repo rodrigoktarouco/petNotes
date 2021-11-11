@@ -13,7 +13,8 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var petTableView: UITableView!
-
+    @IBOutlet var editImageBtn: UIImageView!
+    
     @IBAction func pickImageButton(_ sender: UIButton) {
         // MARK: Setting image
         imageManager.requestPermissions()
@@ -37,6 +38,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         // MARK: Image placeholder
         self.petImage.image = UIImage(named: "placeHolderAsset".localized())
+        editImageBtn.layer.cornerRadius = 10
         
         // MARK: Localizable
         let newPet = "newPetTitle".localized()
@@ -134,6 +136,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if indexPath.row == 0 {
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "textField-cell", for: indexPath)
+                
                 
                 return cell
                 

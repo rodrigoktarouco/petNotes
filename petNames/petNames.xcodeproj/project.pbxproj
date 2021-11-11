@@ -51,8 +51,9 @@
 		F496C572271A140C00443927 /* NewPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496C571271A140C00443927 /* NewPetViewController.swift */; };
 		F496C574271F597C00443927 /* TaskScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496C573271F597C00443927 /* TaskScreenViewController.swift */; };
 		F496C576271F612300443927 /* TaskScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496C575271F612300443927 /* TaskScreenTableViewCell.swift */; };
+		F4A3DD03273DC7A700B0ABB0 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3DD02273DC7A700B0ABB0 /* AlertManager.swift */; };
 		F4D6129E272B3BE300C49FCB /* TaskSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6129D272B3BE300C49FCB /* TaskSettingsViewController.swift */; };
-		F4D612A2272B492E00C49FCB /* warningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D612A1272B492E00C49FCB /* warningTableViewCell.swift */; };
+		F4D612A2272B492E00C49FCB /* WarningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D612A1272B492E00C49FCB /* WarningTableViewCell.swift */; };
 		F4D612A4272B493900C49FCB /* repeatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D612A3272B493900C49FCB /* repeatTableViewCell.swift */; };
 		F4D612A6272B494200C49FCB /* notesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D612A5272B494200C49FCB /* notesTableViewCell.swift */; };
 		FD06EAAC2721E9C700EC4D37 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1788AC271DE63900C839DF /* SF-Pro-Rounded-Black.otf */; };
@@ -140,9 +141,10 @@
 		F496C571271A140C00443927 /* NewPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetViewController.swift; sourceTree = "<group>"; };
 		F496C573271F597C00443927 /* TaskScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskScreenViewController.swift; sourceTree = "<group>"; };
 		F496C575271F612300443927 /* TaskScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskScreenTableViewCell.swift; sourceTree = "<group>"; };
+		F4A3DD02273DC7A700B0ABB0 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		F4D6129D272B3BE300C49FCB /* TaskSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSettingsViewController.swift; sourceTree = "<group>"; };
 		F4D6129F272B491800C49FCB /* AddWarningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWarningTableViewCell.swift; sourceTree = "<group>"; };
-		F4D612A1272B492E00C49FCB /* warningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = warningTableViewCell.swift; sourceTree = "<group>"; };
+		F4D612A1272B492E00C49FCB /* WarningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningTableViewCell.swift; sourceTree = "<group>"; };
 		F4D612A3272B493900C49FCB /* repeatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = repeatTableViewCell.swift; sourceTree = "<group>"; };
 		F4D612A5272B494200C49FCB /* notesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notesTableViewCell.swift; sourceTree = "<group>"; };
 		FD06EAB82721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentsTableViewCell.swift; sourceTree = "<group>"; };
@@ -367,8 +369,9 @@
 			isa = PBXGroup;
 			children = (
 				F4D6129D272B3BE300C49FCB /* TaskSettingsViewController.swift */,
+				F4A3DD02273DC7A700B0ABB0 /* AlertManager.swift */,
 				F4D6129F272B491800C49FCB /* AddWarningTableViewCell.swift */,
-				F4D612A1272B492E00C49FCB /* warningTableViewCell.swift */,
+				F4D612A1272B492E00C49FCB /* WarningTableViewCell.swift */,
 				F4D612A3272B493900C49FCB /* repeatTableViewCell.swift */,
 				F4D612A5272B494200C49FCB /* notesTableViewCell.swift */,
 			);
@@ -570,6 +573,7 @@
 				5C50A717273B263B00FD142E /* ToolBarPickerView.swift in Sources */,
 				5C50A70327344D6E00FD142E /* CustomFontModel.swift in Sources */,
 				9D641CEF273DA4A80072886A /* Onboarding2ViewController.swift in Sources */,
+				F4A3DD03273DC7A700B0ABB0 /* AlertManager.swift in Sources */,
 				5C50A707273458DC00FD142E /* AddNewTaskTableViewCell.swift in Sources */,
 				9D5A1D302718BD6600637589 /* PetsModel.swift in Sources */,
 				FD06EAB92721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift in Sources */,
@@ -579,7 +583,7 @@
 				5CBE0478272C98ED000811D5 /* AddWarningTableViewCell.swift in Sources */,
 				FD06EABB27232C0A00EC4D37 /* ContactTableViewCell.swift in Sources */,
 				9D641CED273DA3DF0072886A /* OnboardingViewController.swift in Sources */,
-				F4D612A2272B492E00C49FCB /* warningTableViewCell.swift in Sources */,
+				F4D612A2272B492E00C49FCB /* WarningTableViewCell.swift in Sources */,
 				9D6449CB272898A8007BFB63 /* PersistanceManager.swift in Sources */,
 				FD86996F271F288900FC9725 /* WarningsOfTaskSettingsTableViewCell.swift in Sources */,
 				9DCC58E227189992007A800C /* FeedModel.swift in Sources */,
