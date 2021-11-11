@@ -13,6 +13,7 @@
 		5C50A7052734554A00FD142E /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A7042734554A00FD142E /* CategoryTableViewCell.swift */; };
 		5C50A707273458DC00FD142E /* AddNewTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A706273458DC00FD142E /* AddNewTaskTableViewCell.swift */; };
 		5C50A717273B263B00FD142E /* ToolBarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A716273B263B00FD142E /* ToolBarPickerView.swift */; };
+		5C50A719273D909600FD142E /* TaskSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A718273D909600FD142E /* TaskSwitchTableViewCell.swift */; };
 		5C86C9F8271DE4BE00FD1C2C /* TaskScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C86C9F7271DE4BE00FD1C2C /* TaskScreen.storyboard */; };
 		5C86C9FA271DE4E200FD1C2C /* PetDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C86C9F9271DE4E200FD1C2C /* PetDetails.storyboard */; };
 		5C86C9FC271DE91000FD1C2C /* PetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C86C9FB271DE91000FD1C2C /* PetDetailsViewController.swift */; };
@@ -81,6 +82,7 @@
 		5C50A7042734554A00FD142E /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		5C50A706273458DC00FD142E /* AddNewTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskTableViewCell.swift; sourceTree = "<group>"; };
 		5C50A716273B263B00FD142E /* ToolBarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarPickerView.swift; sourceTree = "<group>"; };
+		5C50A718273D909600FD142E /* TaskSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		5C86C9F7271DE4BE00FD1C2C /* TaskScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskScreen.storyboard; sourceTree = "<group>"; };
 		5C86C9F9271DE4E200FD1C2C /* PetDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetDetails.storyboard; sourceTree = "<group>"; };
 		5C86C9FB271DE91000FD1C2C /* PetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				5C50A7042734554A00FD142E /* CategoryTableViewCell.swift */,
 				5C145B5C2721DF090091C02A /* ImagePickerManager.swift */,
 				5C50A706273458DC00FD142E /* AddNewTaskTableViewCell.swift */,
+				5C50A718273D909600FD142E /* TaskSwitchTableViewCell.swift */,
 			);
 			path = "New Pet";
 			sourceTree = "<group>";
@@ -225,12 +228,12 @@
 				9D1E7501270E118E00321E54 /* AppDelegate.swift */,
 				FD62D2D2272C7FA20061560E /* AppUITabBar.swift */,
 				9D1E7503270E118E00321E54 /* SceneDelegate.swift */,
+				F48142072733249D0070FF77 /* Background.swift */,
 				9D1E750A270E119000321E54 /* Assets.xcassets */,
 				9D295290271DE1410079A685 /* Fonts */,
 				9D1E750C270E119000321E54 /* LaunchScreen.storyboard */,
 				9D1E750F270E119000321E54 /* Info.plist */,
 				9D75F9EC2710C54D001FF11C /* Localizable.strings */,
-				F48142072733249D0070FF77 /* Background.swift */,
 			);
 			path = petNames;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				F48142082733249D0070FF77 /* Background.swift in Sources */,
 				9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */,
 				FD638E57272AEB5400197910 /* NextTaskCollectionViewCell.swift in Sources */,
+				5C50A719273D909600FD142E /* TaskSwitchTableViewCell.swift in Sources */,
 				9D1E7504270E118E00321E54 /* SceneDelegate.swift in Sources */,
 				5C145B5D2721DF090091C02A /* ImagePickerManager.swift in Sources */,
 				5C86C9FC271DE91000FD1C2C /* PetDetailsViewController.swift in Sources */,

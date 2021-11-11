@@ -46,9 +46,11 @@
 "tasksSearchBar" = "Buscar";
 "never" = "Nunca";
 "daily" = "Diariamente";
+"save" = "Salvar";
 
 
 //MARK: -NewPet
+"placeHolderAsset" = "placeholder-ptBR";
 "newPetTitle" = "Novo pet";
 "cancelButton" = "Cancelar";
 "addButton" = "Adicionar";

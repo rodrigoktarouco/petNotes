@@ -72,6 +72,7 @@ extension repeatTableViewCell: ToolbarPickerViewDelegate {
         self.frequencyTextField.text = self.pickerData[row]
         self.frequencyTextField.textColor = .link
         self.frequencyTextField.resignFirstResponder()
+        frequencyGlobal = self.frequencyTextField.text ?? ""
     }
 
     func didTapCancel() {

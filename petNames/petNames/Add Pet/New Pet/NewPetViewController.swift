@@ -22,8 +22,11 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
-    var isPressed: Bool = false
+    var myPetTasks: [Task] = []
+
+    // MARK: Instantiates
     var imageManager = ImagePickerManager()
+    var isPressed: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         Background.shared.assignBackground(view: self.view)
 
         // MARK: Image placeholder
+        self.petImage.image = UIImage(named: "placeHolderAsset".localized())
         
         // MARK: Localizable
         let newPet = "newPetTitle".localized()
@@ -180,7 +184,6 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let viewC = storyboard.instantiateViewController(withIdentifier: "taskScreen") as UIViewController
             show(viewC, sender: nil)
             tableView.deselectRow(at: indexPath, animated: true)
-            //            present(viewC, animated: true, completion: nil)
             
         } else {
             // share
