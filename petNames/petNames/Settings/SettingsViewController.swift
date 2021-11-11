@@ -30,6 +30,16 @@ class SettingsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
+//    }
+//    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
+//    }
 }
 extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,7 +104,7 @@ extension SettingsViewController: UITableViewDelegate {
             label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
             label.text = sectionNames[section].localized()
             label.font = .systemFont(ofSize: 20)
-            label.textColor = .black
+            label.textColor = UIColor(named: "headerTitleColor")
             label.font = UIFont(name: "SFProRounded-Semibold", size: 20)
 
             headerView.addSubview(label)
