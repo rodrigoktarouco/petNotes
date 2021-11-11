@@ -39,6 +39,15 @@ class FeedModel {
         task2
     ]
 
+    let imageNamesPerWeekDay: [String:String] = [
+        "Sunday":"banner-domingo",
+        "Monday":"banner-segunda",
+        "Tuesday":"banner-terca",
+        "Wednesday":"banner-quarta",
+        "Thursday":"banner-quinta",
+        "Friday":"banner-sexta",
+        "Saturday":"banner-sabado"
+    ]
     lazy var petsArray: [Pet] = {
         var petArray: [Pet] = []
         PersistanceManager.shared.listPets { result in
@@ -104,9 +113,33 @@ class FeedModel {
     func getNumberOfPets() -> Int {
         return petsArray.count
     }
+    func getDayOfWeek() -> String? {
 
+        let dateInstance = Date()
+
+        let weekDays = [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ]
+
+        let formatter  = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let date: String = formatter.string(from: dateInstance)
+        guard let myDate = formatter.date(from: date) else { return nil }
+
+        let myCalendar = Calendar(identifier: .gregorian)
+        let weekDay = myCalendar.component(.weekday, from: myDate)
+
+        return weekDays[weekDay-1]
+    }
     func getImageForFunTasksImageView() -> UIImage? {
-        let image = UIImage(named: "mockFunImage")
+        let dayOfWeek = getDayOfWeek() ?? "Sunday"
+        let image = UIImage(named: imageNamesPerWeekDay[dayOfWeek] ?? "banner-domingo")
         return image
     }
 

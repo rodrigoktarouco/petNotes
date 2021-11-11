@@ -15,6 +15,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var appSettingsBackgroundImage: UIImageView!
     
     let sectionNames: [String] = ["Adjustments", "Contacts", "Developed By"]
+    let urlAddresses: [URL?] = [URL(string: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"), URL(string: "https://www.youtube.com/watch?v=G1IbRujko-A")]
     let switchNames: [String] = ["General notifications".localized(), "Sound effects".localized(), "Dark mode".localized()]
     let contactTypes: [(UIImage?, String)] = [(UIImage(named: "email"), "Email"), (UIImage(named: "instagram"), "Instagram")]
     let teamMembers: [String] = ["Dharana Rivas", "Enzo Degrazia", "Guilherme Antonini", "Heitor Kunrath", "Rodrigo Tarouco"]
@@ -69,13 +70,14 @@ extension SettingsViewController: UITableViewDataSource {
             guard let cell =  settingsTableView.dequeueReusableCell(withIdentifier: "Contacts") as? ContactTableViewCell else { return UITableViewCell() }
             cell.contactTitleLabel.text = contactTypes[indexPath.row].1
             cell.contactImageView.image = contactTypes[indexPath.row].0
+            cell.url = urlAddresses[indexPath.row]
+
             return cell
         } else if indexPath.section == 2 {
             guard let cell =  settingsTableView.dequeueReusableCell(withIdentifier: "DevelopedBy") as? DevelopedByTableViewCell else { return UITableViewCell() }
             cell.developerTitleLabel.text = teamMembers[indexPath.row]
             return cell
         }
-
      let cell = UITableViewCell()
         return cell
     }
@@ -139,6 +141,14 @@ extension SettingsViewController: AdjustmentsTableViewCellDelegate {
             LocalNotificationService.shared.customSoundsEnabled.toggle()
             settingsTableView.reloadData()
         case .darkMode:
+            switch isOn {
+            case true:
+                let window = UIApplication.shared.windows.filter({$0.isKeyWindow}).first
+                window?.overrideUserInterfaceStyle = .dark
+            case false:
+                let window = UIApplication.shared.windows.filter({$0.isKeyWindow}).first
+                window?.overrideUserInterfaceStyle = .light
+            }
             self.darkMode.toggle()
             settingsTableView.reloadData()
         }

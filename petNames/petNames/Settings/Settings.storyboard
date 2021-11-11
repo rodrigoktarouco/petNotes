@@ -81,6 +81,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="57.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gv4-Be-bZE">
+                                                    <rect key="frame" x="20" y="11" width="334" height="35.5"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain"/>
+                                                    <connections>
+                                                        <action selector="linkBtnAction:" destination="XZj-6S-13e" eventType="touchUpInside" id="OeZ-OB-wXw"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyT-Id-oR8">
                                                     <rect key="frame" x="46.5" y="20" width="280.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="17"/>
@@ -105,12 +113,16 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Gv4-Be-bZE" firstAttribute="top" secondItem="bws-mJ-ySR" secondAttribute="topMargin" id="36c-YA-FaQ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Gv4-Be-bZE" secondAttribute="bottom" id="8Ua-LM-Hgo"/>
                                                 <constraint firstItem="WQ9-Po-H0v" firstAttribute="centerY" secondItem="lKZ-ck-mc2" secondAttribute="centerY" id="ACJ-TI-VtF"/>
+                                                <constraint firstItem="Gv4-Be-bZE" firstAttribute="leading" secondItem="bws-mJ-ySR" secondAttribute="leadingMargin" id="EZN-Yt-uiD"/>
                                                 <constraint firstItem="ZyT-Id-oR8" firstAttribute="leading" secondItem="lKZ-ck-mc2" secondAttribute="trailing" constant="10" id="UJ3-QP-NdL"/>
                                                 <constraint firstItem="ZyT-Id-oR8" firstAttribute="centerY" secondItem="lKZ-ck-mc2" secondAttribute="centerY" id="VFL-R2-cQ0"/>
                                                 <constraint firstItem="lKZ-ck-mc2" firstAttribute="leading" secondItem="bws-mJ-ySR" secondAttribute="leading" constant="13" id="Vqd-Aq-CfD"/>
                                                 <constraint firstAttribute="trailing" secondItem="WQ9-Po-H0v" secondAttribute="trailing" constant="14" id="WCN-WB-4gf"/>
                                                 <constraint firstAttribute="bottom" secondItem="lKZ-ck-mc2" secondAttribute="bottom" constant="16" id="nwY-I7-ndQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Gv4-Be-bZE" secondAttribute="trailing" id="rVj-GI-6JH"/>
                                                 <constraint firstItem="lKZ-ck-mc2" firstAttribute="top" secondItem="bws-mJ-ySR" secondAttribute="top" constant="18" id="wlC-Li-lqB"/>
                                                 <constraint firstItem="WQ9-Po-H0v" firstAttribute="leading" secondItem="ZyT-Id-oR8" secondAttribute="trailing" constant="10" id="yiq-V9-nKW"/>
                                             </constraints>
