@@ -11,6 +11,7 @@ class PetsOnFeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var petImageHeight: NSLayoutConstraint!
     @IBOutlet weak var petName: UILabel!
     @IBOutlet weak var petImage: UIImageView!
+    @IBOutlet weak var auxBackGroundView: UIView!
     @IBOutlet weak var petTaskQuantity: UILabel!
 
     override func awakeFromNib() {
@@ -18,6 +19,14 @@ class PetsOnFeedCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 22
         setUpLabelsDetails()
         petImageHeight.constant = self.contentView.frame.height * 67 / 110 - 20
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            auxBackGroundView.backgroundColor = UIColor(red: 0.813, green: 0.904, blue: 1, alpha: 1)
+        case.dark:
+            auxBackGroundView.backgroundColor = UIColor(red: 0.717, green: 0.852, blue: 1, alpha: 1)
+        default:
+            break
+        }
     }
     func setUpLabelsDetails() {
 
