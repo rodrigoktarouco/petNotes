@@ -13,7 +13,6 @@ class TaskSwitchTableViewCell: UITableViewCell {
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var taskSwitch: UISwitch!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
