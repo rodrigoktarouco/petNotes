@@ -16,7 +16,8 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
 
         self.textField.delegate = self
 
-        textField.attributedText = NSAttributedString(string: "textField".localized(), attributes: nil)
+        textField.placeholder = "textField".localized()
+//        textField.attributedText = NSAttributedString(string: "textField".localized(), attributes: nil)
         textField.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
     }
 

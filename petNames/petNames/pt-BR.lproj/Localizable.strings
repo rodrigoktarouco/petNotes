@@ -31,6 +31,9 @@
 "addNewWarning" = "Adicionar um novo alerta";
 "repeat" = "Repete";
 "notes" = "Notas";
+"warning" = "Oops!";
+"warningMessage" = "Você excedeu o número máximo de alertas (6).";
+"hourPickerPH" = "00:00";
 
 //MARK: -SegmentedControl
 "All" = "Todas";
