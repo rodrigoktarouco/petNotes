@@ -21,6 +21,10 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
 //        textField.attributedText = NSAttributedString(string: "textField".localized(), attributes: nil)
         textField.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textFieldInput = ""
+    }
 
     @IBAction func onReturn() {
         self.textField.resignFirstResponder()
