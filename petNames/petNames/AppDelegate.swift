@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         LocalNotificationService.initialize()
         UNUserNotificationCenter.current().delegate = self
         // Override point for customization after application launch.
+        //
+        print("Application directory: \(NSHomeDirectory())")
         PersistanceManager.shared.setUp()
         PersistanceManager.shared.loadUser { result in
             switch result {

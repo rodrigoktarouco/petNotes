@@ -223,7 +223,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("Add pressed")
         let pet = Pet()
         petImage.image = self.petImage.image
-        pet.name = textFieldInput + "teste feijão"
+        pet.name = textFieldInput
         PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
             PersistanceManager.shared.listPets { result in
                 switch result {
