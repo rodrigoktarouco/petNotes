@@ -23,6 +23,7 @@ class TaskViewController: UIViewController, UISearchBarDelegate {
 
         tasksTableView.backgroundView?.backgroundColor = .clear
         
+        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "cellColor")
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
         tasksSearchBar.delegate = self
@@ -32,6 +33,7 @@ class TaskViewController: UIViewController, UISearchBarDelegate {
         tasksSegmentedControl.setTitle("By Pet".localized(), forSegmentAt: 2)
         tasksSearchBar.placeholder = "tasksSearchBar".localized()
     }
+    
 }
 
 // MARK: - UITableViewDataSource
