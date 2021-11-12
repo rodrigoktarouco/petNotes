@@ -15,6 +15,7 @@ class TaskViewController: UIViewController {
     var selectedSegment: SelectedSementInTasks = SelectedSementInTasks.all
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "cellColor")
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
         taskTitleLabel.text = "taskTitleLabel".localized()
@@ -23,6 +24,7 @@ class TaskViewController: UIViewController {
         tasksSegmentedControl.setTitle("By Pet".localized(), forSegmentAt: 2)
         tasksSearchBar.placeholder = "tasksSearchBar".localized()
     }
+    
 }
 
 // MARK: - UITableViewDataSource

@@ -70,6 +70,7 @@
 "other" = "Other";
 "cancel" = "Cancel";
 "done" = "Done";
+"warningMessage" = "You need to fill the info about your pet";
 
 //MARK: -AppSettings
 "settingsTitleLabel" = "Settings";

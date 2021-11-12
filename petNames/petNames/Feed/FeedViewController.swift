@@ -40,6 +40,7 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
         tasksCollectionView.dataSource = self
         petsCollectionView.dataSource = self
         petsCollectionView.delegate = self
@@ -65,23 +66,12 @@ class FeedViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        switch traitCollection.userInterfaceStyle {
-        case .light, .unspecified:
-            self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 0.5)
-        default:
-            self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
-        }
+        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "feedTabBarColor")
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        switch traitCollection.userInterfaceStyle {
-        case .light, .unspecified:
-            self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 1)
-        default:
-            self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
-        }
-
+        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "cellColor")
     }
 
     func setUpDoneTasksImage() {
