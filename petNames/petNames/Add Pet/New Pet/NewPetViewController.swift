@@ -13,6 +13,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var petTableView: UITableView!
+    @IBOutlet var editImageBtn: UIImageView!
 
     @IBAction func pickImageButton(_ sender: UIButton) {
         // MARK: Setting image
@@ -22,15 +23,22 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
-    var isPressed: Bool = false
+    let pet = Pet()
+    var myPetTasks: [Task] = []
+
+    // MARK: Instantiates
     var imageManager = ImagePickerManager()
+    var isPressed: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         Background.shared.assignBackground(view: self.view)
+        self.petTableView.reloadData()
 
         // MARK: Image placeholder
+        self.petImage.image = UIImage(named: "placeHolderAsset".localized())
+        editImageBtn.layer.cornerRadius = 10
         
         // MARK: Localizable
         let newPet = "newPetTitle".localized()
@@ -111,7 +119,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case 0:
             rowsInSection = 2
         case 1:
-            rowsInSection = 1
+            rowsInSection = 1 + myPetTasks.count
         default:
             rowsInSection = 1
         }
@@ -129,6 +137,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "textField-cell", for: indexPath)
                 
+                
                 return cell
                 
             } else {
@@ -142,16 +151,28 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 return cell2 }
             
         } else if indexPath.section == 1 {
-            // swiftlint:disable:next line_length
-            guard let cell = (tableView.dequeueReusableCell(withIdentifier: "newTask-cell", for: indexPath) as? AddNewTaskTableViewCell) else {
-                return AddNewTaskTableViewCell() }
-            
-            cell.addNewTaskLabel.text = "addNewTask".localized()
-            cell.accessoryView = UIImageView(image: UIImage(systemName: "chevron.right"))
-            cell.accessoryView?.tintColor = UIColor(named: "headerTitleColor")
+            if indexPath.row == 0 {
+                guard let cell = (tableView.dequeueReusableCell(withIdentifier: "newTask-cell", for: indexPath) as? AddNewTaskTableViewCell) else {
+                    return AddNewTaskTableViewCell() }
 
-            return cell
-            
+                cell.addNewTaskLabel.text = "addNewTask".localized()
+                cell.accessoryView = UIImageView(image: UIImage(systemName: "chevron.right"))
+                cell.accessoryView?.tintColor = UIColor(named: "headerTitleColor")
+
+                return cell } else {
+                    if myPetTasks.isEmpty == false {
+                        guard let cell2 = (tableView.dequeueReusableCell(withIdentifier: "taskSwitch-cell", for: indexPath) as? TaskSwitchTableViewCell) else {
+                            return TaskSwitchTableViewCell() }
+
+                        let lastAppendedTask = myPetTasks[indexPath.row - 1]
+                        cell2.taskLabel.text = lastAppendedTask.name
+                        cell2.taskIconImage.image = UIImage(named: TasksDesign.shared.pickTaskIcon(task: lastAppendedTask.name ?? ""))
+
+                        return cell2
+                    }
+                    return UITableViewCell()
+                }
+
         } else {
             guard let cell = (tableView.dequeueReusableCell(withIdentifier: "share-cell", for: indexPath)
                               as? ShareTableViewCell) else {
@@ -174,14 +195,16 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 tableView.deselectRow(at: indexPath, animated: true)
             }
         } else if indexPath.section == 1 {
-            // addTask
-            print("addTask")
-            let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
-            let viewC = storyboard.instantiateViewController(withIdentifier: "taskScreen") as UIViewController
-            show(viewC, sender: nil)
-            tableView.deselectRow(at: indexPath, animated: true)
-            //            present(viewC, animated: true, completion: nil)
-            
+            if indexPath.row == 0 {
+                // addTask
+                print("addTask")
+                let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
+                let viewC = storyboard.instantiateViewController(withIdentifier: "taskScreen") as UIViewController
+                show(viewC, sender: nil)
+                tableView.deselectRow(at: indexPath, animated: true)
+            } else {
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
         } else {
             // share
             print("share")
@@ -200,21 +223,20 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("Add pressed")
         let pet = Pet()
         petImage.image = self.petImage.image
-        pet.name = textFieldInput
+        pet.name = textFieldInput + "teste feijão"
         PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
             PersistanceManager.shared.listPets { result in
                 switch result {
                 case .success(let pets):
-                    for pet in pets where pet.name == "tibetiamo" {
-                        PersistanceManager.shared.getPetImage(pet) { image in
-                            print(pet.name, image)
-                        }
+                    for pet in pets {
+                        print(pet.name)
                     }
                 default:
                     return
                 }
             }
         }
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
-    
+
 }

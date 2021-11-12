@@ -56,6 +56,8 @@ class TasksDesign {
             iconAsset = "groom-task-icon"
         case "Vet".localized():
             iconAsset = "vet-task-icon"
+        case "Custom".localized():
+            iconAsset = "custom-task-icon"
         default:
             iconAsset = "xmark"
         }

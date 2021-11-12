@@ -14,8 +14,9 @@ class repeatTableViewCell: UITableViewCell {
 
     // MARK: picker properties
     let picker = ToolbarPickerView()
-    var pickerData: [String] = ["never".localized(), "daily".localized()]
-    
+    var pickerData: [String] = [" ", "never", "daily"]
+    var selectedRepetition: String?
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -56,11 +57,12 @@ extension repeatTableViewCell: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.pickerData[row]
+        return self.pickerData[row].localized()
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.frequencyTextField.text = self.pickerData[row]
+        self.frequencyTextField.text = self.pickerData[row].localized()
+        selectedRepetition = self.pickerData[row] // for saving in english in the persistance
     }
 }
 
@@ -69,9 +71,10 @@ extension repeatTableViewCell: ToolbarPickerViewDelegate {
     func didTapDone() {
         let row = self.picker.selectedRow(inComponent: 0)
         self.picker.selectRow(row, inComponent: 0, animated: false)
-        self.frequencyTextField.text = self.pickerData[row]
+        self.frequencyTextField.text = self.pickerData[row].localized()
         self.frequencyTextField.textColor = .link
         self.frequencyTextField.resignFirstResponder()
+        frequencyGlobal = selectedRepetition ?? ""
     }
 
     func didTapCancel() {

@@ -32,6 +32,9 @@
 "addNewWarning" = "Add a new warning";
 "repeat" = "Repeat";
 "notes" = "Notes";
+"warning" = "Oops!";
+"warningMessage" = "You exceeded the amount of alerts (6).";
+"hourPickerPH" = "00:00 AM";
 
 //MARK: -SegmentedControl
 "All" = "All";
@@ -45,9 +48,10 @@
 "observationsTitlelabel" = "Observations";
 "frequencyLabel" = "Daily";
 "tasksSearchBar" = "Search";
-
+"save" = "Save";
 
 //MARK: -NewPet
+"placeHolderAsset" = "placeholder-eng";
 "newPetTitle" = "New Pet";
 "cancelButton" = "Cancel";
 "addButton" = "Add";

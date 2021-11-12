@@ -1,16 +1,17 @@
 //
-//  addAlertTableViewCell.swift
+//  TaskSwitchTableViewCell.swift
 //  petNames
 //
-//  Created by Enzo Degrazia on 28/10/21.
+//  Created by Guilherme Valent Antonini on 11/11/21.
 //
 
 import UIKit
 
-class AddWarningTableViewCell: UITableViewCell {
+class TaskSwitchTableViewCell: UITableViewCell {
 
-    @IBOutlet var addWarningLabel: UILabel!
-    @IBOutlet weak var alertImage: UIImageView!
+    @IBOutlet weak var taskIconImage: UIImageView!
+    @IBOutlet weak var taskLabel: UILabel!
+    @IBOutlet weak var taskSwitch: UISwitch!
     
     override func awakeFromNib() {
         super.awakeFromNib()

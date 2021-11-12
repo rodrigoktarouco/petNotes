@@ -135,11 +135,13 @@ class PersistanceManager {
         completion(.success(pets))
 
     }
+
     func listTasksFromPet(pet: Pet, completion: @escaping(Result<[Task], Error>) -> Void) {
         let tasks : [Task] = (pet.tasks ?? []).compactMap { $0 as? Task }
         completion(.success(tasks))
 
     }
+
     func listAllTasks( completion: @escaping(Result<[Task], Error>) -> Void) {
 
         let fetchRequest = Task.fetchRequest()

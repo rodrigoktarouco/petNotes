@@ -50,12 +50,12 @@ class FeedViewController: UIViewController {
         constraintAdjustments()
 
         logoImage.image = UIImage(named: "logo")
+        
     }
 
     func constraintAdjustments() {
         welcomeUserTopDistance.constant = UIScreen.main.bounds.height * 23 / 844
         funimageTopDistance.constant = UIScreen.main.bounds.height * 10 / 844
-
 
         //        funImageHeight.constant = UIScreen.main.bounds.height * 80 / 844
         //        funImageWidth.constant = UIScreen.main.bounds.width * 330 / 844
@@ -65,21 +65,23 @@ class FeedViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
-        PersistanceManager.shared.listPets { result in
-            switch result {
-            case .success(let pets):
-                pets.forEach { pet in
-                    print(pet.name)
-                }
-            default:
-                return
-            }
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 0.5)
+        default:
+            self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
         }
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            self.tabBarController?.tabBar.backgroundColor = UIColor(red: 0.957, green: 0.957, blue: 0.957, alpha: 1)
+        default:
+            self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
+        }
+
     }
 
     func setUpDoneTasksImage() {
@@ -133,11 +135,12 @@ extension FeedViewController: UICollectionViewDataSource {
             guard let cell = cell else { return UICollectionViewCell() }
             let infoStruct = modelInstance.getTaskFeedCollectionViewCellData(taskNumber: indexPath.row)
             cell.petImage.image = infoStruct.petImage
-            cell.auxView.backgroundColor = TasksDesign.shared.getTaskDesignProperties(infoStruct.taskName ?? "").color
-            cell.taskNameLabel.text = infoStruct.taskName?.capitalized
+            cell.taskNameLabel.text = infoStruct.taskName?.localized().capitalized
             cell.taskTimeLabel.text = infoStruct.taskTime
             cell.checkImage.image = infoStruct.done ?? false ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "checkmark.circle.fill")
-            cell.checkImage.tintColor = UIColor(red: 0.592, green: 0.592, blue: 0.592, alpha: 1)
+            cell.taskNameInPersistence = infoStruct.taskName
+            cell.setUpColors()
+
             return cell
         } else if collectionView == petsCollectionView {
             if indexPath.row == 0 {

@@ -86,7 +86,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMH-CK-W8W">
                                                     <rect key="frame" x="0.0" y="0.0" width="330" height="70"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4yJ-AD-gzb">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4yJ-AD-gzb">
                                                             <rect key="frame" x="10" y="7" width="65" height="55"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="65" id="M8c-AN-hDB"/>
@@ -212,6 +212,7 @@
                                         <connections>
                                             <outlet property="addImage" destination="2px-Uh-npz" id="bOn-SL-xlb"/>
                                             <outlet property="addNewPet" destination="L3O-Uo-LgK" id="9qy-p0-hxA"/>
+                                            <outlet property="auxBackGroundView" destination="7kT-0z-5Wr" id="UUy-PW-aIg"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="PetsOnFeedCollectionViewCell" id="I7F-lY-Ymi" customClass="PetsOnFeedCollectionViewCell" customModule="petNames" customModuleProvider="target">
@@ -265,6 +266,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="155" height="154"/>
                                         <connections>
+                                            <outlet property="auxBackGroundView" destination="oJX-Wt-feL" id="p4R-9z-yjT"/>
                                             <outlet property="petImage" destination="YZu-WP-7wp" id="Y9v-eI-Cfl"/>
                                             <outlet property="petImageHeight" destination="qDF-fq-gAE" id="APl-x4-cas"/>
                                             <outlet property="petName" destination="Ncn-Ix-yzX" id="hPb-Ob-z1l"/>
