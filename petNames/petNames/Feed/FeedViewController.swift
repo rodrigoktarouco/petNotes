@@ -50,6 +50,7 @@ class FeedViewController: UIViewController {
         constraintAdjustments()
 
         logoImage.image = UIImage(named: "logo")
+        
     }
 
     func constraintAdjustments() {
