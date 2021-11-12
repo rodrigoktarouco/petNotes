@@ -57,7 +57,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0j2-tu-SG2">
-                                                    <rect key="frame" x="50" y="11" width="314" height="98"/>
+                                                    <rect key="frame" x="30" y="11" width="354" height="98"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R0j-0Q-aih">
                                                             <rect key="frame" x="9" y="16.5" width="65" height="65"/>
@@ -68,7 +68,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="taJ-bt-Mcb">
-                                                            <rect key="frame" x="87" y="7" width="42" height="76.5"/>
+                                                            <rect key="frame" x="87" y="5" width="42" height="76.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7O-xd-5l2">
                                                                     <rect key="frame" x="0.0" y="0.0" width="42" height="20"/>
@@ -91,7 +91,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="F92-0c-JgM">
-                                                            <rect key="frame" x="260" y="29" width="41" height="40"/>
+                                                            <rect key="frame" x="300" y="29" width="41" height="40"/>
                                                             <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="41" id="PXY-CR-8vO"/>
@@ -104,17 +104,18 @@
                                                         <constraint firstItem="F92-0c-JgM" firstAttribute="centerY" secondItem="0j2-tu-SG2" secondAttribute="centerY" id="IAh-vo-ycb"/>
                                                         <constraint firstItem="taJ-bt-Mcb" firstAttribute="leading" secondItem="R0j-0Q-aih" secondAttribute="trailing" constant="13.199999999999999" id="K9i-KA-bMJ"/>
                                                         <constraint firstAttribute="trailing" secondItem="F92-0c-JgM" secondAttribute="trailing" constant="13" id="Oot-yX-2az"/>
+                                                        <constraint firstAttribute="height" constant="85" id="XKZ-5U-00W"/>
                                                         <constraint firstItem="R0j-0Q-aih" firstAttribute="leading" secondItem="0j2-tu-SG2" secondAttribute="leading" constant="9" id="Yoe-qh-G4V"/>
-                                                        <constraint firstAttribute="width" secondItem="0j2-tu-SG2" secondAttribute="height" multiplier="157:49" id="a3j-s8-31J"/>
+                                                        <constraint firstAttribute="width" secondItem="0j2-tu-SG2" secondAttribute="height" multiplier="330:85" id="a3j-s8-31J"/>
                                                         <constraint firstItem="R0j-0Q-aih" firstAttribute="centerY" secondItem="0j2-tu-SG2" secondAttribute="centerY" id="pLu-hH-Ks5"/>
-                                                        <constraint firstItem="taJ-bt-Mcb" firstAttribute="top" secondItem="0j2-tu-SG2" secondAttribute="top" constant="7.2000000000000002" id="wy3-vb-WmX"/>
+                                                        <constraint firstItem="taJ-bt-Mcb" firstAttribute="top" secondItem="0j2-tu-SG2" secondAttribute="top" constant="5" id="wy3-vb-WmX"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="0j2-tu-SG2" firstAttribute="leading" secondItem="iMv-vn-RvC" secondAttribute="leadingMargin" constant="30" id="4zS-7O-gml"/>
+                                                <constraint firstItem="0j2-tu-SG2" firstAttribute="leading" secondItem="iMv-vn-RvC" secondAttribute="leading" constant="30" id="4zS-7O-gml"/>
                                                 <constraint firstItem="0j2-tu-SG2" firstAttribute="bottom" secondItem="iMv-vn-RvC" secondAttribute="bottomMargin" id="Rxo-fr-86C"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="0j2-tu-SG2" secondAttribute="trailing" constant="30" id="a0E-pv-bFl"/>
+                                                <constraint firstAttribute="trailing" secondItem="0j2-tu-SG2" secondAttribute="trailing" constant="30" id="a0E-pv-bFl"/>
                                                 <constraint firstItem="0j2-tu-SG2" firstAttribute="top" secondItem="iMv-vn-RvC" secondAttribute="topMargin" id="evj-1z-gKr"/>
                                             </constraints>
                                         </tableViewCellContentView>
