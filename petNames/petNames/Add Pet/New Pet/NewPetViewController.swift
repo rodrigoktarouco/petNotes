@@ -141,8 +141,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if indexPath.row == 0 {
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "textField-cell", for: indexPath)
-                
-                
+
                 return cell
                 
             } else {

@@ -7,16 +7,25 @@
 
 import UIKit
 
-class TaskViewController: UIViewController {
+class TaskViewController: UIViewController, UISearchBarDelegate {
+
     @IBOutlet weak var taskTitleLabel: UILabel!
     @IBOutlet weak var tasksTableView: UITableView!
     @IBOutlet weak var tasksSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tasksSearchBar: UISearchBar!
+
     var selectedSegment: SelectedSementInTasks = SelectedSementInTasks.all
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        Background.shared.assignBackground(view: self.view)
+
+        tasksTableView.backgroundView?.backgroundColor = .clear
+        
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
+        tasksSearchBar.delegate = self
         taskTitleLabel.text = "taskTitleLabel".localized()
         tasksSegmentedControl.setTitle("All".localized(), forSegmentAt: 0)
         tasksSegmentedControl.setTitle("Not done".localized(), forSegmentAt: 1)
@@ -28,8 +37,16 @@ class TaskViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return getNumberOfTasks(selectedSegment)
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 2
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,6 +59,10 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
         safeCell.taskTimeLabel.text = myInfos.taskTime
         safeCell.petNameLabel.text = myInfos.taskPetName
         safeCell.petImageTask.image = myInfos.taskPetImage
+
+        let insideColor =  TasksDesign.shared.getTaskDesignProperties(myInfos.taskName).color
+        safeCell.backgroundColor = insideColor
+
         if myInfos.isCheckedAsDone {
             safeCell.taskCheckedImage.image = UIImage(systemName: "checkmark.circle.fill")
         } else {
@@ -53,8 +74,11 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let storyboard = UIStoryboard(name: "Task", bundle: nil)
-        let settingsController = storyboard.instantiateViewController(identifier: "NavigationControllerOfTasksSettingsView")
-        self.present(settingsController, animated: true, completion: nil)
+        let viewC = storyboard.instantiateViewController(withIdentifier: "navigateTo") as UIViewController
+        self.present(viewC, animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+//        selectedTaskGlobal =
+        comingFromTaskScreen = true
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -67,7 +91,7 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
 extension TaskViewController {
 
     func getDataForRowAt(_ selectedSegment: SelectedSementInTasks, _ item: Int) -> CellInfosStruct {
-        let pittyMockTask = CellInfosStruct(taskName: "Alimentação", taskTime: "12:00", taskPetName: "Pitty", taskPetImage: UIImage(named: "pitty") ?? UIImage(), isCheckedAsDone: false)
+        let pittyMockTask = CellInfosStruct(taskName: "Walk", taskTime: "12:00", taskPetName: "Pitty", taskPetImage: UIImage(named: "profile-vermelho") ?? UIImage(), isCheckedAsDone: false)
         return pittyMockTask
     }
 

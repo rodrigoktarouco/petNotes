@@ -7,16 +7,14 @@
 
 import Foundation
 
-
 class TaskManager {
 
-    private init(){}
+    private init() {}
 
     let shared: TaskManager = TaskManager()
 
-
-    var petsAndSupposedToExistExecutions: [Pet:[Execution]] = [:]
-    var petsAndExistingExecutions: [Pet:[Execution]] = [:]
+    var petsAndSupposedToExistExecutions: [Pet: [Execution]] = [: ]
+    var petsAndExistingExecutions: [Pet: [Execution]] = [: ]
 
     func setPetsAndSupposedToExistExecutions() {
         var allPets: [Pet] = []
@@ -37,15 +35,12 @@ class TaskManager {
         }
     }
 
-    func executionGenerator(thisTask: Task) ->  [Execution] {
+    func executionGenerator(thisTask: Task) -> [Execution] {
         let date = String(DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short)).components(separatedBy: " ")
         let day = date[0]
         let time = date[1]
         let repetition = thisTask.taskRepetition
 
-
         return []
     }
-
-
 }

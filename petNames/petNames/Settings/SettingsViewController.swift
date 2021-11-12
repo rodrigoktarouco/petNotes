@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var settingsTitleLabel: UILabel!

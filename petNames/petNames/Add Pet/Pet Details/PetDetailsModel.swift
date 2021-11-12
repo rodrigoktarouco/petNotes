@@ -17,4 +17,3 @@ struct PetsInfosForPetDetails {
     var petClassification: String?
     var petTaskNames: [String]?
 }
-
