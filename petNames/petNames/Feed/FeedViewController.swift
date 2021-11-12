@@ -23,10 +23,9 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var backgroundImage: UIImageView!
 
-    //Constraints
+    // Constraints
 
     @IBOutlet weak var welcomeUserTopDistance: NSLayoutConstraint!
-
 
     @IBOutlet weak var funimageTopDistance: NSLayoutConstraint!
 
@@ -162,7 +161,7 @@ extension FeedViewController: UICollectionViewDelegate {
             } else {
                 let storyboard = UIStoryboard(name: "PetDetails", bundle: nil)
 
-                guard let navController = storyboard.instantiateInitialViewController() as? UINavigationController, let VCdetails = navController.topViewController as? PetDetailsViewController else{ return }
+                guard let navController = storyboard.instantiateInitialViewController() as? UINavigationController, let VCdetails = navController.topViewController as? PetDetailsViewController else { return }
                 let petDataAndPet = modelInstance.getPetsInfosForPetDetails(forRowAt: indexPath.row - 1)
                 VCdetails.petData = petDataAndPet.0
                 VCdetails.chosenPet = petDataAndPet.1
@@ -176,7 +175,7 @@ extension FeedViewController: UICollectionViewDelegate {
 }
 extension FeedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //let squareSide: CGFloat = UIScreen.main.bounds.height * 155 / 844 - 2
+        // let squareSide: CGFloat = UIScreen.main.bounds.height * 155 / 844 - 2
         let squareSide: CGFloat = ( collectionView.frame.height - 14 ) / 2
         return CGSize(width: squareSide, height: squareSide)
     }

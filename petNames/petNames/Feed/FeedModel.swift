@@ -39,14 +39,14 @@ class FeedModel {
         task2
     ]
 
-    let imageNamesPerWeekDay: [String:String] = [
-        "Sunday":"banner-domingo",
-        "Monday":"banner-segunda",
-        "Tuesday":"banner-terca",
-        "Wednesday":"banner-quarta",
-        "Thursday":"banner-quinta",
-        "Friday":"banner-sexta",
-        "Saturday":"banner-sabado"
+    let imageNamesPerWeekDay: [String: String] = [
+        "Sunday": "banner-domingo",
+        "Monday": "banner-segunda",
+        "Tuesday": "banner-terca",
+        "Wednesday": "banner-quarta",
+        "Thursday": "banner-quinta",
+        "Friday": "banner-sexta",
+        "Saturday": "banner-sabado"
     ]
     lazy var petsArray: [Pet] = {
         var petArray: [Pet] = []
@@ -87,9 +87,7 @@ class FeedModel {
         return emptyDic
     }()
 
-    func getTaskFeedCollectionViewCellData(taskNumber: Int) -> TaskFeedCollectionViewCellData {// send the task name as it is on the persistence
-
-
+    func getTaskFeedCollectionViewCellData(taskNumber: Int) -> TaskFeedCollectionViewCellData { // send the task name as it is on the persistence
 
         let taskDataStruct = TaskFeedCollectionViewCellData(petImage: UIImage(named: "pitty"), taskType: .water, taskName: "water", taskTime: "12:00", done: true)
         return taskDataStruct
@@ -155,7 +153,7 @@ class FeedModel {
             taskNames.append(thisName)
         }
 
-        return (PetsInfosForPetDetails(name: thisPet.name ?? "unnamedAnimal", petImage: petsImages[thisPet] ?? UIImage(named:"") ,petClassification: thisPet.category ,petTaskNames: taskNames) , thisPet)
+        return (PetsInfosForPetDetails(name: thisPet.name ?? "unnamedAnimal", petImage: petsImages[thisPet] ?? UIImage(named: ""), petClassification: thisPet.category, petTaskNames: taskNames) , thisPet)
 
     }
 

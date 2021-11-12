@@ -15,15 +15,27 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskTimeLabel: UILabel!
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var taskCheckedImage: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUpBackColor()
+
+//        setUpBackColor()
         petImageTask.layer.cornerRadius = 22
-        backView.layer.cornerRadius = 22
     }
-    func setUpBackColor() {
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layer.cornerRadius = 22
+        self.layer.masksToBounds = true
+
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor(named: "headerTitleColor")?.cgColor
+
+    }
+
+    func setUpBackColor(colorName: String) {
         let name = taskNameLabel.text
-        backView.backgroundColor = TasksDesign.shared.getTaskDesignProperties(name ?? "").color
+//        backView.backgroundColor = TasksDesign.shared.getTaskDesignProperties(name ?? "").color
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
