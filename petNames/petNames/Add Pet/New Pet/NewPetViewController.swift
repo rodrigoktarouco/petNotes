@@ -14,7 +14,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var petTableView: UITableView!
     @IBOutlet var editImageBtn: UIImageView!
-    
+
     @IBAction func pickImageButton(_ sender: UIButton) {
         // MARK: Setting image
         imageManager.requestPermissions()
@@ -162,82 +162,81 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 return cell } else {
                     if myPetTasks.isEmpty == false {
                         guard let cell2 = (tableView.dequeueReusableCell(withIdentifier: "taskSwitch-cell", for: indexPath) as? TaskSwitchTableViewCell) else {
-                        return TaskSwitchTableViewCell() }
+                            return TaskSwitchTableViewCell() }
 
                         let lastAppendedTask = myPetTasks[indexPath.row - 1]
                         cell2.taskLabel.text = lastAppendedTask.name
                         cell2.taskIconImage.image = UIImage(named: TasksDesign.shared.pickTaskIcon(task: lastAppendedTask.name ?? ""))
 
-                    return cell2
-                }
-                    return UITableViewCell()
-        }
-
-    } else {
-        guard let cell = (tableView.dequeueReusableCell(withIdentifier: "share-cell", for: indexPath)
-                          as? ShareTableViewCell) else {
-            return ShareTableViewCell() }
-        cell.shareLabel.text = "shareLabel".localized()
-        return cell
-    }
-}
-
-// MARK: navigate when cell is selected
-func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if indexPath.section == 0 {
-        if indexPath.row == 0 {
-            // textField
-            print("textfield")
-            tableView.deselectRow(at: indexPath, animated: true)
-        } else {
-            // category
-            print("category")
-            tableView.deselectRow(at: indexPath, animated: true)
-        }
-    } else if indexPath.section == 1 {
-        if indexPath.row == 0 {
-        // addTask
-        print("addTask")
-        let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
-        let viewC = storyboard.instantiateViewController(withIdentifier: "taskScreen") as UIViewController
-        show(viewC, sender: nil)
-        tableView.deselectRow(at: indexPath, animated: true)
-        } else {
-            tableView.deselectRow(at: indexPath, animated: true)
-        }
-    } else {
-        // share
-        print("share")
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-// MARK: navigation bar buttons
-@objc func cancelButtonAction() {
-    print("Cancel pressed")
-    self.navigationController?.dismiss(animated: true, completion: nil)
-
-}
-
-@objc func addButtonAction() {
-    print("Add pressed")
-    self.navigationController?.dismiss(animated: true, completion: nil)
-    petImage.image = self.petImage.image
-    pet.name = textFieldInput
-    PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
-        PersistanceManager.shared.listPets { result in
-            switch result {
-            case .success(let pets):
-                for pet in pets where pet.name == "tibetiamo" {
-                    PersistanceManager.shared.getPetImage(pet) { image in
-                        print(pet.name, image)
+                        return cell2
                     }
+                    return UITableViewCell()
                 }
-            default:
-                return
+
+        } else {
+            guard let cell = (tableView.dequeueReusableCell(withIdentifier: "share-cell", for: indexPath)
+                              as? ShareTableViewCell) else {
+                return ShareTableViewCell() }
+            cell.shareLabel.text = "shareLabel".localized()
+            return cell
+        }
+    }
+
+    // MARK: navigate when cell is selected
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                // textField
+                print("textfield")
+                tableView.deselectRow(at: indexPath, animated: true)
+            } else {
+                // category
+                print("category")
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
+        } else if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                // addTask
+                print("addTask")
+                let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
+                let viewC = storyboard.instantiateViewController(withIdentifier: "taskScreen") as UIViewController
+                show(viewC, sender: nil)
+                tableView.deselectRow(at: indexPath, animated: true)
+            } else {
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
+        } else {
+            // share
+            print("share")
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+
+    // MARK: navigation bar buttons
+    @objc func cancelButtonAction() {
+        print("Cancel pressed")
+        self.navigationController?.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    @objc func addButtonAction() {
+        print("Add pressed")
+        let pet = Pet()
+        petImage.image = self.petImage.image
+        pet.name = textFieldInput + "teste feijão"
+        PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
+            PersistanceManager.shared.listPets { result in
+                switch result {
+                case .success(let pets):
+                    for pet in pets {
+                        print(pet.name)
+                    }
+                default:
+                    return
+                }
             }
         }
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
-}
 
 }
