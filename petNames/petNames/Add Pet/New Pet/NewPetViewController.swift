@@ -37,7 +37,12 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.petTableView.reloadData()
 
         // MARK: Image placeholder
+//        let placeHolderImages = ["profile-amarelo", "profile-azul", "profile-laranja", "profile-roxo", "profile-verde", "profile-vermelho"]
+//
+//        self.petImage.image = UIImage(named: placeHolderImages.randomElement() ?? "placeHolderAsset".localized())
+
         self.petImage.image = UIImage(named: "placeHolderAsset".localized())
+        self.petImage.clipsToBounds = true
         editImageBtn.layer.cornerRadius = 10
         
         // MARK: Localizable
