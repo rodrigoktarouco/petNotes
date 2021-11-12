@@ -46,7 +46,7 @@ class FeedViewController: UIViewController {
         petsCollectionView.delegate = self
         setUpFontStyle()
         setUpLabelsTexts()
-        setUpBackground()
+        Background.shared.assignBackground(view: self.view)
         setUpDoneTasksImage()
         constraintAdjustments()
 
@@ -79,12 +79,12 @@ class FeedViewController: UIViewController {
         doneTasksFunImage.image =  modelInstance.getImageForFunTasksImageView()
     }
 
-    func setUpBackground() {
-        let backGroundAssetNames = ["background1", "background2", "background3"]
-        backgroundImage.image = UIImage(named: backGroundAssetNames.randomElement() ?? "background1") ?? UIImage(named: "")
-        backgroundImage.alpha = 0.4
-        [tasksCollectionView, petsCollectionView].forEach { collection in collection?.backgroundColor = .clear}
-    }
+//    func setUpBackground() {
+//        let backGroundAssetNames = ["background1", "background2", "background3"]
+//        backgroundImage.image = UIImage(named: backGroundAssetNames.randomElement() ?? "background1") ?? UIImage(named: "")
+//        backgroundImage.alpha = 0.4
+//        [tasksCollectionView, petsCollectionView].forEach { collection in collection?.backgroundColor = .clear}
+//    }
 
     func setUpLabelsTexts() {
 
