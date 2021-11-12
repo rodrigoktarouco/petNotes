@@ -30,7 +30,6 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     @IBAction func editingIsHapenning(_ sender: Any) {
         textFieldInput = textField.text ?? ""
-        print(textFieldInput)
     }
 
 }
