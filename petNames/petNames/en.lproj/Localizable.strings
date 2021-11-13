@@ -84,3 +84,6 @@
 //MARK: -PetDetails
 "name" = "Name";
 "edit" = "Edit";
+
+//MARK: - Onboarding
+"onboarding1TextLabel" = "Register your pet to organize your tasks in a simple and practical way";
