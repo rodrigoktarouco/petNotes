@@ -11,7 +11,6 @@ class DevelopedByTableViewCell: UITableViewCell {
 
     @IBOutlet weak var developerTitleLabel: UILabel!
 
-
     override func awakeFromNib() {
         super.awakeFromNib()
 

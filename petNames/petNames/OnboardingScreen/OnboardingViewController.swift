@@ -14,7 +14,8 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         onboarding1TextLabel.text = "onboarding1TextLabel".localized()
-        
+        onboarding1Button.layer.cornerRadius = 22
+
 
         }
 
