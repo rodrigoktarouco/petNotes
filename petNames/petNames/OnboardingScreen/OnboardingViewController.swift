@@ -16,7 +16,10 @@ class OnboardingViewController: UIViewController {
         onboarding1TextLabel.text = "onboarding1TextLabel".localized()
         onboarding1Button.layer.cornerRadius = 22
 
-
         }
+
+    @IBAction func onboarding1ButtonDidPressed(_ sender: UIButton) {
+    }
+
 
 }

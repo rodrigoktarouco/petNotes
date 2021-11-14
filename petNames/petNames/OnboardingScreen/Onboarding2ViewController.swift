@@ -8,11 +8,17 @@
 import UIKit
 
 class Onboarding2ViewController: UIViewController {
+    @IBOutlet weak var onboarding2TextLabel: UILabel!
+    @IBOutlet weak var onboarding2BackButton: UIButton!
+    @IBOutlet weak var onboarding2Button: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        onboarding2TextLabel.text = "onboarding2TextLabel".localized()
+        onboarding2Button.layer.cornerRadius = 22
         // Do any additional setup after loading the view.
+    }
+    @IBAction func onboardin2ButtonDidPressed(_ sender: UIButton) {
     }
 
 }
