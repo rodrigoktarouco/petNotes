@@ -91,3 +91,6 @@
 //MARK: - Onboarding
 "onboarding1TextLabel" = "Cadastre seu pet para organizar suas tarefas de maneira simples e prática";
 "onboarding2TextLabel" = "Adicione tarefas recorrentes relacionadas a ele e personalize seus alertas";
+"onboarding2BackButton" = "Voltar";
+"onboarding3SkipButton" = "Pular";
+"onboarding3LetsStartButton" = "Vamos começar!";

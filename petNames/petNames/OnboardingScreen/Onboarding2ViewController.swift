@@ -16,9 +16,12 @@ class Onboarding2ViewController: UIViewController {
         super.viewDidLoad()
         onboarding2TextLabel.text = "onboarding2TextLabel".localized()
         onboarding2Button.layer.cornerRadius = 22
-        // Do any additional setup after loading the view.
+        onboarding2BackButton.setTitle("onboarding2BackButton".localized(), for: .normal)
+        onboarding2BackButton.titleLabel?.font =  UIFont(name: "SFProRounded-Regular", size: 20)
     }
-    @IBAction func onboardin2ButtonDidPressed(_ sender: UIButton) {
+    @IBAction func onboardin2ButtonDidPress(_ sender: UIButton) {
     }
 
+    @IBAction func onboarding2BackButtonDidPress(_ sender: Any) {
+    }
 }
