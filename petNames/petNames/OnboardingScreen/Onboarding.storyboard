@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SF-Pro-Rounded-Bold.otf">
+            <string>SFProRounded-Bold</string>
+        </array>
         <array key="SF-Pro-Rounded-Regular.otf">
             <string>SFProRounded-Regular</string>
         </array>
@@ -186,13 +189,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compartilhe informações com quem quiser para que ninguém esqueça nada!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QW0-xW-q2P">
-                                <rect key="frame" x="45" y="552" width="324" height="86"/>
+                                <rect key="frame" x="45" y="552" width="324" height="98.5"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUD-FI-ILB">
-                                <rect key="frame" x="40" y="727" width="67" height="38"/>
+                                <rect key="frame" x="40" y="739.5" width="66.5" height="14.5"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -209,7 +212,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdz-6f-zp8">
-                                <rect key="frame" x="152" y="716" width="229" height="60"/>
+                                <rect key="frame" x="151.5" y="717.5" width="229" height="58.5"/>
                                 <color key="backgroundColor" red="0.53725490196078429" green="0.8784313725490196" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="229" id="iMc-V9-9aP"/>
@@ -263,20 +266,134 @@
             </objects>
             <point key="canvasLocation" x="2467" y="78"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding4 View Controller-->
         <scene sceneID="vpl-hV-scx">
             <objects>
-                <viewController id="RyP-rm-WKo" sceneMemberID="viewController">
+                <viewController id="RyP-rm-WKo" customClass="Onboarding4ViewController" customModule="petNames" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iQb-4G-8xj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background1" translatesAutoresizingMaskIntoConstraints="NO" id="d9x-kx-z2Q">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLC-9u-p4z">
+                                <rect key="frame" x="43" y="731" width="66.5" height="37"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Pular">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="SFProRounded-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onboarding3BackButtonDidPress:" destination="FdC-ee-1ga" eventType="touchUpInside" id="vcx-OY-eIt"/>
+                                    <action selector="onboarding4SkipDidPress:" destination="RyP-rm-WKo" eventType="touchUpInside" id="1ch-gH-0SY"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Qv-jd-qij">
+                                <rect key="frame" x="0.0" y="168" width="414" height="404"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá tutor! 😄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RF5-25-f3h">
+                                        <rect key="frame" x="31" y="45" width="354" height="43"/>
+                                        <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para você ter uma experiência mais personalizada nos gostaríamos de saber" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10H-90-CNo">
+                                        <rect key="frame" x="31" y="113" width="354" height="86"/>
+                                        <color key="tintColor" systemColor="systemGray2Color"/>
+                                        <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Texto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s2h-97-9Ru">
+                                        <rect key="frame" x="30" y="264.5" width="354" height="34"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Como você gostaria de ser chamado?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBf-jU-EAN">
+                                        <rect key="frame" x="31" y="227" width="354" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="10H-90-CNo" firstAttribute="leading" secondItem="7Qv-jd-qij" secondAttribute="leading" constant="31" id="5xW-za-seW"/>
+                                    <constraint firstItem="s2h-97-9Ru" firstAttribute="leading" secondItem="7Qv-jd-qij" secondAttribute="leading" constant="30" id="6JK-Uf-ZKt"/>
+                                    <constraint firstItem="RF5-25-f3h" firstAttribute="leading" secondItem="7Qv-jd-qij" secondAttribute="leading" constant="31" id="BkM-ey-A2G"/>
+                                    <constraint firstItem="10H-90-CNo" firstAttribute="top" secondItem="RF5-25-f3h" secondAttribute="bottom" constant="25" id="DmT-xa-ECg"/>
+                                    <constraint firstItem="s2h-97-9Ru" firstAttribute="top" secondItem="fBf-jU-EAN" secondAttribute="bottom" constant="16" id="I4J-d2-4Fc"/>
+                                    <constraint firstAttribute="trailing" secondItem="s2h-97-9Ru" secondAttribute="trailing" constant="30" id="KSj-OD-wUj"/>
+                                    <constraint firstAttribute="trailing" secondItem="RF5-25-f3h" secondAttribute="trailing" constant="29" id="Ztn-9M-yD2"/>
+                                    <constraint firstAttribute="trailing" secondItem="fBf-jU-EAN" secondAttribute="trailing" constant="29" id="aSM-Hw-AdC"/>
+                                    <constraint firstAttribute="trailing" secondItem="10H-90-CNo" secondAttribute="trailing" constant="29" id="iAY-bo-vsQ"/>
+                                    <constraint firstItem="fBf-jU-EAN" firstAttribute="top" secondItem="10H-90-CNo" secondAttribute="bottom" constant="28" id="mdH-Wm-JIX"/>
+                                    <constraint firstItem="RF5-25-f3h" firstAttribute="top" secondItem="7Qv-jd-qij" secondAttribute="top" constant="45" id="oQq-bD-jOk"/>
+                                    <constraint firstItem="fBf-jU-EAN" firstAttribute="leading" secondItem="7Qv-jd-qij" secondAttribute="leading" constant="31" id="sRS-6L-Rgr"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfJ-Lf-dt7">
+                                <rect key="frame" x="216" y="720" width="147" height="59"/>
+                                <color key="backgroundColor" red="0.53725490196078429" green="0.8784313725490196" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="MsU-ZE-MMj"/>
+                                    <constraint firstAttribute="height" constant="59" id="rU6-re-K0N"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Salvar">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="SFProRounded-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onboarding4SaveDidPress:" destination="RyP-rm-WKo" eventType="touchUpInside" id="ayW-73-lO3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Azg-as-oh2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iLC-9u-p4z" firstAttribute="leading" secondItem="Azg-as-oh2" secondAttribute="leading" constant="43" id="3bN-yq-9De"/>
+                            <constraint firstAttribute="trailing" secondItem="d9x-kx-z2Q" secondAttribute="trailing" id="9cS-Us-6Ej"/>
+                            <constraint firstItem="d9x-kx-z2Q" firstAttribute="top" secondItem="iQb-4G-8xj" secondAttribute="top" id="Kyv-QZ-ysO"/>
+                            <constraint firstAttribute="bottom" secondItem="d9x-kx-z2Q" secondAttribute="bottom" id="LEx-Lc-Z2X"/>
+                            <constraint firstItem="7Qv-jd-qij" firstAttribute="leading" secondItem="Azg-as-oh2" secondAttribute="leading" id="PSl-KE-D8f"/>
+                            <constraint firstItem="7Qv-jd-qij" firstAttribute="trailing" secondItem="Azg-as-oh2" secondAttribute="trailing" id="Z3R-kc-Mj4"/>
+                            <constraint firstItem="FfJ-Lf-dt7" firstAttribute="centerY" secondItem="iLC-9u-p4z" secondAttribute="centerY" id="aDC-O9-V6x"/>
+                            <constraint firstItem="7Qv-jd-qij" firstAttribute="top" secondItem="Azg-as-oh2" secondAttribute="top" constant="124" id="atZ-BS-xEE"/>
+                            <constraint firstItem="Azg-as-oh2" firstAttribute="trailing" secondItem="FfJ-Lf-dt7" secondAttribute="trailing" constant="51" id="cPF-M0-esC"/>
+                            <constraint firstAttribute="bottom" secondItem="7Qv-jd-qij" secondAttribute="bottom" constant="324" id="hz3-sg-qup"/>
+                            <constraint firstItem="d9x-kx-z2Q" firstAttribute="leading" secondItem="iQb-4G-8xj" secondAttribute="leading" id="kv0-O1-0m3"/>
+                            <constraint firstItem="iLC-9u-p4z" firstAttribute="top" secondItem="7Qv-jd-qij" secondAttribute="bottom" constant="159" id="lCm-XZ-FmL"/>
+                            <constraint firstItem="Azg-as-oh2" firstAttribute="bottom" secondItem="FfJ-Lf-dt7" secondAttribute="bottom" constant="83" id="xSK-zp-NBX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="onboarding4HeaderTitleLabel" destination="RF5-25-f3h" id="EGI-c6-HbZ"/>
+                        <outlet property="onboarding4QuestionLabel" destination="fBf-jU-EAN" id="Sbu-bR-8uB"/>
+                        <outlet property="onboarding4SaveButton" destination="FfJ-Lf-dt7" id="Qqp-68-hhP"/>
+                        <outlet property="onboarding4SignUpView" destination="7Qv-jd-qij" id="3ez-nx-pyt"/>
+                        <outlet property="onboarding4SkipButton" destination="iLC-9u-p4z" id="tPf-g2-aAE"/>
+                        <outlet property="onboarding4SubHeaderTitleLabel" destination="10H-90-CNo" id="aS5-aC-9Wn"/>
+                        <outlet property="onboarding4TextBoxView" destination="s2h-97-9Ru" id="rh8-9X-eni"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rp4-aR-E3G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3251" y="78"/>
+            <point key="canvasLocation" x="3250.7246376811595" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>
@@ -284,14 +401,21 @@
         <image name="Ilustra 2" width="390" height="420"/>
         <image name="Ilustra 3" width="390" height="420"/>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="background1" width="1125" height="2436"/>
         <image name="fundo1" width="1125" height="2436"/>
         <image name="fundo2" width="1125" height="2436"/>
         <image name="fundo3" width="1125" height="2436"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
