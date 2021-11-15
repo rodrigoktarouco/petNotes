@@ -27,6 +27,7 @@
 		9D1E7509270E118E00321E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E7507270E118E00321E54 /* Main.storyboard */; };
 		9D1E750B270E119000321E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E750A270E119000321E54 /* Assets.xcassets */; };
 		9D1E750E270E119000321E54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E750C270E119000321E54 /* LaunchScreen.storyboard */; };
+		9D34E242274302960033CF9E /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D34E241274302960033CF9E /* OnboardingPageViewController.swift */; };
 		9D5A1D292718B52B00637589 /* NewPet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A1D282718B52B00637589 /* NewPet.storyboard */; };
 		9D5A1D2C2718BD3E00637589 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A1D2B2718BD3E00637589 /* Pets.storyboard */; };
 		9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5A1D2D2718BD5A00637589 /* PetsViewController.swift */; };
@@ -114,6 +115,7 @@
 		9D1E750D270E119000321E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D1E750F270E119000321E54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D295291271DE3A80079A685 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
+		9D34E241274302960033CF9E /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		9D5A1D282718B52B00637589 /* NewPet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPet.storyboard; sourceTree = "<group>"; };
 		9D5A1D2B2718BD3E00637589 /* Pets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pets.storyboard; sourceTree = "<group>"; };
 		9D5A1D2D2718BD5A00637589 /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				9D641CEA273DA3930072886A /* Onboarding.storyboard */,
+				9D34E241274302960033CF9E /* OnboardingPageViewController.swift */,
 				9D641CEC273DA3DF0072886A /* OnboardingViewController.swift */,
 				9D641CEE273DA4A80072886A /* Onboarding2ViewController.swift */,
 				9D641CF0273DA4BB0072886A /* Onboarding3ViewController.swift */,
@@ -590,6 +593,7 @@
 				F4D6129E272B3BE300C49FCB /* TaskSettingsViewController.swift in Sources */,
 				5C86C9FE271E0CAC00FD1C2C /* ShareTableViewCell.swift in Sources */,
 				FD45E96B27344B2400F01E83 /* SmallTableViewCell.swift in Sources */,
+				9D34E242274302960033CF9E /* OnboardingPageViewController.swift in Sources */,
 				5C145B592721DA970091C02A /* TextFieldTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

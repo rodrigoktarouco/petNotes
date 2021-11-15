@@ -29,6 +29,8 @@ class Onboarding4ViewController: UIViewController {
     }
 
     @IBAction func onboarding4SkipDidPress(_ sender: UIButton) {
+        didPressSkipButtons()
+        
     }
     
     @IBAction func onboarding4SaveDidPress(_ sender: Any) {
@@ -44,4 +46,16 @@ extension UIView {
     mask.path = path.cgPath
     self.layer.mask = mask
   }
+}
+
+extension Onboarding4ViewController {
+    func didPressSkipButtons() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let initialController = storyBoard.instantiateInitialViewController()
+        let scene = view.window?.windowScene?.delegate as? SceneDelegate
+        scene?.window?.rootViewController = initialController
+
+        guard let window = scene?.window else { return }
+        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
+    }
 }

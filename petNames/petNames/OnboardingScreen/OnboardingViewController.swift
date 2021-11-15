@@ -21,5 +21,4 @@ class OnboardingViewController: UIViewController {
     @IBAction func onboarding1ButtonDidPressed(_ sender: UIButton) {
     }
 
-
 }
