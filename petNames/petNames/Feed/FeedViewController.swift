@@ -39,7 +39,7 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
+        //        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "tabBarColor")
         tasksCollectionView.dataSource = self
         petsCollectionView.dataSource = self
         petsCollectionView.delegate = self
@@ -78,12 +78,12 @@ class FeedViewController: UIViewController {
         doneTasksFunImage.image =  modelInstance.getImageForFunTasksImageView()
     }
 
-//    func setUpBackground() {
-//        let backGroundAssetNames = ["background1", "background2", "background3"]
-//        backgroundImage.image = UIImage(named: backGroundAssetNames.randomElement() ?? "background1") ?? UIImage(named: "")
-//        backgroundImage.alpha = 0.4
-//        [tasksCollectionView, petsCollectionView].forEach { collection in collection?.backgroundColor = .clear}
-//    }
+    //    func setUpBackground() {
+    //        let backGroundAssetNames = ["background1", "background2", "background3"]
+    //        backgroundImage.image = UIImage(named: backGroundAssetNames.randomElement() ?? "background1") ?? UIImage(named: "")
+    //        backgroundImage.alpha = 0.4
+    //        [tasksCollectionView, petsCollectionView].forEach { collection in collection?.backgroundColor = .clear}
+    //    }
 
     func setUpLabelsTexts() {
 
@@ -187,5 +187,16 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
 extension String {
     func localized() -> String {
         return NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: self, comment: self)
+    }
+}
+
+// MARK: Onboarding checking method
+
+extension FeedViewController {
+    override func viewDidAppear(_ animated: Bool) {
+        if !UserDefaultsManager.shared.isOnboardingDone {
+            performSegue(withIdentifier: "toOnboarding", sender: nil)
+//            UserDefaultManager.shared.saveOnboardingStatus(status: true)
+        }
     }
 }

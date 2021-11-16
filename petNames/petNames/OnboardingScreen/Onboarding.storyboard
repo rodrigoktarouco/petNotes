@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Page View Controller-->
+        <!--Onboarding Page View Controller-->
         <scene sceneID="KeJ-OE-igl">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Q4b-il-qnT" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Q4b-il-qnT" customClass="OnboardingPageViewController" customModule="petNames" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lic-KO-mFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="900" y="-615"/>
@@ -32,36 +32,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fundo1" translatesAutoresizingMaskIntoConstraints="NO" id="Tfp-KS-LVu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fundo1" translatesAutoresizingMaskIntoConstraints="NO" id="Tfp-KS-LVu">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ilustra 1" translatesAutoresizingMaskIntoConstraints="NO" id="cSp-jC-whu">
-                                <rect key="frame" x="0.0" y="90" width="414" height="434"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="cSp-jC-whu" secondAttribute="height" multiplier="207:217" id="U8N-2f-5qW"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="Ilustra 1" translatesAutoresizingMaskIntoConstraints="NO" id="cSp-jC-whu">
+                                <rect key="frame" x="0.0" y="90" width="414" height="420"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastre seu pet para organizar suas tarefas de maneira simples e prática" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ck-dd-jzK">
-                                <rect key="frame" x="65" y="552" width="284" height="86"/>
+                                <rect key="frame" x="65" y="538" width="284" height="86"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHx-aC-g3z">
-                                <rect key="frame" x="249" y="720" width="100" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.53725490196078429" green="0.8784313725490196" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                                <connections>
-                                    <action selector="onboarding1ButtonDidPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lHM-ZH-jGO"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0Eq-hP-j0N">
-                                <rect key="frame" x="279" y="729" width="40" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -80,7 +62,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="DgE-35-LOS"/>
                     <connections>
-                        <outlet property="onboarding1Button" destination="bHx-aC-g3z" id="fqE-SG-Oqq"/>
                         <outlet property="onboarding1TextLabel" destination="3ck-dd-jzK" id="vWc-wk-RTz"/>
                     </connections>
                 </viewController>
@@ -111,40 +92,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lB9-PY-rdt">
-                                <rect key="frame" x="271" y="718" width="98" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.53725490196078429" green="0.8784313725490196" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                                <connections>
-                                    <action selector="onboardin2ButtonDidPressed:" destination="gb7-NN-1gu" eventType="touchUpInside" id="n5P-Fv-FRP"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LwO-Qc-sCQ">
-                                <rect key="frame" x="299" y="728" width="43" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEQ-3b-k3l">
-                                <rect key="frame" x="44" y="731" width="72" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Voltar">
-                                            <attributes>
-                                                <font key="NSFont" size="20" name="SFProRounded-Regular"/>
-                                                <font key="NSOriginalFont" size="20" name="SFProRounded-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="onboarding2BackButtonDidPress:" destination="gb7-NN-1gu" eventType="touchUpInside" id="n4S-jm-FI2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4CH-gf-DV4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -162,8 +109,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="onboarding2BackButton" destination="JEQ-3b-k3l" id="xZ4-cz-QCx"/>
-                        <outlet property="onboarding2Button" destination="lB9-PY-rdt" id="rCk-0K-PCc"/>
                         <outlet property="onboarding2TextLabel" destination="09U-fy-3jf" id="z6x-x8-gKR"/>
                     </connections>
                 </viewController>
@@ -189,30 +134,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compartilhe informações com quem quiser para que ninguém esqueça nada!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QW0-xW-q2P">
-                                <rect key="frame" x="45" y="552" width="324" height="84"/>
+                                <rect key="frame" x="45" y="552" width="324" height="86"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUD-FI-ILB">
-                                <rect key="frame" x="40" y="725" width="66.5" height="18"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Pular">
-                                            <attributes>
-                                                <font key="NSFont" size="20" name="SFProRounded-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="onboarding3BackButtonDidPress:" destination="FdC-ee-1ga" eventType="touchUpInside" id="3ff-eu-EoT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdz-6f-zp8">
-                                <rect key="frame" x="151.5" y="692" width="229" height="84"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdz-6f-zp8">
+                                <rect key="frame" x="151.5" y="736.5" width="229" height="39.5"/>
                                 <color key="backgroundColor" red="0.53725490196078429" green="0.8784313725490196" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="229" id="iMc-V9-9aP"/>
@@ -237,28 +165,21 @@
                         <viewLayoutGuide key="safeArea" id="RDA-wf-Ytg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jdz-6f-zp8" firstAttribute="leading" secondItem="vUD-FI-ILB" secondAttribute="trailing" constant="45" id="3Os-M8-7IK"/>
                             <constraint firstItem="RDA-wf-Ytg" firstAttribute="trailing" secondItem="QW0-xW-q2P" secondAttribute="trailing" constant="45" id="3nT-nj-fUW"/>
                             <constraint firstItem="RDA-wf-Ytg" firstAttribute="bottom" secondItem="jdz-6f-zp8" secondAttribute="bottom" constant="86" id="H6k-di-qWU"/>
-                            <constraint firstItem="jdz-6f-zp8" firstAttribute="baseline" secondItem="vUD-FI-ILB" secondAttribute="firstBaseline" id="KfT-VF-aBA"/>
                             <constraint firstItem="jbW-1V-M9N" firstAttribute="top" secondItem="RDA-wf-Ytg" secondAttribute="top" constant="45.799999999999997" id="LYo-vU-6ha"/>
-                            <constraint firstItem="vUD-FI-ILB" firstAttribute="leading" secondItem="RDA-wf-Ytg" secondAttribute="leading" constant="40" id="T60-nh-rCS"/>
                             <constraint firstItem="jbW-1V-M9N" firstAttribute="trailing" secondItem="RDA-wf-Ytg" secondAttribute="trailing" id="UAG-fU-f8b"/>
-                            <constraint firstItem="jdz-6f-zp8" firstAttribute="centerY" secondItem="vUD-FI-ILB" secondAttribute="centerY" id="Uxq-8E-54k"/>
                             <constraint firstAttribute="bottom" secondItem="XUI-ls-SGc" secondAttribute="bottom" id="ZO6-Li-oCD"/>
                             <constraint firstItem="jbW-1V-M9N" firstAttribute="leading" secondItem="RDA-wf-Ytg" secondAttribute="leading" id="iRO-Dw-XyF"/>
                             <constraint firstItem="XUI-ls-SGc" firstAttribute="leading" secondItem="imc-5Q-Goh" secondAttribute="leading" id="qXA-cn-ghW"/>
                             <constraint firstItem="QW0-xW-q2P" firstAttribute="leading" secondItem="RDA-wf-Ytg" secondAttribute="leading" constant="45" id="qzv-4T-Sql"/>
-                            <constraint firstItem="jdz-6f-zp8" firstAttribute="baseline" secondItem="vUD-FI-ILB" secondAttribute="baseline" id="rqO-ek-fdn"/>
                             <constraint firstItem="QW0-xW-q2P" firstAttribute="top" secondItem="jbW-1V-M9N" secondAttribute="bottom" constant="28" id="sNW-6D-iKG"/>
                             <constraint firstAttribute="trailing" secondItem="XUI-ls-SGc" secondAttribute="trailing" id="sdZ-Yu-pYo"/>
                             <constraint firstItem="XUI-ls-SGc" firstAttribute="top" secondItem="imc-5Q-Goh" secondAttribute="top" id="tJK-RE-Nfn"/>
-                            <constraint firstItem="vUD-FI-ILB" firstAttribute="top" secondItem="QW0-xW-q2P" secondAttribute="bottom" constant="89" id="uZf-dE-GUO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="onboarding3LetsStartButton" destination="jdz-6f-zp8" id="EHx-yz-CQW"/>
-                        <outlet property="onboarding3SkipButton" destination="vUD-FI-ILB" id="dgA-Y7-7A1"/>
                         <outlet property="onboarding3TextLabel" destination="QW0-xW-q2P" id="eVz-WW-fS9"/>
                     </connections>
                 </viewController>
@@ -277,24 +198,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background1" translatesAutoresizingMaskIntoConstraints="NO" id="d9x-kx-z2Q">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLC-9u-p4z">
-                                <rect key="frame" x="43" y="731" width="66.5" height="37"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Pular">
-                                            <attributes>
-                                                <font key="NSFont" size="20" name="SFProRounded-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="onboarding3BackButtonDidPress:" destination="FdC-ee-1ga" eventType="touchUpInside" id="vcx-OY-eIt"/>
-                                    <action selector="onboarding4SkipDidPress:" destination="RyP-rm-WKo" eventType="touchUpInside" id="1ch-gH-0SY"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Qv-jd-qij">
                                 <rect key="frame" x="0.0" y="168" width="414" height="404"/>
                                 <subviews>
@@ -359,25 +262,22 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="onboarding4SaveDidPress:" destination="RyP-rm-WKo" eventType="touchUpInside" id="ayW-73-lO3"/>
+                                    <action selector="onboarding4SaveDidPress:" destination="RyP-rm-WKo" eventType="touchUpInside" id="EUU-qb-Mvr"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Azg-as-oh2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iLC-9u-p4z" firstAttribute="leading" secondItem="Azg-as-oh2" secondAttribute="leading" constant="43" id="3bN-yq-9De"/>
                             <constraint firstAttribute="trailing" secondItem="d9x-kx-z2Q" secondAttribute="trailing" id="9cS-Us-6Ej"/>
                             <constraint firstItem="d9x-kx-z2Q" firstAttribute="top" secondItem="iQb-4G-8xj" secondAttribute="top" id="Kyv-QZ-ysO"/>
                             <constraint firstAttribute="bottom" secondItem="d9x-kx-z2Q" secondAttribute="bottom" id="LEx-Lc-Z2X"/>
                             <constraint firstItem="7Qv-jd-qij" firstAttribute="leading" secondItem="Azg-as-oh2" secondAttribute="leading" id="PSl-KE-D8f"/>
                             <constraint firstItem="7Qv-jd-qij" firstAttribute="trailing" secondItem="Azg-as-oh2" secondAttribute="trailing" id="Z3R-kc-Mj4"/>
-                            <constraint firstItem="FfJ-Lf-dt7" firstAttribute="centerY" secondItem="iLC-9u-p4z" secondAttribute="centerY" id="aDC-O9-V6x"/>
                             <constraint firstItem="7Qv-jd-qij" firstAttribute="top" secondItem="Azg-as-oh2" secondAttribute="top" constant="124" id="atZ-BS-xEE"/>
                             <constraint firstItem="Azg-as-oh2" firstAttribute="trailing" secondItem="FfJ-Lf-dt7" secondAttribute="trailing" constant="51" id="cPF-M0-esC"/>
                             <constraint firstAttribute="bottom" secondItem="7Qv-jd-qij" secondAttribute="bottom" constant="324" id="hz3-sg-qup"/>
                             <constraint firstItem="d9x-kx-z2Q" firstAttribute="leading" secondItem="iQb-4G-8xj" secondAttribute="leading" id="kv0-O1-0m3"/>
-                            <constraint firstItem="iLC-9u-p4z" firstAttribute="top" secondItem="7Qv-jd-qij" secondAttribute="bottom" constant="159" id="lCm-XZ-FmL"/>
                             <constraint firstItem="Azg-as-oh2" firstAttribute="bottom" secondItem="FfJ-Lf-dt7" secondAttribute="bottom" constant="83" id="xSK-zp-NBX"/>
                         </constraints>
                     </view>
@@ -386,7 +286,6 @@
                         <outlet property="onboarding4QuestionLabel" destination="fBf-jU-EAN" id="Sbu-bR-8uB"/>
                         <outlet property="onboarding4SaveButton" destination="FfJ-Lf-dt7" id="Qqp-68-hhP"/>
                         <outlet property="onboarding4SignUpView" destination="7Qv-jd-qij" id="3ez-nx-pyt"/>
-                        <outlet property="onboarding4SkipButton" destination="iLC-9u-p4z" id="tPf-g2-aAE"/>
                         <outlet property="onboarding4SubHeaderTitleLabel" destination="10H-90-CNo" id="aS5-aC-9Wn"/>
                         <outlet property="onboarding4TextBoxView" destination="s2h-97-9Ru" id="rh8-9X-eni"/>
                     </connections>
@@ -400,7 +299,6 @@
         <image name="Ilustra 1" width="390" height="420"/>
         <image name="Ilustra 2" width="390" height="420"/>
         <image name="Ilustra 3" width="390" height="420"/>
-        <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="background1" width="1125" height="2436"/>
         <image name="fundo1" width="1125" height="2436"/>
         <image name="fundo2" width="1125" height="2436"/>

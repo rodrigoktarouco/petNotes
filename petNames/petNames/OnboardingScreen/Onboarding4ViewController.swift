@@ -13,8 +13,8 @@ class Onboarding4ViewController: UIViewController {
     @IBOutlet weak var onboarding4SubHeaderTitleLabel: UILabel!
     @IBOutlet weak var onboarding4QuestionLabel: UILabel!
     @IBOutlet weak var onboarding4TextBoxView: UITextField!
-    @IBOutlet weak var onboarding4SkipButton: UIButton!
     @IBOutlet weak var onboarding4SaveButton: UIButton!
+    weak var delegate: OnboardingControlDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +23,11 @@ class Onboarding4ViewController: UIViewController {
         onboarding4HeaderTitleLabel.text = "onboarding4HeaderTitleLabel".localized()
         onboarding4HeaderTitleLabel.text = "onboarding4SubHeaderTitleLabel".localized()
         onboarding4QuestionLabel.text = "onboarding4QuestionLabel".localized()
-        onboarding4SkipButton.setTitle("onboarding3LetsStartButton".localized(), for: .normal)
         onboarding4SaveButton.setTitle("onboarding4SaveButton".localized(), for: .normal)
 
     }
-
-    @IBAction func onboarding4SkipDidPress(_ sender: UIButton) {
-        didPressSkipButtons()
-        
-    }
-    
-    @IBAction func onboarding4SaveDidPress(_ sender: Any) {
+    @IBAction func onboarding4SaveDidPress(_ sender: UIButton) {
+        delegate?.didTapSaveButton(viewController: self, button: sender)
     }
 
 }
