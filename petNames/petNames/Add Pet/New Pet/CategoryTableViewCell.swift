@@ -14,7 +14,7 @@ class CategoryTableViewCell: UITableViewCell {
 
     // MARK: picker properties
     let picker = ToolbarPickerView()
-    var pickerData: [String] = ["dog".localized(), "cat".localized(), "bird".localized(), "other".localized()]
+    var pickerData: [String] = [" ", "dog".localized(), "cat".localized(), "bird".localized(), "other".localized()]
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -66,11 +66,21 @@ extension CategoryTableViewCell: ToolbarPickerViewDelegate {
         self.categoryTextField.text = self.pickerData[row]
         self.categoryTextField.textColor = .link
         self.categoryTextField.resignFirstResponder()
+        print("#\(categoryTextField.text)")
+        
+        if categoryTextField.text != " " {
+            categoryPicked = true
+        } else {
+            categoryPicked = false
+            print("#entrou")
+        }
+        
     }
 
     func didTapCancel() {
         self.categoryTextField.text = "choose".localized()
         self.categoryTextField.textColor = .link
         self.categoryTextField.resignFirstResponder()
+        categoryPicked = false
     }
 }

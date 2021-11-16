@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var settingsTitleLabel: UILabel!
@@ -24,6 +22,7 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.backgroundColor = UIColor(named: "cellColor")
         settingsTableView.dataSource = self
         settingsTitleLabel.text = "settingsTitleLabel".localized()
         settingsTableView.delegate = self
@@ -31,8 +30,8 @@ class SettingsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
 }
+
 extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -81,6 +80,11 @@ extension SettingsViewController: UITableViewDataSource {
      let cell = UITableViewCell()
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 
 extension SettingsViewController: UITableViewDelegate {

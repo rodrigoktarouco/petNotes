@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum SelectedSementInTasks {
+enum SelectedSegmentInTasks {
         case all
         case notDone
         case byPet

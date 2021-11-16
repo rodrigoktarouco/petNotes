@@ -92,7 +92,7 @@ class PersistanceManager {
 
     }
 
-    func savePet(pet: Pet, petImage: UIImage? , completion: @escaping(Error?) -> Void) {
+    func savePet(pet: Pet, petImage: UIImage?, completion: @escaping(Error?) -> Void) {
         pet.user = currentUser
         let imageName = pet.image ?? "\(UUID().uuidString).jpg"
         var url = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: .userDomainMask)[0]
@@ -125,7 +125,7 @@ class PersistanceManager {
 
     }
 
-    func saveTask( task: Task ,completion: @escaping(Error?) -> Void ) {
+    func saveTask( task: Task, completion: @escaping(Error?) -> Void ) {
         saveContext()
         completion(nil)
     }
@@ -137,7 +137,7 @@ class PersistanceManager {
     }
 
     func listTasksFromPet(pet: Pet, completion: @escaping(Result<[Task], Error>) -> Void) {
-        let tasks : [Task] = (pet.tasks ?? []).compactMap { $0 as? Task }
+        let tasks: [Task] = (pet.tasks ?? []).compactMap { $0 as? Task }
         completion(.success(tasks))
 
     }
