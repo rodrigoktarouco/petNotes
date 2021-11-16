@@ -204,6 +204,7 @@ extension Task {
                 if let hourString = timeComponents.first, let hour = Int(hourString),
                    let minutesString = timeComponents.last, let minutes = Int(minutesString) {
                     var dateComponents = DateComponents()
+                    dateComponents.timeZone = TimeZone(secondsFromGMT: 0)
                     dateComponents.hour = hour
                     dateComponents.minute = minutes
                     components.append(dateComponents)
