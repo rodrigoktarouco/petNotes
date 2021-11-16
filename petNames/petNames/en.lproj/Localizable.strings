@@ -71,6 +71,7 @@
 "cancel" = "Cancel";
 "done" = "Done";
 "warningMessage" = "You need to fill the info about your pet";
+"editImage" = "Edit image";
 
 //MARK: -AppSettings
 "settingsTitleLabel" = "Settings";

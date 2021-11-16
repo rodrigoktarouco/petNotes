@@ -21,7 +21,7 @@ class TaskTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        petImageTask.layer.cornerRadius = 22
+//        petImageTask.layer.cornerRadius = 22
 
     }
 

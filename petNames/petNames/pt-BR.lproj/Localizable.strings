@@ -73,6 +73,7 @@
 "cancel" = "Cancelar";
 "done" = "Confirmar";
 "warningMessage" = "Você precisa preencher as informações do seu pet";
+"editImage" = "Editar imagem";
 
 //MARK: -AppSettings
 "settingsTitleLabel" = "Configurações";
