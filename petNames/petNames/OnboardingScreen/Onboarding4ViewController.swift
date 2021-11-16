@@ -28,6 +28,7 @@ class Onboarding4ViewController: UIViewController {
     }
     @IBAction func onboarding4SaveDidPress(_ sender: UIButton) {
         delegate?.didTapSaveButton(viewController: self, button: sender)
+        dismiss(animated: true)
     }
 
 }

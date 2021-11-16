@@ -183,6 +183,7 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 14
     }
+
 }
 extension String {
     func localized() -> String {
@@ -196,7 +197,7 @@ extension FeedViewController {
     override func viewDidAppear(_ animated: Bool) {
         if !UserDefaultsManager.shared.isOnboardingDone {
             performSegue(withIdentifier: "toOnboarding", sender: nil)
-//            UserDefaultManager.shared.saveOnboardingStatus(status: true)
+            UserDefaultsManager.shared.saveOnboardingStatus(status: true)
         }
     }
 }
