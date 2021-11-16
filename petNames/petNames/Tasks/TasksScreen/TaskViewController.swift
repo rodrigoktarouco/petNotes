@@ -78,16 +78,19 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Task", bundle: nil)
         let viewC = storyboard.instantiateViewController(withIdentifier: "navigateTo") as UIViewController
         self.present(viewC, animated: true, completion: nil)
-        tableView.deselectRow(at: indexPath, animated: true)
+        tasksTableView.deselectRow(at: indexPath, animated: true)
 //        selectedTaskGlobal =
         comingFromTaskScreen = true
     }
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            print("Content deleted.")
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+////            objects.remove(at: indexPath.row)
+//            tasksTableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+//        }
+//    }
 }
 // get informações a serem apresentadas no all, not done, e by pet
 extension TaskViewController {
