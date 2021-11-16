@@ -23,6 +23,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         imageManager.requestPermissions()
         imageManager.pickImage(self) { image in
             self.petImage.image = image
+            self.petImage.layer.cornerRadius = 50
         }
     }
     
@@ -39,7 +40,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         Background.shared.assignBackground(view: self.view)
         self.petTableView.reloadData()
         
-        // MARK: Generated a random image placeholder
+        // MARK: Generates a random image placeholder
         let placeHolderImages = ["profile-amarelo-rounded", "profile-azul-rounded", "profile-laranja-rounded", "profile-roxo-rounded", "profile-verde-rounded", "profile-vermelho-rounded"]
         self.petImage.image = UIImage(named: placeHolderImages.randomElement() ?? "placeHolderAsset".localized())
         self.petImage.clipsToBounds = true
