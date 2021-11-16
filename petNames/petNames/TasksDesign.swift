@@ -14,15 +14,15 @@ class TasksDesign {
     init() {}
     static var shared: TasksDesign = TasksDesign()
     var tasksDesignPropertiesArray: [TasksDesignProperties] = {
-        let water = TasksDesignProperties(name: "water", taskImage: UIImage(named: "water-task-icon"), color: UIColor(red: 0.808, green: 1, blue: 1, alpha: 1))
-        let food = TasksDesignProperties(name: "food", taskImage: UIImage(named: "food-task-icon"), color: UIColor(red: 1, green: 0.92, blue: 0.852, alpha: 1))
-        let wash = TasksDesignProperties(name: "wash", taskImage: UIImage(named: "wash-task-icon"), color: UIColor(red: 0.902, green: 0.842, blue: 1, alpha: 1))
-        let playtime = TasksDesignProperties(name: "playtime", taskImage: UIImage(named: "playtime-task-icon"), color: UIColor(red: 1, green: 0.833, blue: 0.993, alpha: 1))
-        let walk  = TasksDesignProperties(name: "walk", taskImage: UIImage(named: "walk-task-icon"), color: UIColor(red: 0.843, green: 1, blue: 0.859, alpha: 1))
-        let medicine = TasksDesignProperties(name: "medicine", taskImage: UIImage(named: "medicine-task-icon"), color: UIColor(red: 1, green: 0.846, blue: 0.846, alpha: 1))
-        let groom = TasksDesignProperties(name: "groom", taskImage: UIImage(named: "groom-task-icon"), color: UIColor(red: 1, green: 0.961, blue: 0.829, alpha: 1))
-        let vet = TasksDesignProperties(name: "vet", taskImage: UIImage(named: "vet-task-icon"), color: UIColor(red: 0.863, green: 0.929, blue: 1, alpha: 1))
-        let custom = TasksDesignProperties(name: "custom", taskImage: UIImage(named: "custom-task-icon"), color: UIColor(red: 0.922, green: 0.922, blue: 0.922, alpha: 1))
+        let water = TasksDesignProperties(name: "water", taskImage: UIImage(named: "water-task-icon"), color: UIColor(named: "TC-water-inside"))
+        let food = TasksDesignProperties(name: "food", taskImage: UIImage(named: "food-task-icon"), color: UIColor(named: "TC-food-inside"))
+        let wash = TasksDesignProperties(name: "wash", taskImage: UIImage(named: "wash-task-icon"), color: UIColor(named: "TC-wash-inside"))
+        let playtime = TasksDesignProperties(name: "playtime", taskImage: UIImage(named: "playtime-task-icon"), color: UIColor(named: "TC-playtime-inside"))
+        let walk  = TasksDesignProperties(name: "walk", taskImage: UIImage(named: "walk-task-icon"), color: UIColor(named: "TC-walk-inside"))
+        let medicine = TasksDesignProperties(name: "medicine", taskImage: UIImage(named: "medicine-task-icon"), color: UIColor(named: "TC-medicine-inside"))
+        let groom = TasksDesignProperties(name: "groom", taskImage: UIImage(named: "groom-task-icon"), color: UIColor(named: "TC-groom-inside"))
+        let vet = TasksDesignProperties(name: "vet", taskImage: UIImage(named: "vet-task-icon"), color: UIColor(named: "TC-vet-inside"))
+        let custom = TasksDesignProperties(name: "custom", taskImage: UIImage(named: "custom-task-icon"), color: UIColor(named: "TC-custom-inside"))
 
        return [ water, food, wash, playtime, walk, medicine, groom, vet, custom]
     }()
@@ -34,6 +34,52 @@ class TasksDesign {
             }
         }
         return tasksDesignPropertiesArray.last ?? TasksDesignProperties(name: "custom", taskImage: UIImage(named: "custom-task-icon"), color: UIColor(red: 0.922, green: 0.922, blue: 0.922, alpha: 1)) // the last is the custom TasksDesignProperties
+    }
+
+    var tasksCellBorder: [TasksCellBorder] = {
+        let water = TasksCellBorder(name: "water", color: UIColor(named: "TC-water-border") ?? .red)
+        let food = TasksCellBorder(name: "food", color: UIColor(named: "TC-food-border") ?? .red)
+        let wash = TasksCellBorder(name: "wash", color: UIColor(named: "TC-wash-border") ?? .red)
+        let playtime = TasksCellBorder(name: "playtime", color: UIColor(named: "TC-playtime-border") ?? .red)
+        let walk = TasksCellBorder(name: "walk", color: UIColor(named: "TC-walk-border") ?? .red)
+        let medicine = TasksCellBorder(name: "medicine", color: UIColor(named: "TC-medicine-border") ?? .red)
+        let groom = TasksCellBorder(name: "groom", color: UIColor(named: "TC-groom-border") ?? .red)
+        let vet = TasksCellBorder(name: "vet", color: UIColor(named: "TC-vet-border") ?? .red)
+        let custom = TasksCellBorder(name: "custom", color: UIColor(named: "TC-custom-border") ?? .red)
+
+        return [water, food, wash, playtime, walk, medicine, groom, vet, custom]
+    }()
+
+    func getTasksCellBorder( _ taskName: String) -> TasksCellBorder {
+        for task in tasksCellBorder {
+            if task.name.lowercased() == taskName.lowercased() {
+                return task
+            }
+        }
+        return tasksCellBorder.last ?? TasksCellBorder(name: "custom", color: UIColor(named: "TC-custom-border") ?? .red) // the last is the custom TasksCellBorder
+    }
+
+    var tasksCheckMark: [TasksCheckMark] = {
+        let water = TasksCheckMark(name: "water", color: UIColor(named: "TC-water-checkMark") ?? .red)
+        let food = TasksCheckMark(name: "food", color: UIColor(named: "TC-food-checkMark") ?? .red)
+        let wash = TasksCheckMark(name: "wash", color: UIColor(named: "TC-wash-checkMark") ?? .red)
+        let playtime = TasksCheckMark(name: "playtime", color: UIColor(named: "TC-playtime-checkMark") ?? .red)
+        let walk = TasksCheckMark(name: "walk", color: UIColor(named: "TC-walk-checkMark") ?? .red)
+        let medicine = TasksCheckMark(name: "medicine", color: UIColor(named: "TC-medicine-checkMark") ?? .red)
+        let groom = TasksCheckMark(name: "groom", color: UIColor(named: "TC-groom-checkMark") ?? .red)
+        let vet = TasksCheckMark(name: "vet", color: UIColor(named: "TC-vet-checkMark") ?? .red)
+        let custom = TasksCheckMark(name: "custom", color: UIColor(named: "TC-custom-checkMark") ?? .red)
+
+        return [water, food, wash, playtime, walk, medicine, groom, vet, custom]
+    }()
+
+    func getTasksCheckMark( _ taskName: String) -> TasksCheckMark {
+        for task in tasksCheckMark {
+            if task.name.lowercased() == taskName.lowercased() {
+                return task
+            }
+        }
+        return tasksCheckMark.last ?? TasksCheckMark(name: "custom", color: UIColor(named: "TC-custom-checkMark") ?? .red) // the last is the custom TasksCheckMark
     }
 
     func pickTaskIcon(task: String) -> String {
@@ -70,4 +116,14 @@ struct TasksDesignProperties {
     var name: String
     var taskImage: UIImage?
     var color: UIColor?
+}
+
+struct TasksCellBorder {
+    var name: String
+    var color: UIColor
+}
+
+struct TasksCheckMark {
+    var name: String
+    var color: UIColor
 }

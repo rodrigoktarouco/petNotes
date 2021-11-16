@@ -235,18 +235,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SY1-th-eXr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
+                                <color key="backgroundColor" name="navBar"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="C9z-KT-E0e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Our-uM-egQ" firstAttribute="top" secondItem="SY1-th-eXr" secondAttribute="bottom" constant="35" id="0EA-bo-OcK"/>
                             <constraint firstAttribute="bottom" secondItem="Our-uM-egQ" secondAttribute="bottom" id="7in-kh-g34"/>
                             <constraint firstItem="Our-uM-egQ" firstAttribute="trailing" secondItem="C9z-KT-E0e" secondAttribute="trailing" id="P9C-8K-nfG"/>
+                            <constraint firstItem="SY1-th-eXr" firstAttribute="top" secondItem="tBf-8b-wo7" secondAttribute="top" id="Qdz-ld-E7e"/>
                             <constraint firstItem="Our-uM-egQ" firstAttribute="leading" secondItem="C9z-KT-E0e" secondAttribute="leading" id="U0S-m6-CMk"/>
                             <constraint firstItem="Our-uM-egQ" firstAttribute="top" secondItem="tBf-8b-wo7" secondAttribute="top" constant="90" id="bAf-8O-VeI"/>
+                            <constraint firstItem="C9z-KT-E0e" firstAttribute="trailing" secondItem="SY1-th-eXr" secondAttribute="trailing" id="oqO-bd-Fvs"/>
+                            <constraint firstItem="SY1-th-eXr" firstAttribute="leading" secondItem="C9z-KT-E0e" secondAttribute="leading" id="xjH-2r-EyE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Task X" id="eUU-Ho-tMv"/>
                     <connections>
+                        <outlet property="navView" destination="SY1-th-eXr" id="U13-Yq-Xmw"/>
                         <outlet property="taskSettingsTableView" destination="Our-uM-egQ" id="502-Ce-WxQ"/>
                     </connections>
                 </viewController>
