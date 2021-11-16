@@ -13,6 +13,7 @@ public var comingFromTaskScreen: Bool = false
 class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var taskSettingsTableView: UITableView!
+    @IBOutlet weak var navView: UIView!
     
     var task: Task = Task()
     var newPetVC: UIViewController?
@@ -26,6 +27,8 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
         
         taskSettingsTableView.delegate = self
         taskSettingsTableView.dataSource = self
+
+        navView.isHidden = true
         
         // MARK: Register the custom header view.
         taskSettingsTableView.register(MyCustomHeader.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
@@ -43,7 +46,9 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
                                                                     target: self,
                                                                     action: #selector(cancelButtonAction))
             comingFromTaskScreen = false
+            navView.isHidden = false
         }
+
     }
 
 // MARK: navigation bar buttons

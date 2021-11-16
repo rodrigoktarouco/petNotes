@@ -42,9 +42,12 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //
 //        self.petImage.image = UIImage(named: placeHolderImages.randomElement() ?? "placeHolderAsset".localized())
 
-        self.petImage.image = UIImage(named: "placeHolderAsset".localized())
+        self.petImage.image = UIImage(named: "profile-roxo-dark")
+
+//        self.petImage.image = UIImage(named: "placeHolderAsset".localized())
         self.petImage.clipsToBounds = true
-        editImageBtn.layer.cornerRadius = 10
+
+        editImageBtn.image = UIImage(named: "Group 128")
         
         // MARK: Localizable
         let newPet = "newPetTitle".localized()
@@ -66,7 +69,8 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                                                  action: #selector(addButtonAction))
         
         // MARK: Setting the View Controller`s outlets
-        petImage.layer.cornerRadius = 22
+//        petImage.layer.cornerRadius = 22
+//        petImage.sizeToFit()
         
         // MARK: Register the custom header view.
         petTableView.register(MyCustomHeader.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
