@@ -63,8 +63,8 @@ class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDa
         pages = [onboarding1, onboarding2, onboarding3, onboarding4]
         dataSource = self
         setViewControllers([pages[0]], direction: .forward, animated: true, completion: nil)
-        let appearance = UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
-        appearance.backgroundStyle = .prominent
+//        let appearance = UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
+//        appearance.backgroundStyle = .prominent
     }
 
     override func viewDidLayoutSubviews() {

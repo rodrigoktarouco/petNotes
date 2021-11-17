@@ -18,12 +18,17 @@ class Onboarding4ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        onboarding4SaveButton.layer.cornerRadius = 22
+        // Onboarding SigUpVie
         onboarding4SignUpView.round(corners: [.bottomLeft, .bottomRight, .topRight], radius: 90.0)
+        // Onboarding Header Title Label
         onboarding4HeaderTitleLabel.text = "onboarding4HeaderTitleLabel".localized()
         onboarding4HeaderTitleLabel.text = "onboarding4SubHeaderTitleLabel".localized()
+        // Onboarding Question Label
         onboarding4QuestionLabel.text = "onboarding4QuestionLabel".localized()
+        // Onboarding Save Button
+        onboarding4SaveButton.layer.cornerRadius = 22
         onboarding4SaveButton.setTitle("onboarding4SaveButton".localized(), for: .normal)
+        onboarding4SaveButton.titleLabel?.font =  UIFont(name: "SFProRounded-Bold", size: 20)
 
     }
     @IBAction func onboarding4SaveDidPress(_ sender: UIButton) {
