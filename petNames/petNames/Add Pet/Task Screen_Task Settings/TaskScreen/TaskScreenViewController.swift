@@ -104,7 +104,6 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
         let viewC = storyboard.instantiateViewController(withIdentifier: "taskSetting") as UIViewController
-        
         tableView.deselectRow(at: indexPath, animated: true)
         
         if indexPath.section == 0 {
@@ -119,9 +118,15 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             let selectedTask = filteredData[indexPath.row]
             selectedTaskGlobal = selectedTask
         } else {
-            let selectedTask = "Custom".localized()
-            selectedTaskGlobal = selectedTask
+            selectedTaskGlobal = "Custom".localized()
         }
+    }
+    
+    func reloadTaskSettings() {
+        guard let settingsVC = self.navigationController?.topViewController as? TaskSettingsViewController else {
+            return
+        }
+        settingsVC.title = selectedTaskGlobal
     }
     
     // MARK: Alert Config
@@ -150,7 +155,9 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
                 print("invalid")
                 return
             }
-            
+            selectedTaskGlobal = task
+            self.reloadTaskSettings()
+            print("#\(task)")
         }))
          
         present(alert, animated: true)
