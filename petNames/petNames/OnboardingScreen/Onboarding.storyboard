@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q4b-il-qnT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q4b-il-qnT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -77,9 +77,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="fundo2" translatesAutoresizingMaskIntoConstraints="NO" id="Vew-Aa-bjr">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ilustra 2" translatesAutoresizingMaskIntoConstraints="NO" id="ukV-Pk-3Ty">
                                 <rect key="frame" x="0.0" y="90" width="414" height="434"/>
                                 <constraints>
@@ -96,13 +93,9 @@
                         <viewLayoutGuide key="safeArea" id="4CH-gf-DV4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Vew-Aa-bjr" firstAttribute="top" secondItem="bjZ-80-d4y" secondAttribute="top" id="E9D-gn-1jm"/>
                             <constraint firstItem="4CH-gf-DV4" firstAttribute="trailing" secondItem="09U-fy-3jf" secondAttribute="trailing" constant="45" id="FWg-UO-eLU"/>
-                            <constraint firstAttribute="bottom" secondItem="Vew-Aa-bjr" secondAttribute="bottom" id="JcU-kN-jiC"/>
                             <constraint firstItem="09U-fy-3jf" firstAttribute="top" secondItem="ukV-Pk-3Ty" secondAttribute="bottom" constant="28" id="Svm-Qu-8dG"/>
                             <constraint firstItem="ukV-Pk-3Ty" firstAttribute="leading" secondItem="4CH-gf-DV4" secondAttribute="leading" id="bHt-0d-veM"/>
-                            <constraint firstAttribute="trailing" secondItem="Vew-Aa-bjr" secondAttribute="trailing" id="jBr-Zv-e5a"/>
-                            <constraint firstItem="Vew-Aa-bjr" firstAttribute="leading" secondItem="bjZ-80-d4y" secondAttribute="leading" id="rYZ-pg-vhQ"/>
                             <constraint firstItem="09U-fy-3jf" firstAttribute="leading" secondItem="4CH-gf-DV4" secondAttribute="leading" constant="45" id="stN-on-YLu"/>
                             <constraint firstItem="ukV-Pk-3Ty" firstAttribute="top" secondItem="4CH-gf-DV4" secondAttribute="top" constant="45.799999999999997" id="wJr-CR-ak6"/>
                             <constraint firstItem="ukV-Pk-3Ty" firstAttribute="trailing" secondItem="4CH-gf-DV4" secondAttribute="trailing" id="wTO-l4-LqA"/>
@@ -124,9 +117,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="fundo3" translatesAutoresizingMaskIntoConstraints="NO" id="XUI-ls-SGc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ilustra 3" translatesAutoresizingMaskIntoConstraints="NO" id="jbW-1V-M9N">
                                 <rect key="frame" x="0.0" y="90" width="414" height="434"/>
                                 <constraints>
@@ -170,16 +160,13 @@
                         <constraints>
                             <constraint firstItem="jdz-6f-zp8" firstAttribute="leading" secondItem="RDA-wf-Ytg" secondAttribute="leading" constant="57" id="1mu-w6-o3F"/>
                             <constraint firstItem="RDA-wf-Ytg" firstAttribute="trailing" secondItem="QW0-xW-q2P" secondAttribute="trailing" constant="45" id="3nT-nj-fUW"/>
-                            <constraint firstAttribute="bottom" secondItem="XUI-ls-SGc" secondAttribute="bottom" id="6aY-8b-jIZ"/>
                             <constraint firstItem="jdz-6f-zp8" firstAttribute="top" secondItem="QW0-xW-q2P" secondAttribute="bottom" constant="60" id="LJu-j3-ppp"/>
                             <constraint firstItem="jbW-1V-M9N" firstAttribute="top" secondItem="RDA-wf-Ytg" secondAttribute="top" constant="45.799999999999997" id="LYo-vU-6ha"/>
                             <constraint firstItem="jbW-1V-M9N" firstAttribute="trailing" secondItem="RDA-wf-Ytg" secondAttribute="trailing" id="UAG-fU-f8b"/>
                             <constraint firstItem="RDA-wf-Ytg" firstAttribute="trailing" secondItem="jdz-6f-zp8" secondAttribute="trailing" constant="57" id="UmY-eJ-bFG"/>
-                            <constraint firstItem="XUI-ls-SGc" firstAttribute="top" secondItem="imc-5Q-Goh" secondAttribute="top" id="Veg-tU-VqM"/>
-                            <constraint firstAttribute="trailing" secondItem="XUI-ls-SGc" secondAttribute="trailing" id="f7H-eO-52l"/>
                             <constraint firstItem="jdz-6f-zp8" firstAttribute="top" secondItem="QW0-xW-q2P" secondAttribute="bottom" constant="60" id="g6v-CE-ghJ"/>
-                            <constraint firstItem="XUI-ls-SGc" firstAttribute="leading" secondItem="imc-5Q-Goh" secondAttribute="leading" id="iH7-Df-eOd"/>
                             <constraint firstItem="jbW-1V-M9N" firstAttribute="leading" secondItem="RDA-wf-Ytg" secondAttribute="leading" id="iRO-Dw-XyF"/>
+                            <constraint firstItem="RDA-wf-Ytg" firstAttribute="bottom" secondItem="jdz-6f-zp8" secondAttribute="bottom" priority="250" constant="104" id="nha-4R-gdU"/>
                             <constraint firstItem="QW0-xW-q2P" firstAttribute="leading" secondItem="RDA-wf-Ytg" secondAttribute="leading" constant="45" id="qzv-4T-Sql"/>
                             <constraint firstItem="QW0-xW-q2P" firstAttribute="top" secondItem="jbW-1V-M9N" secondAttribute="bottom" constant="28" id="sNW-6D-iKG"/>
                         </constraints>
@@ -201,9 +188,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="background1" translatesAutoresizingMaskIntoConstraints="NO" id="d9x-kx-z2Q">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Qv-jd-qij">
                                 <rect key="frame" x="0.0" y="168" width="414" height="404"/>
                                 <subviews>
@@ -275,12 +259,8 @@
                         <viewLayoutGuide key="safeArea" id="Azg-as-oh2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="d9x-kx-z2Q" firstAttribute="leading" secondItem="iQb-4G-8xj" secondAttribute="leading" id="HyZ-Sq-YBU"/>
                             <constraint firstItem="7Qv-jd-qij" firstAttribute="leading" secondItem="Azg-as-oh2" secondAttribute="leading" id="PSl-KE-D8f"/>
-                            <constraint firstItem="d9x-kx-z2Q" firstAttribute="top" secondItem="iQb-4G-8xj" secondAttribute="top" id="WSZ-DZ-aWj"/>
-                            <constraint firstAttribute="bottom" secondItem="d9x-kx-z2Q" secondAttribute="bottom" id="XMG-qN-tlw"/>
                             <constraint firstItem="7Qv-jd-qij" firstAttribute="trailing" secondItem="Azg-as-oh2" secondAttribute="trailing" id="Z3R-kc-Mj4"/>
-                            <constraint firstAttribute="trailing" secondItem="d9x-kx-z2Q" secondAttribute="trailing" id="ZTf-fn-3wf"/>
                             <constraint firstItem="7Qv-jd-qij" firstAttribute="top" secondItem="Azg-as-oh2" secondAttribute="top" constant="124" id="atZ-BS-xEE"/>
                             <constraint firstItem="Azg-as-oh2" firstAttribute="trailing" secondItem="Tzo-10-3fQ" secondAttribute="trailing" constant="57" id="eeL-Pk-1oy"/>
                             <constraint firstAttribute="bottom" secondItem="7Qv-jd-qij" secondAttribute="bottom" constant="324" id="hz3-sg-qup"/>
@@ -306,10 +286,7 @@
         <image name="Ilustra 1" width="390" height="420"/>
         <image name="Ilustra 2" width="390" height="420"/>
         <image name="Ilustra 3" width="390" height="420"/>
-        <image name="background1" width="1125" height="2436"/>
         <image name="fundo1" width="1125" height="2436"/>
-        <image name="fundo2" width="1125" height="2436"/>
-        <image name="fundo3" width="1125" height="2436"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

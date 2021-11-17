@@ -98,9 +98,10 @@
 // Onboarding3
 "onboarding3SkipButton" = "Pular";
 "onboarding3LetsStartButton" = "Vamos começar!";
+"onboarding3TextLabel" = "Compartilhe informações com quem quiser para que ninguém esqueça nada!";
 // Onboarding4
 "onboarding4HeaderTitleLabel" = "Olá tutor! 😄";
-"onboarding4SubHeaderTitleLabel" = "Para você ter uma experiência mais personalizada nos gostaríamos de saber";
+"onboarding4SubHeaderTitleLabel" = "Para você ter uma experiência mais personalizada, nós gostaríamos de saber:";
 "onboarding4QuestionLabel" = "Como você gostaria de ser chamado?";
 "onboarding4SaveButton" = "Salvar";
 
