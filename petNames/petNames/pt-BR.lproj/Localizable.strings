@@ -12,6 +12,7 @@
 "addNewPet" = "Adicionar um pet";
 "tasks" = "Tarefas";
 "myPets" = "Meus pets";
+
 //MARK: -TaskScreen
 "taskTitleLabel" = "Tarefas";
 "backButton" = "Voltar";
@@ -24,6 +25,9 @@
 "Groom" = "Tosa";
 "Vet" = "Veterinário";
 "Custom" = "Personalizada";
+"Description" = "Nome da tarefa";
+"Cancel" = "Cancelar";
+"Save" = "Salvar";
 
 //MARK: -TaskSettingViewController
 "Warning" = "Alertas";

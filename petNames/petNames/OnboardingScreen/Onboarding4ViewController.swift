@@ -30,11 +30,19 @@ class Onboarding4ViewController: UIViewController {
         onboarding4SaveButton.setTitle("onboarding4SaveButton".localized(), for: .normal)
         onboarding4SaveButton.titleLabel?.font =  UIFont(name: "SFProRounded-Bold", size: 20)
         Background.shared.assignBackground(view: self.view)
+        // Onboarding Text box view
+        onboarding4TextBoxView.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
 
     }
     @IBAction func onboarding4SaveDidPress(_ sender: UIButton) {
         delegate?.didTapSaveButton(viewController: self, button: sender)
         dismiss(animated: true)
+    }
+
+    @IBAction func onReturn() {
+        self.onboarding4TextBoxView.resignFirstResponder()
+//        textFieldInput = textField.text ?? "unnamedAnimal"
+
     }
 
 }
