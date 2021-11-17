@@ -22,7 +22,7 @@ class Onboarding4ViewController: UIViewController {
         onboarding4SignUpView.round(corners: [.bottomLeft, .bottomRight, .topRight], radius: 90.0)
         // Onboarding Header Title Label
         onboarding4HeaderTitleLabel.text = "onboarding4HeaderTitleLabel".localized()
-        onboarding4HeaderTitleLabel.text = "onboarding4SubHeaderTitleLabel".localized()
+        onboarding4SubHeaderTitleLabel.text = "onboarding4SubHeaderTitleLabel".localized()
         // Onboarding Question Label
         onboarding4QuestionLabel.text = "onboarding4QuestionLabel".localized()
         // Onboarding Save Button
