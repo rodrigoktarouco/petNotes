@@ -87,6 +87,7 @@ class PersistanceManager {
             completion(image)
         } catch {
             print(error)
+            let thisImage = UIImage(named: pet.image ?? "")
             completion(nil)
         }
 

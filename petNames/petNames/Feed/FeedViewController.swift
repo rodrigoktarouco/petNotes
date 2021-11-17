@@ -35,7 +35,7 @@ class FeedViewController: UIViewController {
 
     @IBOutlet weak var doneTasksTopDistance: NSLayoutConstraint!
 
-    let modelInstance: FeedModel = FeedModel()
+    var modelInstance: FeedModel = FeedModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +49,8 @@ class FeedViewController: UIViewController {
         setUpDoneTasksImage()
         constraintAdjustments()
 
-        logoImage.image = UIImage(named: "logo")
-        TaskManager.shared.load()
+        logoImage.image = UIImage(named: "Logo")
+
     }
 
     func constraintAdjustments() {
@@ -66,11 +66,17 @@ class FeedViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.backgroundColor = UIColor(named: "feedTabBarColor")
+        reloadVC()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.backgroundColor = UIColor(named: "cellColor")
+    }
+    func reloadVC() {
+        modelInstance = FeedModel()
+        petsCollectionView.reloadData()
+        tasksCollectionView.reloadData()
     }
 
     func setUpDoneTasksImage() {
@@ -157,11 +163,18 @@ extension FeedViewController: UICollectionViewDelegate {
             if indexPath.row == 0 {
                 let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
                 let newVC = storyboard.instantiateViewController(withIdentifier: "NewPetNavigationControllerViewController")
-                present(newVC, animated: true, completion: nil)
+
+                guard let newVCUnwrapped = newVC as? UINavigationController,
+                      let rootVC = newVCUnwrapped.viewControllers[0] as? NewPetViewController else { fatalError() }
+                rootVC.feedInstance = self
+                present(newVCUnwrapped, animated: true, completion: nil)
+
             } else {
                 let storyboard = UIStoryboard(name: "PetDetails", bundle: nil)
 
-                guard let navController = storyboard.instantiateInitialViewController() as? UINavigationController, let VCdetails = navController.topViewController as? PetDetailsViewController else { return }
+                guard let navController = storyboard.instantiateInitialViewController() as? UINavigationController,
+                    let VCdetails = navController.topViewController as? PetDetailsViewController
+                else { return }
                 let petDataAndPet = modelInstance.getPetsInfosForPetDetails(forRowAt: indexPath.row - 1)
                 VCdetails.petData = petDataAndPet.0
                 VCdetails.chosenPet = petDataAndPet.1
