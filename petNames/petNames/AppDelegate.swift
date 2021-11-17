@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNUserNotificationCenter.current().delegate = self
         // Override point for customization after application launch.
         //
-        print("Application directory: \(NSHomeDirectory())")
+        //print("Application directory: \(NSHomeDirectory())")
         
         PersistanceManager.shared.setUp()
         PersistanceManager.shared.loadUser { result in
@@ -35,42 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         let window = UIApplication.shared.windows.filter({$0.isKeyWindow}).first
         window?.overrideUserInterfaceStyle = .unspecified
-        //        let user = User.init(context: persistentContainer.viewContext)
-//        user.name = "Heitor"
-//        user.id = "1"
-//        let pet = Pet.init(context: persistentContainer.viewContext)
-//        pet.id = "2"
-//        pet.name = "Pitty"
-//        pet.user = user
-//        pet.category = "Dog"
-//        pet.image = ""
-//        pet.share = ""
-//        saveContext()
-//        let fetchRequest = Pet.fetchRequest()
-//        do {
-//            let results = try persistentContainer.viewContext.fetch(fetchRequest)
-//            let pet = results[0] as Pet
-//            print(pet.name, pet.user?.name)
-//        } catch {
-//            print(error)
-//        }
-
-//        PersistanceManager.shared.loadUser { result in
-//            switch result {
-//            case .success(let user):
-//                self.testCreatePet()
-//                self.listPets()
-//            case .failure(let error):
-//                print(error)
-//                let newUser = User()
-//                newUser.name = "RodrigoS2"
-//                PersistanceManager.shared.saveUser(user: newUser) { error in
-//                    print(error)
-//                    self.testCreatePet()
-//                    self.listPets()
-//                }
-//            }
-//        }
 
         return true
     }

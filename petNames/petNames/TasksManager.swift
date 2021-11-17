@@ -9,20 +9,64 @@ import Foundation
 
 class TaskManager {
 
-    private init() {}
+    private init() { load() }
 
     static let shared: TaskManager = TaskManager()
 
     var petsAndSupposedToExistExecutions: [PetNotInPersistence: [TaskNotInPersistence: [ExecutionNotInPersistence]]] = [:]
     var petsAndExistingExecutions: [PetNotInPersistence: [TaskNotInPersistence: [ExecutionNotInPersistence]]] = [:]
     var PetNotInPersistenceArray: [PetNotInPersistence] = []
-
+    var allPetsFractionOfDoneTasksAsTuple: (Int,Int)?
+    var arrayOfCalculatedExecutionsNotDone: [ExecutionNotInPersistence] = []
 
     func load() {
         setPetsAndSupposedToExistExecutions()
         setPetsAndSupposedToExistExecutions()
+        _ = getNumberOfTasksNotDoneAndDone()
+        TasksFromNowOnToBeDone()
         //printAll()
         }
+
+    func TasksFromNowOnToBeDone() {
+        arrayOfCalculatedExecutionsNotDone = []
+        let currentDate = Date()
+
+        for pet in PetNotInPersistenceArray {
+            for task in pet.tasks {
+                task.executionsCalculatedAfterCurrentTime = []
+                for thisExecution in  task.executionsThatDoNotExist {
+                    guard let executionDate = thisExecution.timeStamp  else {
+                        return
+                    }
+                    if currentDate <= executionDate {
+                        task.executionsCalculatedAfterCurrentTime.append(thisExecution)
+                        arrayOfCalculatedExecutionsNotDone.append(thisExecution)
+                    }
+                }
+            }
+        }
+
+
+    }
+    func getNumberOfTasksNotDoneAndDone() -> (Int,Int) {
+        var notDone: Int = 0// for all pets
+        var done: Int = 0// for all pets
+        for pet in PetNotInPersistenceArray {
+            var thisPetNotDone: Int = 0
+            var thisPetDone: Int = 0
+            for task in pet.tasks {
+                done += task.executionsThatDoExist.count
+                notDone += task.executionsThatDoNotExist.count
+
+                thisPetDone += task.executionsThatDoExist.count
+                thisPetNotDone += task.executionsThatDoNotExist.count
+
+            }
+            pet.fractionOfDoneTasksAsTuple = (thisPetDone,thisPetNotDone)
+        }
+        allPetsFractionOfDoneTasksAsTuple =  (done,notDone)
+        return (done,notDone)
+    }
 
     func setUpPetsAndExistingExecutions() {
         var allPets: [Pet] = []
@@ -34,9 +78,6 @@ class TaskManager {
                 break
             }
         }
-
-
-
 
     }
 
@@ -87,13 +128,15 @@ class TaskManager {
             petsAndSupposedToExistExecutions[newPetNotInPersistence] = [:]
 
             for thisTask in thisPetTasks {
-                let thisTasksSuposedToExistExecutions = executionGenerator(thisTask: thisTask)
+                var newTaskNotInPersistence = TaskNotInPersistence()
+                let thisTasksSuposedToExistExecutions = executionGenerator(thisTask: thisTask, thisTaskNotInPersistence: &newTaskNotInPersistence)
 
-                let newTaskNotInPersistence = TaskNotInPersistence()
+
                 newTaskNotInPersistence.task = thisTask
                 newTaskNotInPersistence.executions = thisTasksSuposedToExistExecutions
                 newTaskNotInPersistence.id = thisTask.id
                 newTaskNotInPersistence.name = thisTask.name
+                newTaskNotInPersistence.thisPetNotInPersistence = newPetNotInPersistence
                 newPetNotInPersistence.tasks.append(newTaskNotInPersistence)
 
                 petsAndSupposedToExistExecutions[newPetNotInPersistence]![newTaskNotInPersistence] =  thisTasksSuposedToExistExecutions // can force it because of the petsAndSupposedToExistExecutions[newPetAux] = [:] before the loop
@@ -101,7 +144,7 @@ class TaskManager {
         }
     }
 
-    func executionGenerator(thisTask: Task) -> [ExecutionNotInPersistence] {
+    func executionGenerator(thisTask: Task, thisTaskNotInPersistence: inout TaskNotInPersistence) -> [ExecutionNotInPersistence] {
 //        let date = String(DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short)).components(separatedBy: " ")
 //        let day = date[0]
 //        let time = date[1]
@@ -125,7 +168,8 @@ class TaskManager {
                     let thisExecutionsTime = utcCalendar.date(bySettingHour: thisHour, minute: thisMinute, second: 0, of: day)!
                     var newExecution = ExecutionNotInPersistence ()
                     newExecution.timeStamp = thisExecutionsTime
-                    print(thisExecutionsTime)
+                    newExecution.taskNotInPersistence = thisTaskNotInPersistence
+                    //print(thisExecutionsTime)
                     executions.append(newExecution)
                 }
             }
@@ -178,6 +222,8 @@ class PetNotInPersistence: Hashable {
     var name: String?
     var pet: Pet?
     var tasks: [TaskNotInPersistence] = []
+    var fractionOfDoneTasksAsTuple: (Int,Int)?
+
 
     static func == (lhs: PetNotInPersistence, rhs: PetNotInPersistence) -> Bool {
         if let lhsID = lhs.id, let rhsID = rhs.id {
@@ -201,9 +247,11 @@ class TaskNotInPersistence: Hashable {
     var id: String?
     var name: String?
     var task: Task?
+    weak var thisPetNotInPersistence: PetNotInPersistence?
     var executions: [ExecutionNotInPersistence] = []
     var executionsThatDoExist: [ExecutionNotInPersistence] = []
     var executionsThatDoNotExist: [ExecutionNotInPersistence] = []
+    var executionsCalculatedAfterCurrentTime: [ExecutionNotInPersistence] = []
 
     static func == (lhs: TaskNotInPersistence, rhs: TaskNotInPersistence) -> Bool {
         if let lhsID = lhs.id, let rhsID = rhs.id {
@@ -215,6 +263,7 @@ class TaskNotInPersistence: Hashable {
 
         return false
     }
+
     func hash(into hasher: inout Hasher) {
             hasher.combine(id)
             hasher.combine(name)
@@ -225,6 +274,8 @@ class TaskNotInPersistence: Hashable {
 class ExecutionNotInPersistence {
     var timeStamp: Date?
     var execution: Execution?// if not nil, then it exists and has been performed in the real world
+    weak var taskNotInPersistence: TaskNotInPersistence?
+
 }
 
 

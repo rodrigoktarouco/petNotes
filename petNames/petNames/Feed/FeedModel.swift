@@ -23,21 +23,9 @@ case custom
 
 class FeedModel {
 
-    var task1: Task = {
-        var task = Task()
-        task.name = "water"
-        return task
-    }()
-    var task2: Task = {
-
-         var task = Task()
-         task.name = "walk"
-         return task
-    }()
-    lazy var mockTasks: [Task] = [
-        task1,
-        task2
-    ]
+    init() {
+        TaskManager.shared.load()
+    }
 
     let imageNamesPerWeekDay: [String: String] = [
         "Sunday": "banner-domingo",
@@ -81,17 +69,16 @@ class FeedModel {
         var emptyDic: [Pet: UIImage?] = [:]
         for thisPet in petsArray {
             PersistanceManager.shared.getPetImage(thisPet) { image in
+                if image != nil {
                 emptyDic[thisPet] = image
+                } else {
+
+                    emptyDic[thisPet] = UIImage(named: thisPet.image ?? "profile-verde")
+                }
             }
         }
         return emptyDic
     }()
-
-    func getTaskFeedCollectionViewCellData(taskNumber: Int) -> TaskFeedCollectionViewCellData { // send the task name as it is on the persistence
-
-        let taskDataStruct = TaskFeedCollectionViewCellData(petImage: UIImage(named: "pitty"), taskType: .water, taskName: "water", taskTime: "12:00", done: true)
-        return taskDataStruct
-    }
 
     func getPetsCollectionViewData( petNumber: Int) -> PetsCollectionViewDataOnFeed {
         let thisPet = petsArray[petNumber]
@@ -100,15 +87,43 @@ class FeedModel {
     }
 
     func getFractionOfNumberOfTasksDone() -> String {
-        return "7 / 10"
+        guard let tuple = TaskManager.shared.allPetsFractionOfDoneTasksAsTuple as? (Int,Int) else{
+            return " 0\0 "
+        }
+        let numerador = tuple.0
+        let denominador = tuple.1
+
+        let fraction = "\(numerador) / \(denominador)"
+
+        return fraction
     }
 
     func getUsersName() -> String {
         return PersistanceManager.shared.currentUser?.name?.capitalized ?? " "
     }
+    func getTaskFeedCollectionViewCellData(taskNumber: Int) -> TaskFeedCollectionViewCellData { // send the task name as it is on the persistence
+        var thisPetImage = UIImage(named: "pitty")
+        let thisNotInPersistenceExecution = TaskManager.shared.arrayOfCalculatedExecutionsNotDone[taskNumber]
+        if let pet = thisNotInPersistenceExecution.taskNotInPersistence?.thisPetNotInPersistence?.pet{
+            PersistanceManager.shared.getPetImage(pet) { image in
+                if image != nil {
+                    thisPetImage = image
+                }
+            }
+        }
+        if let date = thisNotInPersistenceExecution.timeStamp {
+            print(date)
+        } else {
+            print("MEU PAU ")
+        }
+
+        let taskDataStruct = TaskFeedCollectionViewCellData(petImage: thisPetImage, taskName: "water", taskTime: "12:00", done: false)
+        return taskDataStruct
+    }
 
     func getNumberOfTotalTasks() -> Int {
-        return 2
+        
+        return TaskManager.shared.arrayOfCalculatedExecutionsNotDone.count
     }
 
     func getNumberOfPets() -> Int {
@@ -138,6 +153,7 @@ class FeedModel {
 
         return weekDays[weekDay-1]
     }
+
     func getImageForFunTasksImageView() -> UIImage? {
         let dayOfWeek = getDayOfWeek() ?? "Sunday"
         let image = UIImage(named: imageNamesPerWeekDay[dayOfWeek] ?? "banner-domingo")
@@ -161,7 +177,7 @@ class FeedModel {
 
 struct TaskFeedCollectionViewCellData {
     var petImage: UIImage?
-    var taskType: TaskTypes?
+
     var taskName: String?
     var taskTime: String?
     var done: Bool?
