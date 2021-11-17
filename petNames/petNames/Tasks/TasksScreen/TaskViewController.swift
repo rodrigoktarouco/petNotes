@@ -119,12 +119,12 @@ extension TaskViewController {
 
     func getDataForRowAt(_ selectedSegment: SelectedSegmentInTasks, _ item: Int) -> [CellInfosStruct] {
 
-        let mock_1 = CellInfosStruct(taskName: "vet", taskTime: "12:00", taskPetName: "doguin 1", taskPetImage: UIImage(named: "profile-vermelho") ?? UIImage(), isCheckedAsDone: false)
-        let mock_2 = CellInfosStruct(taskName: "medicine", taskTime: "12:00", taskPetName: "doguin 2", taskPetImage: UIImage(named: "profile-azul") ?? UIImage(), isCheckedAsDone: false)
-        let mock_3 = CellInfosStruct(taskName: "wash", taskTime: "12:00", taskPetName: "gatin 1", taskPetImage: UIImage(named: "profile-verde") ?? UIImage(), isCheckedAsDone: false)
-        let mock_4 = CellInfosStruct(taskName: "playtime", taskTime: "12:00", taskPetName: "passarin 1", taskPetImage: UIImage(named: "profile-vermelho") ?? UIImage(), isCheckedAsDone: false)
-        let mock_5 = CellInfosStruct(taskName: "food", taskTime: "12:00", taskPetName: "gatin 2", taskPetImage: UIImage(named: "profile-amarelo") ?? UIImage(), isCheckedAsDone: false)
-        let mock_6 = CellInfosStruct(taskName: "groom", taskTime: "12:00", taskPetName: "doguin 3", taskPetImage: UIImage(named: "profile-laranja") ?? UIImage(), isCheckedAsDone: false)
+        let mock_1 = CellInfosStruct(taskName: "vet", taskTime: "12:00", taskPetName: "doguin 1", taskPetImage: UIImage(named: "profile-roxo-rounded") ?? UIImage(), isCheckedAsDone: false)
+        let mock_2 = CellInfosStruct(taskName: "medicine", taskTime: "12:00", taskPetName: "doguin 2", taskPetImage: UIImage(named: "profile-azul-rounded") ?? UIImage(), isCheckedAsDone: false)
+        let mock_3 = CellInfosStruct(taskName: "wash", taskTime: "12:00", taskPetName: "gatin 1", taskPetImage: UIImage(named: "profile-verde-rounded") ?? UIImage(), isCheckedAsDone: false)
+        let mock_4 = CellInfosStruct(taskName: "playtime", taskTime: "12:00", taskPetName: "passarin 1", taskPetImage: UIImage(named: "profile-vermelho-rounded") ?? UIImage(), isCheckedAsDone: false)
+        let mock_5 = CellInfosStruct(taskName: "food", taskTime: "12:00", taskPetName: "gatin 2", taskPetImage: UIImage(named: "profile-amarelo-rounded") ?? UIImage(), isCheckedAsDone: false)
+        let mock_6 = CellInfosStruct(taskName: "groom", taskTime: "12:00", taskPetName: "doguin 3", taskPetImage: UIImage(named: "profile-laranja-rounded") ?? UIImage(), isCheckedAsDone: false)
         return [mock_1, mock_2, mock_3, mock_4, mock_5, mock_6]
     }
 

@@ -48,7 +48,6 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
             comingFromTaskScreen = false
             navView.isHidden = false
         }
-
     }
 
 // MARK: navigation bar buttons

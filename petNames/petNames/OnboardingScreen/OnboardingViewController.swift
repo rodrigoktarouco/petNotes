@@ -8,11 +8,11 @@
 import UIKit
 
 class OnboardingViewController: UIViewController {
+    @IBOutlet weak var onboarding1TextLabel: UILabel!
+    weak var delegate: OnboardingControlDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
+        onboarding1TextLabel.text = "onboarding1TextLabel".localized()
+        }
 }

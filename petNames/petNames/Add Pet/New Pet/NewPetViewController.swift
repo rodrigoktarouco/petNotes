@@ -15,12 +15,15 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var petTableView: UITableView!
     @IBOutlet var editImageBtn: UIImageView!
+    @IBOutlet weak var editImageView: UIView!
+    @IBOutlet weak var editLabel: UILabel!
     
     @IBAction func pickImageButton(_ sender: UIButton) {
         // MARK: Setting image
         imageManager.requestPermissions()
         imageManager.pickImage(self) { image in
             self.petImage.image = image
+            self.petImage.layer.cornerRadius = 50
         }
     }
     
@@ -37,17 +40,17 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         Background.shared.assignBackground(view: self.view)
         self.petTableView.reloadData()
         
-        // MARK: Image placeholder
-//        let placeHolderImages = ["profile-amarelo", "profile-azul", "profile-laranja", "profile-roxo", "profile-verde", "profile-vermelho"]
-//
-//        self.petImage.image = UIImage(named: placeHolderImages.randomElement() ?? "placeHolderAsset".localized())
-
-        self.petImage.image = UIImage(named: "profile-roxo-dark")
-
-//        self.petImage.image = UIImage(named: "placeHolderAsset".localized())
+        // MARK: Generates a random image placeholder
+        let placeHolderImages = ["profile-amarelo-rounded", "profile-azul-rounded", "profile-laranja-rounded", "profile-roxo-rounded", "profile-verde-rounded", "profile-vermelho-rounded"]
+        self.petImage.image = UIImage(named: placeHolderImages.randomElement() ?? "placeHolderAsset".localized())
         self.petImage.clipsToBounds = true
 
-        editImageBtn.image = UIImage(named: "Group 128")
+        // MARK: Sets the "edit image" attributes
+        editImageView.backgroundColor = UIColor(named: "EditImageView")
+        editImageView.layer.cornerRadius = 10
+        editLabel.textColor = UIColor(named: "EditLabel")
+        editLabel.text = "editImage".localized()
+        editImageBtn.tintColor = UIColor(named: "EditImage")
         
         // MARK: Localizable
         let newPet = "newPetTitle".localized()
@@ -67,10 +70,6 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: #selector(addButtonAction))
-        
-        // MARK: Setting the View Controller`s outlets
-//        petImage.layer.cornerRadius = 22
-//        petImage.sizeToFit()
         
         // MARK: Register the custom header view.
         petTableView.register(MyCustomHeader.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")

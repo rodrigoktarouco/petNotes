@@ -73,6 +73,7 @@
 "cancel" = "Cancelar";
 "done" = "Confirmar";
 "warningMessage" = "Você precisa preencher as informações do seu pet";
+"editImage" = "Editar imagem";
 
 //MARK: -AppSettings
 "settingsTitleLabel" = "Configurações";
@@ -87,3 +88,19 @@
 //MARK: -PetDetails
 "name" = "Nome";
 "edit" = "Editar";
+
+//MARK: - Onboarding
+// Onboarding1
+"onboarding1TextLabel" = "Cadastre seu pet para organizar suas tarefas de maneira simples e prática";
+// Onboarding2
+"onboarding2TextLabel" = "Adicione tarefas recorrentes relacionadas a ele e personalize seus alertas";
+"onboarding2BackButton" = "Voltar";
+// Onboarding3
+"onboarding3SkipButton" = "Pular";
+"onboarding3LetsStartButton" = "Vamos começar!";
+// Onboarding4
+"onboarding4HeaderTitleLabel" = "Olá tutor! 😄";
+"onboarding4SubHeaderTitleLabel" = "Para você ter uma experiência mais personalizada nos gostaríamos de saber";
+"onboarding4QuestionLabel" = "Como você gostaria de ser chamado?";
+"onboarding4SaveButton" = "Salvar";
+

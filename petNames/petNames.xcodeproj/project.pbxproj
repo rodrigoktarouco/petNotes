@@ -27,6 +27,7 @@
 		9D1E7509270E118E00321E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E7507270E118E00321E54 /* Main.storyboard */; };
 		9D1E750B270E119000321E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E750A270E119000321E54 /* Assets.xcassets */; };
 		9D1E750E270E119000321E54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E750C270E119000321E54 /* LaunchScreen.storyboard */; };
+		9D34E242274302960033CF9E /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D34E241274302960033CF9E /* OnboardingPageViewController.swift */; };
 		9D5A1D292718B52B00637589 /* NewPet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A1D282718B52B00637589 /* NewPet.storyboard */; };
 		9D5A1D2C2718BD3E00637589 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A1D2B2718BD3E00637589 /* Pets.storyboard */; };
 		9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5A1D2D2718BD5A00637589 /* PetsViewController.swift */; };
@@ -40,6 +41,7 @@
 		9D75F9EA2710C54D001FF11C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D75F9EC2710C54D001FF11C /* Localizable.strings */; };
 		9D90D1412728683300689292 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D90D13F2728683300689292 /* Model.xcdatamodeld */; };
 		9D93C97A2739CFF300C3C713 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93C9792739CFF300C3C713 /* LocalNotificationService.swift */; };
+		9DBF071E27442149004532FA /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF071D27442149004532FA /* UserDefaultsManager.swift */; };
 		9DCC58E227189992007A800C /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58E127189992007A800C /* FeedModel.swift */; };
 		9DCC58E4271899B1007A800C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCC58E3271899B1007A800C /* Settings.storyboard */; };
 		9DCC58E6271899C7007A800C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58E5271899C7007A800C /* SettingsViewController.swift */; };
@@ -114,6 +116,7 @@
 		9D1E750D270E119000321E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D1E750F270E119000321E54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D295291271DE3A80079A685 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
+		9D34E241274302960033CF9E /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		9D5A1D282718B52B00637589 /* NewPet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPet.storyboard; sourceTree = "<group>"; };
 		9D5A1D2B2718BD3E00637589 /* Pets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pets.storyboard; sourceTree = "<group>"; };
 		9D5A1D2D2718BD5A00637589 /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 		9D75F9ED2710C554001FF11C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		9D90D1402728683300689292 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9D93C9792739CFF300C3C713 /* LocalNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
+		9DBF071D27442149004532FA /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		9DCC58E127189992007A800C /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		9DCC58E3271899B1007A800C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9DCC58E5271899C7007A800C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 		9D1E7500270E118E00321E54 /* petNames */ = {
 			isa = PBXGroup;
 			children = (
+				9DBF071C27442129004532FA /* UserDefaults */,
 				9D641CE9273D927E0072886A /* OnboardingScreen */,
 				FD638E59272B1A0A00197910 /* .swiftlint.yml */,
 				9D90D13E2728680000689292 /* CoreData */,
@@ -298,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				9D641CEA273DA3930072886A /* Onboarding.storyboard */,
+				9D34E241274302960033CF9E /* OnboardingPageViewController.swift */,
 				9D641CEC273DA3DF0072886A /* OnboardingViewController.swift */,
 				9D641CEE273DA4A80072886A /* Onboarding2ViewController.swift */,
 				9D641CF0273DA4BB0072886A /* Onboarding3ViewController.swift */,
@@ -321,6 +327,14 @@
 				9D93C9792739CFF300C3C713 /* LocalNotificationService.swift */,
 			);
 			path = LocalNotificationService;
+			sourceTree = "<group>";
+		};
+		9DBF071C27442129004532FA /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				9DBF071D27442149004532FA /* UserDefaultsManager.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		9DCC58DB2718964A007A800C /* Feed */ = {
@@ -567,6 +581,7 @@
 				5C50A719273D909600FD142E /* TaskSwitchTableViewCell.swift in Sources */,
 				9D1E7504270E118E00321E54 /* SceneDelegate.swift in Sources */,
 				5C145B5D2721DF090091C02A /* ImagePickerManager.swift in Sources */,
+				9DBF071E27442149004532FA /* UserDefaultsManager.swift in Sources */,
 				5C86C9FC271DE91000FD1C2C /* PetDetailsViewController.swift in Sources */,
 				FD62D2D92732F7E00061560E /* PetDetailsModel.swift in Sources */,
 				9DCC58E6271899C7007A800C /* SettingsViewController.swift in Sources */,
@@ -590,6 +605,7 @@
 				F4D6129E272B3BE300C49FCB /* TaskSettingsViewController.swift in Sources */,
 				5C86C9FE271E0CAC00FD1C2C /* ShareTableViewCell.swift in Sources */,
 				FD45E96B27344B2400F01E83 /* SmallTableViewCell.swift in Sources */,
+				9D34E242274302960033CF9E /* OnboardingPageViewController.swift in Sources */,
 				5C145B592721DA970091C02A /* TextFieldTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,7 +769,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8JAU65C453;
+				DEVELOPMENT_TEAM = TTJUS38QJA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = petNames/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -782,7 +798,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8JAU65C453;
+				DEVELOPMENT_TEAM = TTJUS38QJA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = petNames/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
