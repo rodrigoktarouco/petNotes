@@ -25,6 +25,12 @@
 "Groom" = "Groom";
 "Vet" = "Vet";
 "Custom" = "Custom";
+"Description" = "Task's name";
+"Cancel" = "Cancel";
+"Save" = "Save";
+
+
+
 
 //MARK: -TaskSettingViewController
 "Warning" = "Warning";
