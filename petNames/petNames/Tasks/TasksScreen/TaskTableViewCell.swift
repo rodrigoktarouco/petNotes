@@ -14,8 +14,19 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskTimeLabel: UILabel!
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var taskCheckedImage: UIImageView!
+    
+    var clicked = false
+
     @IBAction func taskCheckedButton(_ sender: UIButton) {
-        print("Check clicked")
+                if clicked == false {
+                taskCheckedImage.image = UIImage(systemName: "checkmark.circle.fill")
+                taskCheckedImage.tintColor = UIColor(named: "CheckMarkClicked")
+                clicked = true
+                } else {
+                    taskCheckedImage.image = UIImage(systemName: "checkmark.circle")
+                    taskCheckedImage.tintColor = UIColor(named: "TC-custom-checkMark")
+                    clicked = false
+                }
     }
 
     override func awakeFromNib() {

@@ -99,14 +99,21 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 52
     }
-
+    
     // MARK: Performs navigation
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
         let viewC = storyboard.instantiateViewController(withIdentifier: "taskSetting") as UIViewController
-        show(viewC, sender: nil)
+        
         tableView.deselectRow(at: indexPath, animated: true)
-
+        
+        if indexPath.section == 0 {
+            show(viewC, sender: nil)
+        } else {
+            show(viewC, sender: nil)
+            showAlert()
+        }
+        
         // MARK: Gets the selected task name
         if indexPath.section == 0 {
             let selectedTask = filteredData[indexPath.row]
@@ -115,6 +122,38 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             let selectedTask = "Custom".localized()
             selectedTaskGlobal = selectedTask
         }
+    }
+    
+    // MARK: Alert Config
+    func showAlert() {
+        let alert = UIAlertController(
+            title: "Custom".localized(),
+            message: "Description".localized(),
+            preferredStyle: .alert
+        )
+        // add textfield
+        alert.addTextField { field in
+            field.placeholder = "Custom".localized()
+            field.returnKeyType = .next
+            field.keyboardType = .default
+            field.autocapitalizationType = .sentences
+        }
+        // add buttons
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Save".localized(), style: .default, handler: { _ in
+            // read textfields value
+            guard let fields = alert.textFields else {
+                return
+            }
+            let taskField = fields[0]
+            guard let task = taskField.text, !task.isEmpty else {
+                print("invalid")
+                return
+            }
+            
+        }))
+         
+        present(alert, animated: true)
     }
     
     // MARK: Search Bar Config
