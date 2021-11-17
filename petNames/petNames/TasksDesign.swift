@@ -105,7 +105,7 @@ class TasksDesign {
         case "Custom".localized():
             iconAsset = "custom-task-icon"
         default:
-            iconAsset = "xmark"
+            iconAsset = "custom-task-icon"
         }
 
         return iconAsset
