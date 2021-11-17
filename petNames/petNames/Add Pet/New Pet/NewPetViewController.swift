@@ -17,12 +17,18 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet var editImageBtn: UIImageView!
     @IBOutlet weak var editImageView: UIView!
     @IBOutlet weak var editLabel: UILabel!
-    
+
+    var imageDesignName = ""
+    var userDidntSelectPersonalImage: Bool = true
+
+    weak var feedInstance: FeedViewController?
+
     @IBAction func pickImageButton(_ sender: UIButton) {
         // MARK: Setting image
         imageManager.requestPermissions()
         imageManager.pickImage(self) { image in
             self.petImage.image = image
+            self.userDidntSelectPersonalImage = false
             self.petImage.layer.cornerRadius = 50
         }
     }
@@ -42,7 +48,8 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // MARK: Generates a random image placeholder
         let placeHolderImages = ["profile-amarelo-rounded", "profile-azul-rounded", "profile-laranja-rounded", "profile-roxo-rounded", "profile-verde-rounded", "profile-vermelho-rounded"]
-        self.petImage.image = UIImage(named: placeHolderImages.randomElement() ?? "placeHolderAsset".localized())
+        imageDesignName = placeHolderImages.randomElement() ?? "profile-verde-rounded"
+        self.petImage.image = UIImage(named: imageDesignName )
         self.petImage.clipsToBounds = true
 
         // MARK: Sets the "edit image" attributes
@@ -241,6 +248,10 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let pet = Pet()
             petImage.image = self.petImage.image
             pet.name = textFieldInput
+            if userDidntSelectPersonalImage == true {
+            pet.image = imageDesignName
+            petImage.image = nil
+            }
             PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
                 PersistanceManager.shared.listPets { result in
                     switch result {
@@ -257,7 +268,9 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             textFieldInput = ""
             categoryPicked = false
         }
-        
+
+        self.feedInstance?.reloadVC()
+
     }
     
 }
