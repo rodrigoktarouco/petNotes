@@ -29,6 +29,7 @@ class Onboarding4ViewController: UIViewController {
         onboarding4SaveButton.layer.cornerRadius = 22
         onboarding4SaveButton.setTitle("onboarding4SaveButton".localized(), for: .normal)
         onboarding4SaveButton.titleLabel?.font =  UIFont(name: "SFProRounded-Bold", size: 20)
+        Background.shared.assignBackground(view: self.view)
 
     }
     @IBAction func onboarding4SaveDidPress(_ sender: UIButton) {

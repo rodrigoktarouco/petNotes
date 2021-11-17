@@ -14,10 +14,11 @@ class Onboarding3ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        onboarding3TextLabel.text = "onboarding2TextLabel".localized()
+        onboarding3TextLabel.text = "onboarding3TextLabel".localized()
         onboarding3LetsStartButton.layer.cornerRadius = 22
         onboarding3LetsStartButton.setTitle("onboarding3LetsStartButton".localized(), for: .normal)
         onboarding3LetsStartButton.titleLabel?.font =  UIFont(name: "SFProRounded-Bold", size: 20)
+        Background.shared.assignBackground(view: self.view)
 
     }
 

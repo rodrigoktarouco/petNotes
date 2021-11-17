@@ -14,5 +14,7 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         onboarding1TextLabel.text = "onboarding1TextLabel".localized()
+
+        Background.shared.assignBackground(view: self.view)
         }
 }
