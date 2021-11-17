@@ -24,7 +24,7 @@ class TaskTableViewCell: UITableViewCell {
                 clicked = true
                 } else {
                     taskCheckedImage.image = UIImage(systemName: "checkmark.circle")
-                    taskCheckedImage.tintColor = UIColor(named: "TC-custom-checkMark")
+                    taskCheckedImage.tintColor = UIColor(named: "TC-checkMark")
                     clicked = false
                 }
     }

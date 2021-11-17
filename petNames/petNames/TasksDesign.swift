@@ -59,29 +59,6 @@ class TasksDesign {
         return tasksCellBorder.last ?? TasksCellBorder(name: "custom", color: UIColor(named: "TC-custom-border") ?? .red) // the last is the custom TasksCellBorder
     }
 
-    var tasksCheckMark: [TasksCheckMark] = {
-        let water = TasksCheckMark(name: "water", color: UIColor(named: "TC-water-checkMark") ?? .red)
-        let food = TasksCheckMark(name: "food", color: UIColor(named: "TC-food-checkMark") ?? .red)
-        let wash = TasksCheckMark(name: "wash", color: UIColor(named: "TC-wash-checkMark") ?? .red)
-        let playtime = TasksCheckMark(name: "playtime", color: UIColor(named: "TC-playtime-checkMark") ?? .red)
-        let walk = TasksCheckMark(name: "walk", color: UIColor(named: "TC-walk-checkMark") ?? .red)
-        let medicine = TasksCheckMark(name: "medicine", color: UIColor(named: "TC-medicine-checkMark") ?? .red)
-        let groom = TasksCheckMark(name: "groom", color: UIColor(named: "TC-groom-checkMark") ?? .red)
-        let vet = TasksCheckMark(name: "vet", color: UIColor(named: "TC-vet-checkMark") ?? .red)
-        let custom = TasksCheckMark(name: "custom", color: UIColor(named: "TC-custom-checkMark") ?? .red)
-
-        return [water, food, wash, playtime, walk, medicine, groom, vet, custom]
-    }()
-
-    func getTasksCheckMark( _ taskName: String) -> TasksCheckMark {
-        for task in tasksCheckMark {
-            if task.name.lowercased() == taskName.lowercased() {
-                return task
-            }
-        }
-        return tasksCheckMark.last ?? TasksCheckMark(name: "custom", color: UIColor(named: "TC-custom-checkMark") ?? .red) // the last is the custom TasksCheckMark
-    }
-
     func pickTaskIcon(task: String) -> String {
         var iconAsset: String
 

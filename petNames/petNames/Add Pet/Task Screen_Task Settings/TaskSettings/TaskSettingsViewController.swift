@@ -210,7 +210,7 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 taskSettingsTableView.reloadData()
             } else {
                 let title = "warning".localized()
-                let message = "warningMessage".localized()
+                let message = "exceedMessage".localized()
 
                 AlertManager.shared.createAlert(title: title, message: message, viewC: self)
             }

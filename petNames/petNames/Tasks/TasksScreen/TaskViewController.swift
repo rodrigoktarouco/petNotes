@@ -81,7 +81,7 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
         safeCell.layer.borderColor = borderColor.cgColor
 
         // MARK: Sets the color of the cell`s checkMark
-        let checkMarkColor = TasksDesign.shared.getTasksCheckMark(myInfos[section].taskName).color
+        let checkMarkColor = UIColor(named: "TC-checkMark")
         safeCell.taskCheckedImage.tintColor = checkMarkColor
 
         if myInfos[section].isCheckedAsDone {

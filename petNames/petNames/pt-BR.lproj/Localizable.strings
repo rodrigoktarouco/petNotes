@@ -36,7 +36,7 @@
 "repeat" = "Repete";
 "notes" = "Notas";
 "warning" = "Oops!";
-"warningMessage" = "Você excedeu o número máximo de alertas (6).";
+"exceedMessage" = "Você excedeu o número máximo de 6 alertas.";
 "hourPickerPH" = "00:00";
 
 //MARK: -SegmentedControl
@@ -78,6 +78,8 @@
 "done" = "Confirmar";
 "warningMessage" = "Você precisa preencher as informações do seu pet";
 "editImage" = "Editar imagem";
+"sharedAlertTitle" = "Em breve! 👀";
+"sharedAlertMessage" = "Essa função logo estará disponível.";
 
 //MARK: -AppSettings
 "settingsTitleLabel" = "Configurações";

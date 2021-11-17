@@ -223,6 +223,9 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             // share
             print("share")
+            let title = "sharedAlertTitle".localized()
+            let message = "sharedAlertMessage".localized()
+            AlertManager.shared.createAlert(title: title, message: message, viewC: self)
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
