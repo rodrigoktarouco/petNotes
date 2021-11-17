@@ -85,3 +85,20 @@
 //MARK: -PetDetails
 "name" = "Name";
 "edit" = "Edit";
+
+//MARK: - Onboarding
+// Onboarding1
+"onboarding1TextLabel" = "Register your pet to organize your tasks in a simple and practical way";
+// Onboarding2
+"onboarding2TextLabel" = "Add recurring tasks related to it and customize your alerts";
+"onboarding2BackButton" = "Back";
+// Onboarding3
+"onboarding3SkipButton" = "Skip";
+"onboarding3LetsStartButton" = "Let's get started!";
+// Onboarding4
+"onboarding4HeaderTitleLabel" = "Hello tutor! 😄";
+"onboarding4SubHeaderTitleLabel" = "For you to have a more personalized experience we would like to know";
+"onboarding4QuestionLabel" = "How would you like to be called?";
+"onboarding4SaveButton" = "Save";
+
+
