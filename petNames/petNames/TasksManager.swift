@@ -118,8 +118,11 @@ class TaskManager {
                     guard let thisHour = alertTime.hour, let thisMinute = alertTime.minute else {
                         continue
                     }
-                    print(thisHour, "-----------",thisMinute)
-                    let thisExecutionsTime = Calendar.current.date(bySettingHour: thisHour, minute: thisMinute, second: 0, of: day)!
+                    var utcCalendar = Calendar.current
+                    utcCalendar.timeZone = TimeZone(identifier: "UTC") ?? .autoupdatingCurrent
+
+                    //let finalDate = utcCalendar.date(bySettingHour: components.hour!, minute: components.minute!, second: 0, of: day)!
+                    let thisExecutionsTime = utcCalendar.date(bySettingHour: thisHour, minute: thisMinute, second: 0, of: day)!
                     var newExecution = ExecutionNotInPersistence ()
                     newExecution.timeStamp = thisExecutionsTime
                     print(thisExecutionsTime)

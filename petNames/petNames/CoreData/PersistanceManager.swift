@@ -215,7 +215,17 @@ extension Task {
         set {
             var alertStrings: [String] = []
             for timeComponents in newValue {
-                alertStrings.append("\(timeComponents.hour ?? 0):\(timeComponents.minute ?? 0)")
+                // convert components to date on the current timezone (10:00 in -3 will be 13:00 UTC)
+                let date = Calendar.autoupdatingCurrent.date(from: timeComponents) ?? Date()
+
+                // create calendar in UTC timezone
+                var utcCalendar = Calendar.autoupdatingCurrent
+                utcCalendar.timeZone = TimeZone(identifier: "UTC") ?? .autoupdatingCurrent
+
+                // get updated components for UTC
+                let utcComponents = utcCalendar.dateComponents([.hour, .minute], from: date)
+
+                alertStrings.append("\(utcComponents.hour ?? 0):\(utcComponents.minute ?? 0)")
             }
             alerts =  alertStrings.joined(separator: "|")
         }
