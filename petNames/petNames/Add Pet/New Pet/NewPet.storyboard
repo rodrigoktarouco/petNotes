@@ -28,7 +28,7 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="22" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h7Y-c3-YDn">
-                                <rect key="frame" x="0.0" y="304.5" width="414" height="591.5"/>
+                                <rect key="frame" x="0.0" y="309.5" width="414" height="586.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="linkColor"/>
                                 <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -256,7 +256,7 @@
                             <constraint firstItem="h7Y-c3-YDn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fv2-TB-mwb"/>
                             <constraint firstItem="p0c-VH-BSZ" firstAttribute="top" secondItem="hLP-2Y-Zc0" secondAttribute="bottom" constant="8" id="gx1-RN-3pT"/>
                             <constraint firstAttribute="bottom" secondItem="h7Y-c3-YDn" secondAttribute="bottom" id="rE6-il-SaB"/>
-                            <constraint firstItem="h7Y-c3-YDn" firstAttribute="top" secondItem="hLP-2Y-Zc0" secondAttribute="bottom" constant="35" id="uSD-4T-eb6"/>
+                            <constraint firstItem="h7Y-c3-YDn" firstAttribute="top" secondItem="hLP-2Y-Zc0" secondAttribute="bottom" constant="40" id="uSD-4T-eb6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Pet" leftItemsSupplementBackButton="YES" id="yOu-ZO-i4L">
