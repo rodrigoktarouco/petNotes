@@ -50,7 +50,7 @@ class FeedViewController: UIViewController {
         constraintAdjustments()
 
         logoImage.image = UIImage(named: "logo")
-        
+        TaskManager.shared.load()
     }
 
     func constraintAdjustments() {
