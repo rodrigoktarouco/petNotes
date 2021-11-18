@@ -65,10 +65,13 @@ class WarningTableViewCell: UITableViewCell {
         formatterHour.dateFormat = "HH"
         let formatterMinute = DateFormatter()
         formatterMinute.dateFormat = "mm"
-//        ScheduleNotification.shared.preferedHour = Int(formatterHour.string(from: newDate ?? Date()))
-//        ScheduleNotification.shared.preferedMinute = Int(formatterMinute.string(from: newDate ?? Date()))
-//        confirmedHourNotificationBtn.isEnabled = true
-//        confirmedHourNotificationBtn.backgroundColor = UIColor(named: "Verde")
+
+        print(datePicker.date)
+
+        let components = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
+
+        alertsGlobal.append(components)
+
         self.alertTextField.resignFirstResponder()
     }
     

@@ -74,6 +74,9 @@ extension CategoryTableViewCell: ToolbarPickerViewDelegate {
             categoryPicked = false
             print("#entrou")
         }
+
+        // MARK: Passes to the global var in NewPetVC
+        categoryGlobal = categoryTextField.text ?? "error"
         
     }
 

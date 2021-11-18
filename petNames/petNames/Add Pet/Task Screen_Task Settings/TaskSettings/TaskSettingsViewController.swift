@@ -9,6 +9,7 @@ import UIKit
 
 public var frequencyGlobal: String = ""
 public var comingFromTaskScreen: Bool = false
+public var alertsGlobal: [DateComponents] = []
 
 class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -57,7 +58,9 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
     task.name = selectedTaskGlobal
     task.repetition = frequencyGlobal
     task.initialDate = Date()
-    //       task.observations =
+    task.alertTimes = alertsGlobal
+    print(task.alertTimes)
+    alertsGlobal = []
 
     // MARK: returns to the first view of the flow
     self.navigationController?.popToRootViewController(animated: true)
