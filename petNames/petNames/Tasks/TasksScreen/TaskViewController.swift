@@ -81,7 +81,7 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
         safeCell.petImageTask.image = myInfosCell.taskPetImage
 
         // MARK: Sets the color of the cell`s inside
-        let insideColor =  TasksDesign.shared.getTaskDesignProperties(myInfosCell.taskName).color
+        let insideColor = TasksDesign.shared.getTaskDesignProperties(myInfosCell.taskName).color
         safeCell.backgroundColor = insideColor
 
         // MARK: Sets the color of the cell`s border
