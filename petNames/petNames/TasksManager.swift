@@ -18,6 +18,7 @@ class TaskManager {
     var arrayOfCalculatedExecutionsNotDone: [ExecutionNotInPersistence] = []
 
     func load() {
+
         setPetsAndSupposedToExistExecutions()
         TasksFromNowOnToBeDone()
         _ = getNumberOfTasksNotDoneAndDone()
@@ -39,6 +40,7 @@ class TaskManager {
                         return
                     }
 
+                    print (currentDate < executionDate, "---" , thisExecution.taskNotInPersistence?.name)
                     if currentDate < executionDate {
                         task.executionsCalculatedAfterCurrentTime.append(thisExecution)
                         arrayOfCalculatedExecutionsNotDone.append(thisExecution)
@@ -46,6 +48,8 @@ class TaskManager {
                 }
             }
         }
+        print("array - > ",arrayOfCalculatedExecutionsNotDone)
+        print("count - > ",arrayOfCalculatedExecutionsNotDone.count)
     }
 
     func getNumberOfTasksNotDoneAndDone() -> (Int,Int) {
@@ -81,6 +85,9 @@ class TaskManager {
 //    }
 
     func setPetsAndSupposedToExistExecutions() {
+
+        PetNotInPersistenceArray = []
+
         var allPets: [Pet] = []
         PersistanceManager.shared.listPets { result in
             switch result {
