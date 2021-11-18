@@ -9,6 +9,7 @@ import UIKit
 
 public var textFieldInput: String = ""
 public var categoryPicked = false
+public var categoryGlobal: String = ""
 
 class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -247,13 +248,15 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             AlertManager.shared.createAlert(title: title, message: message, viewC: self)
             
         } else {
-           
+
             let pet = Pet()
             petImage.image = self.petImage.image
             pet.name = textFieldInput
+            pet.category = categoryGlobal
+            pet.tasks = Set(myPetTasks) as NSSet
             if userDidntSelectPersonalImage == true {
-            pet.image = imageDesignName
-            petImage.image = nil
+                pet.image = imageDesignName
+                petImage.image = nil
             }
             PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
                 PersistanceManager.shared.listPets { result in
@@ -267,6 +270,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     }
                 }
             }
+
             self.navigationController?.dismiss(animated: true, completion: nil)
             textFieldInput = ""
             categoryPicked = false
