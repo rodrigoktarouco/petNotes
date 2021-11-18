@@ -8,12 +8,78 @@
 import Foundation
 import UIKit
 
-enum SelectedSegmentInTasks {
-        case all
-        case notDone
-        case byPet
-        case filter
+class TaskModel {
+    init() {TaskManager.shared.load()}
+
+    var cellForAllSegment: [CellInfosStruct] = []
+
+    func getNumberOfTasks(_ selectedSegment: SelectedSegmentInTasks) -> Int {
+
+        switch selectedSegment {
+        case .all:
+            return generateAllTasks()
+        case .notDone:
+            return generateAllTasks()
+        case .byPet:
+            return generateAllTasks()
+        case .filter:
+            return 0
+        }
+
+        return 0
     }
+
+    func generateAllTasks() -> Int {
+        cellForAllSegment = []
+
+        for notPersistentPet in TaskManager.shared.PetNotInPersistenceArray {
+            for notPersistentTask in notPersistentPet.tasks {
+                for notPersistentExecution in notPersistentTask.executions {
+                    let nameForCell = notPersistentTask.name ?? "unnamedTask"
+                    var thisImage: UIImage?  = nil
+                    if let tpet = notPersistentPet.pet {
+                        PersistanceManager.shared.getPetImage(tpet) { image in
+                            thisImage = image
+                        }
+                    }
+                    if thisImage == nil {
+                        thisImage = UIImage(named: notPersistentPet.pet?.image ?? "")
+                    }
+                    var didTheTask = false
+                    if notPersistentExecution.execution != nil {
+                        didTheTask = true
+                    }
+
+                    guard let date = notPersistentExecution.timeStamp else {
+                        let  newCellInfo = CellInfosStruct(taskName: nameForCell , taskTime: "--:--", taskPetName: notPersistentPet.name ?? "unamedPet", taskPetImage: thisImage!, isCheckedAsDone: didTheTask)
+                        cellForAllSegment.append(newCellInfo)
+                        continue
+                    }
+                    var alert = ""
+                    var calendar = Calendar.autoupdatingCurrent
+                    let components = calendar.dateComponents([.hour, .minute], from: date)
+                    alert = "\(components.hour ?? 0):\(components.minute ?? 0) "
+
+                    let  newCellInfo = CellInfosStruct(taskName: nameForCell , taskTime: alert , taskPetName: notPersistentPet.name ?? "unamedPet", taskPetImage: thisImage!, isCheckedAsDone: didTheTask)
+                    cellForAllSegment.append(newCellInfo)
+
+
+                }
+            }
+
+        }
+
+        return cellForAllSegment.count
+    }
+}
+
+
+enum SelectedSegmentInTasks {
+    case all
+    case notDone
+    case byPet
+    case filter
+}
 
 struct CellInfosStruct {
     var taskName: String
