@@ -47,6 +47,8 @@ class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDa
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        isModalInPresentation = true
+
         let storyboard = UIStoryboard(name: "Onboarding", bundle: .main)
         let onboarding1 = storyboard.instantiateViewController(withIdentifier: "onboarding1") as! OnboardingViewController
         onboarding1.delegate = self
@@ -66,6 +68,7 @@ class OnboardingPageViewController: UIPageViewController, UIPageViewControllerDa
 //        let appearance = UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
 //        appearance.backgroundStyle = .prominent
     }
+
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
