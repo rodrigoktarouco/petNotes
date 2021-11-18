@@ -111,13 +111,17 @@ class FeedModel {
                 }
             }
         }
-        if let date = thisNotInPersistenceExecution.timeStamp {
-            print(date)
-        } else {
-            print("MEU PAU ")
+        let nameOfTask = thisNotInPersistenceExecution.taskNotInPersistence?.name
+        guard let date = thisNotInPersistenceExecution.timeStamp else {
+            let taskDataStruct = TaskFeedCollectionViewCellData(petImage: thisPetImage, taskName: nameOfTask, taskTime: "--:--", done: false)
+            return taskDataStruct
         }
+        var alert = ""
+        var calendar = Calendar.autoupdatingCurrent
+        let components = calendar.dateComponents([.hour, .minute], from: date)
+        alert = "\(components.hour ?? 0):\(components.minute ?? 0) "
 
-        let taskDataStruct = TaskFeedCollectionViewCellData(petImage: thisPetImage, taskName: "water", taskTime: "12:00", done: false)
+        let taskDataStruct = TaskFeedCollectionViewCellData(petImage: thisPetImage, taskName: nameOfTask, taskTime: alert, done: false)
         return taskDataStruct
     }
 
