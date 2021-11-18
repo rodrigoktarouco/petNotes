@@ -210,6 +210,7 @@ extension FeedViewController {
     override func viewDidAppear(_ animated: Bool) {
         if !UserDefaultsManager.shared.isOnboardingDone {
             performSegue(withIdentifier: "toOnboarding", sender: nil)
+//
             UserDefaultsManager.shared.saveOnboardingStatus(status: true)
         }
     }
