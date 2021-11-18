@@ -20,6 +20,8 @@
 		5C86C9FE271E0CAC00FD1C2C /* ShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C86C9FD271E0CAC00FD1C2C /* ShareTableViewCell.swift */; };
 		5CBE0475272C774D000811D5 /* CustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE0474272C774D000811D5 /* CustomHeader.swift */; };
 		5CBE0478272C98ED000811D5 /* AddWarningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6129F272B491800C49FCB /* AddWarningTableViewCell.swift */; };
+		9D07C7922746C5F1006A4850 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D07C7912746C5F1006A4850 /* SoundService.swift */; };
+		9D07C7942746C77A006A4850 /* hey.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D07C7932746C77A006A4850 /* hey.wav */; };
 		9D1788B3271DE8CF00C839DF /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1788B2271DE8CF00C839DF /* TaskTableViewCell.swift */; };
 		9D1E7502270E118E00321E54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1E7501270E118E00321E54 /* AppDelegate.swift */; };
 		9D1E7504270E118E00321E54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1E7503270E118E00321E54 /* SceneDelegate.swift */; };
@@ -45,7 +47,6 @@
 		9DCC58E227189992007A800C /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58E127189992007A800C /* FeedModel.swift */; };
 		9DCC58E4271899B1007A800C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCC58E3271899B1007A800C /* Settings.storyboard */; };
 		9DCC58E6271899C7007A800C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58E5271899C7007A800C /* SettingsViewController.swift */; };
-		9DCC58E8271899E4007A800C /* SoundsImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58E7271899E4007A800C /* SoundsImplementation.swift */; };
 		9DCC58EA27189A0A007A800C /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCC58E927189A0A007A800C /* Task.storyboard */; };
 		9DCC58EC27189A1E007A800C /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58EB27189A1E007A800C /* TaskViewController.swift */; };
 		9DCC58EE27189A2C007A800C /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58ED27189A2C007A800C /* TaskModel.swift */; };
@@ -97,6 +98,8 @@
 		5C86C9FB271DE91000FD1C2C /* PetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewController.swift; sourceTree = "<group>"; };
 		5C86C9FD271E0CAC00FD1C2C /* ShareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTableViewCell.swift; sourceTree = "<group>"; };
 		5CBE0474272C774D000811D5 /* CustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeader.swift; sourceTree = "<group>"; };
+		9D07C7912746C5F1006A4850 /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
+		9D07C7932746C77A006A4850 /* hey.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hey.wav; sourceTree = "<group>"; };
 		9D1788A9271DE63900C839DF /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
 		9D1788AA271DE63900C839DF /* SF-Pro-Rounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Light.otf"; sourceTree = "<group>"; };
 		9D1788AB271DE63900C839DF /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
@@ -137,7 +140,6 @@
 		9DCC58E127189992007A800C /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		9DCC58E3271899B1007A800C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9DCC58E5271899C7007A800C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		9DCC58E7271899E4007A800C /* SoundsImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsImplementation.swift; sourceTree = "<group>"; };
 		9DCC58E927189A0A007A800C /* Task.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		9DCC58EB27189A1E007A800C /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		9DCC58ED27189A2C007A800C /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
@@ -214,6 +216,15 @@
 				FD62D2D82732F7E00061560E /* PetDetailsModel.swift */,
 			);
 			path = "Pet Details";
+			sourceTree = "<group>";
+		};
+		9D07C7902746C5D5006A4850 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				9D07C7932746C77A006A4850 /* hey.wav */,
+				9D07C7912746C5F1006A4850 /* SoundService.swift */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		9D1E74F5270E118E00321E54 = {
@@ -351,10 +362,10 @@
 		9DCC58DF27189952007A800C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				9D07C7902746C5D5006A4850 /* Audio */,
 				9D93C9782739CFDA00C3C713 /* LocalNotificationService */,
 				FD06EABC27232D8400EC4D37 /* Cells */,
 				9DCC58E5271899C7007A800C /* SettingsViewController.swift */,
-				9DCC58E7271899E4007A800C /* SoundsImplementation.swift */,
 				9DCC58E3271899B1007A800C /* Settings.storyboard */,
 			);
 			path = Settings;
@@ -507,6 +518,7 @@
 				FD06EAAF2721E9C700EC4D37 /* SF-Pro-Rounded-Light.otf in Resources */,
 				FD06EAB02721E9C700EC4D37 /* SF-Pro-Rounded-Medium.otf in Resources */,
 				FD06EAB22721E9C700EC4D37 /* SF-Pro-Rounded-Semibold.otf in Resources */,
+				9D07C7942746C77A006A4850 /* hey.wav in Resources */,
 				FD06EAB32721E9C700EC4D37 /* SF-Pro-Rounded-Thin.otf in Resources */,
 				FD06EAB42721E9C700EC4D37 /* SF-Pro-Rounded-Ultralight.otf in Resources */,
 				FD06EAB52721E9C700EC4D37 /* SF-Pro-Rounded-Regular.otf in Resources */,
@@ -553,7 +565,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D641CF1273DA4BB0072886A /* Onboarding3ViewController.swift in Sources */,
-				9DCC58E8271899E4007A800C /* SoundsImplementation.swift in Sources */,
 				F496C574271F597C00443927 /* TaskScreenViewController.swift in Sources */,
 				F4D612A6272B494200C49FCB /* notesTableViewCell.swift in Sources */,
 				FD45E96D273458B300F01E83 /* TasksDesign.swift in Sources */,
@@ -575,6 +586,7 @@
 				9D90D1412728683300689292 /* Model.xcdatamodeld in Sources */,
 				F496C572271A140C00443927 /* NewPetViewController.swift in Sources */,
 				FDB7B31D2733233500C83EC8 /* TopInfosTableViewCell.swift in Sources */,
+				9D07C7922746C5F1006A4850 /* SoundService.swift in Sources */,
 				F48142082733249D0070FF77 /* Background.swift in Sources */,
 				9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */,
 				FD638E57272AEB5400197910 /* NextTaskCollectionViewCell.swift in Sources */,
