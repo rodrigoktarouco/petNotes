@@ -37,6 +37,11 @@ class Onboarding4ViewController: UIViewController {
     @IBAction func onboarding4SaveDidPress(_ sender: UIButton) {
         delegate?.didTapSaveButton(viewController: self, button: sender)
         dismiss(animated: true)
+        let test = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController
+        let navigation = test?.viewControllers?[0] as? UINavigationController
+        print(navigation?.viewControllers[0] ?? UINavigationController())
+        guard let feedVC = navigation?.viewControllers[0] as? FeedViewController else { return }
+        feedVC.reloadVC()
     }
 
     @IBAction func onReturn() {

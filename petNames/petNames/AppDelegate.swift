@@ -16,20 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNUserNotificationCenter.current().delegate = self
         // Override point for customization after application launch.
         //
-        //print("Application directory: \(NSHomeDirectory())")
+//        print("Application directory: \(NSHomeDirectory())")
         
         PersistanceManager.shared.setUp()
         PersistanceManager.shared.loadUser { result in
-            switch result {
-            case .failure(PersistenceError.notSignedIn):
-                let user = User()
-                user.name = "unamedUser"
-
-                PersistanceManager.shared.saveUser(user: user) { _ in }
-
-            default:
-                return
-            }
+//            switch result {
+//            case .failure(PersistenceError.notSignedIn):
+//                let user = User()
+//                user.name = "unamedUser"
+//
+//                PersistanceManager.shared.saveUser(user: user) { _ in }
+//
+//            default:
+//                return
+//            }
             
         }
 
