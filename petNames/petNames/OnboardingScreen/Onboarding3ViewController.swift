@@ -19,6 +19,7 @@ class Onboarding3ViewController: UIViewController {
         onboarding3LetsStartButton.setTitle("onboarding3LetsStartButton".localized(), for: .normal)
         onboarding3LetsStartButton.titleLabel?.font =  UIFont(name: "SFProRounded-Bold", size: 20)
         Background.shared.assignBackground(view: self.view)
+        onboarding3LetsStartButton.tintColor = .black
 
     }
 

@@ -123,13 +123,26 @@ extension FeedViewController: UICollectionViewDataSource {
             let cell = tasksCollectionView.dequeueReusableCell(withReuseIdentifier: "NextTaskCollectionViewCell", for: indexPath) as? NextTaskCollectionViewCell
             guard let cell = cell else { return UICollectionViewCell() }
             let infoStruct = modelInstance.getTaskFeedCollectionViewCellData(taskNumber: indexPath.row)
-            cell.petImage.image = infoStruct.petImage
             cell.taskNameLabel.text = infoStruct.taskName?.localized().capitalized
             cell.taskTimeLabel.text = infoStruct.taskTime
             cell.checkImage.image = infoStruct.done ?? false ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "checkmark.circle.fill")
             cell.taskNameInPersistence = infoStruct.taskName
-            cell.setUpColors()
 
+            // MARK: Sets the color of the cell`s inside
+            let insideColor = TasksDesign.shared.getTaskDesignProperties(infoStruct.taskName ?? "").color
+            cell.auxView.backgroundColor = insideColor
+
+            // MARK: Sets the color of the cell`s border
+            let borderColor = TasksDesign.shared.getTasksCellBorder(infoStruct.taskName ?? "").color
+            cell.auxView.layer.borderColor = borderColor.cgColor
+            
+            // MARK: Sets the color of the cell`s checkMark
+            let checkMarkColor = UIColor(named: "TC-checkMark")
+            cell.checkImage.tintColor = checkMarkColor
+            
+            // MARK: Sets the image of the cell's image
+            cell.petImage.image = infoStruct.petImage ?? UIImage(named: "")
+            
             return cell
         } else if collectionView == petsCollectionView {
             if indexPath.row == 0 {
@@ -138,6 +151,7 @@ extension FeedViewController: UICollectionViewDataSource {
             } else {
                 let cell = petsCollectionView.dequeueReusableCell(withReuseIdentifier: "PetsOnFeedCollectionViewCell", for: indexPath) as? PetsOnFeedCollectionViewCell
                 let infoStruct = modelInstance.getPetsCollectionViewData(petNumber: indexPath.row - 1)
+                
                 cell?.petImage.image = infoStruct.petImage ?? UIImage()
                 cell?.petName.text = infoStruct.petName?.capitalized
 

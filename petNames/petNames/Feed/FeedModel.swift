@@ -72,8 +72,27 @@ class FeedModel {
                 if image != nil {
                 emptyDic[thisPet] = image
                 } else {
+                    var imageString = thisPet.image
+                    if imageString == "profile-amarelo-rounded" {
+                        imageString = "profile-amarelo"
+                        
+                    } else if imageString == "profile-azul-rounded" {
+                        imageString = "profile-azul"
+                        
+                    } else if imageString == "profile-laranja-rounded" {
+                        imageString = "profile-laranja"
+                        
+                    } else if imageString == "profile-roxo-rounded" {
+                        imageString = "profile-roxo"
+                        
+                    } else if imageString == "profile-verde-rounded" {
+                        imageString = "profile-verde"
+                        
+                    } else {
+                        imageString = "profile-vermelho"
+                    }
 
-                    emptyDic[thisPet] = UIImage(named: thisPet.image ?? "profile-verde")
+                    emptyDic[thisPet] = UIImage(named: imageString ?? "profile-verde")
                 }
             }
         }
@@ -108,6 +127,8 @@ class FeedModel {
             PersistanceManager.shared.getPetImage(pet) { image in
                 if image != nil {
                     thisPetImage = image
+                } else {
+                    thisPetImage = UIImage(named: pet.image ?? "")
                 }
             }
         }
