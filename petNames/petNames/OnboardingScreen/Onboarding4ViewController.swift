@@ -32,6 +32,8 @@ class Onboarding4ViewController: UIViewController {
         Background.shared.assignBackground(view: self.view)
         // Onboarding Text box view
         onboarding4TextBoxView.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
+        onboarding4TextBoxView.placeholder = "Your name".localized()
+        onboarding4SaveButton.tintColor = .black
 
     }
     @IBAction func onboarding4SaveDidPress(_ sender: UIButton) {

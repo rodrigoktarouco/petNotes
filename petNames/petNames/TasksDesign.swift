@@ -58,7 +58,7 @@ class TasksDesign {
         }
         return tasksCellBorder.last ?? TasksCellBorder(name: "custom", color: UIColor(named: "TC-custom-border") ?? .red) // the last is the custom TasksCellBorder
     }
-
+    
     func pickTaskIcon(task: String) -> String {
         var iconAsset: String
 
