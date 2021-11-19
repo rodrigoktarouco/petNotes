@@ -239,7 +239,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @objc func addButtonAction() {
-        print("Add pressed")
+        print("#Add pressed")
         
         if textFieldInput == "" || categoryPicked == false {
             
@@ -263,7 +263,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     switch result {
                     case .success(let pets):
                         for pet in pets {
-                            print(pet.name)
+                            print("#\(pet.name)")
                         }
                     default:
                         return
@@ -271,6 +271,16 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
 
+            PersistanceManager.shared.listPets { result in
+                switch result {
+                case .success(let pets):
+                    for pet in pets {
+                        print(pet.name ?? "error")
+                    }
+                default:
+                    print("failure")
+                }
+            }
             self.navigationController?.dismiss(animated: true, completion: nil)
             textFieldInput = ""
             categoryPicked = false

@@ -77,19 +77,13 @@ class FeedViewController: UIViewController {
         modelInstance = FeedModel()
         petsCollectionView.reloadData()
         tasksCollectionView.reloadData()
+        welcomeUserLabel.text = "welcomeUser".localized().capitalized + " " + modelInstance.getUsersName() + "!" + " 👋🏼"
     }
 
     func setUpDoneTasksImage() {
         doneTasksFunImage.layer.cornerRadius = 22
         doneTasksFunImage.image =  modelInstance.getImageForFunTasksImageView()
     }
-
-    //    func setUpBackground() {
-    //        let backGroundAssetNames = ["background1", "background2", "background3"]
-    //        backgroundImage.image = UIImage(named: backGroundAssetNames.randomElement() ?? "background1") ?? UIImage(named: "")
-    //        backgroundImage.alpha = 0.4
-    //        [tasksCollectionView, petsCollectionView].forEach { collection in collection?.backgroundColor = .clear}
-    //    }
 
     func setUpLabelsTexts() {
 

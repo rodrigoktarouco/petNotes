@@ -109,8 +109,14 @@ extension OnboardingPageViewController: OnboardingControlDelegate {
         guard let myViewController = viewController as? Onboarding4ViewController else {
             fatalError("The last screen isn't of type \(viewController)")
         }
-        let name = myViewController.onboarding4TextBoxView.text ?? ""
-        print(name)
+        let name = myViewController.onboarding4TextBoxView.text ?? "Tutor"
+        let user = User()
+        user.name = name
+        user.id = UUID().uuidString
+        PersistanceManager.shared.saveUser(user: user) { error in
+            print(error)
+        }
+        PersistanceManager.shared.loadUser { _ in }
     }
 
 }
