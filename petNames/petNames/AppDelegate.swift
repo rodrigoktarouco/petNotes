@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 
+public var isDarkModeOn: Bool = false
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -16,21 +18,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNUserNotificationCenter.current().delegate = self
         // Override point for customization after application launch.
         //
-//        print("Application directory: \(NSHomeDirectory())")
+        //        print("Application directory: \(NSHomeDirectory())")
         
         PersistanceManager.shared.setUp()
         PersistanceManager.shared.loadUser { result in
-//            switch result {
-//            case .failure(PersistenceError.notSignedIn):
-//                let user = User()
-//                user.name = "unamedUser"
-//
-//                PersistanceManager.shared.saveUser(user: user) { _ in }
-//
-//            default:
-//                return
-//            }
-            
+            //            switch result {
+            //            case .failure(PersistenceError.notSignedIn):
+            //                let user = User()
+            //                user.name = "unamedUser"
+            //
+            //                PersistanceManager.shared.saveUser(user: user) { _ in }
+            //
+            //            default:
+            //                return
+            //            }
+
+            if UITraitCollection.current.userInterfaceStyle == .dark {
+                isDarkModeOn = true
+            }
+            else {
+                isDarkModeOn = false
+            }
         }
 
         let window = UIApplication.shared.windows.filter({$0.isKeyWindow}).first
@@ -43,59 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         completionHandler([.badge, .sound, .banner])
         SoundService.shared.playButtonEffects()
     }
-
-//    func testCreatePet() {
-//        let pet = Pet()
-//        pet.name = "belinha"
-//        pet.petCategory = .bird
-//
-//
-//        let task1 = Task()
-//        task1.name = "vet"
-//        task1.alertTimes = [
-//            DateComponents(hour: 10, minute: 30),
-//            DateComponents(hour: 4, minute: 20),
-//            DateComponents(hour: 9, minute: 9)
-//        ]
-//        task1.taskRepetition = .daily
-//        task1.observations = " S xXguilhermeXx e xXrodrigoXx 2"
-//
-//        let task2 = Task()
-//        task2.name = "shower"
-//        task2.alertTimes = [
-//            DateComponents(hour: 16, minute: 20),
-//        ]
-//        task2.taskRepetition = .never
-//
-//        let task3 = Task()
-//        task3.name = "water"
-//        task3.taskRepetition = .never
-//
-//        task1.pet = pet
-//        task2.pet = pet
-//        task3.pet = pet
-//
-//        pet.tasks = [
-//            task1,
-//            task2,
-//            task3
-//        ]
-//
-//        PersistanceManager.shared.savePet(pet: pet) { error in
-//            print(error)
-//        }
-//
-//    }
-//    func listPets() {
-//        PersistanceManager.shared.listPets() { result in
-//            switch result {
-//            case .success(let pets):
-//                print(pets)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
 
     // MARK: UISceneSession Lifecycle
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
