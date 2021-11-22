@@ -62,6 +62,12 @@ extension SettingsViewController: UITableViewDataSource {
             } else if indexPath.row == 2 {
                 cell.cellType = .darkMode
                 cell.generalNotificationsSwitch.isOn = darkMode
+//                if isDarkModeOn == true {
+//                    print("#\(isDarkModeOn)")
+//                    cell.generalNotificationsSwitch.setOn(true, animated: true)
+//                } else {
+//                    cell.generalNotificationsSwitch.setOn(false, animated: true)
+//                }
             }
             cell.delegate = self
             return cell
