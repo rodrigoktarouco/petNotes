@@ -27,6 +27,7 @@ class AdjustmentsTableViewCell: UITableViewCell {
     @IBAction func generalNotificationsSwitch(_ sender: UISwitch) {
         if let cellType = cellType {
             delegate?.didToogleSwitch(cellType: cellType, isOn: sender.isOn)
+
         }
     }
 
