@@ -10,15 +10,15 @@ import UIKit
 import AVFoundation
 
 enum TaskTypes {
-case water
-case feeding
-case wash
-case playtime
-case walk
-case groom
-case medicine
-case vet
-case custom
+    case water
+    case feeding
+    case wash
+    case playtime
+    case walk
+    case groom
+    case medicine
+    case vet
+    case custom
 }
 
 class FeedModel {
@@ -70,24 +70,24 @@ class FeedModel {
         for thisPet in petsArray {
             PersistanceManager.shared.getPetImage(thisPet) { image in
                 if image != nil {
-                emptyDic[thisPet] = image
+                    emptyDic[thisPet] = image
                 } else {
                     var imageString = thisPet.image
                     if imageString == "profile-amarelo-rounded" {
                         imageString = "profile-amarelo"
-
+                        
                     } else if imageString == "profile-azul-rounded" {
                         imageString = "profile-azul"
-
+                        
                     } else if imageString == "profile-laranja-rounded" {
                         imageString = "profile-laranja"
-
+                        
                     } else if imageString == "profile-roxo-rounded" {
                         imageString = "profile-roxo"
-
+                        
                     } else if imageString == "profile-verde-rounded" {
                         imageString = "profile-verde"
-
+                        
                     } else {
                         imageString = "profile-vermelho"
                     }
@@ -137,6 +137,7 @@ class FeedModel {
             let taskDataStruct = TaskFeedCollectionViewCellData(petImage: thisPetImage, taskName: nameOfTask, taskTime: "--:--", done: false)
             return taskDataStruct
         }
+
         var alert = ""
         let formatter = DateFormatter()
         formatter.dateStyle = .none
@@ -144,21 +145,17 @@ class FeedModel {
         formatter.timeZone = .autoupdatingCurrent
         alert = formatter.string(from: date)
 
-        //MARK: Old Formatter
-//        var calendar = Calendar.autoupdatingCurrent
-//        let components = calendar.dateComponents([.hour, .minute], from: date)
-//        let hour = components.hour ?? 0
-//        let hourString = hour < 10 ? "0\(hour)" : "\(hour)"
-//        let minutes = components.minute ?? 0
-//        let minutesString = minutes < 10 ? "0\(minutes)" : "\(minutes)"
-//        alert = "\(hourString):\(minutesString)"
+        //        var alert = ""
+        //        var calendar = Calendar.autoupdatingCurrent
+        //        let components = calendar.dateComponents([.hour, .minute], from: date)
+        //        alert = "\(components.hour ?? 0):\(components.minute ?? 0) "
 
         let taskDataStruct = TaskFeedCollectionViewCellData(petImage: thisPetImage, taskName: nameOfTask, taskTime: alert, done: false)
         return taskDataStruct
     }
 
     func getNumberOfTotalTasks() -> Int {
-
+        
         return TaskManager.shared.arrayOfCalculatedExecutionsNotDone.count
     }
 

@@ -55,10 +55,19 @@ class TaskModel {
                         cellForAllSegment.append(newCellInfo)
                         continue
                     }
+
                     var alert = ""
-                    var calendar = Calendar.autoupdatingCurrent
-                    let components = calendar.dateComponents([.hour, .minute], from: date)
-                    alert = "\(components.hour ?? 0):\(components.minute ?? 0) "
+                    let formatter = DateFormatter()
+                    formatter.dateStyle = .none
+                    formatter.timeStyle = .short
+                    formatter.timeZone = .autoupdatingCurrent
+                    alert = formatter.string(from: date)
+
+                    // MARK: Old date value
+//                    var alert = ""
+//                    var calendar = Calendar.autoupdatingCurrent
+//                    let components = calendar.dateComponents([.hour, .minute], from: date)
+//                    alert = "\(components.hour ?? 0):\(components.minute ?? 0) "
 
                     let  newCellInfo = CellInfosStruct(taskName: nameForCell , taskTime: alert , taskPetName: notPersistentPet.name ?? "unamedPet", taskPetImage: thisImage!, isCheckedAsDone: didTheTask)
                     cellForAllSegment.append(newCellInfo)
@@ -73,7 +82,6 @@ class TaskModel {
     }
 }
 
-
 enum SelectedSegmentInTasks {
     case all
     case notDone
@@ -84,6 +92,7 @@ enum SelectedSegmentInTasks {
 struct CellInfosStruct {
     var taskName: String
     var taskTime: String
+    let formatter = DateFormatter()
     var taskPetName: String
     var taskPetImage: UIImage
     var isCheckedAsDone: Bool
