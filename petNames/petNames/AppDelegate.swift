@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         //        print("Application directory: \(NSHomeDirectory())")
         
         PersistanceManager.shared.setUp()
-        PersistanceManager.shared.loadUser { result in
+        PersistanceManager.shared.loadUser { _ in
             //            switch result {
             //            case .failure(PersistenceError.notSignedIn):
             //                let user = User()
@@ -35,8 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
             if UITraitCollection.current.userInterfaceStyle == .dark {
                 isDarkModeOn = true
-            }
-            else {
+            } else {
                 isDarkModeOn = false
             }
         }
