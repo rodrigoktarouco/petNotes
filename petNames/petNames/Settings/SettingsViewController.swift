@@ -13,7 +13,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var appSettingsBackgroundImage: UIImageView!
     
     let sectionNames: [String] = ["Adjustments", "Contacts", "Developed By"]
-    let urlAddresses: [URL?] = [URL(string: "https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlLWRdWNDXMnsxrvMHtGKdhrXlHJnXDLcMrClHfndLJsLMcrKXHpmdqFwkXpNpdMLWFfsV"), URL(string: "https://instagram.com/heypetapp?utm_medium=copy_link")]
+    let urlAddresses: [URL?] = [URL(string: "https://mail.google.com/mail/u/heypetapp@gmail.com"), URL(string: "https://instagram.com/heypetapp?utm_medium=copy_link")]
     let switchNames: [String] = ["General notifications".localized(), "Sound effects".localized(), "Dark mode".localized()]
     let contactTypes: [(UIImage?, String)] = [(UIImage(named: "email"), "Email"), (UIImage(named: "instagram"), "Instagram")]
     let teamMembers: [String] = ["Dharana Rivas", "Enzo Degrazia", "Guilherme Antonini", "Heitor Kunrath", "Rodrigo Tarouco"]
