@@ -75,19 +75,19 @@ class FeedModel {
                     var imageString = thisPet.image
                     if imageString == "profile-amarelo-rounded" {
                         imageString = "profile-amarelo"
-                        
+
                     } else if imageString == "profile-azul-rounded" {
                         imageString = "profile-azul"
-                        
+
                     } else if imageString == "profile-laranja-rounded" {
                         imageString = "profile-laranja"
-                        
+
                     } else if imageString == "profile-roxo-rounded" {
                         imageString = "profile-roxo"
-                        
+
                     } else if imageString == "profile-verde-rounded" {
                         imageString = "profile-verde"
-                        
+
                     } else {
                         imageString = "profile-vermelho"
                     }
@@ -138,16 +138,27 @@ class FeedModel {
             return taskDataStruct
         }
         var alert = ""
-        var calendar = Calendar.autoupdatingCurrent
-        let components = calendar.dateComponents([.hour, .minute], from: date)
-        alert = "\(components.hour ?? 0):\(components.minute ?? 0) "
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        formatter.timeZone = .autoupdatingCurrent
+        alert = formatter.string(from: date)
+
+        //MARK: Old Formatter
+//        var calendar = Calendar.autoupdatingCurrent
+//        let components = calendar.dateComponents([.hour, .minute], from: date)
+//        let hour = components.hour ?? 0
+//        let hourString = hour < 10 ? "0\(hour)" : "\(hour)"
+//        let minutes = components.minute ?? 0
+//        let minutesString = minutes < 10 ? "0\(minutes)" : "\(minutes)"
+//        alert = "\(hourString):\(minutesString)"
 
         let taskDataStruct = TaskFeedCollectionViewCellData(petImage: thisPetImage, taskName: nameOfTask, taskTime: alert, done: false)
         return taskDataStruct
     }
 
     func getNumberOfTotalTasks() -> Int {
-        
+
         return TaskManager.shared.arrayOfCalculatedExecutionsNotDone.count
     }
 
