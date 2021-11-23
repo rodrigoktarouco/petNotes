@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskViewController: UIViewController, UISearchBarDelegate {
+class TaskViewController: UIViewController {
 
     @IBOutlet weak var taskTitleLabel: UILabel!
     @IBOutlet weak var tasksTableView: UITableView!
@@ -17,11 +17,18 @@ class TaskViewController: UIViewController, UISearchBarDelegate {
     var selectedSegment: SelectedSegmentInTasks = SelectedSegmentInTasks.all
 
     var taskModel: TaskModel = TaskModel()
+    
+    var filteredData: [CellInfosStruct] = []
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         taskModel = TaskModel()
-        tasksTableView.reloadData()
+        taskModel.generateAllTasks()
+        filteredData = taskModel.cellForAllSegment
+        print("#\(taskModel.cellForAllSegment)")
+        DispatchQueue.main.async {
+            self.tasksTableView.reloadData()
+        }
     }
 
     override func viewDidLoad() {
@@ -51,11 +58,36 @@ class TaskViewController: UIViewController, UISearchBarDelegate {
     
 }
 
+extension TaskViewController: UISearchBarDelegate {
+    
+// MARK: Search Bar Config
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            filteredData = taskModel.cellForAllSegment
+            
+        } else {
+            filteredData = taskModel.cellForAllSegment.filter({ task in
+                if task.taskName.lowercased().contains(searchText.lowercased()) {
+                    return true
+                } else {
+                    return false
+                }
+            })
+            
+        }
+
+        DispatchQueue.main.async {
+            self.tasksTableView.reloadData()
+        }
+
+    }
+}
+
 // MARK: - UITableViewDataSource
 extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return taskModel.getNumberOfTasks(selectedSegment)
+        return filteredData.count
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -72,9 +104,10 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
         guard let safeCell = cell as? TaskTableViewCell else {
             return UITableViewCell()
         }
-
+        
         let section = indexPath.section
-        let myInfosCell = taskModel.cellForAllSegment[section]
+        let myInfosCell = filteredData[section]
+        
         safeCell.taskNameLabel.text = myInfosCell.taskName
         safeCell.taskTimeLabel.text = myInfosCell.taskTime
         safeCell.petNameLabel.text = myInfosCell.taskPetName
