@@ -107,5 +107,6 @@
 "onboarding4QuestionLabel" = "How would you like to be called?";
 "onboarding4SaveButton" = "Save";
 "Your name" = "Your name";
+"onboardingAlertMessage" = "We need to call you something 😄...";
 
 

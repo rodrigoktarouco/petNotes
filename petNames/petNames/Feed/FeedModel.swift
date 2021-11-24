@@ -10,15 +10,15 @@ import UIKit
 import AVFoundation
 
 enum TaskTypes {
-case water
-case feeding
-case wash
-case playtime
-case walk
-case groom
-case medicine
-case vet
-case custom
+    case water
+    case feeding
+    case wash
+    case playtime
+    case walk
+    case groom
+    case medicine
+    case vet
+    case custom
 }
 
 class FeedModel {
@@ -70,7 +70,7 @@ class FeedModel {
         for thisPet in petsArray {
             PersistanceManager.shared.getPetImage(thisPet) { image in
                 if image != nil {
-                emptyDic[thisPet] = image
+                    emptyDic[thisPet] = image
                 } else {
                     var imageString = thisPet.image
                     if imageString == "profile-amarelo-rounded" {
@@ -137,10 +137,18 @@ class FeedModel {
             let taskDataStruct = TaskFeedCollectionViewCellData(petImage: thisPetImage, taskName: nameOfTask, taskTime: "--:--", done: false)
             return taskDataStruct
         }
+
         var alert = ""
-        var calendar = Calendar.autoupdatingCurrent
-        let components = calendar.dateComponents([.hour, .minute], from: date)
-        alert = "\(components.hour ?? 0):\(components.minute ?? 0) "
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        formatter.timeZone = .autoupdatingCurrent
+        alert = formatter.string(from: date)
+
+        //        var alert = ""
+        //        var calendar = Calendar.autoupdatingCurrent
+        //        let components = calendar.dateComponents([.hour, .minute], from: date)
+        //        alert = "\(components.hour ?? 0):\(components.minute ?? 0) "
 
         let taskDataStruct = TaskFeedCollectionViewCellData(petImage: thisPetImage, taskName: nameOfTask, taskTime: alert, done: false)
         return taskDataStruct

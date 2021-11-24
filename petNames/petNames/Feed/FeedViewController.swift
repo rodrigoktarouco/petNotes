@@ -75,9 +75,11 @@ class FeedViewController: UIViewController {
     }
     func reloadVC() {
         modelInstance = FeedModel()
-        petsCollectionView.reloadData()
-        tasksCollectionView.reloadData()
-        welcomeUserLabel.text = "welcomeUser".localized().capitalized + " " + modelInstance.getUsersName() + "!" + " 👋🏼"
+        DispatchQueue.main.async {
+            self.petsCollectionView.reloadData()
+            self.tasksCollectionView.reloadData()
+            self.welcomeUserLabel.text = "welcomeUser".localized().capitalized + " " + self.modelInstance.getUsersName() + "!" + " 👋🏼"
+        }
     }
 
     func setUpDoneTasksImage() {
