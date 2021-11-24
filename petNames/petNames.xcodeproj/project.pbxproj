@@ -83,6 +83,7 @@
 		FDA924BC273C60D5005B43CB /* TasksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA924BB273C60D5005B43CB /* TasksManager.swift */; };
 		FDB7B31D2733233500C83EC8 /* TopInfosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB7B31C2733233500C83EC8 /* TopInfosTableViewCell.swift */; };
 		FDB7B31F273323B700C83EC8 /* TasksEnumerationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB7B31E273323B700C83EC8 /* TasksEnumerationTableViewCell.swift */; };
+		FDEA58D4274ECCDE003F62F7 /* TaskManagerAuxFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA58D3274ECCDE003F62F7 /* TaskManagerAuxFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -168,6 +169,7 @@
 		FDA924BB273C60D5005B43CB /* TasksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksManager.swift; sourceTree = "<group>"; };
 		FDB7B31C2733233500C83EC8 /* TopInfosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInfosTableViewCell.swift; sourceTree = "<group>"; };
 		FDB7B31E273323B700C83EC8 /* TasksEnumerationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksEnumerationTableViewCell.swift; sourceTree = "<group>"; };
+		FDEA58D3274ECCDE003F62F7 /* TaskManagerAuxFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerAuxFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 		9D1E7500270E118E00321E54 /* petNames */ = {
 			isa = PBXGroup;
 			children = (
+				FDEA58D2274ECCB3003F62F7 /* Task Manager */,
 				9DBF071C27442129004532FA /* UserDefaults */,
 				9D641CE9273D927E0072886A /* OnboardingScreen */,
 				FD638E59272B1A0A00197910 /* .swiftlint.yml */,
@@ -256,7 +259,6 @@
 				9DCC58DF27189952007A800C /* Settings */,
 				9DCC58DB2718964A007A800C /* Feed */,
 				FD45E96C273458B300F01E83 /* TasksDesign.swift */,
-				FDA924BB273C60D5005B43CB /* TasksManager.swift */,
 				9D1E7501270E118E00321E54 /* AppDelegate.swift */,
 				FD62D2D2272C7FA20061560E /* AppUITabBar.swift */,
 				9D1E7503270E118E00321E54 /* SceneDelegate.swift */,
@@ -451,6 +453,15 @@
 			path = "Pet Details Major Cells";
 			sourceTree = "<group>";
 		};
+		FDEA58D2274ECCB3003F62F7 /* Task Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FDA924BB273C60D5005B43CB /* TasksManager.swift */,
+				FDEA58D3274ECCDE003F62F7 /* TaskManagerAuxFile.swift */,
+			);
+			path = "Task Manager";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -602,6 +613,7 @@
 				F4A3DD03273DC7A700B0ABB0 /* AlertManager.swift in Sources */,
 				5C50A707273458DC00FD142E /* AddNewTaskTableViewCell.swift in Sources */,
 				9D5A1D302718BD6600637589 /* PetsModel.swift in Sources */,
+				FDEA58D4274ECCDE003F62F7 /* TaskManagerAuxFile.swift in Sources */,
 				FD06EAB92721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift in Sources */,
 				F4D612A4272B493900C49FCB /* repeatTableViewCell.swift in Sources */,
 				9DCC58EE27189A2C007A800C /* TaskModel.swift in Sources */,
