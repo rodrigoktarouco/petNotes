@@ -32,7 +32,7 @@ class TaskModel {
     func generateAllTasks() -> Int {
         cellForAllSegment = []
 
-        for notPersistentPet in TaskManager.shared.PetNotInPersistenceArray {
+        for notPersistentPet in TaskManager.shared.petNotInPersistenceArray {
             for notPersistentTask in notPersistentPet.tasks {
                 for notPersistentExecution in notPersistentTask.executions {
                     let nameForCell = notPersistentTask.name ?? "unnamedTask"
