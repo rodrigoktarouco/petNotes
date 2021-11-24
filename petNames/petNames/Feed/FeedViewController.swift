@@ -221,7 +221,7 @@ extension FeedViewController {
         if !UserDefaultsManager.shared.isOnboardingDone {
             performSegue(withIdentifier: "toOnboarding", sender: nil)
 //
-//            UserDefaultsManager.shared.saveOnboardingStatus(status: true)
+            UserDefaultsManager.shared.saveOnboardingStatus(status: true)
         }
     }
 }
