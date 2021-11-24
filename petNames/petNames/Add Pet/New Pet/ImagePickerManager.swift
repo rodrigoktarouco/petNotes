@@ -13,7 +13,7 @@ import UIKit
 class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var picker = UIImagePickerController()
-    var alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+    var alert = UIAlertController(title: "chooseImage".localized(), message: nil, preferredStyle: .actionSheet)
     var viewController: UIViewController?
     var pickImageCallback: ((UIImage) -> Void )?
     private var cameraPermission: Bool = false
@@ -21,13 +21,13 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
 
     override init() {
         super.init()
-        let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
+        let cameraAction = UIAlertAction(title: "camera".localized(), style: .default) { _ in
             self.openCamera()
         }
-        let galleryAction = UIAlertAction(title: "Gallery", style: .default) { _ in
+        let galleryAction = UIAlertAction(title: "gallery".localized(), style: .default) { _ in
             self.openGallery()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+        let cancelAction = UIAlertAction(title: "cancel".localized(), style: .cancel) { _ in
         }
 
         // Add the actions
@@ -76,8 +76,8 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
                 self.viewController!.present(picker, animated: true, completion: nil)
             } else {
                 let alertController: UIAlertController = {
-                    let controller = UIAlertController(title: "Warning",
-                                                       message: "You don't have a camera",
+                    let controller = UIAlertController(title: "cameraWarning".localized(),
+                                                       message: "cameraPermission".localized(),
                                                        preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default)
                     controller.addAction(action)
@@ -88,13 +88,13 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
         } else {
             // User trying to use the camera without giving permission
             let alert = UIAlertController(
-                title: "You have denied access to the camera",
-                message: "Enable access in Privacy Settings.",
+                title: "cameraDenied".localized(),
+                message: "cameraDeniedMessage".localized(),
                 preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "cancel".localized(), style: .cancel, handler: nil))
 
-            alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
+            alert.addAction(UIAlertAction(title: "cameraSettings".localized(), style: .default, handler: { _ in
                 if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(settingsURL)
                 }
@@ -110,13 +110,13 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
         } else {
             // User trying to access the gallery without giving permission
             let alert = UIAlertController(
-                title: "You have denied access to the photo gallery",
-                message: "Enable access in Privacy Settings.",
+                title: "galleryDenied".localized(),
+                message: "galleryDeniedMessage".localized(),
                 preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "cancel".localized(), style: .cancel, handler: nil))
 
-            alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
+            alert.addAction(UIAlertAction(title: "cameraSettings".localized(), style: .default, handler: { _ in
                 if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(settingsURL)
                 }

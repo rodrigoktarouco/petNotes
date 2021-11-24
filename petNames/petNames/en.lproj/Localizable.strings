@@ -75,6 +75,18 @@
 "done" = "Done";
 "warningMessage" = "You need to fill the info about your pet";
 "editImage" = "Edit image";
+
+"chooseImage" = "Choose Image";
+"camera" = "Camera";
+"gallery" = "Gallery";
+"cameraWarning" = "Warning";
+"cameraPermission" = "You don't have a camera";
+"cameraDenied" = "You have denied access to the camera";
+"cameraDeniedMessage" = "Enable access in Privacy Settings.";
+"cameraSettings" = "Settings";
+"galleryDenied" = "You have denied access to the photo gallery";
+"galleryDeniedMessage" = "Enable access in Privacy Settings.";
+
 "sharedAlertTitle" = "Coming soon! 👀";
 "sharedAlertMessage" = "This feature is yet to come.";
 

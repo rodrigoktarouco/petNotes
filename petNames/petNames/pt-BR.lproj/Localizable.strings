@@ -78,6 +78,18 @@
 "done" = "Confirmar";
 "warningMessage" = "Você precisa preencher as informações do seu pet";
 "editImage" = "Editar imagem";
+
+"chooseImage" = "Escolha uma Imagem";
+"camera" = "Câmera";
+"gallery" = "Galeria";
+"cameraWarning" = "Aviso";
+"cameraPermission" = "Você não tem câmera";
+"cameraDenied" = "Você negou acesso a câmera";
+"cameraDeniedMessage" = "Libere o acesso nas configurações de privacidade.";
+"cameraSettings" = "Configurações";
+"galleryDenied" = "Você negou acesso a galeria";
+"galleryDeniedMessage" = "Libere o acesso nas configurações de privacidade.";
+
 "sharedAlertTitle" = "Em breve! 👀";
 "sharedAlertMessage" = "Essa função logo estará disponível.";
 
