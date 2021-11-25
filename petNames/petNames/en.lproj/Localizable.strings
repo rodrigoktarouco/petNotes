@@ -102,6 +102,7 @@
 //MARK: -PetDetails
 "name" = "Name";
 "edit" = "Edit";
+"sharedWith" = "Shared with";
 
 //MARK: - Onboarding
 // Onboarding1
