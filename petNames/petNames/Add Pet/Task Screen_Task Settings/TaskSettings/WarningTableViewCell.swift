@@ -26,7 +26,9 @@ class WarningTableViewCell: UITableViewCell {
         toolbar.sizeToFit()
 
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-        toolbar.setItems([doneBtn], animated: true)
+        let spaceBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelBtn = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelPressed))
+        toolbar.setItems([cancelBtn, spaceBtn, doneBtn], animated: true)
 
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.datePickerMode = .time
@@ -43,6 +45,14 @@ class WarningTableViewCell: UITableViewCell {
         let myColor = UIColor.link
         alertTextField.layer.borderColor = myColor.cgColor
         alertTextField.layer.borderWidth = 1.0
+    }
+    
+    @objc func cancelPressed() {
+        print("#cancel")
+        alertTextField.text = "hourPickerPH".localized()
+        alertTextField.textColor = .link
+        alertTextField.resignFirstResponder()
+        
     }
     
     @objc func donePressed() {

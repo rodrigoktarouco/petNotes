@@ -170,7 +170,8 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             return tasksString.range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil
         })
         
-        taskTableView.reloadData()
-        
+        DispatchQueue.main.async {
+            self.taskTableView.reloadData()
+        }
     }
 }

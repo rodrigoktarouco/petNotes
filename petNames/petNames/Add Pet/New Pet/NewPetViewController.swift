@@ -45,7 +45,10 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         Background.shared.assignBackground(view: self.view)
-        self.petTableView.reloadData()
+//        self.petTableView.reloadData()
+        DispatchQueue.main.async {
+            self.petTableView.reloadData()
+        }
         
         // MARK: Generates a random image placeholder
         let placeHolderImages = ["profile-amarelo-rounded", "profile-azul-rounded", "profile-laranja-rounded", "profile-roxo-rounded", "profile-verde-rounded", "profile-vermelho-rounded"]
