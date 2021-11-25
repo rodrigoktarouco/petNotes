@@ -51,8 +51,7 @@ class TaskModel {
                     }
 
                     guard let date = notPersistentExecution.timeStamp else {
-                        let  newCellInfo = CellInfosStruct(taskName: nameForCell , taskTime: "--:--", taskPetName: notPersistentPet.name ?? "unamedPet", taskPetImage: thisImage!, isCheckedAsDone: didTheTask)
-                        cellForAllSegment.append(newCellInfo)
+
                         continue
                     }
 
@@ -69,9 +68,8 @@ class TaskModel {
 //                    let components = calendar.dateComponents([.hour, .minute], from: date)
 //                    alert = "\(components.hour ?? 0):\(components.minute ?? 0) "
 
-                    let  newCellInfo = CellInfosStruct(taskName: nameForCell , taskTime: alert , taskPetName: notPersistentPet.name ?? "unamedPet", taskPetImage: thisImage!, isCheckedAsDone: didTheTask)
+                    let  newCellInfo = CellInfosStruct(taskName: nameForCell , taskTime: alert , taskPetName: notPersistentPet.name ?? "unamedPet", taskPetImage: thisImage!, isCheckedAsDone: didTheTask, taskInPersistance: notPersistentTask.task, dateForThisExecution: date)
                     cellForAllSegment.append(newCellInfo)
-
 
                 }
             }
@@ -96,4 +94,6 @@ struct CellInfosStruct {
     var taskPetName: String
     var taskPetImage: UIImage
     var isCheckedAsDone: Bool
+    var taskInPersistance: Task?
+    var dateForThisExecution: Date?
 }
