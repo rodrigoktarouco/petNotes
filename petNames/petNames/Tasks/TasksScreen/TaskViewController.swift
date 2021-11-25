@@ -115,6 +115,7 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
         safeCell.petImageTask.image = myInfosCell.taskPetImage
         safeCell.myTaskInPersistance = myInfosCell.taskInPersistance
         safeCell.executionDate = myInfosCell.dateForThisExecution
+        safeCell.clicked = myInfosCell.isCheckedAsDone
 
         // MARK: Sets the color of the cell`s inside
         let insideColor = TasksDesign.shared.getTaskDesignProperties(myInfosCell.taskName).color
@@ -129,7 +130,7 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
         safeCell.taskCheckedImage.tintColor = checkMarkColor
 
         if myInfosCell.isCheckedAsDone {
-            safeCell.taskCheckedImage.image = UIImage(systemName: "checkmark.circle.fill")
+            safeCell.taskCheckedImage.image = UIImage(systemName: "checkmark.circle.fill")?.withTintColor(.green)
         } else {
             safeCell.taskCheckedImage.image = UIImage(systemName: "checkmark.circle")
         }
@@ -149,32 +150,6 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
 
     }
 
-    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    //        if editingStyle == .delete {
-    ////            objects.remove(at: indexPath.row)
-    //            tasksTableView.deleteRows(at: [indexPath], with: .fade)
-    //        } else if editingStyle == .insert {
-    //            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    //        }
-    //    }
-}
-// get informações a serem apresentadas no all, not done, e by pet
-extension TaskViewController {
-
-    //    func getDataForRowAt(_ selectedSegment: SelectedSegmentInTasks, _ item: Int) -> [CellInfosStruct] {
-    //
-    //        let mock_1 = CellInfosStruct(taskName: "Vet", taskTime: "12:00 pm", taskPetName: "Tom", taskPetImage: UIImage(named: "gataralho") ?? UIImage(), isCheckedAsDone: false)
-    //        let mock_2 = CellInfosStruct(taskName: "Medicine", taskTime: "1:30 pm", taskPetName: "Tom", taskPetImage: UIImage(named: "gataralho") ?? UIImage(), isCheckedAsDone: false)
-    //        let mock_3 = CellInfosStruct(taskName: "Wash", taskTime: "3:00 pm", taskPetName: "Moka", taskPetImage: UIImage(named: "cachorralho") ?? UIImage(), isCheckedAsDone: false)
-    //        let mock_4 = CellInfosStruct(taskName: "Playtime", taskTime: "5:00 pm", taskPetName: "Moka", taskPetImage: UIImage(named: "cachorralho") ?? UIImage(), isCheckedAsDone: false)
-    //        let mock_5 = CellInfosStruct(taskName: "Food", taskTime: "8:00 pm", taskPetName: "Moka", taskPetImage: UIImage(named: "cachorralho") ?? UIImage(), isCheckedAsDone: false)
-    //        let mock_6 = CellInfosStruct(taskName: "Water", taskTime: "1:30 pm", taskPetName: "Joe Carioca", taskPetImage: UIImage(named: "profile-verde-rounded") ?? UIImage(), isCheckedAsDone: false)
-    //        return [mock_1, mock_2, mock_6, mock_3, mock_4, mock_5]
-    //    }
-    //
-    //    func getNumberOfTasks(_ selectedSegment: SelectedSegmentInTasks) -> Int {
-    //        return 6
-    //    }
 }
 
 // MARK: PresentMyAlertDelegate

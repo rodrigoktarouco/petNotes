@@ -130,6 +130,11 @@ class PersistanceManager {
         saveContext()
         completion(nil)
     }
+    func removeExecution(execution: Execution, completion: @escaping(Error?) -> Void ) {
+        context.delete(execution)
+        saveContext()
+        completion(nil)
+    }
 
     func saveExecution(execution: Execution, completion: @escaping(Error?) -> Void ) {
            saveContext()
