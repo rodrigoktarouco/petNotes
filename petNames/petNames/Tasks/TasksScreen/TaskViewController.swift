@@ -107,11 +107,14 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
         
         let section = indexPath.section
         let myInfosCell = filteredData[section]
+        safeCell.delegate = self
         
         safeCell.taskNameLabel.text = myInfosCell.taskName
         safeCell.taskTimeLabel.text = myInfosCell.taskTime
         safeCell.petNameLabel.text = myInfosCell.taskPetName
         safeCell.petImageTask.image = myInfosCell.taskPetImage
+        safeCell.myTaskInPersistance = myInfosCell.taskInPersistance
+        safeCell.executionDate = myInfosCell.dateForThisExecution
 
         // MARK: Sets the color of the cell`s inside
         let insideColor = TasksDesign.shared.getTaskDesignProperties(myInfosCell.taskName).color
@@ -172,4 +175,11 @@ extension TaskViewController {
     //    func getNumberOfTasks(_ selectedSegment: SelectedSegmentInTasks) -> Int {
     //        return 6
     //    }
+}
+
+// MARK: PresentMyAlertDelegate
+extension TaskViewController: PresentMyAlertDelegate {
+    func presentThisAlert(thisAlert: UIAlertController) {
+        self.present(thisAlert, animated: true)
+    }
 }
