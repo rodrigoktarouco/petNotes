@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C145B592721DA970091C02A /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C145B582721DA970091C02A /* TextFieldTableViewCell.swift */; };
 		5C145B5D2721DF090091C02A /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C145B5C2721DF090091C02A /* ImagePickerManager.swift */; };
+		5C50839F275007B1009A5140 /* SharedWithTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50839E275007B1009A5140 /* SharedWithTableViewCell.swift */; };
 		5C50A70327344D6E00FD142E /* CustomFontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A70227344D6E00FD142E /* CustomFontModel.swift */; };
 		5C50A7052734554A00FD142E /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A7042734554A00FD142E /* CategoryTableViewCell.swift */; };
 		5C50A707273458DC00FD142E /* AddNewTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A706273458DC00FD142E /* AddNewTaskTableViewCell.swift */; };
@@ -89,6 +90,7 @@
 /* Begin PBXFileReference section */
 		5C145B582721DA970091C02A /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		5C145B5C2721DF090091C02A /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
+		5C50839E275007B1009A5140 /* SharedWithTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWithTableViewCell.swift; sourceTree = "<group>"; };
 		5C50A70227344D6E00FD142E /* CustomFontModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontModel.swift; sourceTree = "<group>"; };
 		5C50A7042734554A00FD142E /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		5C50A706273458DC00FD142E /* AddNewTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskTableViewCell.swift; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 				FDB7B31C2733233500C83EC8 /* TopInfosTableViewCell.swift */,
 				FDB7B31E273323B700C83EC8 /* TasksEnumerationTableViewCell.swift */,
 				FD45E96A27344B2400F01E83 /* SmallTableViewCell.swift */,
+				5C50839E275007B1009A5140 /* SharedWithTableViewCell.swift */,
 			);
 			path = "Pet Details Major Cells";
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				5C50A719273D909600FD142E /* TaskSwitchTableViewCell.swift in Sources */,
 				9D1E7504270E118E00321E54 /* SceneDelegate.swift in Sources */,
 				5C145B5D2721DF090091C02A /* ImagePickerManager.swift in Sources */,
+				5C50839F275007B1009A5140 /* SharedWithTableViewCell.swift in Sources */,
 				9DBF071E27442149004532FA /* UserDefaultsManager.swift in Sources */,
 				5C86C9FC271DE91000FD1C2C /* PetDetailsViewController.swift in Sources */,
 				FD62D2D92732F7E00061560E /* PetDetailsModel.swift in Sources */,
