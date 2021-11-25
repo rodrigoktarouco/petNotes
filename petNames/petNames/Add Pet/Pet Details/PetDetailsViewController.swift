@@ -55,6 +55,10 @@ class PetDetailsViewController: UIViewController {
 
     @objc func editButtonAction() {
         print("edit pressed")
+
+        let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
+        let viewC = storyboard.instantiateViewController(withIdentifier: "addPet") as UIViewController
+        self.present(viewC, animated: true, completion: nil)
     }
 }
 
@@ -62,7 +66,7 @@ class PetDetailsViewController: UIViewController {
 extension PetDetailsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -99,7 +103,7 @@ extension PetDetailsViewController: UITableViewDataSource, UITableViewDelegate {
         case 1:
             headerHeight = 38
         default:
-            headerHeight = 0
+            headerHeight = 20
         }
 
         return headerHeight
@@ -111,6 +115,8 @@ extension PetDetailsViewController: UITableViewDataSource, UITableViewDelegate {
             return 1
         case 1:
             return petData?.petTaskNames?.count ?? 0
+        case 2:
+            return 1
         default:
             return 0
         }
@@ -153,6 +159,19 @@ extension PetDetailsViewController: UITableViewDataSource, UITableViewDelegate {
             if indexPath.row == countTasks - 1 {
                 cell.separatorView.removeFromSuperview()
             }
+            return cell
+        } else {
+            let cell =  bigTableView.dequeueReusableCell(withIdentifier: "sharedWith-cell")
+            guard let cell = cell as? SharedWithTableViewCell else {
+                return  UITableViewCell()
+            }
+            cell.backgroundColor = UIColor(named: "cellColor")
+            let sharedText = "sharedWith".localized()
+            cell.sharedWithLabel.text = sharedText
+            cell.sharedWithLabel.textColor = UIColor(named: "headerTitleColor")
+            cell.sharedWithImage.image = UIImage(systemName: "person.circle")
+            cell.sharedWithImage.tintColor = UIColor(named: "headerTitleColor")
+
             return cell
         }
         return  UITableViewCell()
