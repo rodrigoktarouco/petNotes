@@ -16,7 +16,7 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var taskCheckedImage: UIImageView!
     
-    var clicked = false
+    var clicked: Bool?
     var myTaskInPersistance: Task?
     weak var delegate: PresentMyAlertDelegate?
     var executionDate: Date?
@@ -51,9 +51,38 @@ class TaskTableViewCell: UITableViewCell {
             }
 
                   } else {
-                taskCheckedImage.image = UIImage(systemName: "checkmark.circle")
-                taskCheckedImage.tintColor = UIColor(named: "TC-checkMark")
-                clicked = false
+
+                      let arrayOfExecutions = myTaskInPersistance?.executions?.map({ $0 as? Execution
+                      })
+                      guard let safeArrayOfExecutions = arrayOfExecutions else {
+                          return
+                      }
+                      for execution in safeArrayOfExecutions {
+                          if execution?.timeStamp == executionDate, let execution = execution {
+
+                              PersistanceManager.shared.removeExecution(execution: execution) { error in
+                                  if error != nil {
+                                      DispatchQueue.main.async {
+                                          let alertController: UIAlertController = {
+                                              let controller = UIAlertController(title: "Error",
+                                                                                 message: "Problem deleting data",
+                                                                                 preferredStyle: .alert)
+                                              let correct = UIAlertAction(title: "OK", style: .cancel)
+                                              controller.addAction(correct)
+                                              return controller }()
+                                          self.delegate?.presentThisAlert(thisAlert: alertController)
+                                      }
+                                  }
+                                  DispatchQueue.main.async {
+                                      self.taskCheckedImage.image = UIImage(systemName: "checkmark.circle")
+                                      self.taskCheckedImage.tintColor = UIColor(named: "TC-checkMark")
+                                      self.clicked = false
+                                  }
+
+                              }
+                          }
+                      }
+
             }
 
                   }
