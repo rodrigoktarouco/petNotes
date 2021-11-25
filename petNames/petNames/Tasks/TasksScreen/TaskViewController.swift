@@ -130,7 +130,8 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
         safeCell.taskCheckedImage.tintColor = checkMarkColor
 
         if myInfosCell.isCheckedAsDone {
-            safeCell.taskCheckedImage.image = UIImage(systemName: "checkmark.circle.fill")?.withTintColor(.green)
+            safeCell.taskCheckedImage.image = UIImage(systemName: "checkmark.circle.fill")
+            safeCell.taskCheckedImage.tintColor = UIColor(named: "CheckMarkClicked")
         } else {
             safeCell.taskCheckedImage.image = UIImage(systemName: "checkmark.circle")
         }

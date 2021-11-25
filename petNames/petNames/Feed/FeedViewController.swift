@@ -127,7 +127,7 @@ extension FeedViewController: UICollectionViewDataSource {
             let infoStruct = modelInstance.getTaskFeedCollectionViewCellData(taskNumber: indexPath.row)
             cell.taskNameLabel.text = infoStruct.taskName?.localized().capitalized
             cell.taskTimeLabel.text = infoStruct.taskTime
-            cell.checkImage.image = infoStruct.done ?? false ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "checkmark.circle.fill")
+            cell.checkImage.image = infoStruct.done ?? false ? UIImage(systemName: "checkmark.circle.fill")?.withTintColor(UIColor(named: "CheckMarkClicked") ?? .green) : UIImage(systemName: "checkmark.circle")
             cell.taskNameInPersistence = infoStruct.taskName
 
             // MARK: Sets the color of the cell`s inside
