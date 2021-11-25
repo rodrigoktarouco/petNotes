@@ -131,6 +131,11 @@ class PersistanceManager {
         completion(nil)
     }
 
+    func saveExecution(execution: Execution, completion: @escaping(Error?) -> Void ) {
+           saveContext()
+           completion(nil)
+       }
+
     func listPets(completion: @escaping(Result<[Pet], Error>) -> Void) {
         let pets = (currentUser?.pets ?? []).compactMap { $0 as? Pet }
         completion(.success(pets))

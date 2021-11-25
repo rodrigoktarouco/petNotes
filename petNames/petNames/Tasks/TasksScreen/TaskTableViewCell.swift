@@ -9,6 +9,7 @@ import UIKit
 
 class TaskTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var petImageTask: UIImageView!
     @IBOutlet weak var taskNameLabel: UILabel!
     @IBOutlet weak var taskTimeLabel: UILabel!
@@ -16,38 +17,63 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskCheckedImage: UIImageView!
     
     var clicked = false
+    var myTaskInPersistance: Task?
+    weak var delegate: PresentMyAlertDelegate?
+    var executionDate: Date?
 
     @IBAction func taskCheckedButton(_ sender: UIButton) {
-                if clicked == false {
-                taskCheckedImage.image = UIImage(systemName: "checkmark.circle.fill")
-                taskCheckedImage.tintColor = UIColor(named: "CheckMarkClicked")
-                clicked = true
+        if clicked == false {
+            let newExecution = Execution()
+            newExecution.timeStamp = executionDate
+            myTaskInPersistance?.executions = myTaskInPersistance?.executions?.adding(newExecution) as? NSSet
+
+            PersistanceManager.shared.saveExecution(execution: newExecution) { error in
+                if  error == nil {
+                    DispatchQueue.main.async {
+                        self.taskCheckedImage.image = UIImage(systemName: "checkmark.circle.fill")
+                        self.taskCheckedImage.tintColor = UIColor(named: "CheckMarkClicked")
+                        self.clicked = true
+
+                    }
+
                 } else {
-                    taskCheckedImage.image = UIImage(systemName: "checkmark.circle")
-                    taskCheckedImage.tintColor = UIColor(named: "TC-checkMark")
-                    clicked = false
+                    DispatchQueue.main.async {
+                        let alertController: UIAlertController = {
+                            let controller = UIAlertController(title: "Error",
+                                                               message: "Problem saving data",
+                                                               preferredStyle: .alert)
+                            let correct = UIAlertAction(title: "OK", style: .cancel)
+                            controller.addAction(correct)
+                            return controller }()
+                        self.delegate?.presentThisAlert(thisAlert: alertController)
+                    }
                 }
-    }
+            }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+                  } else {
+                taskCheckedImage.image = UIImage(systemName: "checkmark.circle")
+                taskCheckedImage.tintColor = UIColor(named: "TC-checkMark")
+                clicked = false
+            }
 
-//        petImageTask.layer.cornerRadius = 22
+                  }
 
-    }
+                  override func awakeFromNib() {
+                super.awakeFromNib()
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.layer.cornerRadius = 22
-        self.layer.masksToBounds = true
+                //        petImageTask.layer.cornerRadius = 22
 
-        self.layer.borderWidth = 1
-    }
+            }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+                  override func layoutSubviews() {
+                super.layoutSubviews()
+                self.layer.cornerRadius = 22
+                self.layer.masksToBounds = true
+                self.layer.borderWidth = 1
+            }
+                  }
 
-        // Configure the view for the selected state
-    }
-
-}
+                  // MARK: Present Myalert delegate
+                  protocol PresentMyAlertDelegate: AnyObject {
+                func presentThisAlert(thisAlert: UIAlertController)
+            }
