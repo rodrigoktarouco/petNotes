@@ -10,12 +10,12 @@ import UIKit
 
 extension NSMutableAttributedString {
     var fontSize_20: CGFloat { return 20 }
-    var boldFont: UIFont { return UIFont.boldSystemFont(ofSize: fontSize_20) }
+    var customFont: UIFont { return UIFont(name: "SFProRounded-Semibold", size: 20) ?? UIFont() }
 
     func bold(_ value: String) -> NSMutableAttributedString {
 
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: boldFont
+            .font: customFont
         ]
 
         self.append(NSAttributedString(string: value, attributes: attributes))
