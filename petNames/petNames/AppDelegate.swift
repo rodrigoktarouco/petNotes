@@ -7,6 +7,7 @@
 // user.name = "unamedUser" fazer loc depis
 import UIKit
 import CoreData
+import UserNotifications
 
 public var isDarkModeOn: Bool = false
 

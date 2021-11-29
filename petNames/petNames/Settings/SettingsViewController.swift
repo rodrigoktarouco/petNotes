@@ -28,6 +28,13 @@ class SettingsViewController: UIViewController {
         settingsTableView.delegate = self
         Background.shared.assignBackground(view: self.view)
 
+        if self.traitCollection.userInterfaceStyle == .dark {
+                    darkMode = true
+                } else {
+                    // User Interface is Light
+                    darkMode = false
+                }
+
         // Do any additional setup after loading the view.
     }
 }
