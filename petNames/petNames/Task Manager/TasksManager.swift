@@ -20,13 +20,13 @@ class TaskManager {
     func load() {
 
         setPetsAndSupposedToExistExecutions()
-        TasksFromNowOnToBeDone()
+        tasksFromNowOnToBeDone()
         _ = getNumberOfTasksNotDoneAndDone()
 
         // printAll()
     }
 
-    func TasksFromNowOnToBeDone() {
+    func tasksFromNowOnToBeDone() {
         arrayOfCalculatedExecutionsNotDone = []
         let currentDate = Date()
 
