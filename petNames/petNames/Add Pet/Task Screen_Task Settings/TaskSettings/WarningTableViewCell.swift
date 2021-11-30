@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol DatePickerDelegate: AnyObject {
+    func didSelectDate(date: DateComponents)
+}
+
 class WarningTableViewCell: UITableViewCell {
 
     @IBOutlet var warningSwitch: UISwitch!
     @IBOutlet var alertTextField: UITextField!
+    weak var delegate: DatePickerDelegate?
     
     let datePicker = UIDatePicker()
     
@@ -83,6 +88,7 @@ class WarningTableViewCell: UITableViewCell {
         alertsGlobal.append(components)
 
         self.alertTextField.resignFirstResponder()
+        delegate?.didSelectDate(date: components)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

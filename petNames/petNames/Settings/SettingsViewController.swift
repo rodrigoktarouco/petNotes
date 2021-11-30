@@ -34,7 +34,6 @@ class SettingsViewController: UIViewController {
                     // User Interface is Light
                     darkMode = false
                 }
-
         // Do any additional setup after loading the view.
     }
 }
@@ -65,7 +64,7 @@ extension SettingsViewController: UITableViewDataSource {
                 cell.generalNotificationsSwitch.isOn = notificationsEnabled
             } else if indexPath.row == 1 {
                 cell.cellType = .soundEffects
-                cell.generalNotificationsSwitch.isOn = LocalNotificationService.shared.customSoundsEnabled
+                cell.generalNotificationsSwitch.isOn = UserDefaultsManager.shared.isCustomSoundEffectsEnabled
             } else if indexPath.row == 2 {
                 cell.cellType = .darkMode
                 cell.generalNotificationsSwitch.isOn = darkMode
@@ -144,7 +143,6 @@ extension SettingsViewController: AdjustmentsTableViewCellDelegate {
                         self.notificationsEnabled = success
                         self.settingsTableView.reloadData()
                     }
-
                 }
             } else {
                 // Unschedule all user's notifications
@@ -155,7 +153,7 @@ extension SettingsViewController: AdjustmentsTableViewCellDelegate {
                 settingsTableView.reloadData()
             }
         case .soundEffects:
-            LocalNotificationService.shared.customSoundsEnabled.toggle()
+            UserDefaultsManager.shared.saveCustomSoundEffectsStatus(status: isOn)
             settingsTableView.reloadData()
         case .darkMode:
             switch isOn {

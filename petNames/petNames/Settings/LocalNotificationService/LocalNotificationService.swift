@@ -18,15 +18,6 @@ final class LocalNotificationService {
     private let userDefaults: UserDefaults = .standard
     private let encoder: JSONEncoder = .init()
     private let decoder: JSONDecoder = .init()
-    var customSoundsEnabled: Bool {
-        get {
-            return userDefaults.bool(forKey: "Sound Effects")
-        }
-        set {
-            userDefaults.set(newValue, forKey: "Sound Effects")
-        }
-    }
-
     // MARK: - Single Instance
     static var shared: LocalNotificationService {
         guard let instance = instance else {

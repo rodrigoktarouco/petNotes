@@ -13,6 +13,7 @@ struct UserDefaultsManager {
     static let shared = UserDefaultsManager()
 
     private let onboardingKey: String = "OnboardingKey"
+    private let customSoundsKey: String = "CustomSoundsKey"
 
     var isOnboardingDone: Bool {
         persistanceManager.bool(forKey: onboardingKey)
@@ -21,7 +22,15 @@ struct UserDefaultsManager {
 
     }
 
+    var isCustomSoundEffectsEnabled: Bool {
+        persistanceManager.bool(forKey: customSoundsKey)
+    }
+
     func saveOnboardingStatus(status: Bool) {
         persistanceManager.set(status, forKey: onboardingKey)
+    }
+
+    func saveCustomSoundEffectsStatus(status: Bool) {
+        persistanceManager.set(status, forKey: customSoundsKey)
     }
 }
