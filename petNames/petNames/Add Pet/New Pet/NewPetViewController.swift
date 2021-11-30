@@ -262,6 +262,27 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 petImage.image = nil
             }
             PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
+//                let newNotification = Notification(id: .task, title: "Teste", body: "Está na hora de fazer!", hour: selectedDate?.hour ?? 0, minutes: selectedDate?.minute ?? 0)
+//                LocalNotificationService.shared.schedule(notifications: [newNotification], completion: nil)
+                let tasks = pet.tasks?.allObjects as? [Task] ?? []
+                var notifications = [Notification]()
+                for task in tasks {
+                    for alertTime in task.alertTimes {
+                        var utcCalendar = Calendar.autoupdatingCurrent
+                        utcCalendar.timeZone = TimeZone(identifier: "UTC") ?? .autoupdatingCurrent
+                        var baseComps = utcCalendar.dateComponents(in: utcCalendar.timeZone, from: Date())
+                        baseComps.hour = alertTime.hour
+                        baseComps.minute = alertTime.minute
+                        let date = utcCalendar.date(from: baseComps) ?? Date()
+                        let finalComps = Calendar.autoupdatingCurrent.dateComponents([.hour, .minute], from: date)
+                        print("------------------------------------------------------------")
+                        print(finalComps)
+                        let newNotification = Notification(title: task.name ?? "", body: "Hora de realizar a task", hour: finalComps.hour ?? 0, minutes: finalComps.minute ?? 0)
+                        notifications.append(newNotification)
+                    }
+                }
+                LocalNotificationService.shared.schedule(notifications: notifications, completion: nil)
+
                 PersistanceManager.shared.listPets { result in
                     switch result {
                     case .success(let pets):

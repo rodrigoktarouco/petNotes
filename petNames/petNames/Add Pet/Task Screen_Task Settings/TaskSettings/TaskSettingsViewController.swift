@@ -63,8 +63,6 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
     task.alertTimes = alertsGlobal
     print(task.alertTimes)
     alertsGlobal = []
-    let newNotification = Notification(id: .task, title: "Teste", body: "Está na hora de fazer!", hour: selectedDate?.hour ?? 0, minutes: selectedDate?.minute ?? 0)
-    LocalNotificationService.shared.schedule(notifications: [newNotification], completion: nil)
     // MARK: returns to the first view of the flow
     self.navigationController?.popToRootViewController(animated: true)
 

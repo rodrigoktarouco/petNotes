@@ -55,20 +55,20 @@ final class LocalNotificationService {
             let notificationsNotStored = notifications
                 .filter(validateNotification(notification:))
 
-            Set(notificationsNotStored)
+            notificationsNotStored
                 .forEach { notificationsContainer.insert($0) }
 
             registerNewLocalNotifications(notifications: notificationsNotStored, completion: completion)
         }
     }
 
-    func remove(identifiers: [Notification.Identifier], completion: (() -> Void)? = nil) {
+    func remove(identifiers: [String], completion: (() -> Void)? = nil) {
         identifiers.forEach { identifier in
-            notificationCenter.removeDeliveredNotifications(withIdentifiers: [identifier.rawValue])
-            notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier.rawValue])
+            notificationCenter.removeDeliveredNotifications(withIdentifiers: [identifier])
+            notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
 
             if let index = notificationsContainer.firstIndex(where: { element in
-                element.id == identifier
+                element.id.uuidString == identifier
             }) {
                 notificationsContainer.remove(at: index)
             }
@@ -112,7 +112,7 @@ final class LocalNotificationService {
 
             // Configure the request to schedule the local notification
             let request = UNNotificationRequest(
-                identifier: notification.id.rawValue,
+                identifier: notification.id.uuidString,
                 content: content,
                 trigger: trigger
             )
@@ -182,7 +182,7 @@ final class LocalNotificationService {
 // API Extension to configure the local notification
 extension UNMutableNotificationContent {
     func configure(notification: Notification) {
-        categoryIdentifier = notification.id.rawValue
+        categoryIdentifier = notification.id.uuidString
         title = notification.title
         body = notification.body
         sound = .default
@@ -191,17 +191,11 @@ extension UNMutableNotificationContent {
 
 // MARK: - Model
 struct Notification: Hashable, Codable {
-    let id: Identifier
+    let id: UUID = UUID()
     let title: String
     let body: String
     let hour: Int
     var minutes: Int
-
-    // Unique identifier for each different notification
-    enum Identifier: String, Hashable, Codable {
-        case task
-
-    }
 
     // MARK: - Hashable
     func hash(into hasher: inout Hasher) {

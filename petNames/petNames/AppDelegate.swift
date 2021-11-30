@@ -14,6 +14,26 @@ public var isDarkModeOn: Bool = false
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let dcf = DateComponentsFormatter()
+        dcf.unitsStyle = .abbreviated
+        dcf.allowedUnits = [.year, .month, .day, .hour, .minute, .second]
+
+        UNUserNotificationCenter.current().getPendingNotificationRequests { pending in
+            let ttt = pending.map { req -> String in
+                return "\(req.content.title) (\(req.content.subtitle) - \(req.content.body)) -- \(req.trigger)"
+            }
+                .joined(separator: "\n")
+            print("pending notification requests -- \n\(ttt)")
+
+            UNUserNotificationCenter.current().getDeliveredNotifications { delivered in
+                let ppp = delivered.map { not -> String in
+                    let req = not.request
+                    return "\(not.date) -- \(req.content.title) (\(req.content.subtitle) - \(req.content.body)) -- \(req.trigger)"
+                }
+                    .joined(separator: "\n")
+                print("delivered notifications -- \n\(ppp)")
+            }
+        }
         Thread.sleep(forTimeInterval: 3.0)
         LocalNotificationService.initialize()
         UNUserNotificationCenter.current().delegate = self

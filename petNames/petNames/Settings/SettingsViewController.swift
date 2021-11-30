@@ -147,7 +147,7 @@ extension SettingsViewController: AdjustmentsTableViewCellDelegate {
             } else {
                 // Unschedule all user's notifications
                 DispatchQueue.global(qos: .background).async { [weak self] in
-                    LocalNotificationService.shared.remove(identifiers: [.task])
+//                    LocalNotificationService.shared.remove(identifiers: [.task])
                 }
                 notificationsEnabled = false
                 settingsTableView.reloadData()
