@@ -12,6 +12,7 @@ class TaskModel {
     init() {TaskManager.shared.load()}
 
     var cellForAllSegment: [CellInfosStruct] = []
+    var cellForNotDoneSegment: [CellInfosStruct] = []
 
     func getNumberOfTasks(_ selectedSegment: SelectedSegmentInTasks) -> Int {
 
@@ -19,14 +20,12 @@ class TaskModel {
         case .all:
             return generateAllTasks()
         case .notDone:
-            return generateAllTasks()
+            return generateNotDoneTasks()
         case .byPet:
             return generateAllTasks()
         case .filter:
             return 0
         }
-
-        return 0
     }
 
     func generateAllTasks() -> Int {
@@ -61,6 +60,7 @@ class TaskModel {
                     formatter.timeStyle = .short
                     formatter.timeZone = .autoupdatingCurrent
                     alert = formatter.string(from: date)
+                    print(date.description)
 
                     // MARK: Old date value
 //                    var alert = ""
@@ -78,6 +78,15 @@ class TaskModel {
 
         return cellForAllSegment.count
     }
+    func generateNotDoneTasks() -> Int {
+        cellForNotDoneSegment = []
+        cellForNotDoneSegment = cellForAllSegment.filter { cell in
+            return cell.isCheckedAsDone == false
+        }
+
+        return cellForNotDoneSegment.count
+    }
+
 }
 
 enum SelectedSegmentInTasks {
@@ -87,7 +96,7 @@ enum SelectedSegmentInTasks {
     case filter
 }
 
-struct CellInfosStruct {
+struct CellInfosStruct: Equatable {
     var taskName: String
     var taskTime: String
     let formatter = DateFormatter()

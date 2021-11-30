@@ -7,7 +7,16 @@
 
 import UIKit
 
-class TaskViewController: UIViewController {
+class TaskViewController: UIViewController, ReloadTableViewProtocol {
+    func reloadTableView(_ myStruc: CellInfosStruct) {
+        if let index = filteredData.firstIndex(of: myStruc) {
+            var newStruc = myStruc
+            newStruc.isCheckedAsDone.toggle()
+            filteredData[index] = newStruc
+        }
+        
+        tasksTableView.reloadData()
+    }
 
     @IBOutlet weak var taskTitleLabel: UILabel!
     @IBOutlet weak var tasksTableView: UITableView!
@@ -22,10 +31,11 @@ class TaskViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tasksSegmentedControl.selectedSegmentIndex = 0 
         taskModel = TaskModel()
         taskModel.generateAllTasks()
         filteredData = taskModel.cellForAllSegment
-        print("#\(taskModel.cellForAllSegment)")
+
         DispatchQueue.main.async {
             self.tasksTableView.reloadData()
         }
@@ -47,6 +57,29 @@ class TaskViewController: UIViewController {
         tasksSegmentedControl.setTitle("Not done".localized(), forSegmentAt: 1)
         tasksSegmentedControl.setTitle("By Pet".localized(), forSegmentAt: 2)
         tasksSearchBar.placeholder = "tasksSearchBar".localized()
+
+        tasksSegmentedControl.addTarget(self, action: #selector(touchEventsSegmentControl), for: .valueChanged)
+
+    }
+    @objc private func touchEventsSegmentControl() {
+        switch tasksSegmentedControl.selectedSegmentIndex {
+        case 0:
+            _ = taskModel.generateAllTasks()
+            filteredData = taskModel.cellForAllSegment
+            tasksTableView.reloadData()
+        case 1:
+            _ = taskModel.generateNotDoneTasks()
+            filteredData = taskModel.cellForNotDoneSegment
+            tasksTableView.reloadData()
+        case 2:
+            _ = taskModel.generateAllTasks()
+            filteredData = taskModel.cellForAllSegment
+            tasksTableView.reloadData()
+        default:
+            break
+
+        }
+
     }
 
     // MARK: Reloads the data if detects changes from dark to light mode or vice versa
@@ -66,6 +99,9 @@ extension TaskViewController: UISearchBarDelegate {
             filteredData = taskModel.cellForAllSegment
             
         } else {
+            _ = taskModel.generateAllTasks()
+            filteredData = taskModel.cellForAllSegment
+            tasksSegmentedControl.selectedSegmentIndex = 0
             filteredData = taskModel.cellForAllSegment.filter({ task in
                 if task.taskName.lowercased().contains(searchText.lowercased()) {
                     return true
@@ -108,7 +144,9 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
         let section = indexPath.section
         let myInfosCell = filteredData[section]
         safeCell.delegate = self
-        
+        safeCell.tableViewReloaderDelegate = self
+
+        safeCell.myStruct = myInfosCell
         safeCell.taskNameLabel.text = myInfosCell.taskName
         safeCell.taskTimeLabel.text = myInfosCell.taskTime
         safeCell.petNameLabel.text = myInfosCell.taskPetName
