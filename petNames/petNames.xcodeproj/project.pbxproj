@@ -32,9 +32,6 @@
 		9D1E750B270E119000321E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E750A270E119000321E54 /* Assets.xcassets */; };
 		9D34E242274302960033CF9E /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D34E241274302960033CF9E /* OnboardingPageViewController.swift */; };
 		9D5A1D292718B52B00637589 /* NewPet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A1D282718B52B00637589 /* NewPet.storyboard */; };
-		9D5A1D2C2718BD3E00637589 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A1D2B2718BD3E00637589 /* Pets.storyboard */; };
-		9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5A1D2D2718BD5A00637589 /* PetsViewController.swift */; };
-		9D5A1D302718BD6600637589 /* PetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5A1D2F2718BD6600637589 /* PetsModel.swift */; };
 		9D641CEB273DA3930072886A /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D641CEA273DA3930072886A /* Onboarding.storyboard */; };
 		9D641CED273DA3DF0072886A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D641CEC273DA3DF0072886A /* OnboardingViewController.swift */; };
 		9D641CEF273DA4A80072886A /* Onboarding2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D641CEE273DA4A80072886A /* Onboarding2ViewController.swift */; };
@@ -124,9 +121,6 @@
 		9D295291271DE3A80079A685 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
 		9D34E241274302960033CF9E /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		9D5A1D282718B52B00637589 /* NewPet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPet.storyboard; sourceTree = "<group>"; };
-		9D5A1D2B2718BD3E00637589 /* Pets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pets.storyboard; sourceTree = "<group>"; };
-		9D5A1D2D2718BD5A00637589 /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
-		9D5A1D2F2718BD6600637589 /* PetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsModel.swift; sourceTree = "<group>"; };
 		9D641CEA273DA3930072886A /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		9D641CEC273DA3DF0072886A /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		9D641CEE273DA4A80072886A /* Onboarding2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2ViewController.swift; sourceTree = "<group>"; };
@@ -255,8 +249,7 @@
 				9D641CE9273D927E0072886A /* OnboardingScreen */,
 				FD638E59272B1A0A00197910 /* .swiftlint.yml */,
 				9D90D13E2728680000689292 /* CoreData */,
-				9D5A1D2A2718BD2C00637589 /* Pets */,
-				9D5A1D272718B50300637589 /* Add Pet */,
+				9D5A1D272718B50300637589 /* Pet */,
 				9DCC58E02718996B007A800C /* Tasks */,
 				9DCC58DF27189952007A800C /* Settings */,
 				9DCC58DB2718964A007A800C /* Feed */,
@@ -290,7 +283,7 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		9D5A1D272718B50300637589 /* Add Pet */ = {
+		9D5A1D272718B50300637589 /* Pet */ = {
 			isa = PBXGroup;
 			children = (
 				5CBE0474272C774D000811D5 /* CustomHeader.swift */,
@@ -300,17 +293,7 @@
 				5C86C9F3271DE1FF00FD1C2C /* Task Screen_Task Settings */,
 				5C86C9F6271DE27D00FD1C2C /* Pet Details */,
 			);
-			path = "Add Pet";
-			sourceTree = "<group>";
-		};
-		9D5A1D2A2718BD2C00637589 /* Pets */ = {
-			isa = PBXGroup;
-			children = (
-				9D5A1D2B2718BD3E00637589 /* Pets.storyboard */,
-				9D5A1D2D2718BD5A00637589 /* PetsViewController.swift */,
-				9D5A1D2F2718BD6600637589 /* PetsModel.swift */,
-			);
-			path = Pets;
+			path = Pet;
 			sourceTree = "<group>";
 		};
 		9D641CE9273D927E0072886A /* OnboardingScreen */ = {
@@ -538,7 +521,6 @@
 				FD06EAB52721E9C700EC4D37 /* SF-Pro-Rounded-Regular.otf in Resources */,
 				9DCC58EA27189A0A007A800C /* Task.storyboard in Resources */,
 				9D641CEB273DA3930072886A /* Onboarding.storyboard in Resources */,
-				9D5A1D2C2718BD3E00637589 /* Pets.storyboard in Resources */,
 				9D75F9EA2710C54D001FF11C /* Localizable.strings in Resources */,
 				9D1E750B270E119000321E54 /* Assets.xcassets in Resources */,
 				9D1E7509270E118E00321E54 /* Main.storyboard in Resources */,
@@ -601,7 +583,6 @@
 				FDB7B31D2733233500C83EC8 /* TopInfosTableViewCell.swift in Sources */,
 				9D07C7922746C5F1006A4850 /* SoundService.swift in Sources */,
 				F48142082733249D0070FF77 /* Background.swift in Sources */,
-				9D5A1D2E2718BD5A00637589 /* PetsViewController.swift in Sources */,
 				FD638E57272AEB5400197910 /* NextTaskCollectionViewCell.swift in Sources */,
 				5C50A719273D909600FD142E /* TaskSwitchTableViewCell.swift in Sources */,
 				9D1E7504270E118E00321E54 /* SceneDelegate.swift in Sources */,
@@ -616,7 +597,6 @@
 				9D641CEF273DA4A80072886A /* Onboarding2ViewController.swift in Sources */,
 				F4A3DD03273DC7A700B0ABB0 /* AlertManager.swift in Sources */,
 				5C50A707273458DC00FD142E /* AddNewTaskTableViewCell.swift in Sources */,
-				9D5A1D302718BD6600637589 /* PetsModel.swift in Sources */,
 				FDEA58D4274ECCDE003F62F7 /* TaskManagerAuxFile.swift in Sources */,
 				FD06EAB92721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift in Sources */,
 				F4D612A4272B493900C49FCB /* repeatTableViewCell.swift in Sources */,

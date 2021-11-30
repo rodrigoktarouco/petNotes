@@ -99,6 +99,21 @@ class FeedModel {
         return emptyDic
     }()
 
+    lazy var petsImagesRounded: [Pet: UIImage?] = {
+        var emptyDic: [Pet: UIImage?] = [:]
+        for thisPet in petsArray {
+            PersistanceManager.shared.getPetImage(thisPet) { image in
+                if image != nil {
+                    emptyDic[thisPet] = image
+                } else {
+                    var imageString = thisPet.image
+                    emptyDic[thisPet] = UIImage(named: imageString ?? "profile-verde")
+                }
+            }
+        }
+        return emptyDic
+    }()
+
     func getPetsCollectionViewData( petNumber: Int) -> PetsCollectionViewDataOnFeed {
         let thisPet = petsArray[petNumber]
         let petsDataStruct = PetsCollectionViewDataOnFeed(petImage: petsImages[thisPet] ?? UIImage(named: ""), petName: thisPet.name, tasksQuantity: petsTasks[thisPet]?.count ?? 0)
@@ -202,7 +217,7 @@ class FeedModel {
             taskNames.append(thisName)
         }
 
-        return (PetsInfosForPetDetails(name: thisPet.name ?? "unnamedAnimal", petImage: petsImages[thisPet] ?? UIImage(named: ""), petClassification: thisPet.category, petTaskNames: taskNames) , thisPet)
+        return (PetsInfosForPetDetails(name: thisPet.name ?? "unnamedAnimal", petImage: petsImagesRounded[thisPet] ?? UIImage(named: ""), petClassification: thisPet.category, petTaskNames: taskNames), thisPet)
 
     }
 

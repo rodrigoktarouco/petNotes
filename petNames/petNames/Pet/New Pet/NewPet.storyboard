@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZuM-SA-eqB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZuM-SA-eqB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hLP-2Y-Zc0">
-                                <rect key="frame" x="129.5" y="114.5" width="155" height="155"/>
+                                <rect key="frame" x="129.5" y="115" width="155" height="155"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemGray5Color"/>
                                 <constraints>
@@ -36,7 +36,7 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="22" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h7Y-c3-YDn">
-                                <rect key="frame" x="0.0" y="309.5" width="414" height="586.5"/>
+                                <rect key="frame" x="0.0" y="310" width="414" height="586"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="linkColor"/>
                                 <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -209,7 +209,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJL-cI-qVY">
-                                <rect key="frame" x="154" y="277.5" width="106.5" height="30"/>
+                                <rect key="frame" x="154" y="278" width="106.5" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9D-Wd-sJy">
                                         <rect key="frame" x="35" y="6.5" width="61.5" height="17"/>
@@ -238,7 +238,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0c-VH-BSZ">
-                                <rect key="frame" x="142" y="277.5" width="130" height="30"/>
+                                <rect key="frame" x="142" y="278" width="130" height="30"/>
                                 <color key="backgroundColor" systemColor="tintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5LH-06-q6e"/>
@@ -259,7 +259,7 @@
                             <constraint firstItem="p0c-VH-BSZ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Dqh-x6-2fH"/>
                             <constraint firstItem="bJL-cI-qVY" firstAttribute="top" secondItem="hLP-2Y-Zc0" secondAttribute="bottom" constant="8" id="Qce-hR-spC"/>
                             <constraint firstItem="h7Y-c3-YDn" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="QkV-F8-Aho"/>
-                            <constraint firstItem="hLP-2Y-Zc0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="26.5" id="SrC-eR-1K6"/>
+                            <constraint firstItem="hLP-2Y-Zc0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="27" id="SrC-eR-1K6"/>
                             <constraint firstItem="hLP-2Y-Zc0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="UDd-u1-mFy"/>
                             <constraint firstItem="h7Y-c3-YDn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fv2-TB-mwb"/>
                             <constraint firstItem="p0c-VH-BSZ" firstAttribute="top" secondItem="hLP-2Y-Zc0" secondAttribute="bottom" constant="8" id="gx1-RN-3pT"/>
@@ -275,6 +275,7 @@
                         <outlet property="editImageView" destination="bJL-cI-qVY" id="ZBl-uS-eXV"/>
                         <outlet property="editLabel" destination="N9D-Wd-sJy" id="pmu-1G-tJ9"/>
                         <outlet property="petImage" destination="hLP-2Y-Zc0" id="Zxn-wg-8bn"/>
+                        <outlet property="petImageTopConstraint" destination="SrC-eR-1K6" id="kzz-eS-umb"/>
                         <outlet property="petTableView" destination="h7Y-c3-YDn" id="ndx-KI-Pzw"/>
                     </connections>
                 </viewController>
