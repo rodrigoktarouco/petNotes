@@ -7,19 +7,30 @@
 
 import Foundation
 
-struct UserDefaultsManager {
+class UserDefaultsManager {
     let persistanceManager = UserDefaults.standard
 
     static let shared = UserDefaultsManager()
 
     private let onboardingKey: String = "OnboardingKey"
     private let customSoundsKey: String = "CustomSoundsKey"
+    private let notificationsEnabled: String = "NotificationsEnabled"
 
     var isOnboardingDone: Bool {
         persistanceManager.bool(forKey: onboardingKey)
     }
     init() {
 
+    }
+
+    var notificationsIsEnabled: Bool {
+        get {
+            persistanceManager.bool(forKey: notificationsEnabled)
+        }
+
+        set {
+            persistanceManager.set(newValue, forKey: notificationsEnabled)
+        }
     }
 
     var isCustomSoundEffectsEnabled: Bool {

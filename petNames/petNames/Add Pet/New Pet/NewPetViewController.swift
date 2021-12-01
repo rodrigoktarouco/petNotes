@@ -283,6 +283,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
                 LocalNotificationService.shared.schedule(notifications: notifications, completion: nil)
 
+
                 PersistanceManager.shared.listPets { result in
                     switch result {
                     case .success(let pets):

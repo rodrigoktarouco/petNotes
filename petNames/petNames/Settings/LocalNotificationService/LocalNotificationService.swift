@@ -47,6 +47,7 @@ final class LocalNotificationService {
         completion: (() -> Void)? = nil
     ) {
         requestAuthorizationIfNeeded { [self] success in
+            UserDefaultsManager.shared.notificationsIsEnabled = success
             guard success else {
                 completion?()
                 return

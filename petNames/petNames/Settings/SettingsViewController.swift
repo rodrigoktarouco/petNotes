@@ -17,7 +17,6 @@ class SettingsViewController: UIViewController {
     let switchNames: [String] = ["General notifications".localized(), "Sound effects".localized(), "Dark mode".localized()]
     let contactTypes: [(UIImage?, String)] = [(UIImage(named: "email"), "Email"), (UIImage(named: "instagram"), "Instagram")]
     let teamMembers: [String] = ["Dharana Rivas", "Enzo Degrazia", "Guilherme Antonini", "Heitor Kunrath", "Rodrigo Tarouco"]
-    var notificationsEnabled: Bool = false
     var darkMode: Bool = false
 
     override func viewDidLoad() {
@@ -61,7 +60,7 @@ extension SettingsViewController: UITableViewDataSource {
             cell.generalNotificationsLabel.text = switchNames[indexPath.row]
             if indexPath.row == 0 {
                 cell.cellType = .notifications
-                cell.generalNotificationsSwitch.isOn = notificationsEnabled
+                cell.generalNotificationsSwitch.isOn = UserDefaultsManager.shared.notificationsIsEnabled
             } else if indexPath.row == 1 {
                 cell.cellType = .soundEffects
                 cell.generalNotificationsSwitch.isOn = UserDefaultsManager.shared.isCustomSoundEffectsEnabled
@@ -140,8 +139,9 @@ extension SettingsViewController: AdjustmentsTableViewCellDelegate {
                 // Ask for user enable notifications on Settings
                 LocalNotificationService.shared.requestAuthorizationIfNeeded { [self] success in
                     DispatchQueue.main.async {
-                        self.notificationsEnabled = success
+                        UserDefaultsManager.shared.notificationsIsEnabled = success
                         self.settingsTableView.reloadData()
+                        
                     }
                 }
             } else {
@@ -149,7 +149,7 @@ extension SettingsViewController: AdjustmentsTableViewCellDelegate {
                 DispatchQueue.global(qos: .background).async { [weak self] in
 //                    LocalNotificationService.shared.remove(identifiers: [.task])
                 }
-                notificationsEnabled = false
+                UserDefaultsManager.shared.notificationsIsEnabled = false
                 settingsTableView.reloadData()
             }
         case .soundEffects:
