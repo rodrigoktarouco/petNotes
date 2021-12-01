@@ -97,4 +97,11 @@ class WarningTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func didToogleWarningSwitch(_ sender: UISwitch) {
+        if sender.isOn {
+
+        } else {
+            
+        }
+    }
 }
