@@ -12,6 +12,8 @@
 "addNewPet" = "Adicionar um pet";
 "tasks" = "Tarefas";
 "myPets" = "Meus pets";
+"tasksSummary" = "Resumo de tarefas";
+"noTasksRegistered" = "Você ainda não cadastrou nenhuma tarefa 😔";
 
 //MARK: -TaskScreen
 "taskTitleLabel" = "Tarefas";

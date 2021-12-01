@@ -73,6 +73,8 @@
 		FD06EABB27232C0A00EC4D37 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD06EABA27232C0A00EC4D37 /* ContactTableViewCell.swift */; };
 		FD45E96B27344B2400F01E83 /* SmallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD45E96A27344B2400F01E83 /* SmallTableViewCell.swift */; };
 		FD45E96D273458B300F01E83 /* TasksDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD45E96C273458B300F01E83 /* TasksDesign.swift */; };
+		FD506BF32757FE6B00A6BCBF /* NoneTaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD506BF12757FE6B00A6BCBF /* NoneTaskCollectionViewCell.swift */; };
+		FD506BF42757FE6B00A6BCBF /* NoneTaskCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD506BF22757FE6B00A6BCBF /* NoneTaskCollectionViewCell.xib */; };
 		FD62D2D3272C7FA20061560E /* AppUITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D2D2272C7FA20061560E /* AppUITabBar.swift */; };
 		FD62D2D92732F7E00061560E /* PetDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D2D82732F7E00061560E /* PetDetailsModel.swift */; };
 		FD638E57272AEB5400197910 /* NextTaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD638E56272AEB5400197910 /* NextTaskCollectionViewCell.swift */; };
@@ -159,6 +161,8 @@
 		FD06EABA27232C0A00EC4D37 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		FD45E96A27344B2400F01E83 /* SmallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallTableViewCell.swift; sourceTree = "<group>"; };
 		FD45E96C273458B300F01E83 /* TasksDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDesign.swift; sourceTree = "<group>"; };
+		FD506BF12757FE6B00A6BCBF /* NoneTaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneTaskCollectionViewCell.swift; sourceTree = "<group>"; };
+		FD506BF22757FE6B00A6BCBF /* NoneTaskCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoneTaskCollectionViewCell.xib; sourceTree = "<group>"; };
 		FD62D2D2272C7FA20061560E /* AppUITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITabBar.swift; sourceTree = "<group>"; };
 		FD62D2D82732F7E00061560E /* PetDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsModel.swift; sourceTree = "<group>"; };
 		FD638E56272AEB5400197910 /* NextTaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextTaskCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -422,6 +426,8 @@
 				FD638E56272AEB5400197910 /* NextTaskCollectionViewCell.swift */,
 				FD7C4588272C63230065C035 /* AddNewPetCollectionViewCell.swift */,
 				FD7C458A272C6A6A0065C035 /* PetsOnFeedCollectionViewCell.swift */,
+				FD506BF12757FE6B00A6BCBF /* NoneTaskCollectionViewCell.swift */,
+				FD506BF22757FE6B00A6BCBF /* NoneTaskCollectionViewCell.xib */,
 			);
 			path = "feed cells";
 			sourceTree = "<group>";
@@ -546,6 +552,7 @@
 				9D5A1D292718B52B00637589 /* NewPet.storyboard in Resources */,
 				5C86C9FA271DE4E200FD1C2C /* PetDetails.storyboard in Resources */,
 				9DCC58E4271899B1007A800C /* Settings.storyboard in Resources */,
+				FD506BF42757FE6B00A6BCBF /* NoneTaskCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +624,7 @@
 				F4A3DD03273DC7A700B0ABB0 /* AlertManager.swift in Sources */,
 				5C50A707273458DC00FD142E /* AddNewTaskTableViewCell.swift in Sources */,
 				9D5A1D302718BD6600637589 /* PetsModel.swift in Sources */,
+				FD506BF32757FE6B00A6BCBF /* NoneTaskCollectionViewCell.swift in Sources */,
 				FDEA58D4274ECCDE003F62F7 /* TaskManagerAuxFile.swift in Sources */,
 				FD06EAB92721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift in Sources */,
 				F4D612A4272B493900C49FCB /* repeatTableViewCell.swift in Sources */,

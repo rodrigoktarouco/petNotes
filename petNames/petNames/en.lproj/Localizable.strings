@@ -12,6 +12,8 @@
 "addNewPet" = "Add a New Pet";
 "tasks" = "Tasks";
 "myPets" = "My pets";
+"tasksSummary" = "Task's Summary";
+"noTasksRegistered" = "You haven't registered any tasks yet 😔";
 
 //MARK: -Task Screen
 "taskTitleLabel" = "Tasks";
