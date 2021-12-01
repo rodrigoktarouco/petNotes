@@ -53,26 +53,32 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
 
 // MARK: navigation bar buttons
 @objc func saveButtonAction() {
+    print("#\(frequencyGlobal)")
+    if frequencyGlobal == "" {
+        let title1 = "warning".localized()
+        let message1 = "warningMessage".localized()
+        AlertManager.shared.createAlert(title: title1, message: message1, viewC: self)
+    } else {
 
-    // MARK: Initializes the Task object
-    task.name = selectedTaskGlobal
-    task.repetition = frequencyGlobal
-    task.initialDate = Date()
-    task.alertTimes = alertsGlobal
-    print(task.alertTimes)
-    alertsGlobal = []
+        // MARK: Initializes the Task object
+        task.name = selectedTaskGlobal
+        task.repetition = frequencyGlobal
+        task.initialDate = Date()
+        task.alertTimes = alertsGlobal
+        print(task.alertTimes)
+        alertsGlobal = []
 
-    // MARK: returns to the first view of the flow
-    self.navigationController?.popToRootViewController(animated: true)
+        // MARK: returns to the first view of the flow
+        self.navigationController?.popToRootViewController(animated: true)
 
-    // MARK: Accesses NewPetViewController
-    guard let newPetVC = self.navigationController?.topViewController as? NewPetViewController else {
-        return
+        // MARK: Accesses NewPetViewController
+        guard let newPetVC = self.navigationController?.topViewController as? NewPetViewController else {
+            return
+        }
+        newPetVC.myPetTasks.append(task)
+        print(newPetVC.myPetTasks)
+        newPetVC.petTableView.reloadData()
     }
-    newPetVC.myPetTasks.append(task)
-    print(newPetVC.myPetTasks)
-    newPetVC.petTableView.reloadData()
-
 }
 
 @objc func cancelButtonAction() {
