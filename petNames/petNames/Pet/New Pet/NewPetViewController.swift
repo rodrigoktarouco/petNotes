@@ -25,7 +25,6 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var navBarView: UIView!
     @IBOutlet weak var petImageTopConstraint: NSLayoutConstraint!
 
-
     // MARK: Instantiates a Pet and a Task object
     let pet = Pet()
     var myPetTasks: [Task] = []
@@ -57,12 +56,11 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         DispatchQueue.main.async {
             self.petTableView.reloadData()
 
-
             // MARK: Setting the pet image
             if comingFromPetDetails == true {
                 self.petImage.image = incomingPetInfos.petImage
                 self.petImage.clipsToBounds = true
-                self.petImageTopConstraint.constant = 83 // fixes the petImage top constraint
+//                self.petImageTopConstraint.constant = 83 // fixes the petImage top constraint
             } else {
                 // MARK: Generates a random image placeholder
                 let placeHolderImages = ["profile-amarelo-rounded", "profile-azul-rounded", "profile-laranja-rounded", "profile-roxo-rounded", "profile-verde-rounded", "profile-vermelho-rounded"]
@@ -80,44 +78,41 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.editImageBtn.tintColor = UIColor(named: "EditImage")
 
             // MARK: Localizable
-            let newPet = "newPetTitle".localized()
-            let cancelButton = "cancelButton".localized()
-            let addButton = "addButton".localized()
-            let details = "details".localized()
-            let saveButton = "save".localized()
+            var title: String = ""
+            var leftButton: String = ""
+            var rightButton: String = ""
+            var rightButtonAction: Selector
+
             self.petTableView.delegate = self
             self.petTableView.dataSource = self
 
             // MARK: Setting UIBarButtonItems
             if comingFromPetDetails == true {
-                let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 44))
-                navBar.backgroundColor = UIColor(named: "navBar")
-                self.view.addSubview(navBar)
-                let navItem = UINavigationItem(title: details)
-
-                self.navigationController?.isNavigationBarHidden = false
-                navItem.leftBarButtonItem = UIBarButtonItem(title: cancelButton,
-                                                            style: .plain,
-                                                            target: nil,
-                                                            action: #selector(self.cancelButtonAction))
-                navItem.rightBarButtonItem = UIBarButtonItem(title: saveButton,
-                                                             style: .plain,
-                                                             target: nil,
-                                                             action: #selector(self.saveButtonAction))
-                navBar.setItems([navItem], animated: false)
-
+                title = "details".localized()
+                leftButton = "cancelButton".localized()
+                rightButton = "save".localized()
+                rightButtonAction = #selector(self.saveButtonAction)
             } else {
-                self.title = newPet
+                title = "newPetTitle".localized()
+                leftButton = "cancelButton".localized()
+                rightButton = "addButton".localized()
+                rightButtonAction = #selector(self.addButtonAction)
+            }
+                self.title = title
                 self.navigationController?.isNavigationBarHidden = false
-                self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: cancelButton,
+                self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: leftButton,
                                                                         style: .plain,
                                                                         target: self,
                                                                         action: #selector(self.cancelButtonAction))
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: addButton,
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: rightButton,
                                                                          style: .plain,
                                                                          target: self,
-                                                                         action: #selector(self.addButtonAction))
-            }
+                                                                         action: rightButtonAction)
+        }
+
+        // MARK: Appends the pet's tasks to our local Task vector
+        if comingFromPetDetails == true {
+            myPetTasks.append(contentsOf: incomingPetInfos.petTasks ?? [Task()])
         }
         
         // MARK: Register the custom header view.
@@ -232,14 +227,17 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     cell.accessoryView?.tintColor = UIColor(named: "headerTitleColor")
 
                     return cell } else {
-                        guard let cell2 = (tableView.dequeueReusableCell(withIdentifier: "taskSwitch-cell", for: indexPath) as? TaskSwitchTableViewCell) else {
-                            return TaskSwitchTableViewCell() }
+                        if myPetTasks.isEmpty == false {
+                            guard let cell2 = (tableView.dequeueReusableCell(withIdentifier: "taskSwitch-cell", for: indexPath) as? TaskSwitchTableViewCell) else {
+                                return TaskSwitchTableViewCell() }
 
-                        let lastAppendedTask = incomingPetInfos.petTaskNames?[indexPath.row - 1]
-                        cell2.taskLabel.text = lastAppendedTask
-                        cell2.taskIconImage.image = UIImage(named: TasksDesign.shared.pickTaskIcon(task: lastAppendedTask ?? ""))
+                            let lastAppendedTask = myPetTasks[indexPath.row - 1]
+                            cell2.taskLabel.text = lastAppendedTask.name
+                            cell2.taskIconImage.image = UIImage(named: TasksDesign.shared.pickTaskIcon(task: lastAppendedTask.name ?? ""))
 
-                        return cell2
+                            return cell2
+                        }
+                        return UITableViewCell()
                     }
 
             } else {
@@ -251,7 +249,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
             }
 
-            //MARK: If the view is NOT being called by the edit button on pet's details
+            // MARK: If the view is NOT being called by the edit button on pet's details
         } else {
             if indexPath.section == 0 {
                 if indexPath.row == 0 {
@@ -324,6 +322,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
                 let viewC = storyboard.instantiateViewController(withIdentifier: "taskScreen") as UIViewController
                 show(viewC, sender: nil)
+//                present(viewC, animated: true)
                 tableView.deselectRow(at: indexPath, animated: true)
             } else {
                 tableView.deselectRow(at: indexPath, animated: true)
@@ -340,7 +339,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: navigation bar buttons
     @objc func cancelButtonAction() {
-        if comingFromPetDetails == true {
+        if comingFromPetDetails == true { // BUG: QUANDO ARRASTA A VIEW UM POUCO P/ BAIXO NAO FUNCIONA MAIS
             presentingViewController?.dismiss(animated: true, completion: nil)
         } else {
             self.navigationController?.dismiss(animated: true, completion: nil)

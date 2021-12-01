@@ -61,7 +61,7 @@ class PetDetailsViewController: UIViewController {
         incomingPetInfos = petData ?? PetsInfosForPetDetails()
 
         let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
-        let viewC = storyboard.instantiateViewController(withIdentifier: "addPet") as UIViewController
+        let viewC = storyboard.instantiateViewController(withIdentifier: "NewPetNavigationControllerViewController") as UIViewController
         self.present(viewC, animated: true, completion: nil)
     }
 }

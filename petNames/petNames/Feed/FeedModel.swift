@@ -217,7 +217,7 @@ class FeedModel {
             taskNames.append(thisName)
         }
 
-        return (PetsInfosForPetDetails(name: thisPet.name ?? "unnamedAnimal", petImage: petsImagesRounded[thisPet] ?? UIImage(named: ""), petClassification: thisPet.category, petTaskNames: taskNames), thisPet)
+        return (PetsInfosForPetDetails(name: thisPet.name ?? "unnamedAnimal", petImage: petsImagesRounded[thisPet] ?? UIImage(named: ""), petClassification: thisPet.category, petTaskNames: taskNames, petTasks: theseTasks), thisPet)
 
     }
 
