@@ -59,6 +59,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             // MARK: Setting the pet image
             if comingFromPetDetails == true {
                 self.petImage.image = incomingPetInfos.petImage
+                self.petImage.layer.cornerRadius = 50
                 self.petImage.clipsToBounds = true
 //                self.petImageTopConstraint.constant = 83 // fixes the petImage top constraint
             } else {
