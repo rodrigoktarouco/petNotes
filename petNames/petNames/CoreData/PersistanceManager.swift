@@ -130,6 +130,7 @@ class PersistanceManager {
         saveContext()
         completion(nil)
     }
+
     func removeExecution(execution: Execution, completion: @escaping(Error?) -> Void ) {
         context.delete(execution)
         saveContext()
@@ -139,7 +140,7 @@ class PersistanceManager {
     func saveExecution(execution: Execution, completion: @escaping(Error?) -> Void ) {
            saveContext()
            completion(nil)
-       }
+    }
 
     func listPets(completion: @escaping(Result<[Pet], Error>) -> Void) {
         let pets = (currentUser?.pets ?? []).compactMap { $0 as? Pet }
