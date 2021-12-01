@@ -17,7 +17,6 @@ class SettingsViewController: UIViewController {
     let switchNames: [String] = ["General notifications".localized(), "Sound effects".localized(), "Dark mode".localized()]
     let contactTypes: [(UIImage?, String)] = [(UIImage(named: "email"), "Email"), (UIImage(named: "instagram"), "Instagram")]
     let teamMembers: [String] = ["Dharana Rivas", "Enzo Degrazia", "Guilherme Antonini", "Heitor Kunrath", "Rodrigo Tarouco"]
-    var notificationsEnabled: Bool = false
     var darkMode: Bool = false
 
     override func viewDidLoad() {
@@ -34,7 +33,6 @@ class SettingsViewController: UIViewController {
                     // User Interface is Light
                     darkMode = false
                 }
-
         // Do any additional setup after loading the view.
     }
 }
@@ -62,10 +60,10 @@ extension SettingsViewController: UITableViewDataSource {
             cell.generalNotificationsLabel.text = switchNames[indexPath.row]
             if indexPath.row == 0 {
                 cell.cellType = .notifications
-                cell.generalNotificationsSwitch.isOn = notificationsEnabled
+                cell.generalNotificationsSwitch.isOn = UserDefaultsManager.shared.notificationsIsEnabled
             } else if indexPath.row == 1 {
                 cell.cellType = .soundEffects
-                cell.generalNotificationsSwitch.isOn = LocalNotificationService.shared.customSoundsEnabled
+                cell.generalNotificationsSwitch.isOn = UserDefaultsManager.shared.isCustomSoundEffectsEnabled
             } else if indexPath.row == 2 {
                 cell.cellType = .darkMode
                 cell.generalNotificationsSwitch.isOn = darkMode
@@ -141,21 +139,21 @@ extension SettingsViewController: AdjustmentsTableViewCellDelegate {
                 // Ask for user enable notifications on Settings
                 LocalNotificationService.shared.requestAuthorizationIfNeeded { [self] success in
                     DispatchQueue.main.async {
-                        self.notificationsEnabled = success
+                        UserDefaultsManager.shared.notificationsIsEnabled = success
                         self.settingsTableView.reloadData()
+                        
                     }
-
                 }
             } else {
                 // Unschedule all user's notifications
                 DispatchQueue.global(qos: .background).async { [weak self] in
-                    LocalNotificationService.shared.remove(identifiers: [.task])
+//                    LocalNotificationService.shared.remove(identifiers: [.task])
                 }
-                notificationsEnabled = false
+                UserDefaultsManager.shared.notificationsIsEnabled = false
                 settingsTableView.reloadData()
             }
         case .soundEffects:
-            LocalNotificationService.shared.customSoundsEnabled.toggle()
+            UserDefaultsManager.shared.saveCustomSoundEffectsStatus(status: isOn)
             settingsTableView.reloadData()
         case .darkMode:
             switch isOn {

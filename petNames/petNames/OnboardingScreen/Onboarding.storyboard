@@ -39,7 +39,7 @@
                                 <rect key="frame" x="5" y="90" width="404" height="420"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastre seu pet para organizar suas tarefas de maneira simples e prática" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ck-dd-jzK">
-                                <rect key="frame" x="65" y="538" width="284" height="86"/>
+                                <rect key="frame" x="65" y="538" width="284" height="84"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
