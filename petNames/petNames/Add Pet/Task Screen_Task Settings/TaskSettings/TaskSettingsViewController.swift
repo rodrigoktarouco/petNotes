@@ -11,14 +11,16 @@ public var frequencyGlobal: String = ""
 public var comingFromTaskScreen: Bool = false
 public var alertsGlobal: [DateComponents] = []
 
-class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DatePickerDelegate {
+    func didSelectDate(date: DateComponents) {
+        selectedDate = date
+    }
     @IBOutlet var taskSettingsTableView: UITableView!
     @IBOutlet weak var navView: UIView!
     
     var task: Task = Task()
     var newPetVC: UIViewController?
-    
+    var selectedDate: DateComponents?
     var numberOfAlerts = 1
     
     override func viewDidLoad() {
@@ -60,16 +62,15 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
         AlertManager.shared.createAlert(title: title1, message: message1, viewC: self)
     } else {
 
-        // MARK: Initializes the Task object
-        task.name = selectedTaskGlobal
-        task.repetition = frequencyGlobal
-        task.initialDate = Date()
-        task.alertTimes = alertsGlobal
-        print(task.alertTimes)
-        alertsGlobal = []
-
-        // MARK: returns to the first view of the flow
-        self.navigationController?.popToRootViewController(animated: true)
+    // MARK: Initializes the Task object
+    task.name = selectedTaskGlobal
+    task.repetition = frequencyGlobal
+    task.initialDate = Date()
+    task.alertTimes = alertsGlobal
+    print(task.alertTimes)
+    alertsGlobal = []
+    // MARK: returns to the first view of the flow
+    self.navigationController?.popToRootViewController(animated: true)
 
         // MARK: Accesses NewPetViewController
         guard let newPetVC = self.navigationController?.topViewController as? NewPetViewController else {
@@ -184,6 +185,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
             guard let cell2 = (taskSettingsTableView.dequeueReusableCell(withIdentifier: "warning-cell", for: indexPath)
                                as? WarningTableViewCell) else {
                 return WarningTableViewCell() }
+            cell2.delegate = self
 
             return cell2
         }

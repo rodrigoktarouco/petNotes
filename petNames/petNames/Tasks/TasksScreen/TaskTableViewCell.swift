@@ -27,6 +27,25 @@ class TaskTableViewCell: UITableViewCell {
     var executionDate: Date?
     var myStruct: CellInfosStruct?
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setUpFonts()
+        //        petImageTask.layer.cornerRadius = 22
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layer.cornerRadius = 22
+        self.layer.masksToBounds = true
+        self.layer.borderWidth = 1
+    }
+
+    func setUpFonts() {
+        taskNameLabel.font =  UIFont(name: "SFProRounded-Semibold", size: 17)
+        petNameLabel.font = UIFont(name: "SFProRounded-Medium", size: 13)
+        taskTimeLabel.font = UIFont(name: "SFProRounded-Semibold", size: 14)
+    }
 
     @IBAction func taskCheckedButton(_ sender: UIButton) {
         if clicked == false {
@@ -42,7 +61,7 @@ class TaskTableViewCell: UITableViewCell {
                         guard let safeStruct = self.myStruct else {return }
                         self.tableViewReloaderDelegate?.reloadTableView(safeStruct)
                     }
-                    
+
                 } else {
                     DispatchQueue.main.async {
                         let alertController: UIAlertController = {
@@ -56,9 +75,9 @@ class TaskTableViewCell: UITableViewCell {
                     }
                 }
             }
-            
+
         } else {
-            
+
             let arrayOfExecutions = myTaskInPersistance?.executions?.map({ $0 as? Execution
             })
             guard let safeArrayOfExecutions = arrayOfExecutions else {
@@ -86,29 +105,15 @@ class TaskTableViewCell: UITableViewCell {
                                 guard let safeStruct = self.myStruct else {return }
                                 self.tableViewReloaderDelegate?.reloadTableView(safeStruct)
                             }
-                            
+
                         }
-                        
+
                     }
                 }
             }
-            
+
         }
 
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        //        petImageTask.layer.cornerRadius = 22
-        
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.layer.cornerRadius = 22
-        self.layer.masksToBounds = true
-        self.layer.borderWidth = 1
     }
 }
 
