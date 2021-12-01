@@ -13,8 +13,8 @@ class TaskViewController: UIViewController, ReloadTableViewProtocol {
             var newStruc = myStruc
             newStruc.isCheckedAsDone.toggle()
             filteredData[index] = newStruc
+
         }
-        
         tasksTableView.reloadData()
     }
 
@@ -33,7 +33,7 @@ class TaskViewController: UIViewController, ReloadTableViewProtocol {
         super.viewWillAppear(animated)
         tasksSegmentedControl.selectedSegmentIndex = 0 
         taskModel = TaskModel()
-        taskModel.generateAllTasks()
+        taskModel.reloadEveryArrayOfThisObject()
         filteredData = taskModel.cellForAllSegment
 
         DispatchQueue.main.async {
@@ -62,18 +62,17 @@ class TaskViewController: UIViewController, ReloadTableViewProtocol {
 
     }
     @objc private func touchEventsSegmentControl() {
+        taskModel.reloadEveryArrayOfThisObject()
+
         switch tasksSegmentedControl.selectedSegmentIndex {
         case 0:
-            _ = taskModel.generateAllTasks()
             filteredData = taskModel.cellForAllSegment
             tasksTableView.reloadData()
         case 1:
-            _ = taskModel.generateNotDoneTasks()
             filteredData = taskModel.cellForNotDoneSegment
             tasksTableView.reloadData()
         case 2:
-            _ = taskModel.generateAllTasks()
-            filteredData = taskModel.cellForAllSegment
+            filteredData = taskModel.cellForPetSegment
             tasksTableView.reloadData()
         default:
             break
