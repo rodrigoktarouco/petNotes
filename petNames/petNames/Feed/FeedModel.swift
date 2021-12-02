@@ -106,9 +106,10 @@ class FeedModel {
     }
 
     func getFractionOfNumberOfTasksDone() -> String {
-        guard let tuple = TaskManager.shared.allPetsFractionOfDoneTasksAsTuple as? (Int,Int) else{
+        guard let tuple = TaskManager.shared.allPetsFractionOfDoneTasksAsTuple as? (Int, Int) else {
             return " 0\0 "
         }
+
         let numerador = tuple.0
         let denominador = tuple.1
 

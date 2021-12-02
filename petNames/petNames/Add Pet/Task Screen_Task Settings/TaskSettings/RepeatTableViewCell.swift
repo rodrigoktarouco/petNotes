@@ -19,6 +19,7 @@ class repeatTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        frequencyGlobal = ""
 
         self.frequencyTextField.inputView = self.picker
         self.frequencyTextField.inputAccessoryView = self.picker.toolbar
@@ -78,6 +79,7 @@ extension repeatTableViewCell: ToolbarPickerViewDelegate {
     }
 
     func didTapCancel() {
+        frequencyGlobal = ""
         self.frequencyTextField.text = "choose".localized()
         self.frequencyTextField.textColor = .link
         self.frequencyTextField.resignFirstResponder()
