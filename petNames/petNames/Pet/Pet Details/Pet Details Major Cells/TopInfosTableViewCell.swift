@@ -19,7 +19,7 @@ class TopInfosTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        petImage.layer.cornerRadius = 22
+        petImage.layer.cornerRadius = 50
         setUpFontStyle()
         setUpFuncColor()
         setUpLabelsTexts()
