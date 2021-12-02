@@ -11,9 +11,10 @@ import UIKit
 class PetDetailsModel {
 
 }
-struct PetsInfosForPetDetails {
-    var name: String
+public struct PetsInfosForPetDetails {
+    var name: String?
     var petImage: UIImage?
     var petClassification: String?
     var petTaskNames: [String]?
+    var petTasks: [Task]?
 }

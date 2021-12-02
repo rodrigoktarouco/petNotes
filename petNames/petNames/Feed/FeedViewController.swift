@@ -233,7 +233,6 @@ extension String {
 }
 
 // MARK: Onboarding checking method
-
 extension FeedViewController {
     override func viewDidAppear(_ animated: Bool) {
         if !UserDefaultsManager.shared.isOnboardingDone {

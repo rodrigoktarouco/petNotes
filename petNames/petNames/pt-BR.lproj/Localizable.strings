@@ -80,6 +80,7 @@
 "done" = "Confirmar";
 "warningMessage" = "Você precisa preencher as informações do seu pet";
 "editImage" = "Editar imagem";
+"details" = "Detalhes";
 
 "chooseImage" = "Escolha uma Imagem";
 "camera" = "Câmera";
