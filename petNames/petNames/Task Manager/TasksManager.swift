@@ -28,7 +28,14 @@ class TaskManager {
 
     func tasksFromNowOnToBeDone() {
         arrayOfCalculatedExecutionsNotDone = []
-        let currentDate = Date()
+
+        guard let todaysBeginning = Calendar.current.date(bySettingHour: 0,
+                                                          minute: 0,
+                                                          second: 0,
+                                                          of: Date()),
+              let todaysMidnight = Calendar.current.date(byAdding: .day,
+                                                   value: 1,
+                                                   to: todaysBeginning) else { return }
 
         for pet in petNotInPersistenceArray {
             for task in pet.tasks {
@@ -40,49 +47,49 @@ class TaskManager {
                         return
                     }
 
-                    //print(currentDate < executionDate, "---", thisExecution.taskNotInPersistence?.name)
-                    if currentDate < executionDate {
+                    if todaysBeginning < executionDate && executionDate < todaysMidnight {
                         task.executionsCalculatedAfterCurrentTime.append(thisExecution)
                         arrayOfCalculatedExecutionsNotDone.append(thisExecution)
                     }
                 }
             }
         }
-        // print("array - > ", arrayOfCalculatedExecutionsNotDone)
-        // print("count - > ", arrayOfCalculatedExecutionsNotDone.count)
     }
 
     func getNumberOfTasksNotDoneAndDone() -> (Int, Int) {
         var notDone: Int = 0// for all pets
         var done: Int = 0// for all pets
+
+        let todaysBeginning = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
+        guard let todaysMidnight = Calendar.current.date(byAdding: .day,
+                                                         value: 1,
+                                                         to: todaysBeginning) else { return (0,0) }
+
         for pet in petNotInPersistenceArray {
             var thisPetNotDone: Int = 0
             var thisPetDone: Int = 0
             for task in pet.tasks {
-                done += task.executionsThatDoExist.count
-                notDone += task.executionsThatDoNotExist.count
+                for existingExec in task.executionsThatDoExist {
+                    if todaysMidnight > existingExec.timeStamp! && existingExec.timeStamp! > todaysBeginning {
+                        done += 1
+                        thisPetDone += 1
+                    }
+                }
+                for notExistingExec in task.executionsThatDoNotExist {
+                    if todaysMidnight > notExistingExec.timeStamp! && notExistingExec.timeStamp! > todaysBeginning {
+                        notDone += 1
+                        thisPetNotDone += 1
+                    }
 
-                thisPetDone += task.executionsThatDoExist.count
-                thisPetNotDone += task.executionsThatDoNotExist.count
+                }
 
             }
-            pet.fractionOfDoneTasksAsTuple = (thisPetDone, thisPetNotDone)
-        }
-        allPetsFractionOfDoneTasksAsTuple =  (done, notDone)
-        return (done, notDone)
-    }
 
-// func setUpPetsAndExistingExecutions() {
-//        var allPets: [Pet] = []
-//        PersistanceManager.shared.listPets { result in
-//            switch result {
-//            case .success(let pets):
-//                allPets = pets
-//            default:
-//                break
-//            }
-//        }
-//    }
+            pet.fractionOfDoneTasksAsTuple = (thisPetDone, thisPetNotDone + thisPetDone)
+        }
+        allPetsFractionOfDoneTasksAsTuple =  (done, notDone + done)
+        return (done, notDone + done)
+    }
 
     func setPetsAndSupposedToExistExecutions() {
 
@@ -148,11 +155,7 @@ class TaskManager {
     }
 
     func executionGenerator(thisTask: Task, thisTaskNotInPersistence: inout TaskNotInPersistence) -> [ExecutionNotInPersistence] {
-        //        let date = String(DateFormatter.localizedString(from: Date(),
-        //    dateStyle: .short,
-        //    timeStyle: .short)).components(separatedBy: " ")
-        //        let day = date[0]
-        //        let time = date[1]
+
         let repetition = thisTask.taskRepetition
         var executions: [ExecutionNotInPersistence] = []
         guard let thisTasksRepetition = repetition else {
@@ -169,7 +172,6 @@ class TaskManager {
                     var utcCalendar = Calendar.current
                     utcCalendar.timeZone = TimeZone(identifier: "UTC") ?? .autoupdatingCurrent
 
-                    // let finalDate = utcCalendar.date(bySettingHour: components.hour!, minute: components.minute!, second: 0, of: day)!
                     let thisExecutionsTime = utcCalendar.date(bySettingHour: thisHour,
                                                               minute: thisMinute,
                                                               second: 0, of: day)!
@@ -181,7 +183,7 @@ class TaskManager {
             }
         case .never:
             let now = Date()
-            let todayCalendar = Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: now)!
+            //let todayCalendar = Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: now)!
             let currentTime = now.description.components(separatedBy: [" "])[1]
             let currentTimeInPartsAsString = currentTime.components(separatedBy: [":"])
             let currentTimeInPartsAsInt = currentTimeInPartsAsString.map { str -> Int in
@@ -192,9 +194,7 @@ class TaskManager {
                 }
             }
             var todayOrTomorrow: TodayOrTomorrowEnum = .today
-            print("before alert times loop")
             for alertTime in thisTask.alertTimes {
-                print("inside alert times loop")
                 guard let thisHour = alertTime.hour, let thisMinute = alertTime.minute else {
                     continue
                 }
@@ -208,7 +208,6 @@ class TaskManager {
                         todayOrTomorrow = .today
                     }
                 }
-                print("before switch")
                 switch todayOrTomorrow {
                 case .today:
                     var utcCalendar = Calendar.current
@@ -219,7 +218,6 @@ class TaskManager {
                     let newExecution = ExecutionNotInPersistence()
                     newExecution.timeStamp = thisExecutionsTime
                     newExecution.taskNotInPersistence = thisTaskNotInPersistence
-                    print(newExecution, "here today")
                     executions.append(newExecution)
 
                 case .tomorrow:
@@ -231,7 +229,6 @@ class TaskManager {
                     let newExecution = ExecutionNotInPersistence()
                     newExecution.timeStamp = thisExecutionsTime
                     newExecution.taskNotInPersistence = thisTaskNotInPersistence
-                    print(newExecution, "here tomorrow")
                     executions.append(newExecution)
                 }
             }

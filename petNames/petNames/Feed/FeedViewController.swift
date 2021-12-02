@@ -79,6 +79,8 @@ class FeedViewController: UIViewController {
             self.petsCollectionView.reloadData()
             self.tasksCollectionView.reloadData()
             self.welcomeUserLabel.text = "welcomeUser".localized().capitalized + " " + self.modelInstance.getUsersName() + "!" + " 👋🏼"
+            self.setUpLabelsTexts()
+
         }
     }
 
