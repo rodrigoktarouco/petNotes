@@ -11,7 +11,6 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
 
-
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -29,7 +28,6 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func onReturn() {
         self.textField.resignFirstResponder()
         textField.attributedText = NSAttributedString(string: textField.text ?? "", attributes: nil)
-//        textFieldInput = textField.text ?? "unnamedAnimal"
 
     }
     @IBAction func editingIsHapenning(_ sender: Any) {

@@ -36,6 +36,7 @@ class PetDetailsViewController: UIViewController {
 
     }
 
+    // MARK: Setting the navBar
     func setUpNavController() {
         self.title = "Details"
         self.navigationController?.isNavigationBarHidden = false
@@ -49,15 +50,18 @@ class PetDetailsViewController: UIViewController {
                                                                  action: #selector(editButtonAction))
     }
 
+    // MARK: NavBar buttons' actions
     @objc func cancelButtonAction() {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
 
     @objc func editButtonAction() {
         print("edit pressed")
+        comingFromPetDetails = true
+        incomingPetInfos = petData ?? PetsInfosForPetDetails()
 
         let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
-        let viewC = storyboard.instantiateViewController(withIdentifier: "addPet") as UIViewController
+        let viewC = storyboard.instantiateViewController(withIdentifier: "NewPetNavigationControllerViewController") as UIViewController
         self.present(viewC, animated: true, completion: nil)
     }
 }
@@ -138,7 +142,7 @@ extension PetDetailsViewController: UITableViewDataSource, UITableViewDelegate {
                 return  UITableViewCell()
             }
             cell.petImage.image = petData?.petImage
-            cell.name.text = petData?.name.capitalized
+            cell.name.text = petData?.name?.capitalized
             cell.name.textColor = UIColor(named: "headerTitleColor")
             cell.nameIsNext.textColor = UIColor(named: "EditLabel")
             cell.category.text = petData?.petClassification?.capitalized

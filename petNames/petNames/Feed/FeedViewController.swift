@@ -29,6 +29,7 @@ class FeedViewController: UIViewController {
 
     @IBOutlet weak var funimageTopDistance: NSLayoutConstraint!
 
+    @IBOutlet weak var logoImageTopDistance: NSLayoutConstraint!
     // @IBOutlet weak var funImageHeight: NSLayoutConstraint!
 
     @IBOutlet weak var dayLabelTopdistance: NSLayoutConstraint!
@@ -48,8 +49,7 @@ class FeedViewController: UIViewController {
         Background.shared.assignBackground(view: self.view)
         setUpDoneTasksImage()
         constraintAdjustments()
-
-        logoImage.image = UIImage(named: "Logo")
+        createNoneTaskCellNib()
 
     }
 
@@ -61,6 +61,8 @@ class FeedViewController: UIViewController {
         //        funImageWidth.constant = UIScreen.main.bounds.width * 330 / 844
         doneTasksTopDistance.constant =  0.0201*UIScreen.main.bounds.height - 10
         dayLabelTopdistance.constant = UIScreen.main.bounds.height * 21 / 844
+
+        logoImageTopDistance.constant =  (welcomeUserLabel.center.y + welcomeUserLabel.frame.height) / 2
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -112,9 +114,14 @@ extension FeedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == tasksCollectionView {
-            return modelInstance.getNumberOfTotalTasks()
+            let quantityOfCells = modelInstance.getNumberOfTotalTasks()
+            if quantityOfCells != 0 {
+                return quantityOfCells
+            } else {
+                return 1
+            }
         } else if collectionView == petsCollectionView {
-            return 1 + modelInstance.getNumberOfPets() // 1 + é para mostrar o adicionar pet além dos pets que já existem
+            return 1 + modelInstance.getNumberOfPets() //1 + é para mostrar o adicionar pet além dos pets que já existem
 
         }
         return 0
@@ -122,30 +129,39 @@ extension FeedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == tasksCollectionView {
-            let cell = tasksCollectionView.dequeueReusableCell(withReuseIdentifier: "NextTaskCollectionViewCell", for: indexPath) as? NextTaskCollectionViewCell
-            guard let cell = cell else { return UICollectionViewCell() }
-            let infoStruct = modelInstance.getTaskFeedCollectionViewCellData(taskNumber: indexPath.row)
-            cell.taskNameLabel.text = infoStruct.taskName?.localized().capitalized
-            cell.taskTimeLabel.text = infoStruct.taskTime
-            cell.checkImage.image = infoStruct.done ?? false ? UIImage(systemName: "checkmark.circle.fill")?.withTintColor(UIColor(named: "CheckMarkClicked") ?? .green) : UIImage(systemName: "checkmark.circle")
-            cell.taskNameInPersistence = infoStruct.taskName
+            if modelInstance.getNumberOfTotalTasks() == 0 {
+                guard let cell = tasksCollectionView
+                        .dequeueReusableCell(withReuseIdentifier: "NoneTaskCollectionViewCell",
+                                             for: indexPath) as? NoneTaskCollectionViewCell else {
+                            return UICollectionViewCell() }
+                
+                return cell
+            } else {
+                let cell = tasksCollectionView.dequeueReusableCell(withReuseIdentifier: "NextTaskCollectionViewCell", for: indexPath) as? NextTaskCollectionViewCell
+                guard let cell = cell else { return UICollectionViewCell() }
+                let infoStruct = modelInstance.getTaskFeedCollectionViewCellData(taskNumber: indexPath.row)
+                cell.taskNameLabel.text = infoStruct.taskName?.localized().capitalized
+                cell.taskTimeLabel.text = infoStruct.taskTime
+                cell.checkImage.image = infoStruct.done ?? false ? UIImage(systemName: "checkmark.circle.fill")?.withTintColor(UIColor(named: "CheckMarkClicked") ?? .green) : UIImage(systemName: "checkmark.circle")
+                cell.taskNameInPersistence = infoStruct.taskName
 
-            // MARK: Sets the color of the cell`s inside
-            let insideColor = TasksDesign.shared.getTaskDesignProperties(infoStruct.taskName ?? "").color
-            cell.auxView.backgroundColor = insideColor
+                // MARK: Sets the color of the cell`s inside
+                let insideColor = TasksDesign.shared.getTaskDesignProperties(infoStruct.taskName ?? "").color
+                cell.auxView.backgroundColor = insideColor
 
-            // MARK: Sets the color of the cell`s border
-            let borderColor = TasksDesign.shared.getTasksCellBorder(infoStruct.taskName ?? "").color
-            cell.auxView.layer.borderColor = borderColor.cgColor
-            
-            // MARK: Sets the color of the cell`s checkMark
-            let checkMarkColor = UIColor(named: "TC-checkMark")
-            cell.checkImage.tintColor = checkMarkColor
-            
-            // MARK: Sets the image of the cell's image
-            cell.petImage.image = infoStruct.petImage ?? UIImage(named: "")
-            
-            return cell
+                // MARK: Sets the color of the cell`s border
+                let borderColor = TasksDesign.shared.getTasksCellBorder(infoStruct.taskName ?? "").color
+                cell.auxView.layer.borderColor = borderColor.cgColor
+
+                // MARK: Sets the color of the cell`s checkMark
+                let checkMarkColor = UIColor(named: "TC-checkMark")
+                cell.checkImage.tintColor = checkMarkColor
+
+                // MARK: Sets the image of the cell's image
+                cell.petImage.image = infoStruct.petImage ?? UIImage(named: "")
+
+                return cell
+            }
         } else if collectionView == petsCollectionView {
             if indexPath.row == 0 {
                 let cell = petsCollectionView.dequeueReusableCell(withReuseIdentifier: "AddNewPetCollectionViewCell", for: indexPath) as? AddNewPetCollectionViewCell
@@ -183,7 +199,7 @@ extension FeedViewController: UICollectionViewDelegate {
                 let storyboard = UIStoryboard(name: "PetDetails", bundle: nil)
 
                 guard let navController = storyboard.instantiateInitialViewController() as? UINavigationController,
-                    let VCdetails = navController.topViewController as? PetDetailsViewController
+                      let VCdetails = navController.topViewController as? PetDetailsViewController
                 else { return }
                 let petDataAndPet = modelInstance.getPetsInfosForPetDetails(forRowAt: indexPath.row - 1)
                 VCdetails.petData = petDataAndPet.0
@@ -203,7 +219,9 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: squareSide, height: squareSide)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 14
     }
 
@@ -215,13 +233,22 @@ extension String {
 }
 
 // MARK: Onboarding checking method
-
 extension FeedViewController {
     override func viewDidAppear(_ animated: Bool) {
         if !UserDefaultsManager.shared.isOnboardingDone {
             performSegue(withIdentifier: "toOnboarding", sender: nil)
-//
+            //
             UserDefaultsManager.shared.saveOnboardingStatus(status: true)
         }
     }
+}
+extension FeedViewController {
+
+    private func createNoneTaskCellNib() {
+
+        logoImage.image = UIImage(named: "Logo")
+        let nib = UINib(nibName: "NoneTaskCollectionViewCell", bundle: nil)
+        tasksCollectionView.register(nib, forCellWithReuseIdentifier: "NoneTaskCollectionViewCell")
+    }
+
 }
