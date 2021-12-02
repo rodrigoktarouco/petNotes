@@ -20,6 +20,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kP5-hM-fgg">
                         <rect key="frame" x="0.0" y="0.0" width="330" height="70"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="330" id="umZ-UJ-m4q"/>
+                        </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jkl-IR-yFn">
                         <rect key="frame" x="16" y="12" width="298" height="46"/>
@@ -54,6 +57,7 @@
             <size key="customSize" width="342" height="60"/>
             <connections>
                 <outlet property="backView" destination="kP5-hM-fgg" id="xTk-4U-y8e"/>
+                <outlet property="backViewWidthContraint" destination="umZ-UJ-m4q" id="TfS-YQ-0HR"/>
                 <outlet property="bottomLabel" destination="BGV-5Z-Ojt" id="pzq-gC-KXS"/>
                 <outlet property="topLabel" destination="ZFC-z5-D6o" id="Oup-lS-IFX"/>
             </connections>

@@ -14,6 +14,7 @@ class NextTaskCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var checkImage: UIImageView!
     @IBOutlet weak var auxView: UIView!
     var taskNameInPersistence: String?
+    @IBOutlet weak var auxViewWidth: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,9 @@ class NextTaskCollectionViewCell: UICollectionViewCell {
         auxView.layer.borderWidth = 1
 
         setUpFontStyle()
+
+        auxViewWidth.constant = UIScreen.main.bounds.width - 60
+        
     }
     
     func setUpFontStyle () {

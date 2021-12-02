@@ -41,30 +41,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K6A-0S-2zj">
-                                <rect key="frame" x="157" y="50" width="100" height="35"/>
+                                <rect key="frame" x="157" y="35" width="100" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="cEk-58-wY8"/>
                                     <constraint firstAttribute="width" constant="100" id="uV7-N1-Aga"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo Heitor!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXt-ZZ-rcJ">
-                                <rect key="frame" x="30" y="110" width="139.5" height="21"/>
+                                <rect key="frame" x="30" y="80" width="139.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jB9-iN-aho">
-                                <rect key="frame" x="30" y="141" width="354" height="80"/>
+                                <rect key="frame" x="30" y="111" width="354" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Próxima tarefa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqa-la-VlU">
-                                <rect key="frame" x="30" y="241" width="109.5" height="21"/>
+                                <rect key="frame" x="30" y="211" width="109.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4ZS-1w-HVI">
-                                <rect key="frame" x="30" y="272" width="384" height="70"/>
+                                <rect key="frame" x="30" y="242" width="384" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Ixt-xZ-MAx"/>
@@ -141,6 +141,7 @@
                                         <size key="customSize" width="330" height="70"/>
                                         <connections>
                                             <outlet property="auxView" destination="aMH-CK-W8W" id="uvQ-2p-JEM"/>
+                                            <outlet property="auxViewWidth" destination="YIP-xn-Ugx" id="4LE-TM-yFr"/>
                                             <outlet property="checkImage" destination="nWO-QU-YEk" id="ZrS-rz-kKA"/>
                                             <outlet property="petImage" destination="4yJ-AD-gzb" id="ISe-b5-IzB"/>
                                             <outlet property="taskNameLabel" destination="vpp-v2-ic4" id="RTP-LO-vZ7"/>
@@ -165,13 +166,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meus Pets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQt-oB-7Te">
-                                <rect key="frame" x="30" y="362" width="79.5" height="21"/>
+                                <rect key="frame" x="30" y="332" width="79.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gm1-th-1zg">
-                                <rect key="frame" x="30" y="403" width="384" height="398"/>
+                                <rect key="frame" x="30" y="373" width="384" height="428"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9AP-Eo-bDY">
                                     <size key="itemSize" width="155" height="155"/>
@@ -291,13 +292,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="sBp-jK-ccy">
-                                <rect key="frame" x="47" y="152" width="41.5" height="21"/>
+                                <rect key="frame" x="47" y="122" width="41.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="5qh-Mr-CLK">
-                                <rect key="frame" x="47" y="183" width="42" height="21"/>
+                                <rect key="frame" x="47" y="153" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -325,9 +326,9 @@
                             <constraint firstItem="gm1-th-1zg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="UmV-fS-cMH"/>
                             <constraint firstItem="4ZS-1w-HVI" firstAttribute="top" secondItem="Dqa-la-VlU" secondAttribute="bottom" constant="10" id="X4k-cq-dPl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gm1-th-1zg" secondAttribute="bottom" constant="12" id="bYo-0f-6lT"/>
-                            <constraint firstItem="K6A-0S-2zj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="eb7-ty-apn"/>
+                            <constraint firstItem="K6A-0S-2zj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="35" id="eb7-ty-apn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4ZS-1w-HVI" secondAttribute="trailing" id="f5i-j7-EkK"/>
-                            <constraint firstItem="eXt-ZZ-rcJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="gKI-o0-wwv"/>
+                            <constraint firstItem="eXt-ZZ-rcJ" firstAttribute="top" secondItem="K6A-0S-2zj" secondAttribute="bottom" constant="10" id="gKI-o0-wwv"/>
                             <constraint firstItem="eXt-ZZ-rcJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="j4G-oh-Ouw"/>
                             <constraint firstItem="sBp-jK-ccy" firstAttribute="top" secondItem="eXt-ZZ-rcJ" secondAttribute="bottom" constant="21" id="mBH-ad-Ttg"/>
                             <constraint firstItem="sBp-jK-ccy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="p2s-0L-Aqj"/>
@@ -345,6 +346,7 @@
                         <outlet property="doneTasksTopDistance" destination="Hfc-CG-hoE" id="3PE-Os-RmK"/>
                         <outlet property="funimageTopDistance" destination="7uG-bN-Fh0" id="qXG-9F-RPE"/>
                         <outlet property="logoImage" destination="K6A-0S-2zj" id="Zd2-KQ-t5I"/>
+                        <outlet property="logoImageTopDistance" destination="eb7-ty-apn" id="8Kc-gJ-rdg"/>
                         <outlet property="myPetsLabel" destination="HQt-oB-7Te" id="drF-mE-r5E"/>
                         <outlet property="nextTaskLabel" destination="Dqa-la-VlU" id="CSe-rk-797"/>
                         <outlet property="petsCollectionView" destination="gm1-th-1zg" id="DhM-qF-iyB"/>

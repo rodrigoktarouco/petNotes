@@ -29,6 +29,7 @@ class FeedViewController: UIViewController {
 
     @IBOutlet weak var funimageTopDistance: NSLayoutConstraint!
 
+    @IBOutlet weak var logoImageTopDistance: NSLayoutConstraint!
     // @IBOutlet weak var funImageHeight: NSLayoutConstraint!
 
     @IBOutlet weak var dayLabelTopdistance: NSLayoutConstraint!
@@ -60,6 +61,8 @@ class FeedViewController: UIViewController {
         //        funImageWidth.constant = UIScreen.main.bounds.width * 330 / 844
         doneTasksTopDistance.constant =  0.0201*UIScreen.main.bounds.height - 10
         dayLabelTopdistance.constant = UIScreen.main.bounds.height * 21 / 844
+
+        logoImageTopDistance.constant =  (welcomeUserLabel.center.y + welcomeUserLabel.frame.height) / 2
     }
 
     override func viewWillAppear(_ animated: Bool) {
