@@ -29,6 +29,7 @@ class TaskScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         taskTableView.dataSource = self
         searchBar.delegate = self
         filteredData = tasks
+        searchBar.placeholder = "tasksSearchBar".localized()
         
         tasksNavigationinItem.title = "taskTitleLabel".localized()
         //        tasksNavigationinItem.backButtonTitle = "backButton".localized()
