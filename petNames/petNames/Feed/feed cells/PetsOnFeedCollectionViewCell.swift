@@ -18,15 +18,15 @@ class PetsOnFeedCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         self.layer.cornerRadius = 22
         setUpLabelsDetails()
-        petImageHeight.constant = self.contentView.frame.height * 67 / 110 - 20
-        switch traitCollection.userInterfaceStyle {
-        case .light, .unspecified:
-            auxBackGroundView.backgroundColor = UIColor(red: 0.813, green: 0.904, blue: 1, alpha: 1)
-        case.dark:
-            auxBackGroundView.backgroundColor = UIColor(red: 0.717, green: 0.852, blue: 1, alpha: 1)
-        default:
-            break
-        }
+//        petImageHeight.constant = self.contentView.frame.height * 67 / 110 - 20
+//        switch traitCollection.userInterfaceStyle {
+//        case .light, .unspecified:
+//            auxBackGroundView.backgroundColor = UIColor(red: 0.813, green: 0.904, blue: 1, alpha: 1)
+//        case.dark:
+//            auxBackGroundView.backgroundColor = UIColor(red: 0.717, green: 0.852, blue: 1, alpha: 1)
+//        default:
+//            break
+//        }
     }
     func setUpLabelsDetails() {
 
@@ -36,6 +36,18 @@ class PetsOnFeedCollectionViewCell: UICollectionViewCell {
         petTaskQuantity.textColor = UIColor(red: 0.385, green: 0.385, blue: 0.385, alpha: 1)
         petTaskQuantity.font = UIFont(name: "SFProRounded-Regular", size: 14)
 
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            petName.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+
+            petTaskQuantity.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+
+        case.dark:
+            petName.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+            petTaskQuantity.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        default:
+            break
+        }
     }
 
 }
