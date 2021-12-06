@@ -248,6 +248,21 @@ extension Task {
         }
     }
 
+    var deletedAlertDates: [Date] {
+        get {
+            let decoder = JSONDecoder.init()
+            let data = (deletedTimes ?? "").data(using: .utf8) ?? Data()
+            let dates = try? decoder.decode([Date].self, from: data)
+            return dates ?? []
+        }
+        set {
+            let encoder = JSONEncoder.init()
+            let data = (try? encoder.encode(newValue)) ?? Data()
+            let dates = String.init(data: data, encoding: .utf8)
+            self.deletedTimes = dates
+        }
+    }
+
     func setUTCAlertTies(newAlerts: [DateComponents]) {
         var alertStrings: [String] = []
         for timeComponents in newAlerts {

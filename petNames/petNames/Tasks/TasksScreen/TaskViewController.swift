@@ -221,16 +221,19 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
               let cellsDate = taskCell.executionDate else {
             return
         }
+        
+        taskCell.myStruct?.taskInPersistance?.deletedAlertDates.append(cellsDate)
 
-        var calendar = Calendar(identifier: .gregorian)
-        calendar.timeZone = TimeZone(abbreviation: "GMT")!
-        let calculatedDateComponentOfCell = calendar.dateComponents([.hour, .minute],
-                                                                    from: cellsDate)
-
-        alertTimes.removeAll { alert in
-            return calculatedDateComponentOfCell.hour == alert.hour && calculatedDateComponentOfCell.minute == alert.minute
-        }
-        taskCell.myStruct?.taskInPersistance?.setUTCAlertTies(newAlerts: alertTimes )
+//        var calendar = Calendar(identifier: .gregorian)
+//        calendar.timeZone = TimeZone(abbreviation: "GMT")!
+//        let calculatedDateComponentOfCell = calendar.dateComponents([.hour, .minute],
+//                                                                    from: cellsDate)
+//
+//        alertTimes.removeAll { alert in
+//            return calculatedDateComponentOfCell.hour == alert.hour && calculatedDateComponentOfCell.minute == alert.minute
+//        }
+//
+//        taskCell.myStruct?.taskInPersistance?.setUTCAlertTies(newAlerts: alertTimes )
 
         guard let thisTask = taskCell.myStruct?.taskInPersistance else {
             return
