@@ -178,7 +178,7 @@ class TaskManager {
                                                               minute: thisMinute,
                                                               second: 0, of: day)!
                     if let initialDate = thisTask.initialDate,
-                            thisExecutionsTime > initialDate {
+                       thisExecutionsTime > initialDate, !thisTask.deletedAlertDates.contains(thisExecutionsTime) {
                         let newExecution = ExecutionNotInPersistence()
                         newExecution.timeStamp = thisExecutionsTime
                         newExecution.taskNotInPersistence = thisTaskNotInPersistence
