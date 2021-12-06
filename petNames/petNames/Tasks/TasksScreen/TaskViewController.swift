@@ -123,11 +123,19 @@ extension TaskViewController: UISearchBarDelegate {
 extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return filteredData.count
+        if filteredData.count == 0 {
+            return 1
+        } else {
+            return filteredData.count
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 2
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -136,6 +144,16 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
+        if filteredData.count == 0 {
+            guard let cell = tasksTableView.dequeueReusableCell(withIdentifier: "noTaskPHCell",
+                                         for: indexPath) as? NoTaskPHTableViewCell else {
+                        return UITableViewCell() }
+            cell.backgroundColor = UIColor(named: "NoTaskCell")
+            cell.layer.borderColor = UIColor(named: "NoTaskCell")?.cgColor
+            
+            return cell
+        }
+        
         let cell = tasksTableView.dequeueReusableCell(withIdentifier: "reloadableTaskCell" )
         guard let safeCell = cell as? TaskTableViewCell else {
             return UITableViewCell()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ReloadTableViewProtocol: AnyObject  {
+protocol ReloadTableViewProtocol: AnyObject {
     func reloadTableView(_ myStruc: CellInfosStruct)
 }
 
