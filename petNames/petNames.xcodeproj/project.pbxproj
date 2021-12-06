@@ -30,6 +30,7 @@
 		9D1E7506270E118E00321E54 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1E7505270E118E00321E54 /* FeedViewController.swift */; };
 		9D1E7509270E118E00321E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E7507270E118E00321E54 /* Main.storyboard */; };
 		9D1E750B270E119000321E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E750A270E119000321E54 /* Assets.xcassets */; };
+		9D21D381275EA29700ADF2BB /* CustomNotificationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D21D380275EA29700ADF2BB /* CustomNotificationMessage.swift */; };
 		9D34E242274302960033CF9E /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D34E241274302960033CF9E /* OnboardingPageViewController.swift */; };
 		9D5A1D292718B52B00637589 /* NewPet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A1D282718B52B00637589 /* NewPet.storyboard */; };
 		9D641CEB273DA3930072886A /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D641CEA273DA3930072886A /* Onboarding.storyboard */; };
@@ -121,6 +122,7 @@
 		9D1E7508270E118E00321E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D1E750A270E119000321E54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D1E750F270E119000321E54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D21D380275EA29700ADF2BB /* CustomNotificationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotificationMessage.swift; sourceTree = "<group>"; };
 		9D295291271DE3A80079A685 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
 		9D34E241274302960033CF9E /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		9D5A1D282718B52B00637589 /* NewPet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPet.storyboard; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				9D93C9792739CFF300C3C713 /* LocalNotificationService.swift */,
+				9D21D380275EA29700ADF2BB /* CustomNotificationMessage.swift */,
 			);
 			path = LocalNotificationService;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				5C50A717273B263B00FD142E /* ToolBarPickerView.swift in Sources */,
 				5C50A70327344D6E00FD142E /* CustomFontModel.swift in Sources */,
 				9D641CEF273DA4A80072886A /* Onboarding2ViewController.swift in Sources */,
+				9D21D381275EA29700ADF2BB /* CustomNotificationMessage.swift in Sources */,
 				F4A3DD03273DC7A700B0ABB0 /* AlertManager.swift in Sources */,
 				5C50A707273458DC00FD142E /* AddNewTaskTableViewCell.swift in Sources */,
 				FD506BF32757FE6B00A6BCBF /* NoneTaskCollectionViewCell.swift in Sources */,

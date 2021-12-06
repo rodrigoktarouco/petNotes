@@ -383,6 +383,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         let finalComps = Calendar.autoupdatingCurrent.dateComponents([.hour, .minute], from: date)
                         print("------------------------------------------------------------")
                         print(finalComps)
+                        
                         let newNotification = Notification(title: task.name ?? "", body: "Hora de realizar a task", hour: finalComps.hour ?? 0, minutes: finalComps.minute ?? 0)
                         notifications.append(newNotification)
                     }
