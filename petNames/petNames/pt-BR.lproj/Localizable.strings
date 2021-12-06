@@ -30,6 +30,8 @@
 "Description" = "Nome da tarefa";
 "Cancel" = "Cancelar";
 "Save" = "Salvar";
+"Error" = "Erro";
+"ErrorDeletingTask" = "Erro ao deletar tarefa";
 
 //MARK: -TaskSettingViewController
 "Warning" = "Alertas";

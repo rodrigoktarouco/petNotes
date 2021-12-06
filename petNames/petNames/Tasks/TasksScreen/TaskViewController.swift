@@ -8,6 +8,7 @@
 import UIKit
 
 class TaskViewController: UIViewController, ReloadTableViewProtocol {
+
     func reloadTableView(_ myStruc: CellInfosStruct) {
         if let index = filteredData.firstIndex(of: myStruc) {
             var newStruc = myStruc
@@ -188,8 +189,64 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
 
     }
 
-}
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        guard ( tableView.cellForRow(at: indexPath) as? TaskTableViewCell) != nil else {
+            return .none
+        }
+        return .delete
+    }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        guard let taskCell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell,
+              var alertTimes = taskCell.myStruct?.taskInPersistance?.alertTimes,
+              let cellsDate = taskCell.executionDate else {
+            return
+        }
+
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(abbreviation: "GMT")!
+        let calculatedDateComponentOfCell = calendar.dateComponents([.hour, .minute],
+                                                                    from: cellsDate)
+
+        alertTimes.removeAll { alert in
+            return calculatedDateComponentOfCell.hour == alert.hour && calculatedDateComponentOfCell.minute == alert.minute
+        }
+        taskCell.myStruct?.taskInPersistance?.setUTCAlertTies(newAlerts: alertTimes )
+
+        guard let thisTask = taskCell.myStruct?.taskInPersistance else {
+            return
+        }
+
+        PersistanceManager.shared.saveTask(task: thisTask) { error in
+            if error != nil {
+                DispatchQueue.main.async {
+                    AlertManager.shared.createAlert(title: "Error".localized(),
+                                                    message: "ErrorDeletingTask".localized(),
+                                                    viewC: self)
+                }
+            }
+            self.taskModel.reloadEveryArrayOfThisObject()
+
+            switch self.tasksSegmentedControl.selectedSegmentIndex {
+            case 0:
+                self.filteredData = self.taskModel.cellForAllSegment
+            case 1:
+                self.filteredData = self.taskModel.cellForNotDoneSegment
+            case 2:
+                self.filteredData = self.taskModel.cellForPetSegment
+            default:
+                break
+            }
+            
+            DispatchQueue.main.async {
+                self.tasksTableView.reloadData()
+            }
+
+        }
+    }
+
+}
 // MARK: PresentMyAlertDelegate
 extension TaskViewController: PresentMyAlertDelegate {
     func presentThisAlert(thisAlert: UIAlertController) {
