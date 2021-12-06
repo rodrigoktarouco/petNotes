@@ -157,7 +157,7 @@ class FeedModel {
         var alert = ""
         let formatter = DateFormatter()
         formatter.dateStyle = .none
-        formatter.timeStyle = .medium
+        formatter.timeStyle = .short
         formatter.timeZone = .autoupdatingCurrent
         alert = formatter.string(from: date)
         //        var alert = ""
