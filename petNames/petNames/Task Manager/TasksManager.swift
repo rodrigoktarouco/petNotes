@@ -34,8 +34,8 @@ class TaskManager {
                                                           second: 0,
                                                           of: Date()),
               let todaysMidnight = Calendar.current.date(byAdding: .day,
-                                                   value: 1,
-                                                   to: todaysBeginning) else { return }
+                                                         value: 1,
+                                                         to: todaysBeginning) else { return }
 
         for pet in petNotInPersistenceArray {
             for task in pet.tasks {
@@ -166,6 +166,8 @@ class TaskManager {
             let today = Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: Date())!
             for day in [Date.yesterday, today, Date.tomorrow] {
                 for alertTime in thisTask.alertTimes {
+
+
                     guard let thisHour = alertTime.hour, let thisMinute = alertTime.minute else {
                         continue
                     }
@@ -175,10 +177,13 @@ class TaskManager {
                     let thisExecutionsTime = utcCalendar.date(bySettingHour: thisHour,
                                                               minute: thisMinute,
                                                               second: 0, of: day)!
-                    let newExecution = ExecutionNotInPersistence()
-                    newExecution.timeStamp = thisExecutionsTime
-                    newExecution.taskNotInPersistence = thisTaskNotInPersistence
-                    executions.append(newExecution)
+                    if let initialDate = thisTask.initialDate,
+                            thisExecutionsTime > initialDate {
+                        let newExecution = ExecutionNotInPersistence()
+                        newExecution.timeStamp = thisExecutionsTime
+                        newExecution.taskNotInPersistence = thisTaskNotInPersistence
+                        executions.append(newExecution)
+                    }
                 }
             }
         case .never:
