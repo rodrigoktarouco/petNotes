@@ -130,3 +130,29 @@
 "onboarding4SaveButton" = "Salvar";
 "Your name" = "Seu nome";
 "onboardingAlertMessage" = "Nós precisamos saber como te chamar 😄...";
+
+//MARK: CustomNotifications
+// Play
+"playTimeTitle" = "Hey \(Tutor)!";
+"playTimeBody" = "Tem alguém aí querendo brincar.";
+// Bath
+"bathTimeTitle" = "Tchau sujeira! 🐳";
+"bathTimeBody" = "\(pet.name) precisa de banho!";
+// Vet
+"vetTimeTitle" = "Saúde em primeiro lugar 🏩";
+"vetTimeBody" = "Bora levar seu amiguinho no veterinário?";
+// Water
+"waterTitle" = "Uma água fresquinha 💦";
+"waterTimeBody" = "É tudo que \(pet.name) precisa agora!";
+// Walk
+"walkTitle" = "O dia tá lindo! 🌿";
+"walkTimeBody" = "Hey\(Tutor), seu amiguinho está esperando por você!";
+// Groom
+"groomTitle" = "Calorzinho combina com look novo! ✨";
+"groomTimeBody" = "\(pet.name) está precisando de uma tosa agorinha!";
+// Feed
+"feedTitle" = "Alguém falou comida? 👀";
+"feedTimeBody" = "A hora mais esperada por \(pet.name) chegou!";
+// Medicine
+"medicineTitle" = "Muita calma nessa hora! ⚠️";
+"medicineTimeBody" = "Não esqueça do remédio do seu pet!;";

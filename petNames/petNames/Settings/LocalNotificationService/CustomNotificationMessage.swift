@@ -19,8 +19,7 @@ class CustomNotificationMessage {
         return thisCustomNotification
     }()
 
-    lazy var vetTime: CustomNotification = {
-        var thisCustomNotification = CustomNotification(title: "vetTimeTitle".localized(), body: "vetTimeBody".localized())
+    lazy var vetTime: CustomNotification = {       var thisCustomNotification = CustomNotification(title: "vetTimeTitle".localized(), body: "vetTimeBody".localized())
         return thisCustomNotification
     }()
 
