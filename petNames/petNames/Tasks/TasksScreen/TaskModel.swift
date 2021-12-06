@@ -36,6 +36,15 @@ class TaskModel {
         for notPersistentPet in TaskManager.shared.petNotInPersistenceArray {
             for notPersistentTask in notPersistentPet.tasks {
                 for notPersistentExecution in notPersistentTask.executions {
+
+                    guard let date = notPersistentExecution.timeStamp else {
+                        continue
+                    }
+
+                    if notPersistentTask.task?.deletedAlertDates.contains(date) ?? false {
+                        continue
+                    }
+
                     let nameForCell = notPersistentTask.name ?? "unnamedTask"
                     var thisImage: UIImage?
                     if let tpet = notPersistentPet.pet {
@@ -51,10 +60,6 @@ class TaskModel {
                         didTheTask = true
                     }
 
-                    guard let date = notPersistentExecution.timeStamp else {
-
-                        continue
-                    }
 
                     var alert = ""
                     let formatter = DateFormatter()

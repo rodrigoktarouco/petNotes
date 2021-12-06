@@ -44,6 +44,7 @@ class PersistanceManager {
         })
         self.container = container
     }
+
     private func saveContext () {
         if context.hasChanges {
             do {
@@ -227,6 +228,7 @@ extension Task {
         set {
             var alertStrings: [String] = []
             for timeComponents in newValue {
+
                 // convert components to date on the current timezone (10:00 in -3 will be 13:00 UTC)
                 var baseComponents = Calendar.autoupdatingCurrent.dateComponents(in: .autoupdatingCurrent, from: Date())
                 baseComponents.hour = timeComponents.hour
@@ -244,6 +246,30 @@ extension Task {
             }
             alerts =  alertStrings.joined(separator: "|")
         }
+    }
+
+    var deletedAlertDates: [Date] {
+        get {
+            let decoder = JSONDecoder.init()
+            let data = (deletedTimes ?? "").data(using: .utf8) ?? Data()
+            let dates = try? decoder.decode([Date].self, from: data)
+            return dates ?? []
+        }
+        set {
+            let encoder = JSONEncoder.init()
+            let data = (try? encoder.encode(newValue)) ?? Data()
+            let dates = String.init(data: data, encoding: .utf8)
+            self.deletedTimes = dates
+        }
+    }
+
+    func setUTCAlertTies(newAlerts: [DateComponents]) {
+        var alertStrings: [String] = []
+        for timeComponents in newAlerts {
+
+            alertStrings.append("\(timeComponents.hour ?? 0):\(timeComponents.minute ?? 0)")
+        }
+        alerts =  alertStrings.joined(separator: "|")
     }
 
     convenience init() {

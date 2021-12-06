@@ -48,6 +48,7 @@
 		9DCC58EA27189A0A007A800C /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCC58E927189A0A007A800C /* Task.storyboard */; };
 		9DCC58EC27189A1E007A800C /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58EB27189A1E007A800C /* TaskViewController.swift */; };
 		9DCC58EE27189A2C007A800C /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC58ED27189A2C007A800C /* TaskModel.swift */; };
+		F47AC8C7275A9B8B009D45C6 /* NoTaskPHTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47AC8C6275A9B8B009D45C6 /* NoTaskPHTableViewCell.swift */; };
 		F48142082733249D0070FF77 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48142072733249D0070FF77 /* Background.swift */; };
 		F496C572271A140C00443927 /* NewPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496C571271A140C00443927 /* NewPetViewController.swift */; };
 		F496C574271F597C00443927 /* TaskScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496C573271F597C00443927 /* TaskScreenViewController.swift */; };
@@ -141,6 +142,7 @@
 		9DCC58E927189A0A007A800C /* Task.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		9DCC58EB27189A1E007A800C /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		9DCC58ED27189A2C007A800C /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		F47AC8C6275A9B8B009D45C6 /* NoTaskPHTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTaskPHTableViewCell.swift; sourceTree = "<group>"; };
 		F48142072733249D0070FF77 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		F496C571271A140C00443927 /* NewPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetViewController.swift; sourceTree = "<group>"; };
 		F496C573271F597C00443927 /* TaskScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskScreenViewController.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				9DCC58EB27189A1E007A800C /* TaskViewController.swift */,
 				9DCC58ED27189A2C007A800C /* TaskModel.swift */,
 				9D1788B2271DE8CF00C839DF /* TaskTableViewCell.swift */,
+				F47AC8C6275A9B8B009D45C6 /* NoTaskPHTableViewCell.swift */,
 			);
 			path = TasksScreen;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				F496C574271F597C00443927 /* TaskScreenViewController.swift in Sources */,
 				F4D612A6272B494200C49FCB /* notesTableViewCell.swift in Sources */,
 				FD45E96D273458B300F01E83 /* TasksDesign.swift in Sources */,
+				F47AC8C7275A9B8B009D45C6 /* NoTaskPHTableViewCell.swift in Sources */,
 				FDB7B31F273323B700C83EC8 /* TasksEnumerationTableViewCell.swift in Sources */,
 				9DCC58EC27189A1E007A800C /* TaskViewController.swift in Sources */,
 				F496C576271F612300443927 /* TaskScreenTableViewCell.swift in Sources */,
@@ -604,7 +608,6 @@
 				9D641CEF273DA4A80072886A /* Onboarding2ViewController.swift in Sources */,
 				F4A3DD03273DC7A700B0ABB0 /* AlertManager.swift in Sources */,
 				5C50A707273458DC00FD142E /* AddNewTaskTableViewCell.swift in Sources */,
-				9D5A1D302718BD6600637589 /* PetsModel.swift in Sources */,
 				FD506BF32757FE6B00A6BCBF /* NoneTaskCollectionViewCell.swift in Sources */,
 				FDEA58D4274ECCDE003F62F7 /* TaskManagerAuxFile.swift in Sources */,
 				FD06EAB92721FA0B00EC4D37 /* AdjustmentsTableViewCell.swift in Sources */,

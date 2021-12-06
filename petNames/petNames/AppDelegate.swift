@@ -14,6 +14,7 @@ public var isDarkModeOn: Bool = false
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        print("Application directory: \(NSHomeDirectory())")
         let dcf = DateComponentsFormatter()
         dcf.unitsStyle = .abbreviated
         dcf.allowedUnits = [.year, .month, .day, .hour, .minute, .second]
@@ -39,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNUserNotificationCenter.current().delegate = self
         // Override point for customization after application launch.
         //
-            print("Application directory: \(NSHomeDirectory())")
+
         
         PersistanceManager.shared.setUp()
         PersistanceManager.shared.loadUser { _ in

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,18 +28,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsH-SP-L8t">
-                                <rect key="frame" x="160.5" y="92" width="93.5" height="43"/>
+                                <rect key="frame" x="161.5" y="92" width="91" height="42"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search" scopeBarBackgroundImage="searchBar:Isa-6L-YUV:scopeBarBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="Isa-6L-YUV">
-                                <rect key="frame" x="16.5" y="145.5" width="381" height="51"/>
+                                <rect key="frame" x="16.5" y="144.5" width="381" height="51"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pec-64-wXi">
-                                <rect key="frame" x="93.5" y="219.5" width="227" height="32"/>
+                                <rect key="frame" x="93.5" y="218.5" width="227" height="32"/>
                                 <segments>
                                     <segment title="All"/>
                                     <segment title="Not done"/>
@@ -48,7 +47,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fvv-cB-sIM">
-                                <rect key="frame" x="0.0" y="270.5" width="414" height="625.5"/>
+                                <rect key="frame" x="0.0" y="269.5" width="414" height="626.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reloadableTaskCell" rowHeight="85" id="05C-FY-the" customClass="TaskTableViewCell" customModule="petNames" customModuleProvider="target">
@@ -66,22 +65,22 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="taJ-bt-Mcb">
-                                                    <rect key="frame" x="91" y="8" width="42.5" height="69"/>
+                                                    <rect key="frame" x="91" y="8" width="42" height="69"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7O-xd-5l2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="42.5" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="17"/>
                                                             <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oo8-lt-h9J">
-                                                            <rect key="frame" x="0.0" y="26" width="42.5" height="17"/>
+                                                            <rect key="frame" x="0.0" y="26" width="42" height="17"/>
                                                             <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zd-4u-B7d">
-                                                            <rect key="frame" x="0.0" y="52" width="42.5" height="17"/>
+                                                            <rect key="frame" x="0.0" y="52" width="42" height="17"/>
                                                             <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -129,6 +128,38 @@
                                             <outlet property="taskCheckedImage" destination="F92-0c-JgM" id="7GX-MI-1An"/>
                                             <outlet property="taskNameLabel" destination="u7O-xd-5l2" id="scN-0N-e2g"/>
                                             <outlet property="taskTimeLabel" destination="oo8-lt-h9J" id="ZFb-6P-Mly"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noTaskPHCell" rowHeight="85" id="Imk-Cw-hSS" customClass="NoTaskPHTableViewCell" customModule="petNames" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="134.5" width="374" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Imk-Cw-hSS" id="NWk-Ki-NXP">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="85"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descricao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7S-6n-dAc">
+                                                    <rect key="frame" x="149" y="41.5" width="76.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aviso de nenhuma task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYd-Bp-IWQ">
+                                                    <rect key="frame" x="99.5" y="16" width="175.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="w7S-6n-dAc" firstAttribute="centerX" secondItem="NWk-Ki-NXP" secondAttribute="centerX" id="3ek-g4-cdf"/>
+                                                <constraint firstItem="YYd-Bp-IWQ" firstAttribute="centerX" secondItem="NWk-Ki-NXP" secondAttribute="centerX" id="f2S-kL-bYR"/>
+                                                <constraint firstItem="YYd-Bp-IWQ" firstAttribute="top" secondItem="NWk-Ki-NXP" secondAttribute="topMargin" constant="5" id="j0k-Bc-B54"/>
+                                                <constraint firstItem="w7S-6n-dAc" firstAttribute="top" secondItem="YYd-Bp-IWQ" secondAttribute="bottom" constant="5" id="ubI-HQ-NBo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="noTaskBottomLabel" destination="w7S-6n-dAc" id="b1H-pl-lky"/>
+                                            <outlet property="noTaskLabel" destination="YYd-Bp-IWQ" id="aom-dw-ubY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
