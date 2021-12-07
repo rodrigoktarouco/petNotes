@@ -326,6 +326,17 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //                present(viewC, animated: true)
                 tableView.deselectRow(at: indexPath, animated: true)
             } else {
+                // added tasks
+                editTaskAlertTime = true
+
+                let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
+                let viewC = storyboard.instantiateViewController(withIdentifier: "taskSetting") as UIViewController
+                show(viewC, sender: nil)
+
+                let selectedTask = myPetTasks[indexPath.row - 1]
+                selectedTaskForEditingAlertTime = selectedTask
+                numberOfTasksinMyPetTasksArray = myPetTasks.count
+
                 tableView.deselectRow(at: indexPath, animated: true)
             }
         } else {
