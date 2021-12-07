@@ -9,21 +9,20 @@ import Foundation
 
 class CustomNotificationMessage {
 
-    static func createCustomNotification(from taskType: TaskType) -> CustomNotification {
+    static func createCustomNotification(from taskType: TaskType, petName: String) -> CustomNotification {
         let user = PersistanceManager.shared.currentUser
-        let pet = petNames.Pet.self
         let title: String
         let body: String
         switch taskType {
         case .water:
             title = "waterTitle".localized()
-            body = String(format: "waterTimeBody".localized(), pet ?? "Pet")
+            body = String(format: "waterTimeBody".localized(), petName)
         case .feeding:
             title = "feedTitle".localized()
-            body = String(format: "feedTimeBody".localized(), pet ?? "Pet")
+            body = String(format: "feedTimeBody".localized(), petName)
         case .wash:
             title = "bathTimeTitle".localized()
-            body = String(format: "bathTimeBody".localized(), pet ?? "Pet")
+            body = String(format: "bathTimeBody".localized(), petName)
         case .playtime:
             title = String(format: "playTimeTitle".localized(), user?.name ?? "Tutor")
             body = "playTimeBody".localized()
@@ -35,7 +34,7 @@ class CustomNotificationMessage {
             body = String(format: "groomTimeBody".localized(), user?.name ?? "Tutor")
         case .medicine:
             title = "medicineTitle".localized()
-            body = String(format:"medicineTimeBody".localized(), pet ?? "Pet")
+            body = String(format: "medicineTimeBody".localized(), petName)
         case .vet:
             title = "vetTimeTitle".localized()
             body = "vetTimeBody".localized()

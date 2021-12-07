@@ -371,7 +371,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 var notifications = [Notification]()
                 for task in tasks {
                     let taskType = TaskType(name: task.name!)
-                    let customNotification = CustomNotificationMessage.createCustomNotification(from: taskType)
+                    let customNotification = CustomNotificationMessage.createCustomNotification(from: taskType, petName: pet.name ?? "Pet")
                     for alertTime in task.alertTimes {
                         var utcCalendar = Calendar.autoupdatingCurrent
                         utcCalendar.timeZone = TimeZone(identifier: "UTC") ?? .autoupdatingCurrent
