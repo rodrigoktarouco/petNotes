@@ -348,7 +348,6 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @objc func addButtonAction() {
-        print("#Add pressed")
 
         if textFieldInput == "" || categoryPicked == false {
 
@@ -368,11 +367,11 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 petImage.image = nil
             }
             PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
-//                let newNotification = Notification(id: .task, title: "Teste", body: "Está na hora de fazer!", hour: selectedDate?.hour ?? 0, minutes: selectedDate?.minute ?? 0)
-//                LocalNotificationService.shared.schedule(notifications: [newNotification], completion: nil)
                 let tasks = pet.tasks?.allObjects as? [Task] ?? []
                 var notifications = [Notification]()
                 for task in tasks {
+                    let taskType = TaskType(name: task.name!)
+                    let customNotification = CustomNotificationMessage.createCustomNotification(from: taskType)
                     for alertTime in task.alertTimes {
                         var utcCalendar = Calendar.autoupdatingCurrent
                         utcCalendar.timeZone = TimeZone(identifier: "UTC") ?? .autoupdatingCurrent
@@ -381,10 +380,9 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         baseComps.minute = alertTime.minute
                         let date = utcCalendar.date(from: baseComps) ?? Date()
                         let finalComps = Calendar.autoupdatingCurrent.dateComponents([.hour, .minute], from: date)
-                        print("------------------------------------------------------------")
-                        print(finalComps)
                         
-                        let newNotification = Notification(title: task.name ?? "", body: "Hora de realizar a task", hour: finalComps.hour ?? 0, minutes: finalComps.minute ?? 0)
+                        let newNotification = Notification(title:
+                                                            customNotification.title, body: customNotification.body, hour: finalComps.hour ?? 0, minutes: finalComps.minute ?? 0)
                         notifications.append(newNotification)
                     }
                 }
