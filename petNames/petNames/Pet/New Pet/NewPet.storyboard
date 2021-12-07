@@ -206,6 +206,31 @@
                                             <outlet property="taskSwitch" destination="1tx-ou-Hsa" id="Jgg-BH-CIm"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="deletePet-cell" id="4uf-52-7gt" customClass="DeletePetTableViewCell" customModule="petNames" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="316" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4uf-52-7gt" id="rVX-VO-VwM">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete pet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSe-ws-h73">
+                                                    <rect key="frame" x="147.5" y="11.5" width="79" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" name="cellColor"/>
+                                            <constraints>
+                                                <constraint firstItem="fSe-ws-h73" firstAttribute="centerY" secondItem="rVX-VO-VwM" secondAttribute="centerY" id="b1h-DD-5XG"/>
+                                                <constraint firstItem="fSe-ws-h73" firstAttribute="centerX" secondItem="rVX-VO-VwM" secondAttribute="centerX" id="ckB-CP-rrr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="cellColor"/>
+                                        <connections>
+                                            <outlet property="deleteLabel" destination="fSe-ws-h73" id="kWG-6f-7DJ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJL-cI-qVY">
