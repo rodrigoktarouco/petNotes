@@ -11,7 +11,6 @@ public var frequencyGlobal: String = ""
 public var comingFromTaskScreen: Bool = false
 public var alertsGlobal: [DateComponents] = []
 public var editTaskAlertTime: Bool = false
-public var numberOfTasksinMyPetTasksArray: Int = 0
 public var selectedTaskForEditingAlertTime: Task = Task()
 
 class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DatePickerDelegate {
@@ -206,7 +205,7 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
                     return cell2
 
                 } else {
-                    print("#\(selectedTaskForEditingAlertTime.alertTimes)")
+//                    print("#\(selectedTaskForEditingAlertTime.alertTimes)")
                     let dateComponents: [DateComponents] = selectedTaskForEditingAlertTime.alertTimes
 
                     let dateComponent = dateComponents[indexPath.row - 1]
@@ -250,7 +249,7 @@ class TaskSettingsViewController: UIViewController, UITableViewDelegate, UITable
                 cell.notesTextView.textColor = UIColor.lightGray
                 return cell
             } else { // if editing an existing pet info
-                print("#\(selectedTaskForEditingAlertTime.observations)")
+//                print("#\(selectedTaskForEditingAlertTime.observations)")
                 cell.notesTextView.text = selectedTaskForEditingAlertTime.observations
                 cell.notesTextView.textColor = UIColor.lightGray
                 return cell

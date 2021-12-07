@@ -348,8 +348,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
                 let selectedTask = myPetTasks[indexPath.row - 1]
                 selectedTaskForEditingAlertTime = selectedTask
-                numberOfTasksinMyPetTasksArray = myPetTasks.count
-
+                selectedTaskGlobal = selectedTaskForEditingAlertTime.name ?? ""
                 tableView.deselectRow(at: indexPath, animated: true)
             }
         } else if indexPath.section == 2 {
@@ -361,7 +360,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             tableView.deselectRow(at: indexPath, animated: true)
         } else {
             // delete pet
-            
+
         }
     }
     
