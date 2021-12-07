@@ -9,31 +9,33 @@ import Foundation
 
 class CustomNotificationMessage {
 
-  static func createCustomNotification(from taskType: TaskType) -> CustomNotification {
+    static func createCustomNotification(from taskType: TaskType) -> CustomNotification {
+        let user = PersistanceManager.shared.currentUser
+        let pet = petNames.Pet.self
         let title: String
         let body: String
         switch taskType {
         case .water:
             title = "waterTitle".localized()
-            body = "waterTimeBody".localized()
+            body = String(format: "waterTimeBody".localized(), pet ?? "Pet")
         case .feeding:
             title = "feedTitle".localized()
-            body = "feedTimeBody".localized()
+            body = String(format: "feedTimeBody".localized(), pet ?? "Pet")
         case .wash:
             title = "bathTimeTitle".localized()
-            body = "bathTimeBody".localized()
+            body = String(format: "bathTimeBody".localized(), pet ?? "Pet")
         case .playtime:
-            title = "playTimeTitle".localized()
+            title = String(format: "playTimeTitle".localized(), user?.name ?? "Tutor")
             body = "playTimeBody".localized()
         case .walk:
             title = "walkTitle".localized()
-            body = "playTimeBody".localized()
+            body = String(format: "playTimeBody".localized(), user?.name ?? "Tutor")
         case .groom:
             title = "groomTitle".localized()
-            body = "groomTimeBody".localized()
+            body = String(format: "groomTimeBody".localized(), user?.name ?? "Tutor")
         case .medicine:
             title = "medicineTitle".localized()
-            body = "medicineTimeBody".localized()
+            body = String(format:"medicineTimeBody".localized(), pet ?? "Pet")
         case .vet:
             title = "vetTimeTitle".localized()
             body = "vetTimeBody".localized()
