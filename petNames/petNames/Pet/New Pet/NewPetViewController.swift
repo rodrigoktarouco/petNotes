@@ -61,7 +61,7 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.petImage.image = incomingPetInfos.petImage
                 self.petImage.layer.cornerRadius = 50
                 self.petImage.clipsToBounds = true
-//                self.petImageTopConstraint.constant = 83 // fixes the petImage top constraint
+                //                self.petImageTopConstraint.constant = 83 // fixes the petImage top constraint
             } else {
                 // MARK: Generates a random image placeholder
                 let placeHolderImages = ["profile-amarelo-rounded", "profile-azul-rounded", "profile-laranja-rounded", "profile-roxo-rounded", "profile-verde-rounded", "profile-vermelho-rounded"]
@@ -99,16 +99,16 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 rightButton = "addButton".localized()
                 rightButtonAction = #selector(self.addButtonAction)
             }
-                self.title = title
-                self.navigationController?.isNavigationBarHidden = false
-                self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: leftButton,
-                                                                        style: .plain,
-                                                                        target: self,
-                                                                        action: #selector(self.cancelButtonAction))
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: rightButton,
-                                                                         style: .plain,
-                                                                         target: self,
-                                                                         action: rightButtonAction)
+            self.title = title
+            self.navigationController?.isNavigationBarHidden = false
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: leftButton,
+                                                                    style: .plain,
+                                                                    target: self,
+                                                                    action: #selector(self.cancelButtonAction))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: rightButton,
+                                                                     style: .plain,
+                                                                     target: self,
+                                                                     action: rightButtonAction)
         }
 
         // MARK: Appends the pet's tasks to our local Task vector
@@ -128,7 +128,11 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: Setting the TableView
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        if comingFromPetDetails == true {
+            return 4
+        } else {
+            return 3
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -183,6 +187,8 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             } else {
                 rowsInSection = 1 + myPetTasks.count
             }
+        case 2:
+            rowsInSection = 1
         default:
             rowsInSection = 1
         }
@@ -241,13 +247,21 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         return UITableViewCell()
                     }
 
-            } else {
+            } else if indexPath.section == 2 {
                 guard let cell = (tableView.dequeueReusableCell(withIdentifier: "share-cell", for: indexPath)
                                   as? ShareTableViewCell) else {
                     return ShareTableViewCell() }
                 cell.shareLabel.text = "shareLabel".localized()
                 return cell
 
+            } else {
+                // delete pet cell
+                guard let cell = (tableView.dequeueReusableCell(withIdentifier: "deletePet-cell", for: indexPath)
+                                  as? DeletePetTableViewCell) else {
+                    return DeletePetTableViewCell() }
+
+                cell.deleteLabel.text = "DeletePet".localized()
+                return cell
             }
 
             // MARK: If the view is NOT being called by the edit button on pet's details
@@ -301,9 +315,8 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
             }
         }
-
     }
-    
+
     // MARK: navigate when cell is selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
@@ -323,18 +336,31 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
                 let viewC = storyboard.instantiateViewController(withIdentifier: "taskScreen") as UIViewController
                 show(viewC, sender: nil)
-//                present(viewC, animated: true)
+                //                present(viewC, animated: true)
                 tableView.deselectRow(at: indexPath, animated: true)
             } else {
+                // added tasks
+                editTaskAlertTime = true
+
+                let storyboard = UIStoryboard(name: "TaskScreen", bundle: nil)
+                let viewC = storyboard.instantiateViewController(withIdentifier: "taskSetting") as UIViewController
+                show(viewC, sender: nil)
+
+                let selectedTask = myPetTasks[indexPath.row - 1]
+                selectedTaskForEditingAlertTime = selectedTask
+                selectedTaskGlobal = selectedTaskForEditingAlertTime.name ?? ""
                 tableView.deselectRow(at: indexPath, animated: true)
             }
-        } else {
+        } else if indexPath.section == 2 {
             // share
             print("share")
             let title = "sharedAlertTitle".localized()
             let message = "sharedAlertMessage".localized()
             AlertManager.shared.createAlert(title: title, message: message, viewC: self)
             tableView.deselectRow(at: indexPath, animated: true)
+        } else {
+            // delete pet
+
         }
     }
     
@@ -368,8 +394,8 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 petImage.image = nil
             }
             PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
-//                let newNotification = Notification(id: .task, title: "Teste", body: "Está na hora de fazer!", hour: selectedDate?.hour ?? 0, minutes: selectedDate?.minute ?? 0)
-//                LocalNotificationService.shared.schedule(notifications: [newNotification], completion: nil)
+                //                let newNotification = Notification(id: .task, title: "Teste", body: "Está na hora de fazer!", hour: selectedDate?.hour ?? 0, minutes: selectedDate?.minute ?? 0)
+                //                LocalNotificationService.shared.schedule(notifications: [newNotification], completion: nil)
                 let tasks = pet.tasks?.allObjects as? [Task] ?? []
                 var notifications = [Notification]()
                 for task in tasks {

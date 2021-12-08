@@ -51,6 +51,15 @@ class WarningTableViewCell: UITableViewCell {
         alertTextField.layer.borderColor = myColor.cgColor
         alertTextField.layer.borderWidth = 1.0
     }
+
+    func setFormatDate(date: Date) {
+        let formatter = DateFormatter()
+
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+
+        alertTextField.text = formatter.string(from: date)
+    }
     
     @objc func cancelPressed() {
         print("#cancel")
@@ -61,27 +70,8 @@ class WarningTableViewCell: UITableViewCell {
     }
     
     @objc func donePressed() {
-        
-        // formatter
-        let formatter = DateFormatter()
 
-        formatter.dateStyle = .none
-        formatter.timeStyle = .short
-
-        alertTextField.text = formatter.string(from: datePicker.date)
-//        timeNotification = datePicker.date
-        let formatter2 = DateFormatter()
-        formatter2.locale = Locale(identifier: "pt_BR")
-        formatter2.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
-        let newDateString = formatter2.string(from: datePicker.date)
-        let newDate = formatter2.date(from: newDateString)
-//        self.view.endEditing(true)
-        let formatterHour = DateFormatter()
-        formatterHour.dateFormat = "HH"
-        let formatterMinute = DateFormatter()
-        formatterMinute.dateFormat = "mm"
-
-        print(datePicker.date)
+        setFormatDate(date: datePicker.date)
 
         let components = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
 
