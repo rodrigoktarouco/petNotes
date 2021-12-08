@@ -10,6 +10,7 @@
 		5C145B592721DA970091C02A /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C145B582721DA970091C02A /* TextFieldTableViewCell.swift */; };
 		5C145B5D2721DF090091C02A /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C145B5C2721DF090091C02A /* ImagePickerManager.swift */; };
 		5C50839F275007B1009A5140 /* SharedWithTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50839E275007B1009A5140 /* SharedWithTableViewCell.swift */; };
+		5C5083A5275FF012009A5140 /* DeletePetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5083A4275FF012009A5140 /* DeletePetTableViewCell.swift */; };
 		5C50A70327344D6E00FD142E /* CustomFontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A70227344D6E00FD142E /* CustomFontModel.swift */; };
 		5C50A7052734554A00FD142E /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A7042734554A00FD142E /* CategoryTableViewCell.swift */; };
 		5C50A707273458DC00FD142E /* AddNewTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50A706273458DC00FD142E /* AddNewTaskTableViewCell.swift */; };
@@ -92,6 +93,7 @@
 		5C145B582721DA970091C02A /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		5C145B5C2721DF090091C02A /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
 		5C50839E275007B1009A5140 /* SharedWithTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWithTableViewCell.swift; sourceTree = "<group>"; };
+		5C5083A4275FF012009A5140 /* DeletePetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePetTableViewCell.swift; sourceTree = "<group>"; };
 		5C50A70227344D6E00FD142E /* CustomFontModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontModel.swift; sourceTree = "<group>"; };
 		5C50A7042734554A00FD142E /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		5C50A706273458DC00FD142E /* AddNewTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskTableViewCell.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				5C145B5C2721DF090091C02A /* ImagePickerManager.swift */,
 				5C50A706273458DC00FD142E /* AddNewTaskTableViewCell.swift */,
 				5C50A718273D909600FD142E /* TaskSwitchTableViewCell.swift */,
+				5C5083A4275FF012009A5140 /* DeletePetTableViewCell.swift */,
 			);
 			path = "New Pet";
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				9D1788B3271DE8CF00C839DF /* TaskTableViewCell.swift in Sources */,
 				9D1E7506270E118E00321E54 /* FeedViewController.swift in Sources */,
 				5C50A7052734554A00FD142E /* CategoryTableViewCell.swift in Sources */,
+				5C5083A5275FF012009A5140 /* DeletePetTableViewCell.swift in Sources */,
 				9D93C97A2739CFF300C3C713 /* LocalNotificationService.swift in Sources */,
 				FD62D2D3272C7FA20061560E /* AppUITabBar.swift in Sources */,
 				9D1E7502270E118E00321E54 /* AppDelegate.swift in Sources */,

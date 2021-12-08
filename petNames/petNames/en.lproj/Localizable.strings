@@ -80,6 +80,7 @@
 "warningMessage" = "You need to fill the info about your pet";
 "editImage" = "Edit image";
 "details" = "Details";
+"DeletePet" = "Delete pet";
 
 "chooseImage" = "Choose Image";
 "camera" = "Camera";
