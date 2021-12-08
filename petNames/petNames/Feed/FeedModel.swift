@@ -9,7 +9,31 @@ import Foundation
 import UIKit
 import AVFoundation
 
-enum TaskTypes {
+enum TaskType {
+    init(name: String) {
+        switch name {
+        case "Water".localized():
+            self = .water
+        case "Food".localized():
+            self = .feeding
+        case "Wash".localized():
+            self = .wash
+        case "Playtime".localized():
+            self = .playtime
+        case "Walk".localized():
+            self = .walk
+        case "Groom".localized():
+            self = .groom
+        case "Medicine".localized():
+            self = .medicine
+        case "Vet".localized():
+            self = .vet
+        case "Custom".localized():
+            self = .custom
+        default:
+            fatalError()
+        }
+    }
     case water
     case feeding
     case wash

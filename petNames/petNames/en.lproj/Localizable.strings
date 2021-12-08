@@ -128,4 +128,31 @@
 "Your name" = "Your name";
 "onboardingAlertMessage" = "We need to call you something 😄...";
 
+//MARK: CustomNotifications
+// Play
+"playTimeTitle" = "Hey %@!";
+"playTimeBody" = "There’s someone wanting to play with you.";
+// Bath
+"bathTimeTitle" = "Bye bye dirty 🐳";
+"bathTimeBody" = "%@ needs to take a shower!";
+// Vet
+"vetTimeTitle" = "Healthcare in first place 🏩";
+"vetTimeBody" = "How about to take your pet to the vet?";
+// Water
+"waterTitle" = "Nothing better than freshwater 💦";
+"waterTimeBody" = "That’s all %@ needs now!";
+// Walk
+"walkTitle" = "It’s time to take a walk 🌿";
+"walkTimeBody" = "Hey %@, your pet is waiting for you.";
+// Groom
+"groomTitle" = "A princess day 👑";
+"groomTimeBody" = "Calm %@, it’s just time to trimming your pet";
+// Feed
+"feedTitle" = "Someone’s said food? 👀";
+"feedTimeBody" = "The best hour of %@’s day has come.";
+// Medicine
+"medicineTitle" = "Attention ⚠️";
+"medicineTimeBody" = "%@ needs it’s medicine right now!";
+
+
 
