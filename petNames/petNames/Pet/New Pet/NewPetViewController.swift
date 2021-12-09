@@ -26,11 +26,14 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var petImageTopConstraint: NSLayoutConstraint!
 
     // MARK: Instantiates a Pet and a Task object
-    let pet = Pet()
+    var pet = Pet()
     var myPetTasks: [Task] = []
 
     // MARK: Instantiates the image manager
     var imageManager = ImagePickerManager()
+
+    // MARK: save Tasks state
+    var disabledTasks: Set<String> = []
 
     // MARK: Variables
     var isPressed: Bool = false
@@ -113,7 +116,16 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         // MARK: Appends the pet's tasks to our local Task vector
         if comingFromPetDetails == true {
+            categoryPicked = true
+            textFieldInput = pet.name ?? ""
             myPetTasks.append(contentsOf: incomingPetInfos.petTasks ?? [Task()])
+            for task in myPetTasks {
+                let taskID = task.objectID.uriRepresentation().absoluteString
+                if UserDefaultsManager.shared.taskNotificationsIsDisabled.contains(taskID) {
+                    disabledTasks.insert(taskID)
+                }
+            }
+
         }
         
         // MARK: Register the custom header view.
@@ -239,9 +251,12 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                 return TaskSwitchTableViewCell() }
 
                             let lastAppendedTask = myPetTasks[indexPath.row - 1]
+                            let taskID = lastAppendedTask.objectID.uriRepresentation().absoluteString
                             cell2.taskLabel.text = lastAppendedTask.name
                             cell2.taskIconImage.image = UIImage(named: TasksDesign.shared.pickTaskIcon(task: lastAppendedTask.name ?? ""))
-
+                            cell2.taskSwitch.isOn = !self.disabledTasks.contains(taskID)
+                            cell2.taskID = taskID
+                            cell2.delegate = self
                             return cell2
                         }
                         return UITableViewCell()
@@ -393,26 +408,13 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 petImage.image = nil
             }
             PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
-                let tasks = pet.tasks?.allObjects as? [Task] ?? []
-                var notifications = [Notification]()
-                for task in tasks {
-                    let taskType = TaskType(name: task.name!)
-                    let customNotification = CustomNotificationMessage.createCustomNotification(from: taskType, petName: pet.name ?? "Pet")
-                    for alertTime in task.alertTimes {
-                        var utcCalendar = Calendar.autoupdatingCurrent
-                        utcCalendar.timeZone = TimeZone(identifier: "UTC") ?? .autoupdatingCurrent
-                        var baseComps = utcCalendar.dateComponents(in: utcCalendar.timeZone, from: Date())
-                        baseComps.hour = alertTime.hour
-                        baseComps.minute = alertTime.minute
-                        let date = utcCalendar.date(from: baseComps) ?? Date()
-                        let finalComps = Calendar.autoupdatingCurrent.dateComponents([.hour, .minute], from: date)
-                        
-                        let newNotification = Notification(title:
-                                                            customNotification.title, body: customNotification.body, hour: finalComps.hour ?? 0, minutes: finalComps.minute ?? 0)
-                        notifications.append(newNotification)
-                    }
-                }
-                LocalNotificationService.shared.schedule(notifications: notifications, completion: nil)
+                let allTasks = pet.tasks?.allObjects as? [Task] ?? []
+                let allTasksIDS = allTasks.map({$0.objectID.uriRepresentation().absoluteString})
+                var allDisabledTaskIDs = Set(UserDefaultsManager.shared.taskNotificationsIsDisabled)
+                allDisabledTaskIDs.subtract(allTasksIDS)
+                allDisabledTaskIDs.formUnion(self.disabledTasks)
+                UserDefaultsManager.shared.taskNotificationsIsDisabled = Array(allDisabledTaskIDs)
+            LocalNotificationService.shared.scheduleTasks(for: pet)
 
                 PersistanceManager.shared.listPets { result in
                     switch result {
@@ -447,5 +449,39 @@ class NewPetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @objc func saveButtonAction() {
         print("#Save pressed")
+        if textFieldInput == "" || categoryPicked == false {
+
+            let title = "warning".localized()
+            let message = "warningMessage".localized()
+            AlertManager.shared.createAlert(title: title, message: message, viewC: self)
+
+        } else {
+            PersistanceManager.shared.savePet(pet: pet, petImage: petImage.image) { _ in
+                let allTasks = self.pet.tasks?.allObjects as? [Task] ?? []
+                let allTasksIDS = allTasks.map({$0.objectID.uriRepresentation().absoluteString})
+                var allDisabledTaskIDs = Set(UserDefaultsManager.shared.taskNotificationsIsDisabled)
+                allDisabledTaskIDs.subtract(allTasksIDS)
+                allDisabledTaskIDs.formUnion(self.disabledTasks)
+                print("All disabled: \(allDisabledTaskIDs)")
+                print("disabled tasks in pet: \(self.disabledTasks)")
+                UserDefaultsManager.shared.taskNotificationsIsDisabled = Array(allDisabledTaskIDs)
+                LocalNotificationService.shared.scheduleTasks(for: self.pet)
+            }
+
+            self.navigationController?.dismiss(animated: true, completion: nil)
+            textFieldInput = ""
+            categoryPicked = false
+            self.feedInstance?.reloadVC()
+        }
+    }
+}
+
+extension NewPetViewController: TaskSwitchTableViewCellDelegate {
+    func didToogleTaskSwitch(taskID: String, enabled: Bool) {
+        if enabled {
+            disabledTasks.remove(taskID)
+        } else {
+            disabledTasks.insert(taskID)
+        }
     }
 }

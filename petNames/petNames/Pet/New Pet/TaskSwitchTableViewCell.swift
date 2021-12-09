@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol TaskSwitchTableViewCellDelegate: AnyObject {
+    func didToogleTaskSwitch(taskID: String, enabled: Bool)
+}
 class TaskSwitchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var taskIconImage: UIImageView!
     @IBOutlet weak var taskLabel: UILabel!
-    @IBOutlet weak var taskSwitch: UISwitch!
+    @IBOutlet public weak var taskSwitch: UISwitch!
+    var taskID: String = ""
+    weak var delegate: TaskSwitchTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +27,10 @@ class TaskSwitchTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    @IBAction func didToogleSwitchTask(_ sender: UISwitch) {
+        delegate?.didToogleTaskSwitch(taskID: taskID, enabled: sender.isOn)
     }
 
 }

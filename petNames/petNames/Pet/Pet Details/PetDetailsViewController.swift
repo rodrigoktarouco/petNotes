@@ -62,6 +62,10 @@ class PetDetailsViewController: UIViewController {
 
         let storyboard = UIStoryboard(name: "NewPet", bundle: nil)
         let viewC = storyboard.instantiateViewController(withIdentifier: "NewPetNavigationControllerViewController") as UIViewController
+        let newPetVC = (viewC as? UINavigationController)?.viewControllers.first as? NewPetViewController
+        if let pet = chosenPet {
+            newPetVC?.pet = pet
+        }
         self.present(viewC, animated: true, completion: nil)
     }
 }

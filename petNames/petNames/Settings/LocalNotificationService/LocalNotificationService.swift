@@ -12,12 +12,7 @@ final class LocalNotificationService {
 
     // MARK: - Properties
     private static var instance: LocalNotificationService?
-    private static var localNotificationsIdentifier = "local-notifications"
-    private var notificationsContainer: Set<Notification> = []
     private let notificationCenter: UNUserNotificationCenter = .current()
-    private let userDefaults: UserDefaults = .standard
-    private let encoder: JSONEncoder = .init()
-    private let decoder: JSONDecoder = .init()
     // MARK: - Single Instance
     static var shared: LocalNotificationService {
         guard let instance = instance else {
@@ -28,10 +23,6 @@ final class LocalNotificationService {
 
     // MARK: - Initializer
     private init() {
-        guard let storedNotifications = getStoredNotifications() else {
-            return
-        }
-        notificationsContainer = storedNotifications
     }
 
     static func initialize() {
@@ -52,48 +43,11 @@ final class LocalNotificationService {
                 completion?()
                 return
             }
-
-            let notificationsNotStored = notifications
-                .filter(validateNotification(notification:))
-
-            notificationsNotStored
-                .forEach { notificationsContainer.insert($0) }
-
-            registerNewLocalNotifications(notifications: notificationsNotStored, completion: completion)
+            registerNewLocalNotifications(notifications: notifications, completion: completion)
         }
-    }
-
-    func remove(identifiers: [String], completion: (() -> Void)? = nil) {
-        identifiers.forEach { identifier in
-            notificationCenter.removeDeliveredNotifications(withIdentifiers: [identifier])
-            notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
-
-            if let index = notificationsContainer.firstIndex(where: { element in
-                element.id.uuidString == identifier
-            }) {
-                notificationsContainer.remove(at: index)
-            }
-        }
-        storeNotifications()
-        completion?()
-    }
-
-    func removeAll() {
-        notificationCenter.removeAllPendingNotificationRequests()
-        notificationCenter.removeAllDeliveredNotifications()
-        notificationsContainer.removeAll()
-        userDefaults.removeObject(forKey: Self.localNotificationsIdentifier)
-    }
-
-    func scheduledNotifications() -> [Notification] {
-        Array(notificationsContainer)
     }
 
     // MARK: - Private API
-    private func validateNotification(notification: Notification) -> Bool {
-        notificationsContainer.contains(notification) == false
-    }
-
     private func registerNewLocalNotifications(
         notifications: [Notification],
         completion: (() -> Void)? = nil
@@ -113,15 +67,13 @@ final class LocalNotificationService {
 
             // Configure the request to schedule the local notification
             let request = UNNotificationRequest(
-                identifier: notification.id.uuidString,
+                identifier: notification.id,
                 content: content,
                 trigger: trigger
             )
 
             notificationCenter.add(request)
         }
-
-        storeNotifications()
         completion?()
     }
 
@@ -131,25 +83,6 @@ final class LocalNotificationService {
         dateComponents.hour = notification.hour
         dateComponents.minute = notification.minutes
         return dateComponents
-    }
-
-    // MARK: - UserDefaults
-    private func getStoredNotifications() -> Set<Notification>? {
-        guard
-            let data = userDefaults.object(forKey: Self.localNotificationsIdentifier) as? Data,
-            let object = try? decoder.decode(Set<Notification>.self, from: data)
-        else {
-            return nil
-        }
-        return object
-    }
-
-    private func storeNotifications() {
-        userDefaults.removeObject(forKey: Self.localNotificationsIdentifier)
-
-        if let data = try? encoder.encode(notificationsContainer) {
-            userDefaults.set(data, forKey: Self.localNotificationsIdentifier)
-        }
     }
 
     // MARK: - Permissions
@@ -178,12 +111,56 @@ final class LocalNotificationService {
             completion(settings.authorizationStatus == .authorized)
         }
     }
+
+    func scheduleTasks(for pet: Pet) {
+        unscheduleTasks(for: pet) {
+            let petID = pet.objectID.uriRepresentation().absoluteString
+            let tasks = pet.tasks?.allObjects as? [Task] ?? []
+            var notifications = [Notification]()
+            for task in tasks {
+                let taskID = task.objectID.uriRepresentation().absoluteString
+                print("Trying to schedule notifications for task \(taskID)")
+                if UserDefaultsManager.shared.taskNotificationsIsDisabled.contains(taskID) {
+                    print("Skiping schedule of notifications for task \(taskID): toogle disabled")
+                    continue
+                }
+                let taskType = TaskType(name: task.name!)
+                let customNotification = CustomNotificationMessage.createCustomNotification(from: taskType, petName: pet.name ?? "Pet")
+                for alertTime in task.alertTimes {
+                    var utcCalendar = Calendar.autoupdatingCurrent
+                    utcCalendar.timeZone = TimeZone(identifier: "UTC") ?? .autoupdatingCurrent
+                    var baseComps = utcCalendar.dateComponents(in: utcCalendar.timeZone, from: Date())
+                    baseComps.hour = alertTime.hour
+                    baseComps.minute = alertTime.minute
+                    let date = utcCalendar.date(from: baseComps) ?? Date()
+                    let finalComps = Calendar.autoupdatingCurrent.dateComponents([.hour, .minute], from: date)
+                    let hour = finalComps.hour ?? 0
+                    let minute = finalComps.minute ?? 0
+                    let alertId = "\(petID)-\(taskID)-\(hour):\(minute)"
+
+                    let newNotification = Notification(id: alertId, title:
+                                                        customNotification.title, body: customNotification.body, hour: hour, minutes: minute)
+                    notifications.append(newNotification)
+                }
+            }
+            self.schedule(notifications: notifications, completion: nil)
+        }
+    }
+
+    func unscheduleTasks(for pet: Pet, completion: @escaping() -> Void) {
+        let petID = pet.objectID.uriRepresentation().absoluteString
+        self.notificationCenter.getPendingNotificationRequests { requests in
+            let toDelete = requests.filter { $0.identifier.starts(with: petID) }
+                .map(\.identifier)
+        self.notificationCenter.removePendingNotificationRequests(withIdentifiers: toDelete)
+            completion()
+        }
+    }
 }
 
 // API Extension to configure the local notification
 extension UNMutableNotificationContent {
     func configure(notification: Notification) {
-        categoryIdentifier = notification.id.uuidString
         title = notification.title
         body = notification.body
         sound = .default
@@ -192,7 +169,7 @@ extension UNMutableNotificationContent {
 
 // MARK: - Model
 struct Notification: Hashable, Codable {
-    let id: UUID = UUID()
+    let id: String
     let title: String
     let body: String
     let hour: Int
