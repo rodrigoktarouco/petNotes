@@ -15,6 +15,7 @@ class UserDefaultsManager {
     private let onboardingKey: String = "OnboardingKey"
     private let customSoundsKey: String = "CustomSoundsKey"
     private let notificationsEnabled: String = "NotificationsEnabled"
+    private let disableTaskNotifications: String = "disableTaskNotifications"
 
     var isOnboardingDone: Bool {
         persistanceManager.bool(forKey: onboardingKey)
@@ -30,6 +31,16 @@ class UserDefaultsManager {
 
         set {
             persistanceManager.set(newValue, forKey: notificationsEnabled)
+        }
+    }
+
+    var taskNotificationsIsDisabled: [String] {
+        get {
+            persistanceManager.array(forKey: disableTaskNotifications) as? [String] ?? []
+        }
+
+        set {
+            persistanceManager.set(newValue, forKey: disableTaskNotifications)
         }
     }
 

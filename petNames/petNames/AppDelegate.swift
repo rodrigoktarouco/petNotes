@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         UNUserNotificationCenter.current().getPendingNotificationRequests { pending in
             let ttt = pending.map { req -> String in
-                return "\(req.content.title) (\(req.content.subtitle) - \(req.content.body)) -- \(req.trigger)"
+                return "\(req.identifier)-\(req.content.title) (\(req.content.subtitle) - \(req.content.body)) -- \(req.trigger)"
             }
                 .joined(separator: "\n")
             print("pending notification requests -- \n\(ttt)")
