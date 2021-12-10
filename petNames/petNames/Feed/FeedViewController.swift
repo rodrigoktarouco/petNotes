@@ -161,6 +161,14 @@ extension FeedViewController: UICollectionViewDataSource {
 
                 // MARK: Sets the image of the cell's image
                 cell.petImage.image = infoStruct.petImage ?? UIImage(named: "")
+                if infoStruct.isCustomImage == true {
+                    cell.petImage.layer.cornerRadius = 22
+                    cell.petImage.layer.borderWidth = 1
+                    let borderColor1 = TasksDesign.shared.getTasksCellBorder(infoStruct.taskName ?? "").color
+                    cell.petImage.layer.borderColor = borderColor1.cgColor
+                } else {
+                    cell.petImage.layer.borderWidth = 0
+                }
 
                 return cell
             }

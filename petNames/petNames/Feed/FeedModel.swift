@@ -162,19 +162,22 @@ class FeedModel {
     }
     func getTaskFeedCollectionViewCellData(taskNumber: Int) -> TaskFeedCollectionViewCellData { // send the task name as it is on the persistence
         var thisPetImage = UIImage(named: "pitty")
+        var customImage: Bool = false
         let thisNotInPersistenceExecution = TaskManager.shared.arrayOfCalculatedExecutionsNotDone[taskNumber]
         if let pet = thisNotInPersistenceExecution.taskNotInPersistence?.thisPetNotInPersistence?.pet{
             PersistanceManager.shared.getPetImage(pet) { image in
                 if image != nil {
+                    customImage = true
                     thisPetImage = image
                 } else {
+                    customImage = false
                     thisPetImage = UIImage(named: pet.image ?? "")
                 }
             }
         }
         let nameOfTask = thisNotInPersistenceExecution.taskNotInPersistence?.name
         guard let date = thisNotInPersistenceExecution.timeStamp else {
-            let taskDataStruct = TaskFeedCollectionViewCellData(petImage: thisPetImage, taskName: nameOfTask, taskTime: "--:--", done: false)
+            let taskDataStruct = TaskFeedCollectionViewCellData(petImage: thisPetImage, isCustomImage: customImage, taskName: nameOfTask, taskTime: "--:--", done: false)
             return taskDataStruct
         }
 
@@ -189,7 +192,7 @@ class FeedModel {
         //        let components = calendar.dateComponents([.hour, .minute], from: date)
         //        alert = "\(components.hour ?? 0):\(components.minute ?? 0) "
 
-        let taskDataStruct = TaskFeedCollectionViewCellData(petImage: thisPetImage, taskName: nameOfTask, taskTime: alert, done: false)
+        let taskDataStruct = TaskFeedCollectionViewCellData(petImage: thisPetImage, isCustomImage: customImage, taskName: nameOfTask, taskTime: alert, done: false)
         return taskDataStruct
     }
 
@@ -249,6 +252,7 @@ class FeedModel {
 
 struct TaskFeedCollectionViewCellData {
     var petImage: UIImage?
+    var isCustomImage: Bool?
 
     var taskName: String?
     var taskTime: String?
