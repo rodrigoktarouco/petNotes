@@ -32,6 +32,7 @@ class TaskModel {
 
     func generatePetTasks() -> Int {
         cellForPetSegment = []
+        var imageIsCustom: Bool = false
 
         for notPersistentPet in TaskManager.shared.petNotInPersistenceArray {
             for notPersistentTask in notPersistentPet.tasks {
@@ -48,18 +49,19 @@ class TaskModel {
                     let nameForCell = notPersistentTask.name ?? "unnamedTask"
                     var thisImage: UIImage?
                     if let tpet = notPersistentPet.pet {
+                        imageIsCustom = true
                         PersistanceManager.shared.getPetImage(tpet) { image in
                             thisImage = image
                         }
                     }
                     if thisImage == nil {
+                        imageIsCustom = false
                         thisImage = UIImage(named: notPersistentPet.pet?.image ?? "")
                     }
                     var didTheTask = false
                     if notPersistentExecution.execution != nil {
                         didTheTask = true
                     }
-
 
                     var alert = ""
                     let formatter = DateFormatter()
@@ -76,6 +78,7 @@ class TaskModel {
                                                        taskTime: alert ,
                                                        taskPetName: notPersistentPet.name ?? "unamedPet",
                                                        taskPetImage: thisImage!,
+                                                       isCustomImage: imageIsCustom,
                                                        isCheckedAsDone: didTheTask,
                                                        taskInPersistance: notPersistentTask.task,
                                                        dateForThisExecution: date)
@@ -131,6 +134,7 @@ struct CellInfosStruct: Equatable {
     let formatter = DateFormatter()
     var taskPetName: String
     var taskPetImage: UIImage
+    var isCustomImage: Bool?
     var isCheckedAsDone: Bool
     var taskInPersistance: Task?
     var dateForThisExecution: Date?

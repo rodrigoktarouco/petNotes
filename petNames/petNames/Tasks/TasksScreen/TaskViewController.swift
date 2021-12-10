@@ -169,6 +169,17 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate {
         safeCell.taskTimeLabel.text = myInfosCell.taskTime
         safeCell.petNameLabel.text = myInfosCell.taskPetName
         safeCell.petImageTask.image = myInfosCell.taskPetImage
+
+        // MARK: If it's a custom pet image, sets cornerRadius and borderWidth/color
+        if myInfosCell.isCustomImage == true {
+            safeCell.petImageTask.layer.cornerRadius = 22
+            safeCell.petImageTask.layer.borderWidth = 1
+            let borderColor1 = TasksDesign.shared.getTasksCellBorder(myInfosCell.taskName).color
+            safeCell.petImageTask.layer.borderColor = borderColor1.cgColor
+        } else {
+            safeCell.petImageTask.layer.borderWidth = 0
+        }
+
         safeCell.myTaskInPersistance = myInfosCell.taskInPersistance
         safeCell.executionDate = myInfosCell.dateForThisExecution
         safeCell.clicked = myInfosCell.isCheckedAsDone
